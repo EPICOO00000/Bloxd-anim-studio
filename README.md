@@ -2,7 +2,61 @@
 
 A small, local 3D animation editor with an editable **8-second Maple clearing**. Version 4.0 expands the public game asset library to 1,309 base block names / 4,032 block states, 1,110 item entries and 1,674 source-model choices. It retains reliable video downloads and direct shortest-path motion between saved poses. It keeps the optional **Gemini Director** that plans terrain, characters, item movement, camera travel and lighting using your own API key. Version 2.1’s keyframe fixes, original-color tool textures, manual editing, model imports and MP3 export are retained.
 
-## Open it
+## 🌐 Live website
+
+**Play it in your browser (free, hosted on GitHub Pages): <https://epicoo00000.github.io/Bloxd-anim-studio/>**
+
+The site is hosted **free on GitHub Pages**, served directly from the `main` branch: the repository root *is* the website (`index.html` + `lib/` + `vendor/` + `assets/`). Every push to `main` republishes it automatically.
+
+**Hosting setup** (one time, in the GitHub web UI): *Settings → Pages → Build and deployment → Source: “Deploy from a branch” → Branch: `main`, folder: `/ (root)` → Save.* The included `.nojekyll` file makes Pages serve the files as-is (no Jekyll processing), which is required because some asset filenames start with `_`.
+
+<details>
+<summary>Optional: deploy with GitHub Actions instead (click to expand)</summary>
+
+If you prefer CI-based deployment, add this file as `.github/workflows/deploy.yml`, then set *Settings → Pages → Source: “GitHub Actions”*:
+
+```yaml
+name: Deploy website to GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Stage site files
+        run: |
+          mkdir -p _site_stage
+          rsync -a --exclude='.git' --exclude='.github' --exclude='node_modules' \
+            --exclude='tests' --exclude='tools' --exclude='*.tgz' \
+            --exclude='package-lock.json' --exclude='_site_stage' ./ _site_stage/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site_stage
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
+```
+
+</details>
+
+## Open it locally
 
 Double-click **START-HERE.html** in Chrome, Edge or another modern desktop WebGL browser. The separately supplied **Bloxd-Studio-4.0.html** and **Bloxd-Studio.html** are identical. Manual editing assets/libraries are embedded; no install, account, CDN or internet connection is needed for the editor itself. **Gemini generation is optional and requires internet and your own Google API key.**
 
@@ -151,7 +205,7 @@ The full public default pack and expanded live/catalog mappings are included. Ex
 
 ## Modify / rebuild
 
-Run the modular app with Python 3:
+The repository root **is** the website. Run the modular app with Python 3:
 
 ```sh
 python3 -m http.server 8000 --bind 0.0.0.0
