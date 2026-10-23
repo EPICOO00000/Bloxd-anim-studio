@@ -15,7 +15,7 @@ html=html.replace('<link rel="stylesheet" href="style.css">',()=>`<style>${css}<
  .replace(/<script type="importmap">[\s\S]*?<\/script>/,'')
  .replace('<script type="module" src="app.js"></script>',()=>`<script>${js}</script>`);
 await writeFile(path.join(root,'START-HERE.html'),html);
-await writeFile(path.join(root,'../Bloxd-Studio.html'),html);
+await writeFile(path.join(root,'Bloxd-Studio.html'),html);
 const version=JSON.parse(await readFile(path.join(root,'package.json'),'utf8')).version.split('.').slice(0,2).join('.');
-await writeFile(path.join(root,`../Bloxd-Studio-${version}.html`),html);
+await writeFile(path.join(root,`Bloxd-Studio-${version}.html`),html);
 console.log(`Built a fully self-contained editor: ${(Buffer.byteLength(html)/1024/1024).toFixed(2)} MB. Manual editing is offline; optional Gemini generation needs your key and internet.`);
