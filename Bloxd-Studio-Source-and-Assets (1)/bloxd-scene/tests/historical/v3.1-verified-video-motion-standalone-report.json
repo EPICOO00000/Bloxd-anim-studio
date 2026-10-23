@@ -1,0 +1,190 @@
+{
+  "date": "2026-10-23",
+  "version": "3.1.0",
+  "appURL": "file:///home/user/Bloxd-Studio-3.1.html",
+  "checks": [
+    {
+      "name": "direct / shortest rotation is the default",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "270\u00b0 endpoint takes the direct \u221290\u00b0 turn, not the dragged +270\u00b0 route",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "position and scale are computed between endpoints, not intermediate edits",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "saved endpoint values remain intact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "355\u00b0 \u2192 5\u00b0 crosses zero by the short route",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "intentional long turns require an explicit Full spins choice",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "interpolation mode can be undone",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "explicit spin mode survives a project round-trip",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "body parts use orientation interpolation rather than raw degree winding",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "held tools also rotate directly between their final poses",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "whole-player rotation uses the same shortest-path system",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "multi-axis interpolation is independent of extra Euler turns",
+      "pass": true,
+      "detail": "{\"worstWinding\":5.960464477539063e-8,\"worstSpeed\":5.662137425588298e-15,\"tie\":0,\"equivalent\":0}"
+    },
+    {
+      "name": "rotations follow the quaternion shortest arc",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "180-degree ties and equivalent poses do not depend on drag direction",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "video is retained with a visible player and explicit download",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "export does not rely on a delayed automatic download",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "native export renders every frame instead of screen-recording playback",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "export restores the editor frame, scene and camera",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "a real user click downloads an actual WebM file",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "WebM contains all 48 frames at 24 fps with an Opus soundtrack",
+      "pass": true,
+      "detail": "{\"programs\":[],\"stream_groups\":[],\"streams\":[{\"codec_name\":\"vp9\",\"codec_type\":\"video\",\"width\":640,\"height\":360,\"avg_frame_rate\":\"24/1\",\"nb_read_frames\":\"48\"},{\"codec_name\":\"opus\",\"codec_type\":\"audio\",\"avg_frame_rate\":\"0/0\",\"nb_read_frames\":\"101\"}],\"format\":{\"format_name\":\"matroska,webm\",\"duration\":\"2.020000\"}}"
+    },
+    {
+      "name": "video timing is no longer stretched by slow rendering",
+      "pass": true,
+      "detail": "container 2.020000 s (includes audio padding)"
+    },
+    {
+      "name": "downloaded WebM completely decodes without errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the downloaded clip has changing pictures, not one frozen screenshot",
+      "pass": true,
+      "detail": "48 distinct frames"
+    },
+    {
+      "name": "the same retained clip can be downloaded again without rendering",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "silent MP4 export is offered only when a real encoder is available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "MP4 is genuinely H.264 in an MP4 container, not renamed WebM",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "MP4 has exactly 48 frames and a two-second duration",
+      "pass": true,
+      "detail": "{\"programs\":[],\"stream_groups\":[],\"streams\":[{\"codec_name\":\"h264\",\"codec_type\":\"video\",\"width\":640,\"height\":360,\"avg_frame_rate\":\"24/1\",\"duration\":\"2.000000\",\"nb_read_frames\":\"48\"}],\"format\":{\"format_name\":\"mov,mp4,m4a,3gp,3g2,mj2\",\"duration\":\"2.000000\"}}"
+    },
+    {
+      "name": "downloaded MP4 completely decodes without errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unsupported MP4 + sound shows a useful error instead of a fake success",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "a failed export preserves the previous finished clip",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "cancel stops export cleanly without replacing the last good clip",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "cancel also restores the original editor state",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "browsers without WebCodecs have a visible real-time fallback",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "fallback recording also produces a decodable, explicitly downloadable file",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "closing/reopening Export keeps the last video ready to download",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no uncaught browser errors during motion/export/cancel/fallback",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "verifiedEditorVersion": "3.1.0",
+  "verifiedOn": "2026-10-23"
+}

@@ -1,0 +1,1668 @@
+[
+  {
+    "name": "67 Base Projectile",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "67 Boosted Projectile",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Bandolier",
+    "file": "live-item-models/Bandolier.glb",
+    "url": "https://static1.bloxd.io/models/Bandolier.glb",
+    "bytes": 5036,
+    "sha256": "9aaea366bcfe6011d0f1fe6b9e4cf28b6562997d1331053ae479127e389d4fa0"
+  },
+  {
+    "name": "Black Kart",
+    "file": "live-item-models/Black Kart.glb",
+    "url": "https://static1.bloxd.io/models/Black%20Kart.glb",
+    "bytes": 15004,
+    "sha256": "0061401089959c0b8b0d919a8677b8211e28ffb20fd4e449bcca9ce12d562c4d"
+  },
+  {
+    "name": "Black Kart Item",
+    "file": "live-item-models/Black Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Black%20Kart%20Item.glb",
+    "bytes": 2752,
+    "sha256": "8d712578f94e901af76d928ff371318e6e58e6c732263cf7e1aafa5c1bc3e31b"
+  },
+  {
+    "name": "Black Paintball Explosive Item",
+    "file": "live-item-models/Black Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Black%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3024,
+    "sha256": "2090375ebb0d63f9a2985e1f71079fa320e869b291475b138db49f9c4d5f7293"
+  },
+  {
+    "name": "Black Quick Paintball Explosive Item",
+    "file": "live-item-models/Black Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Black%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3584,
+    "sha256": "14833a8f7c9dd66e6a7f321d5489b48657d910dcd4a5d947b8e047ce6a54b573"
+  },
+  {
+    "name": "Black Seeking Paintball Explosive Item",
+    "file": "live-item-models/Black Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Black%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3552,
+    "sha256": "3b897162208acf637f741caa8249b10181f6d19e049ca9489482980f8b8fc9ee"
+  },
+  {
+    "name": "Black Sticky Paintball Explosive Item",
+    "file": "live-item-models/Black Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Black%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3688,
+    "sha256": "b923ef4ecd9ff90773fabc4aa7d55ca0df955502ad51935738220824b9324fac"
+  },
+  {
+    "name": "Black Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Black Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Black Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Black Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Black Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Blue Kart",
+    "file": "live-item-models/Blue Kart.glb",
+    "url": "https://static1.bloxd.io/models/Blue%20Kart.glb",
+    "bytes": 14932,
+    "sha256": "d57cc8b7fb56bd60295a052c84f37de43f352a4f77a4a7647a8d9212333b3a56"
+  },
+  {
+    "name": "Blue Kart Item",
+    "file": "live-item-models/Blue Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Blue%20Kart%20Item.glb",
+    "bytes": 2748,
+    "sha256": "7b0dc3958f4cf3b922cb88cc474f09372b75807d1ae5ef31a539baa57e5b8f98"
+  },
+  {
+    "name": "Blue Paintball Explosive Item",
+    "file": "live-item-models/Blue Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Blue%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3020,
+    "sha256": "8e7edaa11aaa641c1002b8c966e6b4b7dddd051e76018e74cefb35269286537f"
+  },
+  {
+    "name": "Blue Quick Paintball Explosive Item",
+    "file": "live-item-models/Blue Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Blue%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3592,
+    "sha256": "f0b6c67b0e631d18dcb215f9ccf0d7b55ff4086159db2fe98af14244fc566723"
+  },
+  {
+    "name": "Blue Seeking Paintball Explosive Item",
+    "file": "live-item-models/Blue Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Blue%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3556,
+    "sha256": "d630b6439808fb1914fb27499187f4ca6266cbfccae154d4df6e9493e481cab1"
+  },
+  {
+    "name": "Blue Sticky Paintball Explosive Item",
+    "file": "live-item-models/Blue Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Blue%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3684,
+    "sha256": "77c2b8a8f3c5d56c89e0b7e6c95290f1985d279f4fd28f83c7bc3cc814f23bfc"
+  },
+  {
+    "name": "Blue Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Blue Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Blue Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Blue Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Blue Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Brood Sac",
+    "file": "live-item-models/Brood Sac.glb",
+    "url": "https://static1.bloxd.io/models/Brood%20Sac.glb",
+    "bytes": 4120,
+    "sha256": "0ef640206aa4ba6c8386b589febf18baa3cc1ceec9d866502f33a98288853f15"
+  },
+  {
+    "name": "Brown Kart",
+    "file": "live-item-models/Brown Kart.glb",
+    "url": "https://static1.bloxd.io/models/Brown%20Kart.glb",
+    "bytes": 14940,
+    "sha256": "0300f8bea112a324c0312c3ccec707268c954f073971dd37937830451c534814"
+  },
+  {
+    "name": "Brown Kart Item",
+    "file": "live-item-models/Brown Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Brown%20Kart%20Item.glb",
+    "bytes": 2752,
+    "sha256": "a076dcacaf4b95dad575da5bad18a4947e0a5dd11e3c5083024a6cb1cf437ea0"
+  },
+  {
+    "name": "Brown Paintball Explosive Item",
+    "file": "live-item-models/Brown Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Brown%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3024,
+    "sha256": "ae72787c6f61ab25c4c9d009a93d3d4151da5163edb5722a6b0b1b8bf4520289"
+  },
+  {
+    "name": "Brown Quick Paintball Explosive Item",
+    "file": "live-item-models/Brown Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Brown%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3592,
+    "sha256": "25d6093251d2a02c3413e9558ccf021025ca427b36edc845194a53086737d057"
+  },
+  {
+    "name": "Brown Seeking Paintball Explosive Item",
+    "file": "live-item-models/Brown Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Brown%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3560,
+    "sha256": "4fb1eef1ab8050b349cdb7a3f621a999683cf6ce9283916ffff1436a2aea34ae"
+  },
+  {
+    "name": "Brown Sticky Paintball Explosive Item",
+    "file": "live-item-models/Brown Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Brown%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3680,
+    "sha256": "25ed6003148c1e9561e706bd705a90a421098591e18a0229b29cbfd303fbbda7"
+  },
+  {
+    "name": "Brown Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Brown Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Brown Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Brown Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Brown Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Capitano Grenade",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Car",
+    "file": "live-item-models/Car.glb",
+    "url": "https://static1.bloxd.io/models/Car.glb",
+    "bytes": 15612,
+    "sha256": "f05b44166684988efcc2f1f76f06726c1c98caf0b31418103a8a76707eb17394"
+  },
+  {
+    "name": "Car Item",
+    "file": "live-item-models/Car Item.glb",
+    "url": "https://static1.bloxd.io/models/Car%20Item.glb",
+    "bytes": 2532,
+    "sha256": "8d1d87ce99021fbf1827790ea31c8c923eb5818924fd07128a1062d6e8cc5840"
+  },
+  {
+    "name": "Caught Mob 67 Default",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Bobino_Musculino Default",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Capitano_Explovissimo Default",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Crone Default",
+    "file": "live-item-models/Caught Mob Crone Default.glb",
+    "url": "https://static1.bloxd.io/models/Caught%20Mob%20Crone%20Default.glb",
+    "bytes": 2728,
+    "sha256": "bbf8eb86ba43b6fd9ba066469308d418488bf89c4b007dd4d09947da00781793"
+  },
+  {
+    "name": "Caught Mob Draugr_Huntress Chainmail",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Draugr_Zombie Longhairchestplate",
+    "file": "live-item-models/Caught Mob Draugr_Zombie Longhairchestplate.glb",
+    "url": "https://static1.bloxd.io/models/Caught%20Mob%20Draugr_Zombie%20Longhairchestplate.glb",
+    "bytes": 2984,
+    "sha256": "1898b4b8aa17094618a294fe2f4f7f3cd5ffbaf055cd59908159493410fd6a79"
+  },
+  {
+    "name": "Caught Mob Draugr_Zombie Longhairclothed",
+    "file": "live-item-models/Caught Mob Draugr_Zombie Longhairclothed.glb",
+    "url": "https://static1.bloxd.io/models/Caught%20Mob%20Draugr_Zombie%20Longhairclothed.glb",
+    "bytes": 2984,
+    "sha256": "1898b4b8aa17094618a294fe2f4f7f3cd5ffbaf055cd59908159493410fd6a79"
+  },
+  {
+    "name": "Caught Mob Draugr_Zombie Shorthairclothed",
+    "file": "live-item-models/Caught Mob Draugr_Zombie Shorthairclothed.glb",
+    "url": "https://static1.bloxd.io/models/Caught%20Mob%20Draugr_Zombie%20Shorthairclothed.glb",
+    "bytes": 2984,
+    "sha256": "1898b4b8aa17094618a294fe2f4f7f3cd5ffbaf055cd59908159493410fd6a79"
+  },
+  {
+    "name": "Caught Mob Frost_Zombie Longhairchestplate",
+    "file": "live-item-models/Caught Mob Frost_Zombie Longhairchestplate.glb",
+    "url": "https://static1.bloxd.io/models/Caught%20Mob%20Frost_Zombie%20Longhairchestplate.glb",
+    "bytes": 2996,
+    "sha256": "6f030ee6b0bd0dc2ae75cf2c52635db2e6bbea83b8729deaed65d0f2027f515a"
+  },
+  {
+    "name": "Caught Mob Frost_Zombie Shorthairclothed",
+    "file": "live-item-models/Caught Mob Frost_Zombie Shorthairclothed.glb",
+    "url": "https://static1.bloxd.io/models/Caught%20Mob%20Frost_Zombie%20Shorthairclothed.glb",
+    "bytes": 2996,
+    "sha256": "6f030ee6b0bd0dc2ae75cf2c52635db2e6bbea83b8729deaed65d0f2027f515a"
+  },
+  {
+    "name": "Caught Mob NPC Carmen",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob NPC Default",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob NPC Emma",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob NPC Enoch",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob NPC Imara",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob NPC Isabel",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob NPC Leo",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob NPC Sanjay",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob NPC Sara",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Black",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Blue",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Brown",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Cyan",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Gray",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Green",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Lightblue",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Lightgray",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Lime",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Magenta",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Orange",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Pink",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Purple",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Red",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Sheep Yellow",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Caught Mob Slime Default",
+    "file": "live-item-models/Caught Mob Slime Default.glb",
+    "url": "https://static1.bloxd.io/models/Caught%20Mob%20Slime%20Default.glb",
+    "bytes": 2816,
+    "sha256": "1a3ad3049d3cd0c5546480fd28f9a7b8f16c23b9842c5105bc283bba3717542b"
+  },
+  {
+    "name": "Caught Mob Stalker Crimson",
+    "file": "live-item-models/Caught Mob Stalker Crimson.glb",
+    "url": "https://static1.bloxd.io/models/Caught%20Mob%20Stalker%20Crimson.glb",
+    "bytes": 2768,
+    "sha256": "21c2748f5cd26110a8eeec09400572ac6400c352b78cd52240b940acc4649798"
+  },
+  {
+    "name": "Caught Mob Stalker Default",
+    "file": "live-item-models/Caught Mob Stalker Default.glb",
+    "url": "https://static1.bloxd.io/models/Caught%20Mob%20Stalker%20Default.glb",
+    "bytes": 2776,
+    "sha256": "b16153b8545a78d72d078ab81cc33a6feb2aba0bc3b597dd9b7c34186f924caf"
+  },
+  {
+    "name": "Caught Mob Stalker Frost",
+    "file": "live-item-models/Caught Mob Stalker Frost.glb",
+    "url": "https://static1.bloxd.io/models/Caught%20Mob%20Stalker%20Frost.glb",
+    "bytes": 2772,
+    "sha256": "24f12444e12e1346e2805d166cd93a1639dc41b8d7db7d8ac12ba8e8a9275c95"
+  },
+  {
+    "name": "Caught Mob Stalker Void",
+    "file": "live-item-models/Caught Mob Stalker Void.glb",
+    "url": "https://static1.bloxd.io/models/Caught%20Mob%20Stalker%20Void.glb",
+    "bytes": 2776,
+    "sha256": "1025744f3cc24899fe6fbc1d88a59fa316f4c9f18953325e58fb4d2852cefa84"
+  },
+  {
+    "name": "Choir Bell",
+    "file": "live-item-models/Choir Bell.glb",
+    "url": "https://static1.bloxd.io/models/Choir%20Bell.glb",
+    "bytes": 2496,
+    "sha256": "ab99ce8c951a985fb6b26297428ea612818237ebe2a91e17418e18f095a6d033"
+  },
+  {
+    "name": "Chunk Map",
+    "file": "live-item-models/Chunk Map.glb",
+    "url": "https://static1.bloxd.io/models/Chunk%20Map.glb",
+    "bytes": 2712,
+    "sha256": "ade1659dc46dce5ddc64fd871cdbf362332ed04468b35000c70051eed11f38a3"
+  },
+  {
+    "name": "Crone Spawn Orb",
+    "file": "live-item-models/Crone Spawn Orb.glb",
+    "url": "https://static1.bloxd.io/models/Crone%20Spawn%20Orb.glb",
+    "bytes": 2848,
+    "sha256": "d672c85c6795a29dfb0ebf358300ff6004cc6f1128cc938e31ba9592f7f224ae"
+  },
+  {
+    "name": "Cyan Kart",
+    "file": "live-item-models/Cyan Kart.glb",
+    "url": "https://static1.bloxd.io/models/Cyan%20Kart.glb",
+    "bytes": 14940,
+    "sha256": "4fc0bec241881e2e82b798f4fe0bca51e3a73a39e228d9d5563f5073009ac41b"
+  },
+  {
+    "name": "Cyan Kart Item",
+    "file": "live-item-models/Cyan Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Cyan%20Kart%20Item.glb",
+    "bytes": 2748,
+    "sha256": "06faf6f6a8a4c954529e44c9a57f8570830f4c081cbb93e1445518e1213c2c64"
+  },
+  {
+    "name": "Cyan Paintball Explosive Item",
+    "file": "live-item-models/Cyan Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Cyan%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3020,
+    "sha256": "9ac77f514f0e3a301647f448d738578d2ea3fe34d6ed790edb310375d47be756"
+  },
+  {
+    "name": "Cyan Quick Paintball Explosive Item",
+    "file": "live-item-models/Cyan Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Cyan%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3584,
+    "sha256": "32ba6a370961d2696a4ce3135fd32ea4ccfe636ead224fe65d087fe3ea9fd8a5"
+  },
+  {
+    "name": "Cyan Seeking Paintball Explosive Item",
+    "file": "live-item-models/Cyan Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Cyan%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3556,
+    "sha256": "a5feea8d399bdfe767f0f327ec5ed8c8be9bea2fc3a9b51a8431da18881663af"
+  },
+  {
+    "name": "Cyan Sticky Paintball Explosive Item",
+    "file": "live-item-models/Cyan Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Cyan%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3684,
+    "sha256": "82540ec5ca34e506fa467b95abe5aa56a74b261de6b59dd89dddc6e17acf2256"
+  },
+  {
+    "name": "Cyan Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Cyan Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Cyan Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Cyan Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Cyan Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Date Pudding",
+    "file": "live-item-models/Date Pudding.glb",
+    "url": "https://static1.bloxd.io/models/Date%20Pudding.glb",
+    "bytes": 2528,
+    "sha256": "c23b9ccd6715421e039d8d329874d87b6067bbccc9866f733c55e8b576e5a100"
+  },
+  {
+    "name": "Dates",
+    "file": "live-item-models/Dates.glb",
+    "url": "https://static1.bloxd.io/models/Dates.glb",
+    "bytes": 2524,
+    "sha256": "4f420b824c8919a45b6186023392be4f0e4fe51bb9fb3ab449db632640f89bd3"
+  },
+  {
+    "name": "Flashlight",
+    "file": "live-item-models/Flashlight.glb",
+    "url": "https://static1.bloxd.io/models/Flashlight.glb",
+    "bytes": 2168,
+    "sha256": "3858a0c30b8c2dd158571eab7e2655b9b42862aeae4d9b65e739f740a3ae0a87"
+  },
+  {
+    "name": "Flywheel",
+    "file": "live-item-models/Flywheel.glb",
+    "url": "https://static1.bloxd.io/models/Flywheel.glb",
+    "bytes": 2920,
+    "sha256": "99df7bd3a07bd55216ae74a5cf55f6e7041627636106fc7b53a9a470f2b90b9a"
+  },
+  {
+    "name": "Frag Grenade",
+    "file": "live-item-models/Frag Grenade.glb",
+    "url": "https://static1.bloxd.io/models/Frag%20Grenade.glb",
+    "bytes": 2432,
+    "sha256": "2118470a2fa97c1a3d703db17f8b8c69efe573ff23baf61ae0fcd6ba4146acc2"
+  },
+  {
+    "name": "Frost Shard",
+    "file": "live-item-models/Frost Shard.glb",
+    "url": "https://static1.bloxd.io/models/Frost%20Shard.glb",
+    "bytes": 2844,
+    "sha256": "6fb34bbfa9d92ccf10e0e707be56b089c8a26f4622665046249980500f661bb2"
+  },
+  {
+    "name": "Glowing Soup",
+    "file": "live-item-models/Glowing Soup.glb",
+    "url": "https://static1.bloxd.io/models/Glowing%20Soup.glb",
+    "bytes": 2624,
+    "sha256": "6184b75b8e3bfa9ac5cb2a7975421a6428debedbd77d65efe6b0db3bb4ada764"
+  },
+  {
+    "name": "Gold Carrot",
+    "file": "live-item-models/Gold Carrot.glb",
+    "url": "https://static1.bloxd.io/models/Gold%20Carrot.glb",
+    "bytes": 7040,
+    "sha256": "f6d4495a36a39e97f057ffbe1dc461f9d1839fd6b061b42fa03cf31e1271109f"
+  },
+  {
+    "name": "Gold Crop",
+    "file": "live-item-models/Gold Crop.glb",
+    "url": "https://static1.bloxd.io/models/Gold%20Crop.glb",
+    "bytes": 2784,
+    "sha256": "8d58db5f97fd8de3d635a4eaf1f5a7a739fd69597a3d9f1f5e6ee561d7bbac9b"
+  },
+  {
+    "name": "Gold Mining Drill",
+    "file": "live-item-models/Gold Mining Drill.glb",
+    "url": "https://static1.bloxd.io/models/Gold%20Mining%20Drill.glb",
+    "bytes": 28948,
+    "sha256": "db4c4d084cfac0d115214c49b7f6cbfb5826519933fe70acf93a376c9cd1605f"
+  },
+  {
+    "name": "Golden Lucky Clover",
+    "file": "live-item-models/Golden Lucky Clover.glb",
+    "url": "https://static1.bloxd.io/models/Golden%20Lucky%20Clover.glb",
+    "bytes": 2496,
+    "sha256": "2eb6d72b6261d1407e8de176e9e2ea64ce1057117ea66b79a0efcc22370c04a2"
+  },
+  {
+    "name": "Gray Kart",
+    "file": "live-item-models/Gray Kart.glb",
+    "url": "https://static1.bloxd.io/models/Gray%20Kart.glb",
+    "bytes": 14932,
+    "sha256": "4656004fe5b3952ff6cdfc8f492a5d789a2ff0eca3a4310d6f0b33adba62290c"
+  },
+  {
+    "name": "Gray Kart Item",
+    "file": "live-item-models/Gray Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Gray%20Kart%20Item.glb",
+    "bytes": 2748,
+    "sha256": "b9a4af61919fa2488312b9ea645d2221b52bebaec84f7259016b4b00e7a7fd0d"
+  },
+  {
+    "name": "Gray Paintball Explosive Item",
+    "file": "live-item-models/Gray Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Gray%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3020,
+    "sha256": "98358f4fea0c63195de395d0dea2cd3e4dd13a2e270d573f4dad28cee040885d"
+  },
+  {
+    "name": "Gray Quick Paintball Explosive Item",
+    "file": "live-item-models/Gray Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Gray%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3584,
+    "sha256": "97b5a6b87d15e3e539167378cdfa0d42debb5d0135ce1f6ee6b29c7ff1ed94b5"
+  },
+  {
+    "name": "Gray Seeking Paintball Explosive Item",
+    "file": "live-item-models/Gray Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Gray%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3548,
+    "sha256": "5e8b3fd4a27e4583d25a629f82aca83bac4629c06886f035a7c02af1aacd2459"
+  },
+  {
+    "name": "Gray Sticky Paintball Explosive Item",
+    "file": "live-item-models/Gray Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Gray%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3676,
+    "sha256": "d6cdae50adc910bd59e8e3d74d9fa90fbd2d69eae90d173ce1bf21bcd9dedaa4"
+  },
+  {
+    "name": "Gray Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Gray Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Gray Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Gray Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Gray Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Green Kart",
+    "file": "live-item-models/Green Kart.glb",
+    "url": "https://static1.bloxd.io/models/Green%20Kart.glb",
+    "bytes": 14948,
+    "sha256": "424c5bbe1beefc210ceb253d690c5ba0984d4558e4446bc581f0633427ceba10"
+  },
+  {
+    "name": "Green Kart Item",
+    "file": "live-item-models/Green Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Green%20Kart%20Item.glb",
+    "bytes": 2752,
+    "sha256": "b5c7094f11156f68bda00ed77af038e738715f485e349bff9120d8a691e0c78e"
+  },
+  {
+    "name": "Green Paintball Explosive Item",
+    "file": "live-item-models/Green Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Green%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3024,
+    "sha256": "4a3a69ceac0f328a7d2732f89d6d2957d4d11802c34199ebf604b233e83e3eec"
+  },
+  {
+    "name": "Green Quick Paintball Explosive Item",
+    "file": "live-item-models/Green Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Green%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3592,
+    "sha256": "c77e7be11dd3f1311be12715527a804ebacdaee3f35a1398142feac756b518bd"
+  },
+  {
+    "name": "Green Seeking Paintball Explosive Item",
+    "file": "live-item-models/Green Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Green%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3568,
+    "sha256": "e35b7cd0d5193a597893522f2846b20dd6152ce2a53b795b428885180116d9ff"
+  },
+  {
+    "name": "Green Sticky Paintball Explosive Item",
+    "file": "live-item-models/Green Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Green%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3688,
+    "sha256": "d475f55e89469ef1d29543cefa93d9ea8b32505def4a10649839d39ec6e23034"
+  },
+  {
+    "name": "Green Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Green Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Green Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Green Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Green Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Hovercraft",
+    "file": "live-item-models/Hovercraft.glb",
+    "url": "https://static1.bloxd.io/models/Hovercraft.glb",
+    "bytes": 9068,
+    "sha256": "e4bd93d1f15bba294757a2730b31145d3b5922d2b61fbc1a692fb7bed121e17b"
+  },
+  {
+    "name": "Hovercraft Item",
+    "file": "live-item-models/Hovercraft Item.glb",
+    "url": "https://static1.bloxd.io/models/Hovercraft%20Item.glb",
+    "bytes": 2524,
+    "sha256": "e40accebf39ac4c1fb9b65e27988b53544922922b1e97acf1688a9f508176bab"
+  },
+  {
+    "name": "Light Blue Kart",
+    "file": "live-item-models/Light Blue Kart.glb",
+    "url": "https://static1.bloxd.io/models/Light%20Blue%20Kart.glb",
+    "bytes": 14940,
+    "sha256": "b38f16b857e5bc0ff297b2b4f8feb7d92d3acfb01b17127ef67134f39d853168"
+  },
+  {
+    "name": "Light Blue Kart Item",
+    "file": "live-item-models/Light Blue Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Light%20Blue%20Kart%20Item.glb",
+    "bytes": 2760,
+    "sha256": "f8f84a8fa44348531a65679abe18ee24cae285d108fb6c055d8726fa040b080f"
+  },
+  {
+    "name": "Light Blue Paintball Explosive Item",
+    "file": "live-item-models/Light Blue Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Light%20Blue%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3040,
+    "sha256": "924116846b6a0c5a41af86140ff101a9466a3b36d85709ac4e83141eeeb9a75b"
+  },
+  {
+    "name": "Light Blue Quick Paintball Explosive Item",
+    "file": "live-item-models/Light Blue Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Light%20Blue%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3600,
+    "sha256": "114189ae4cd0a7483ebbcbabcbd97ef095a220fa34bfd81ea2132a0813c2c388"
+  },
+  {
+    "name": "Light Blue Seeking Paintball Explosive Item",
+    "file": "live-item-models/Light Blue Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Light%20Blue%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3576,
+    "sha256": "3f2cde81b11708cc9716dfee31ac449e4207c05d4a614138aef42bb2fb9dc5bf"
+  },
+  {
+    "name": "Light Blue Sticky Paintball Explosive Item",
+    "file": "live-item-models/Light Blue Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Light%20Blue%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3696,
+    "sha256": "ef944f568979e3e972674ab624342ef448fb60fe98c33a4b5abe599233f11fbc"
+  },
+  {
+    "name": "Light Blue Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Light Blue Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Light Blue Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Light Blue Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Light Blue Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Light Gray Kart",
+    "file": "live-item-models/Light Gray Kart.glb",
+    "url": "https://static1.bloxd.io/models/Light%20Gray%20Kart.glb",
+    "bytes": 14948,
+    "sha256": "fbea5ef217259e99c1c7a9609316069d2a03f68e63e38e068b3e8d29154b7cf3"
+  },
+  {
+    "name": "Light Gray Kart Item",
+    "file": "live-item-models/Light Gray Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Light%20Gray%20Kart%20Item.glb",
+    "bytes": 2760,
+    "sha256": "8f625c0f1c8703c424e889f20fbe0872fc41f50441d1d0e394713609a5379183"
+  },
+  {
+    "name": "Light Gray Paintball Explosive Item",
+    "file": "live-item-models/Light Gray Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Light%20Gray%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3040,
+    "sha256": "5676d0f467e5415d90443f2be70bc6b08cfb29d69db1edcbeaa9442c7a412b65"
+  },
+  {
+    "name": "Light Gray Quick Paintball Explosive Item",
+    "file": "live-item-models/Light Gray Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Light%20Gray%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3592,
+    "sha256": "8853c77dd7fc57d10f4422b39a4813c61e848ec2e55bdd7556522d4b9c6db0d9"
+  },
+  {
+    "name": "Light Gray Seeking Paintball Explosive Item",
+    "file": "live-item-models/Light Gray Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Light%20Gray%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3568,
+    "sha256": "1a457d0cd6f88409474eb7cfc132662a88134a138399e3958fade502318caacf"
+  },
+  {
+    "name": "Light Gray Sticky Paintball Explosive Item",
+    "file": "live-item-models/Light Gray Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Light%20Gray%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3712,
+    "sha256": "ce2b85619c1eb296bf5a996b6e689e7016bc98a8d89fad8d647eb41020cafcf2"
+  },
+  {
+    "name": "Light Gray Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Light Gray Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Light Gray Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Light Gray Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Light Gray Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Lime Kart",
+    "file": "live-item-models/Lime Kart.glb",
+    "url": "https://static1.bloxd.io/models/Lime%20Kart.glb",
+    "bytes": 14924,
+    "sha256": "331ab38176b0a3de1521e0b87d44895a8e8feaeb95775bed5df23d5a9dd71ecc"
+  },
+  {
+    "name": "Lime Kart Item",
+    "file": "live-item-models/Lime Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Lime%20Kart%20Item.glb",
+    "bytes": 2748,
+    "sha256": "7e6530aae3e81d38933ef968a76251d930bd5398b8a21c214fd193064b8d176f"
+  },
+  {
+    "name": "Lime Paintball Explosive Item",
+    "file": "live-item-models/Lime Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Lime%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3020,
+    "sha256": "742c0a2ff66a787e7c9c85353358cb1e12e2a649049894db0001514e80fcc79d"
+  },
+  {
+    "name": "Lime Quick Paintball Explosive Item",
+    "file": "live-item-models/Lime Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Lime%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3600,
+    "sha256": "f5ff653af7c64aa85503c01d8737669c6fc57eb8fd560c5dc413d6dd6493b9b4"
+  },
+  {
+    "name": "Lime Seeking Paintball Explosive Item",
+    "file": "live-item-models/Lime Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Lime%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3564,
+    "sha256": "169e82e2494865e6036048abbe8888f0553794a66dd464100123a37be8846119"
+  },
+  {
+    "name": "Lime Sticky Paintball Explosive Item",
+    "file": "live-item-models/Lime Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Lime%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3684,
+    "sha256": "51d9551009baa7fd2f1c7d839691029ba2b5c1f3fd9693c442857f68e99a910b"
+  },
+  {
+    "name": "Lime Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Lime Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Lime Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Lime Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Lime Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Lucky Armour Upgrade",
+    "file": "live-item-models/Lucky Armour Upgrade.glb",
+    "url": "https://static1.bloxd.io/models/Lucky%20Armour%20Upgrade.glb",
+    "bytes": 2348,
+    "sha256": "303763bef760d60f05505d56efbce4da3f250ca2ea5d74680d55745a0ce2e6ae"
+  },
+  {
+    "name": "Lucky Bomb",
+    "file": "live-item-models/Lucky Bomb.glb",
+    "url": "https://static1.bloxd.io/models/Lucky%20Bomb.glb",
+    "bytes": 2404,
+    "sha256": "b877881007271ebfd6eaa192af88664359b7926034e32ffd5057b6da41c5c23a"
+  },
+  {
+    "name": "Lucky Clover",
+    "file": "live-item-models/Lucky Clover.glb",
+    "url": "https://static1.bloxd.io/models/Lucky%20Clover.glb",
+    "bytes": 2460,
+    "sha256": "ff3b7e98f4c41086866920dffc02d31f08af562f13abb7ee51b9f399eed4f26c"
+  },
+  {
+    "name": "Lucky Sword Upgrade",
+    "file": "live-item-models/Lucky Sword Upgrade.glb",
+    "url": "https://static1.bloxd.io/models/Lucky%20Sword%20Upgrade.glb",
+    "bytes": 2632,
+    "sha256": "882e3c57625d9f9b40509c18b04337a5cfbeebde941da30b20314a1aec634a15"
+  },
+  {
+    "name": "Lucky Tools Upgrade",
+    "file": "live-item-models/Lucky Tools Upgrade.glb",
+    "url": "https://static1.bloxd.io/models/Lucky%20Tools%20Upgrade.glb",
+    "bytes": 2656,
+    "sha256": "f250d50763f1e0caceff3419a27e66de98d63edccf6ded4dfc28e19f7feb4e1a"
+  },
+  {
+    "name": "Lunite",
+    "file": "live-item-models/Lunite.glb",
+    "url": "https://static1.bloxd.io/models/Lunite.glb",
+    "bytes": 3044,
+    "sha256": "69748541602f02ff92efc50d28d67daaa517688edce563ed5d0c3331fe354471"
+  },
+  {
+    "name": "Magenta Kart",
+    "file": "live-item-models/Magenta Kart.glb",
+    "url": "https://static1.bloxd.io/models/Magenta%20Kart.glb",
+    "bytes": 14948,
+    "sha256": "a89743289c908d8cc021d261ae658428b32b266e1201c50bbddbcc32c606973e"
+  },
+  {
+    "name": "Magenta Kart Item",
+    "file": "live-item-models/Magenta Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Magenta%20Kart%20Item.glb",
+    "bytes": 2756,
+    "sha256": "dd812c5249a6bb36d7d5d0b4b4c47f66ca42080fb29f4140cb6a48abd498351d"
+  },
+  {
+    "name": "Magenta Paintball Explosive Item",
+    "file": "live-item-models/Magenta Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Magenta%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3032,
+    "sha256": "2e1c55f0dc2e403f3c530915c09edea825cdd83549c6729f1c5c8d8322d86366"
+  },
+  {
+    "name": "Magenta Quick Paintball Explosive Item",
+    "file": "live-item-models/Magenta Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Magenta%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3592,
+    "sha256": "c779970d2c5cec15a145ae4ab929dae7cfbf053314e7c9d7dc9e075d6fe3db9b"
+  },
+  {
+    "name": "Magenta Seeking Paintball Explosive Item",
+    "file": "live-item-models/Magenta Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Magenta%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3568,
+    "sha256": "e8677db0a5fc4e49fb242f3978344cdd528db9fab71b7fa6cba67e5927e1cc16"
+  },
+  {
+    "name": "Magenta Sticky Paintball Explosive Item",
+    "file": "live-item-models/Magenta Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Magenta%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3696,
+    "sha256": "bc57a3a309f9fa806156f468861e5f65065a56da265eae7be5ff3a7082fe8fa2"
+  },
+  {
+    "name": "Magenta Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Magenta Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Magenta Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Magenta Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Magenta Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Maple Planks Bridge",
+    "file": "live-item-models/Maple Planks Bridge.glb",
+    "url": "https://static1.bloxd.io/models/Maple%20Planks%20Bridge.glb",
+    "bytes": 2236,
+    "sha256": "6db160241c2c32ced4b2d6a7eff92067856c8e06762d1d56038e3ad2c55970f8"
+  },
+  {
+    "name": "Messy Stone Bridge",
+    "file": "live-item-models/Messy Stone Bridge.glb",
+    "url": "https://static1.bloxd.io/models/Messy%20Stone%20Bridge.glb",
+    "bytes": 2672,
+    "sha256": "51346498bc3ea21b6cda639d23597ce22ce24661b77dc2c94c04c8f2a596bd30"
+  },
+  {
+    "name": "Military Boots",
+    "file": "live-item-models/Military Boots.glb",
+    "url": "https://static1.bloxd.io/models/Military%20Boots.glb",
+    "bytes": 2344,
+    "sha256": "4a6a1e949d4bab0cfbf39787d9d5dd1d15333e070b865964d9c857d597e258ae"
+  },
+  {
+    "name": "Military Chestplate",
+    "file": "live-item-models/Military Chestplate.glb",
+    "url": "https://static1.bloxd.io/models/Military%20Chestplate.glb",
+    "bytes": 2644,
+    "sha256": "a686f957ea2ed3d930b0063904ecec3ee6e82786011e2c958d4de84783c34983"
+  },
+  {
+    "name": "Military Gauntlets",
+    "file": "live-item-models/Military Gauntlets.glb",
+    "url": "https://static1.bloxd.io/models/Military%20Gauntlets.glb",
+    "bytes": 2348,
+    "sha256": "0a8be71215535263a90f8116e10ed7424eb633f28b71618c42bccfd7a02b82e6"
+  },
+  {
+    "name": "Military Helmet",
+    "file": "live-item-models/Military Helmet.glb",
+    "url": "https://static1.bloxd.io/models/Military%20Helmet.glb",
+    "bytes": 2756,
+    "sha256": "4b2810fc62122c6c4bc4ed493280f720c19605b824d39d1bf7a66acc32bc117b"
+  },
+  {
+    "name": "Military Leggings",
+    "file": "live-item-models/Military Leggings.glb",
+    "url": "https://static1.bloxd.io/models/Military%20Leggings.glb",
+    "bytes": 2264,
+    "sha256": "4addbc98d5321e6b4ec52b55e4b91ad8a1302ea2832831716b51d5cba95aeec6"
+  },
+  {
+    "name": "Mining Grenade",
+    "file": "live-item-models/Mining Grenade.glb",
+    "url": "https://static1.bloxd.io/models/Mining%20Grenade.glb",
+    "bytes": 2432,
+    "sha256": "d2d5a2d6ee3fc39572737b6019a9f1141d3927f71e9a320dee4246c2db69e352"
+  },
+  {
+    "name": "Mining Helmet",
+    "file": "live-item-models/Mining Helmet.glb",
+    "url": "https://static1.bloxd.io/models/Mining%20Helmet.glb",
+    "bytes": 2496,
+    "sha256": "b39d3dd747a8ddb5824db4584bb62a077d8c039e5cca5d30ee2a04fe2091e693"
+  },
+  {
+    "name": "Molten Cog",
+    "file": "live-item-models/Molten Cog.glb",
+    "url": "https://static1.bloxd.io/models/Molten%20Cog.glb",
+    "bytes": 2848,
+    "sha256": "a73918b3eaaf1d42c2c867662c5e25554f42136fc8326e0097b6aa37fce73cb3"
+  },
+  {
+    "name": "Night Vision Soup",
+    "file": "live-item-models/Night Vision Soup.glb",
+    "url": "https://static1.bloxd.io/models/Night%20Vision%20Soup.glb",
+    "bytes": 2636,
+    "sha256": "48e08c95e48dfb65a846331ec471a6af4071838a34ef95581f726b881a86fbda"
+  },
+  {
+    "name": "Off Roader",
+    "file": "live-item-models/Off Roader.glb",
+    "url": "https://static1.bloxd.io/models/Off%20Roader.glb",
+    "bytes": 15392,
+    "sha256": "83d4ea1a22f7872a9f8ce4e66bef67d5f1e1f864043ff64abd0e7bb16b8086a8"
+  },
+  {
+    "name": "Off Roader Item",
+    "file": "live-item-models/Off Roader Item.glb",
+    "url": "https://static1.bloxd.io/models/Off%20Roader%20Item.glb",
+    "bytes": 2512,
+    "sha256": "d54891b0bc268fc0dbbf253495d1d8e91e26fba10161da4560464e167bdf7203"
+  },
+  {
+    "name": "Orange Kart",
+    "file": "live-item-models/Orange Kart.glb",
+    "url": "https://static1.bloxd.io/models/Orange%20Kart.glb",
+    "bytes": 14972,
+    "sha256": "d1f47bcc61eae888a8450aaf7e127ea225f5eeae9ee747c54e6827ab1f453b6a"
+  },
+  {
+    "name": "Orange Kart Item",
+    "file": "live-item-models/Orange Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Orange%20Kart%20Item.glb",
+    "bytes": 2752,
+    "sha256": "7554b75cf885bf46b36f9463f3d9938e3bd75e7432a3e068fd8f6686b3ca1694"
+  },
+  {
+    "name": "Orange Paintball Explosive Item",
+    "file": "live-item-models/Orange Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Orange%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3028,
+    "sha256": "7b042adadafaccf4cd5386f55f108c8b31885606a7712ba7f288eb9a73d5f4dd"
+  },
+  {
+    "name": "Orange Quick Paintball Explosive Item",
+    "file": "live-item-models/Orange Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Orange%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3596,
+    "sha256": "fbc89ce273d49453cb68adf30a7e85a71fc252dc12f89ac9be0c0a237f14c72b"
+  },
+  {
+    "name": "Orange Seeking Paintball Explosive Item",
+    "file": "live-item-models/Orange Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Orange%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3564,
+    "sha256": "5b8fd86cc1aa23bfa695883a53c831cf6221c4646cbfa804010e262d57662a23"
+  },
+  {
+    "name": "Orange Sticky Paintball Explosive Item",
+    "file": "live-item-models/Orange Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Orange%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3692,
+    "sha256": "8c84d05b7de1a0d7aa102766398fdc9e03967a45c97db25cb45da01166cac39f"
+  },
+  {
+    "name": "Orange Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Orange Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Orange Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Orange Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Orange Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Pink Kart",
+    "file": "live-item-models/Pink Kart.glb",
+    "url": "https://static1.bloxd.io/models/Pink%20Kart.glb",
+    "bytes": 14948,
+    "sha256": "827b34a9863cde815e6693bfb9c2fa53751c5340e6ea07260bc9bf3bf9492b84"
+  },
+  {
+    "name": "Pink Kart Item",
+    "file": "live-item-models/Pink Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Pink%20Kart%20Item.glb",
+    "bytes": 2748,
+    "sha256": "014597eb6193be2abaa5a1d560ec2f817314c0f8131e94a60a0909464eba5409"
+  },
+  {
+    "name": "Pink Paintball Explosive Item",
+    "file": "live-item-models/Pink Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Pink%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3020,
+    "sha256": "ca10f255f09548502bd61d8c33fb93e21010351048699c796aae5c244d2c4983"
+  },
+  {
+    "name": "Pink Quick Paintball Explosive Item",
+    "file": "live-item-models/Pink Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Pink%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3592,
+    "sha256": "5a1a9b873adeafba24782aa87eeb1463fbf74c5c5cc70a957477eaebc2e66b84"
+  },
+  {
+    "name": "Pink Seeking Paintball Explosive Item",
+    "file": "live-item-models/Pink Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Pink%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3556,
+    "sha256": "832deb1aa8a5471de5c818e41f5aef90faf5d53a1c3220e008101cf0efabe04f"
+  },
+  {
+    "name": "Pink Sticky Paintball Explosive Item",
+    "file": "live-item-models/Pink Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Pink%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3692,
+    "sha256": "6d6f094c61a97e8d9573489be9becccbae974d465f9c1ca1713e6742910ceb63"
+  },
+  {
+    "name": "Pink Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Pink Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Pink Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Pink Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Pink Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Purple Kart",
+    "file": "live-item-models/Purple Kart.glb",
+    "url": "https://static1.bloxd.io/models/Purple%20Kart.glb",
+    "bytes": 14948,
+    "sha256": "8ba101bc1e22a359b7876b9a8a2cab55d27976be868ef0451e69903094f9d5a2"
+  },
+  {
+    "name": "Purple Kart Item",
+    "file": "live-item-models/Purple Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Purple%20Kart%20Item.glb",
+    "bytes": 2752,
+    "sha256": "f91d79aaf8cb33c8661f98ddee127fcbf39f00bca30ef3888686bbe8d9558eb8"
+  },
+  {
+    "name": "Purple Paintball Explosive Item",
+    "file": "live-item-models/Purple Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Purple%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3028,
+    "sha256": "71c09db93edfb224c5007f2921c4375c809b7a21355546d56727db632930206b"
+  },
+  {
+    "name": "Purple Quick Paintball Explosive Item",
+    "file": "live-item-models/Purple Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Purple%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3596,
+    "sha256": "8da4998e6e48bb26a9a504f4e100c755d37842da0aecae84700f7afa1375f314"
+  },
+  {
+    "name": "Purple Seeking Paintball Explosive Item",
+    "file": "live-item-models/Purple Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Purple%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3572,
+    "sha256": "245897b49b3612692ca8729616c3a4c61394095f3083a26aa13c9dfe68131316"
+  },
+  {
+    "name": "Purple Sticky Paintball Explosive Item",
+    "file": "live-item-models/Purple Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Purple%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3692,
+    "sha256": "85b90e8934ea6b1e8da4ab0d1c624c9747fb660fcf21f49fd970f75901b1986e"
+  },
+  {
+    "name": "Purple Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Purple Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Purple Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Purple Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Purple Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Radiant Spark",
+    "file": "live-item-models/Radiant Spark.glb",
+    "url": "https://static1.bloxd.io/models/Radiant%20Spark.glb",
+    "bytes": 2728,
+    "sha256": "026592d163bf9f49b63a671e4cffc10528432403a64f6e3662bcb882869a755d"
+  },
+  {
+    "name": "Red Kart",
+    "file": "live-item-models/Red Kart.glb",
+    "url": "https://static1.bloxd.io/models/Red%20Kart.glb",
+    "bytes": 14948,
+    "sha256": "439c66fabfd3347e2b9e89659dbc803cc160e69315d66591bf518a3d8e9f0b01"
+  },
+  {
+    "name": "Red Kart Item",
+    "file": "live-item-models/Red Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Red%20Kart%20Item.glb",
+    "bytes": 2748,
+    "sha256": "f99ac82a2c776649effbc2eab909d9764d0366cd8e28b8e88e3386a0501e3285"
+  },
+  {
+    "name": "Red Paintball Explosive Item",
+    "file": "live-item-models/Red Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Red%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3020,
+    "sha256": "39ced8baf7cec82d9cee84aef6189e075a660a29cf44ded30d3404cfb4fa9ed6"
+  },
+  {
+    "name": "Red Quick Paintball Explosive Item",
+    "file": "live-item-models/Red Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Red%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3580,
+    "sha256": "665627dbbf374c5ab5630575a7c952fbfe35901c6e8ccd53dbb57d13382d9f1e"
+  },
+  {
+    "name": "Red Seeking Paintball Explosive Item",
+    "file": "live-item-models/Red Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Red%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3556,
+    "sha256": "57e3e0297e8ad4f0c1ae7fdca5fc1b1e8dcc91f78feac6c2287cb6170cff09c8"
+  },
+  {
+    "name": "Red Sticky Paintball Explosive Item",
+    "file": "live-item-models/Red Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Red%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3684,
+    "sha256": "fe0f0152f99e432c261effeb983a0d8f5ac4889459f3973ade008d6910aad75c"
+  },
+  {
+    "name": "Red Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Red Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Red Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Red Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Red Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Scatter Pellet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Siege Core",
+    "file": "live-item-models/Siege Core.glb",
+    "url": "https://static1.bloxd.io/models/Siege%20Core.glb",
+    "bytes": 3196,
+    "sha256": "fc7b7ce4a14ff3288f8d2453b1a3e36fa3231bb5024af8611fcbd4812cfa15b2"
+  },
+  {
+    "name": "Slime Spawn Orb",
+    "file": "live-item-models/Slime Spawn Orb.glb",
+    "url": "https://static1.bloxd.io/models/Slime%20Spawn%20Orb.glb",
+    "bytes": 2732,
+    "sha256": "065396054bf09490a8a5718440a0a7bac4ec628007b25a6dfcd5bf48d997cbbe"
+  },
+  {
+    "name": "Smoke Grenade",
+    "file": "live-item-models/Smoke Grenade.glb",
+    "url": "https://static1.bloxd.io/models/Smoke%20Grenade.glb",
+    "bytes": 2240,
+    "sha256": "9e8342cca4514971b2af92e5c0b8b4ef0856d03460774f64b901a9bc844de22b"
+  },
+  {
+    "name": "Speedboat",
+    "file": "live-item-models/Speedboat.glb",
+    "url": "https://static1.bloxd.io/models/Speedboat.glb",
+    "bytes": 5876,
+    "sha256": "e2ea157b2993425ff2ccef9c249712279c2f8db6240b13b7c20d0bd9d63a1cca"
+  },
+  {
+    "name": "Speedboat Item",
+    "file": "live-item-models/Speedboat Item.glb",
+    "url": "https://static1.bloxd.io/models/Speedboat%20Item.glb",
+    "bytes": 2196,
+    "sha256": "c4919c3375291effddfc4f684405c5d49d85fa4d7c8f6cd600fffd1e6f4d99c8"
+  },
+  {
+    "name": "Stalker Spawn Orb",
+    "file": "live-item-models/Stalker Spawn Orb.glb",
+    "url": "https://static1.bloxd.io/models/Stalker%20Spawn%20Orb.glb",
+    "bytes": 2696,
+    "sha256": "3630daa68e1010480e3a7c3e164b192158d0f976dc9a3a992f7fb6c36a1ebd77"
+  },
+  {
+    "name": "Swap Orb",
+    "file": "live-item-models/Swap Orb.glb",
+    "url": "https://static1.bloxd.io/models/Swap%20Orb.glb",
+    "bytes": 2308,
+    "sha256": "787a59f8b54a25dfc8fb28a3abfa499a5876209f4823e30ee6f6ab6a5dcafc4d"
+  },
+  {
+    "name": "Teleport Heart",
+    "file": "live-item-models/Teleport Heart.glb",
+    "url": "https://static1.bloxd.io/models/Teleport%20Heart.glb",
+    "bytes": 2880,
+    "sha256": "9209ddc38fb224a75b7aecae605c737b3ef7945c99c1fce2f34c01ca165615cc"
+  },
+  {
+    "name": "Teleportation Potion",
+    "file": "live-item-models/Teleportation Potion.glb",
+    "url": "https://static1.bloxd.io/models/Teleportation%20Potion.glb",
+    "bytes": 2340,
+    "sha256": "b59deae5d952b1a0d6ffc9d6ab0c9619d5a284baa1078d4f5d2efb4fdd8263bb"
+  },
+  {
+    "name": "Unlucky Bomb",
+    "file": "live-item-models/Unlucky Bomb.glb",
+    "url": "https://static1.bloxd.io/models/Unlucky%20Bomb.glb",
+    "bytes": 2412,
+    "sha256": "7de2fa8af38545a65d9de53722709b85816b381c75f78b4874d1af78b157c99e"
+  },
+  {
+    "name": "Void Net",
+    "file": "live-item-models/Void Net.glb",
+    "url": "https://static1.bloxd.io/models/Void%20Net.glb",
+    "bytes": 2600,
+    "sha256": "0295e35a5a7e23c4e4fb1a64f3b5b065c541109cecd2ccdca7eaed52053b1011"
+  },
+  {
+    "name": "White Kart",
+    "file": "live-item-models/White Kart.glb",
+    "url": "https://static1.bloxd.io/models/White%20Kart.glb",
+    "bytes": 14948,
+    "sha256": "152f35f1a7c3e6eb7f496a6e24f09ca22e3fcca30382d581fedb53417a93865e"
+  },
+  {
+    "name": "White Kart Item",
+    "file": "live-item-models/White Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/White%20Kart%20Item.glb",
+    "bytes": 2752,
+    "sha256": "3f49f3ba6ed909e43afa63abc6e2bf407b90f4fb964d6068ba3ef4ca1c47c134"
+  },
+  {
+    "name": "White Paintball Explosive Item",
+    "file": "live-item-models/White Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/White%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3032,
+    "sha256": "7de9d162c58a899e1a39ee343407e6b0ac2df6311b77089420082c06a849252a"
+  },
+  {
+    "name": "White Quick Paintball Explosive Item",
+    "file": "live-item-models/White Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/White%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3584,
+    "sha256": "b7c52fe86dc594e5fdcc4ecae7ead40eecd5fc904489b42c26da5c50c7ff861a"
+  },
+  {
+    "name": "White Seeking Paintball Explosive Item",
+    "file": "live-item-models/White Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/White%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3544,
+    "sha256": "e7e2fba545a84b61dfb91507c017319e34571e204f7110d3f1212a725d3d0551"
+  },
+  {
+    "name": "White Sticky Paintball Explosive Item",
+    "file": "live-item-models/White Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/White%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3680,
+    "sha256": "c7e6aba3e8b3eb5bac5bf1cc7a264ff5183d521982474c5b3c742af35686d501"
+  },
+  {
+    "name": "White Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "White Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "White Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "White Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "White Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Yellow Kart",
+    "file": "live-item-models/Yellow Kart.glb",
+    "url": "https://static1.bloxd.io/models/Yellow%20Kart.glb",
+    "bytes": 14972,
+    "sha256": "582b041800d775e3de821446d7bc0508acab40de81ed93d9903c51d0d2b6a289"
+  },
+  {
+    "name": "Yellow Kart Item",
+    "file": "live-item-models/Yellow Kart Item.glb",
+    "url": "https://static1.bloxd.io/models/Yellow%20Kart%20Item.glb",
+    "bytes": 2752,
+    "sha256": "58fc7e0e4d33bd82f8e4ed8ac8b014aa88ff686a753bdb8e3191c3d6c87df6c3"
+  },
+  {
+    "name": "Yellow Paintball Explosive Item",
+    "file": "live-item-models/Yellow Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Yellow%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3036,
+    "sha256": "a17fc55ccbfb79a12777facbaec633733f2990f2500f4690c3350b80884ec790"
+  },
+  {
+    "name": "Yellow Quick Paintball Explosive Item",
+    "file": "live-item-models/Yellow Quick Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Yellow%20Quick%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3580,
+    "sha256": "4d03e97659587cc0f478e100cf90e05d58b5d6d979edf88e21d9094360ed2119"
+  },
+  {
+    "name": "Yellow Seeking Paintball Explosive Item",
+    "file": "live-item-models/Yellow Seeking Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Yellow%20Seeking%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3564,
+    "sha256": "1d1ef87b318f5e3771ae109f5eac1229977c3bcedf9ce91640106b88a52bdbe7"
+  },
+  {
+    "name": "Yellow Sticky Paintball Explosive Item",
+    "file": "live-item-models/Yellow Sticky Paintball Explosive Item.glb",
+    "url": "https://static1.bloxd.io/models/Yellow%20Sticky%20Paintball%20Explosive%20Item.glb",
+    "bytes": 3692,
+    "sha256": "3c0a3540ede87116d1f0f5594b7526fb6f3dd9720e31146d00130847c404127e"
+  },
+  {
+    "name": "Yellow Wood Boots",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Yellow Wood Chestplate",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Yellow Wood Gauntlets",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Yellow Wood Helmet",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "Yellow Wood Leggings",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "clock_gold_early_day",
+    "file": "live-item-models/clock_gold_early_day.glb",
+    "url": "https://static1.bloxd.io/models/clock_gold_early_day.glb",
+    "bytes": 2268,
+    "sha256": "ce25be1262bced299ba1d7d8bc764c5610a94ed3c4f32dadf15105ef93dc48f0"
+  },
+  {
+    "name": "clock_gold_early_night",
+    "file": "live-item-models/clock_gold_early_night.glb",
+    "url": "https://static1.bloxd.io/models/clock_gold_early_night.glb",
+    "bytes": 2264,
+    "sha256": "ff4e2e9c12216ef287acd3c38c2dc73301bb1a05116c544003ba30355b0a4153"
+  },
+  {
+    "name": "clock_gold_late_day",
+    "file": "live-item-models/clock_gold_late_day.glb",
+    "url": "https://static1.bloxd.io/models/clock_gold_late_day.glb",
+    "bytes": 2304,
+    "sha256": "eb43adb9a554e0126f718da6996ee17bea260a9b40a42aa9cd3bb5472cfa1a5c"
+  },
+  {
+    "name": "clock_gold_late_night",
+    "file": "live-item-models/clock_gold_late_night.glb",
+    "url": "https://static1.bloxd.io/models/clock_gold_late_night.glb",
+    "bytes": 2308,
+    "sha256": "1277d093726a2684e24b34246a1b4d22380d736546e59a1901043906e1a5ce1d"
+  },
+  {
+    "name": "clock_gold_midday",
+    "file": "live-item-models/clock_gold_midday.glb",
+    "url": "https://static1.bloxd.io/models/clock_gold_midday.glb",
+    "bytes": 2304,
+    "sha256": "db68e6e0c2766e7e6ef2f0720c176e78afdee8222de15c8c32dd9504b74befb8"
+  },
+  {
+    "name": "clock_gold_midnight",
+    "file": "live-item-models/clock_gold_midnight.glb",
+    "url": "https://static1.bloxd.io/models/clock_gold_midnight.glb",
+    "bytes": 2300,
+    "sha256": "04d45548cac68b84e2c1635d136f2e07a2d966830bca9626703d71ef772413a2"
+  },
+  {
+    "name": "clock_gold_sunrise",
+    "file": "live-item-models/clock_gold_sunrise.glb",
+    "url": "https://static1.bloxd.io/models/clock_gold_sunrise.glb",
+    "bytes": 2488,
+    "sha256": "a1a8ac6a3774212ef4f85e09bf8f7847df0649dfe95d42a1ee45924e0da208ce"
+  },
+  {
+    "name": "clock_gold_sunset",
+    "file": "live-item-models/clock_gold_sunset.glb",
+    "url": "https://static1.bloxd.io/models/clock_gold_sunset.glb",
+    "bytes": 2524,
+    "sha256": "b331a40779364eaa64d16aca91c3c4e2f4d10e8df32ddcd5f356a4cef77f5bee"
+  },
+  {
+    "name": "clock_wood_early_day",
+    "file": "live-item-models/clock_wood_early_day.glb",
+    "url": "https://static1.bloxd.io/models/clock_wood_early_day.glb",
+    "bytes": 2260,
+    "sha256": "0e17bf7cdd43b28332d416ed422fbe79bfd26dd27b2925c4ffe4df9247764ebc"
+  },
+  {
+    "name": "clock_wood_early_night",
+    "file": "live-item-models/clock_wood_early_night.glb",
+    "url": "https://static1.bloxd.io/models/clock_wood_early_night.glb",
+    "bytes": 2264,
+    "sha256": "230d8f8d2a5fea6c9980d527e2c62cf43f5e0805965a376b9cd1bb3645d4f45f"
+  },
+  {
+    "name": "clock_wood_late_day",
+    "file": "live-item-models/clock_wood_late_day.glb",
+    "url": "https://static1.bloxd.io/models/clock_wood_late_day.glb",
+    "bytes": 2304,
+    "sha256": "c8280a8c3b3062dbdfc7e8977461f945326a5fa21a2d527e94e39e106e01626d"
+  },
+  {
+    "name": "clock_wood_late_night",
+    "file": "live-item-models/clock_wood_late_night.glb",
+    "url": "https://static1.bloxd.io/models/clock_wood_late_night.glb",
+    "bytes": 2308,
+    "sha256": "72b4c592b5b8ea8b8e5ef79f38f072329be588effd6b66c33c7c44b3981cf382"
+  },
+  {
+    "name": "clock_wood_midday",
+    "file": "live-item-models/clock_wood_midday.glb",
+    "url": "https://static1.bloxd.io/models/clock_wood_midday.glb",
+    "bytes": 2296,
+    "sha256": "3dcd35bddc18b9bce27920edbb229df446014b763f1b96040c8adb344b2b9ed5"
+  },
+  {
+    "name": "clock_wood_midnight",
+    "file": "live-item-models/clock_wood_midnight.glb",
+    "url": "https://static1.bloxd.io/models/clock_wood_midnight.glb",
+    "bytes": 2300,
+    "sha256": "40030e1d5f48876361ed6b0bd729e6e065a3d01054fa7bdc4877a68360d75349"
+  },
+  {
+    "name": "clock_wood_sunrise",
+    "file": "live-item-models/clock_wood_sunrise.glb",
+    "url": "https://static1.bloxd.io/models/clock_wood_sunrise.glb",
+    "bytes": 2488,
+    "sha256": "665a623f277a12d751f4b4aaf62346ba1d6ec0eba7e5047554a8aaf01354d2ba"
+  },
+  {
+    "name": "clock_wood_sunset",
+    "file": "live-item-models/clock_wood_sunset.glb",
+    "url": "https://static1.bloxd.io/models/clock_wood_sunset.glb",
+    "bytes": 2524,
+    "sha256": "39dcfe1f67e68926ce09cf176b19d18f7bdeb89a971b2f65e203a9765ca93314"
+  }
+]

@@ -1,0 +1,298 @@
+{
+  "date": "2026-10-22",
+  "checks": [
+    {
+      "name": "scene boots with instanced terrain",
+      "pass": true,
+      "detail": "956 blocks"
+    },
+    {
+      "name": "all block faces have texture maps",
+      "pass": true,
+      "detail": "official 8px stone texture"
+    },
+    {
+      "name": "expanded block/state and item/source-model catalogs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "ten editable joints including knees and elbows",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Bob stands at the terrain surface",
+      "pass": true,
+      "detail": "foot y=1"
+    },
+    {
+      "name": "real shadows enabled",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "head slider drives the rig",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "manual pose is not overwritten by animation loop",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "position input moves the character and persists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "undo restores position",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "redo reapplies position",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "T-pose is applied to both shoulders",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "elbow is independently poseable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "equipment selector attaches real models to the hand",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "empty hand removes equipment",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "asset search filters the tool library",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "spawn adds a separate character rig",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "undo removes spawned character",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sun direction controls update the actual light",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "fog can be disabled while editing lighting without a crash",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "shadow toggle works",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "moonlight preset actually has a dark sky",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dragging sun pad changes direction",
+      "pass": true,
+      "detail": "azimuth 72"
+    },
+    {
+      "name": "camera spline hits exact positions at key times",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "camera travel uses near-uniform segment speed",
+      "pass": true,
+      "detail": "max/min speed 1.000"
+    },
+    {
+      "name": "linear and smooth camera modes differ",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "timeline scrubbing previews the camera at the correct location",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "non-looping playback stops at the final frame",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "looping playback wraps and continues",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pose timeline really interpolates, not just the latest pose",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "real pointer drag retimes a pose key",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "delete key affects the selected timeline key",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "undo restores a deleted pose key",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "real canvas click places the adjacent block",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "placing adds exactly one block",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "right-click erases the hit block, not the neighbouring cell",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "undo restores a dug block",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "transform handles attach to the selected root",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "OBJ file input imports a real mesh, including negative indices",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "binary STL parser reads a triangle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "PLY parser retains colors and triangle indices",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "PLY normals are finite (indexed geometry)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "voxel conversion fills a closed cube",
+      "pass": true,
+      "detail": "4096 cells"
+    },
+    {
+      "name": "voxel cells are uniformly cubic",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "undo voxelisation restores the original mesh",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "self-contained textured GLB imports correctly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "save project produces JSON with scene and key data",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "project round-trip preserves imports, terrain and camera keys",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "model export produces a binary GLB",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "exported Bob retains named joint hierarchy and embedded skin",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "exported character GLB can be reimported",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "PNG export is a real non-empty image",
+      "pass": true,
+      "detail": "166 KB"
+    },
+    {
+      "name": "clean-view return control remains accessible",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "quick guide and provenance are available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "WebM recording downloads a playable container",
+      "pass": true,
+      "detail": "1318 KB"
+    },
+    {
+      "name": "frame export finishes the whole clip and restores the editing time",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no unexpected runtime or loading errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the modular app uses no remote runtime resources",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "verifiedEditorVersion": "4.0.0",
+  "verifiedOn": "2026-10-23"
+}

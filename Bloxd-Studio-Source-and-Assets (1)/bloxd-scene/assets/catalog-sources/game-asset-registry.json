@@ -1,0 +1,5938 @@
+{
+  "lifeformMeshToBodyPart": {},
+  "Mining Helmet": {
+    "type": "Armour",
+    "textureInfo": "mining_helmet",
+    "MS": [
+      15,
+      14,
+      11
+    ]
+  },
+  "AK-47": {},
+  "M16": {},
+  "MP40": {},
+  "TAR-21": {},
+  "Double Barrel": {},
+  "AWP": {},
+  "Deagle": {},
+  "Striker-12": {},
+  "VSR": {},
+  "Minigun": {},
+  "SKAR": {},
+  "FMR": {},
+  "GPMG": {},
+  "DMR": {},
+  "Wood Pickaxe": {
+    "type": "Tool",
+    "textureInfo": "wooden_pickaxe"
+  },
+  "Stone Pickaxe": {
+    "type": "Tool",
+    "textureInfo": "stone_pickaxe"
+  },
+  "Iron Pickaxe": {
+    "type": "Tool",
+    "textureInfo": "iron_pickaxe"
+  },
+  "Gold Pickaxe": {
+    "type": "Tool",
+    "textureInfo": "golden_pickaxe"
+  },
+  "Diamond Pickaxe": {
+    "type": "Tool",
+    "textureInfo": "diamond_pickaxe"
+  },
+  "Moonstone Pickaxe": {
+    "type": "Tool",
+    "textureInfo": "moonstone_pickaxe"
+  },
+  "Golem Pickaxe": {
+    "type": "Tool",
+    "textureInfo": "golem_pickaxe"
+  },
+  "Wood Axe": {
+    "type": "Tool",
+    "textureInfo": "wooden_axe"
+  },
+  "Stone Axe": {
+    "type": "Tool",
+    "textureInfo": "stone_axe"
+  },
+  "Iron Axe": {
+    "type": "Tool",
+    "textureInfo": "iron_axe"
+  },
+  "Gold Axe": {
+    "type": "Tool",
+    "textureInfo": "golden_axe"
+  },
+  "Diamond Axe": {
+    "type": "Tool",
+    "textureInfo": "diamond_axe"
+  },
+  "Moonstone Axe": {
+    "type": "Tool",
+    "textureInfo": "moonstone_axe"
+  },
+  "Artisan Axe": {
+    "type": "Tool",
+    "textureInfo": "artisan_axe"
+  },
+  "Wood Spade": {
+    "type": "Tool",
+    "textureInfo": "wooden_shovel"
+  },
+  "Stone Spade": {
+    "type": "Tool",
+    "textureInfo": "stone_shovel"
+  },
+  "Iron Spade": {
+    "type": "Tool",
+    "textureInfo": "iron_shovel"
+  },
+  "Gold Spade": {
+    "type": "Tool",
+    "textureInfo": "golden_shovel"
+  },
+  "Diamond Spade": {
+    "type": "Tool",
+    "textureInfo": "diamond_shovel"
+  },
+  "Wood Sword": {
+    "type": "Tool",
+    "textureInfo": "wooden_sword"
+  },
+  "Stone Sword": {
+    "type": "Tool",
+    "textureInfo": "stone_sword"
+  },
+  "Iron Sword": {
+    "type": "Tool",
+    "textureInfo": "iron_sword"
+  },
+  "Gold Sword": {
+    "type": "Tool",
+    "textureInfo": "golden_sword"
+  },
+  "Diamond Sword": {
+    "type": "Tool",
+    "textureInfo": "diamond_sword"
+  },
+  "Knight Sword": {
+    "type": "Tool",
+    "textureInfo": "knight_sword"
+  },
+  "Wood Hoe": {
+    "type": "Tool",
+    "textureInfo": "wooden_hoe"
+  },
+  "Stone Hoe": {
+    "type": "Tool",
+    "textureInfo": "stone_hoe"
+  },
+  "Iron Hoe": {
+    "type": "Tool",
+    "textureInfo": "iron_hoe"
+  },
+  "Gold Hoe": {
+    "type": "Tool",
+    "textureInfo": "golden_hoe"
+  },
+  "Diamond Hoe": {
+    "type": "Tool",
+    "textureInfo": "diamond_hoe"
+  },
+  "Flashlight": {
+    "type": "Item",
+    "textureInfo": "flashlight",
+    "MS": [
+      15,
+      15,
+      15
+    ]
+  },
+  "Wood Helmet": {
+    "type": "Armour",
+    "textureInfo": "wood_helmet"
+  },
+  "Iron Helmet": {
+    "type": "Armour",
+    "textureInfo": "iron_helmet"
+  },
+  "Gold Helmet": {
+    "type": "Armour",
+    "textureInfo": "golden_helmet"
+  },
+  "Diamond Helmet": {
+    "type": "Armour",
+    "textureInfo": "diamond_helmet"
+  },
+  "Wood Chestplate": {
+    "type": "Armour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Iron Chestplate": {
+    "type": "Armour",
+    "textureInfo": "iron_chestplate"
+  },
+  "Gold Chestplate": {
+    "type": "Armour",
+    "textureInfo": "golden_chestplate"
+  },
+  "Diamond Chestplate": {
+    "type": "Armour",
+    "textureInfo": "diamond_chestplate"
+  },
+  "Fur Chestplate": {
+    "type": "Armour",
+    "textureInfo": "fur_chestplate"
+  },
+  "Wood Leggings": {
+    "type": "Armour",
+    "textureInfo": "wood_leggings"
+  },
+  "Iron Leggings": {
+    "type": "Armour",
+    "textureInfo": "iron_leggings"
+  },
+  "Gold Leggings": {
+    "type": "Armour",
+    "textureInfo": "golden_leggings"
+  },
+  "Diamond Leggings": {
+    "type": "Armour",
+    "textureInfo": "diamond_leggings"
+  },
+  "Wood Boots": {
+    "type": "Armour",
+    "textureInfo": "wood_boots"
+  },
+  "Iron Boots": {
+    "type": "Armour",
+    "textureInfo": "iron_boots"
+  },
+  "Gold Boots": {
+    "type": "Armour",
+    "textureInfo": "golden_boots"
+  },
+  "Diamond Boots": {
+    "type": "Armour",
+    "textureInfo": "diamond_boots"
+  },
+  "Spiked Boots": {
+    "type": "Armour",
+    "textureInfo": "spiked_boots"
+  },
+  "Wood Gauntlets": {
+    "type": "Armour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Iron Gauntlets": {
+    "type": "Armour",
+    "textureInfo": "iron_gauntlets"
+  },
+  "Gold Gauntlets": {
+    "type": "Armour",
+    "textureInfo": "golden_gauntlets"
+  },
+  "Diamond Gauntlets": {
+    "type": "Armour",
+    "textureInfo": "diamond_gauntlets"
+  },
+  "Military Helmet": {
+    "type": "Armour",
+    "textureInfo": "military_helmet"
+  },
+  "Military Chestplate": {
+    "type": "Armour",
+    "textureInfo": "military_chestplate"
+  },
+  "Military Gauntlets": {
+    "type": "Armour",
+    "textureInfo": "military_gauntlets"
+  },
+  "Military Leggings": {
+    "type": "Armour",
+    "textureInfo": "military_leggings"
+  },
+  "Military Boots": {
+    "type": "Armour",
+    "textureInfo": "military_boots"
+  },
+  "White Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "White Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "White Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "White Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "White Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Orange Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Orange Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Orange Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Orange Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Orange Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Magenta Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Magenta Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Magenta Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Magenta Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Magenta Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Light Blue Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Light Blue Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Light Blue Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Light Blue Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Light Blue Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Yellow Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Yellow Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Yellow Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Yellow Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Yellow Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Lime Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Lime Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Lime Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Lime Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Lime Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Pink Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Pink Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Pink Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Pink Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Pink Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Gray Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Gray Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Gray Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Gray Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Gray Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Light Gray Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Light Gray Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Light Gray Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Light Gray Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Light Gray Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Cyan Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Cyan Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Cyan Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Cyan Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Cyan Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Purple Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Purple Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Purple Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Purple Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Purple Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Blue Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Blue Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Blue Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Blue Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Blue Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Brown Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Brown Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Brown Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Brown Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Brown Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Green Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Green Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Green Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Green Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Green Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Red Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Red Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Red Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Red Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Red Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Black Wood Helmet": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_helmet"
+  },
+  "Black Wood Chestplate": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_chestplate"
+  },
+  "Black Wood Leggings": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_leggings"
+  },
+  "Black Wood Boots": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_boots"
+  },
+  "Black Wood Gauntlets": {
+    "type": "GrayscaleArmour",
+    "textureInfo": "wood_gauntlets"
+  },
+  "Shears": {
+    "type": "Tool",
+    "textureInfo": "shears"
+  },
+  "Artisan Shears": {
+    "type": "Tool",
+    "textureInfo": "artisan_shears"
+  },
+  "Stick": {
+    "type": "Item",
+    "textureInfo": "stick"
+  },
+  "Coal": {
+    "type": "Item",
+    "textureInfo": "coal"
+  },
+  "Raw Iron": {
+    "type": "Item",
+    "textureInfo": "raw_iron"
+  },
+  "Iron Bar": {
+    "type": "Item",
+    "textureInfo": "iron_ingot"
+  },
+  "Iron Fragment": {
+    "type": "Item",
+    "textureInfo": "iron_fragment"
+  },
+  "Raw Gold": {
+    "type": "Item",
+    "textureInfo": "raw_gold"
+  },
+  "Gold Bar": {
+    "type": "Item",
+    "textureInfo": "gold_ingot"
+  },
+  "Gold Fragment": {
+    "type": "Item",
+    "textureInfo": "gold_fragment"
+  },
+  "Diamond": {
+    "type": "Item",
+    "textureInfo": "diamond"
+  },
+  "Diamond Fragment": {
+    "type": "Item",
+    "textureInfo": "diamond_fragment"
+  },
+  "Moonstone": {
+    "type": "Item",
+    "textureInfo": "moonstone"
+  },
+  "Lunite": {
+    "type": "Item",
+    "textureInfo": "lunite"
+  },
+  "Moonstone Fragment": {
+    "type": "Item",
+    "textureInfo": "moonstone_fragment"
+  },
+  "Bowl": {
+    "type": "Item",
+    "textureInfo": "bowl"
+  },
+  "Mushroom Soup": {
+    "type": "Chargeable",
+    "textureInfo": "mushroom_soup"
+  },
+  "Glowing Soup": {
+    "type": "Chargeable",
+    "textureInfo": "glowing_soup",
+    "MS": [
+      4,
+      11,
+      11
+    ]
+  },
+  "Night Vision Soup": {
+    "type": "Chargeable",
+    "textureInfo": "night_vision_soup"
+  },
+  "Cotton": {
+    "type": "Item",
+    "textureInfo": "cotton"
+  },
+  "Gold Crop": {
+    "type": "Item",
+    "textureInfo": "gold_crop"
+  },
+  "Bucket": {
+    "type": "Item",
+    "textureInfo": "bucket"
+  },
+  "Water Bucket": {
+    "type": "Item",
+    "textureInfo": "water_bucket"
+  },
+  "Lava Bucket": {
+    "type": "Item",
+    "textureInfo": "lava_bucket",
+    "MS": [
+      12,
+      7,
+      2
+    ]
+  },
+  "Boat": {
+    "type": "Item",
+    "textureInfo": "oak_boat",
+    "heldItemGlb": "Boat Item"
+  },
+  "INTERNAL_MESH_Boat": {
+    "type": "Item",
+    "textureInfo": "oak_boat",
+    "heldItemGlb": "Boat"
+  },
+  "Obsidian Boat": {
+    "type": "Item",
+    "textureInfo": "obsidian_boat",
+    "heldItemGlb": "Obsidian Boat Item"
+  },
+  "INTERNAL_MESH_Obsidian Boat": {
+    "type": "Item",
+    "textureInfo": "obsidian_boat",
+    "heldItemGlb": "Obsidian Boat"
+  },
+  "Speedboat": {
+    "type": "Item",
+    "textureInfo": "speedboat",
+    "heldItemGlb": "Speedboat Item"
+  },
+  "INTERNAL_MESH_Speedboat": {
+    "type": "Item",
+    "textureInfo": "speedboat",
+    "heldItemGlb": "Speedboat"
+  },
+  "Wood Hang Glider": {
+    "type": "Item",
+    "textureInfo": "hang_glider",
+    "heldItemGlb": "Wood Hang Glider Item"
+  },
+  "INTERNAL_MESH_Wood Hang Glider": {
+    "type": "Item",
+    "textureInfo": "hang_glider",
+    "heldItemGlb": "Wood Hang Glider"
+  },
+  "Iron Hang Glider": {
+    "type": "Item",
+    "textureInfo": "hang_glider_iron",
+    "heldItemGlb": "Iron Hang Glider Item"
+  },
+  "INTERNAL_MESH_Iron Hang Glider": {
+    "type": "Item",
+    "textureInfo": "hang_glider_iron",
+    "heldItemGlb": "Iron Hang Glider"
+  },
+  "Gold Hang Glider": {
+    "type": "Item",
+    "textureInfo": "hang_glider_gold",
+    "heldItemGlb": "Gold Hang Glider Item"
+  },
+  "INTERNAL_MESH_Gold Hang Glider": {
+    "type": "Item",
+    "textureInfo": "hang_glider_gold",
+    "heldItemGlb": "Gold Hang Glider"
+  },
+  "Diamond Hang Glider": {
+    "type": "Item",
+    "textureInfo": "hang_glider_diamond",
+    "heldItemGlb": "Diamond Hang Glider Item"
+  },
+  "INTERNAL_MESH_Diamond Hang Glider": {
+    "type": "Item",
+    "textureInfo": "hang_glider_diamond",
+    "heldItemGlb": "Diamond Hang Glider"
+  },
+  "Hovercraft": {
+    "type": "Item",
+    "textureInfo": "hovercraft",
+    "heldItemGlb": "Hovercraft Item"
+  },
+  "INTERNAL_MESH_Hovercraft": {
+    "type": "Item",
+    "textureInfo": "hovercraft",
+    "heldItemGlb": "Hovercraft"
+  },
+  "Off Roader": {
+    "type": "Item",
+    "textureInfo": "off_roader",
+    "heldItemGlb": "Off Roader Item"
+  },
+  "INTERNAL_MESH_Off Roader": {
+    "type": "Item",
+    "textureInfo": "off_roader",
+    "heldItemGlb": "Off Roader"
+  },
+  "Gold Mining Drill": {
+    "type": "Item",
+    "textureInfo": "off_roader",
+    "heldItemGlb": "Off Roader Item"
+  },
+  "INTERNAL_MESH_Gold Mining Drill": {
+    "type": "Item",
+    "textureInfo": "off_roader",
+    "heldItemGlb": "Gold Mining Drill"
+  },
+  "Light Blue Car": {
+    "type": "Item",
+    "textureInfo": "light_blue_car",
+    "heldItemGlb": "Car Item"
+  },
+  "INTERNAL_MESH_Car": {
+    "type": "Item",
+    "textureInfo": "light_blue_car",
+    "heldItemGlb": "Car"
+  },
+  "Snowball": {
+    "type": "Item",
+    "textureInfo": "snowball"
+  },
+  "Snowball Launcher": {
+    "type": "FullAuto",
+    "textureInfo": "snowball",
+    "heldItemGlb": "Snowball"
+  },
+  "Pebble": {
+    "type": "Item",
+    "textureInfo": "pebble"
+  },
+  "Reinforced Pebble": {
+    "type": "Item",
+    "textureInfo": "reinforced_pebble"
+  },
+  "Bullet": {
+    "type": "Item",
+    "textureInfo": "arrow"
+  },
+  "Ball": {
+    "type": "Item",
+    "textureInfo": "ball"
+  },
+  "Reinforced Ball": {
+    "type": "Item",
+    "textureInfo": "reinforced_ball"
+  },
+  "Frag Grenade": {
+    "type": "Item",
+    "textureInfo": "frag_grenade"
+  },
+  "Mining Grenade": {
+    "type": "Item",
+    "textureInfo": "mining_grenade"
+  },
+  "Smoke Grenade": {
+    "type": "Item",
+    "textureInfo": "smoke_grenade"
+  },
+  "Moonstone Orb": {
+    "type": "Item",
+    "textureInfo": "moonstone_orb"
+  },
+  "Fireball": {
+    "type": "Item",
+    "textureInfo": "fireball"
+  },
+  "Bouncy Bomb": {
+    "type": "Item",
+    "textureInfo": "bouncy_bomb"
+  },
+  "RPG": {
+    "type": "FullAuto",
+    "textureInfo": "rpg"
+  },
+  "Obby RPG": {
+    "type": "FullAuto",
+    "textureInfo": "rpg"
+  },
+  "Super RPG": {
+    "type": "FullAuto",
+    "textureInfo": "super_rpg"
+  },
+  "Grenade Launcher": {
+    "type": "FullAuto",
+    "textureInfo": "grenade_launcher"
+  },
+  "Iceball": {
+    "type": "Item",
+    "textureInfo": "iceball"
+  },
+  "67 Base Projectile": {
+    "type": "Item",
+    "itemTexture": "67_projectile_base"
+  },
+  "67 Boosted Projectile": {
+    "type": "Item",
+    "itemTexture": "67_projectile_boosted"
+  },
+  "Capitano Grenade": {
+    "type": "Item",
+    "textureInfo": "moonstone_explosive_side"
+  },
+  "Scatter Pellet": {
+    "type": "Item",
+    "textureInfo": "pebble"
+  },
+  "Wood Crossbow Charged": {
+    "type": "Chargeable",
+    "textureInfo": "wood_crossbow_charged"
+  },
+  "Stone Crossbow Charged": {
+    "type": "Chargeable",
+    "textureInfo": "stone_crossbow_charged"
+  },
+  "Iron Crossbow Charged": {
+    "type": "Chargeable",
+    "textureInfo": "iron_crossbow_charged"
+  },
+  "Gold Crossbow Charged": {
+    "type": "Chargeable",
+    "textureInfo": "gold_crossbow_charged"
+  },
+  "Diamond Crossbow Charged": {
+    "type": "Chargeable",
+    "textureInfo": "diamond_crossbow_charged"
+  },
+  "Arrow": {
+    "type": "Item",
+    "textureInfo": "arrow"
+  },
+  "Chunk Map": {
+    "type": "Item",
+    "textureInfo": "chunk_map"
+  },
+  "Bread": {
+    "type": "Chargeable",
+    "textureInfo": "bread"
+  },
+  "Bowl of Rice": {
+    "type": "Chargeable",
+    "textureInfo": "bowl_of_rice"
+  },
+  "Apple": {
+    "type": "Chargeable",
+    "textureInfo": "apple"
+  },
+  "Plum": {
+    "type": "Chargeable",
+    "textureInfo": "plum"
+  },
+  "Coconut": {
+    "type": "Item",
+    "textureInfo": "coconut"
+  },
+  "Cracked Coconut": {
+    "type": "Chargeable",
+    "textureInfo": "cracked_coconut"
+  },
+  "Pear": {
+    "type": "Chargeable",
+    "textureInfo": "pear"
+  },
+  "Cherry": {
+    "type": "Chargeable",
+    "textureInfo": "cherry"
+  },
+  "Banana": {
+    "type": "Chargeable",
+    "textureInfo": "banana"
+  },
+  "Watermelon Slice": {
+    "type": "Chargeable",
+    "textureInfo": "watermelon_slice"
+  },
+  "Gold Watermelon Slice": {
+    "type": "Chargeable",
+    "textureInfo": "glistering_watermelon_slice"
+  },
+  "Melon Slice": {
+    "type": "Chargeable",
+    "textureInfo": "melon_slice"
+  },
+  "Gold Melon Slice": {
+    "type": "Chargeable",
+    "textureInfo": "glistering_melon_slice"
+  },
+  "Pumpkin Pie": {
+    "type": "Chargeable",
+    "textureInfo": "pumpkin_pie"
+  },
+  "Corn": {
+    "type": "Chargeable",
+    "textureInfo": "corn"
+  },
+  "Cornbread": {
+    "type": "Chargeable",
+    "textureInfo": "cornbread"
+  },
+  "Chili Pepper": {
+    "type": "Chargeable",
+    "textureInfo": "chili_pepper"
+  },
+  "Mango": {
+    "type": "Item",
+    "textureInfo": "mango"
+  },
+  "Carrot": {
+    "type": "Chargeable",
+    "textureInfo": "carrot"
+  },
+  "Gold Carrot": {
+    "type": "Chargeable",
+    "textureInfo": "gold_carrot"
+  },
+  "Raw Potato": {
+    "type": "Chargeable",
+    "textureInfo": "raw_potato"
+  },
+  "Baked Potato": {
+    "type": "Chargeable",
+    "textureInfo": "baked_potato"
+  },
+  "Beetroot": {
+    "type": "Chargeable",
+    "textureInfo": "beetroot"
+  },
+  "Raw Porkchop": {
+    "type": "Chargeable",
+    "textureInfo": "raw_porkchop"
+  },
+  "Cooked Porkchop": {
+    "type": "Chargeable",
+    "textureInfo": "cooked_porkchop"
+  },
+  "Raw Beef": {
+    "type": "Chargeable",
+    "textureInfo": "raw_beef"
+  },
+  "Steak": {
+    "type": "Chargeable",
+    "textureInfo": "steak"
+  },
+  "Raw Mutton": {
+    "type": "Chargeable",
+    "textureInfo": "raw_mutton"
+  },
+  "Cooked Mutton": {
+    "type": "Chargeable",
+    "textureInfo": "cooked_mutton"
+  },
+  "Raw Venison": {
+    "type": "Chargeable",
+    "textureInfo": "raw_venison"
+  },
+  "Cooked Venison": {
+    "type": "Chargeable",
+    "textureInfo": "cooked_venison"
+  },
+  "Rotten Flesh": {
+    "type": "Chargeable",
+    "textureInfo": "rotten_flesh"
+  },
+  "Rotten Brain": {
+    "type": "Chargeable",
+    "textureInfo": "rotten_brain"
+  },
+  "Bone": {
+    "type": "Item",
+    "textureInfo": "bone"
+  },
+  "Bone Meal": {
+    "type": "Item",
+    "textureInfo": "bone_meal"
+  },
+  "Leather": {
+    "type": "Item",
+    "textureInfo": "leather"
+  },
+  "Saddle": {
+    "type": "Item",
+    "textureInfo": "saddle"
+  },
+  "Spirit Saddle": {
+    "type": "Item",
+    "textureInfo": "spirit_saddle"
+  },
+  "Fur": {
+    "type": "Item",
+    "textureInfo": "fur"
+  },
+  "Golem Eye": {
+    "type": "Item",
+    "textureInfo": "golem_eye"
+  },
+  "Knight Heart": {
+    "type": "Item",
+    "textureInfo": "knight_heart"
+  },
+  "Teleport Heart": {
+    "type": "Item",
+    "textureInfo": "teleport_heart"
+  },
+  "Frost Shard": {
+    "type": "Item",
+    "textureInfo": "frost_shard"
+  },
+  "Molten Cog": {
+    "type": "Item",
+    "textureInfo": "molten_cog"
+  },
+  "Choir Bell": {
+    "type": "Item",
+    "textureInfo": "choir_bell"
+  },
+  "Siege Core": {
+    "type": "Item",
+    "textureInfo": "siege_core"
+  },
+  "Flywheel": {
+    "type": "Item",
+    "textureInfo": "flywheel"
+  },
+  "Radiant Spark": {
+    "type": "Item",
+    "textureInfo": "radiant_spark"
+  },
+  "Brood Sac": {
+    "type": "Item",
+    "textureInfo": "brood_sac"
+  },
+  "Bandolier": {
+    "type": "Item",
+    "textureInfo": "bandolier"
+  },
+  "Name Tag": {
+    "type": "Item",
+    "textureInfo": "name_tag"
+  },
+  "Book": {
+    "type": "Item",
+    "textureInfo": "book"
+  },
+  "Empty Bottle": {
+    "type": "Item",
+    "textureInfo": "empty_bottle"
+  },
+  "Water Bottle": {
+    "type": "Chargeable",
+    "textureInfo": "water_bottle"
+  },
+  "Slowness Potion": {
+    "type": "Chargeable",
+    "textureInfo": "slowness_potion"
+  },
+  "Slowness Potion II": {
+    "type": "Chargeable",
+    "textureInfo": "slowness_potion",
+    "heldItemGlb": "Slowness Potion"
+  },
+  "Splash Slowness Potion": {
+    "type": "Item",
+    "textureInfo": "splash_slowness_potion"
+  },
+  "Splash Slowness Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_slowness_potion",
+    "heldItemGlb": "Splash Slowness Potion"
+  },
+  "Arrow of Slowness": {
+    "type": "Item",
+    "textureInfo": "slowness_arrow"
+  },
+  "Poison Potion": {
+    "type": "Chargeable",
+    "textureInfo": "poison"
+  },
+  "Poison Potion II": {
+    "type": "Chargeable",
+    "textureInfo": "poison",
+    "heldItemGlb": "Poison Potion"
+  },
+  "Splash Poison Potion": {
+    "type": "Item",
+    "textureInfo": "splash_poison"
+  },
+  "Splash Poison Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_poison",
+    "heldItemGlb": "Splash Poison Potion"
+  },
+  "Arrow of Poison": {
+    "type": "Item",
+    "textureInfo": "poison_arrow"
+  },
+  "Weakness Potion": {
+    "type": "Chargeable",
+    "textureInfo": "weakness_potion"
+  },
+  "Weakness Potion II": {
+    "type": "Chargeable",
+    "textureInfo": "weakness_potion",
+    "heldItemGlb": "Weakness Potion"
+  },
+  "Splash Weakness Potion": {
+    "type": "Item",
+    "textureInfo": "splash_weakness_potion"
+  },
+  "Splash Weakness Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_weakness_potion",
+    "heldItemGlb": "Splash Weakness Potion"
+  },
+  "Arrow of Weakness": {
+    "type": "Item",
+    "textureInfo": "weakness_arrow"
+  },
+  "Instant Damage Potion": {
+    "type": "Chargeable",
+    "textureInfo": "instant_damage_potion"
+  },
+  "Instant Damage Potion II": {
+    "type": "Chargeable",
+    "textureInfo": "instant_damage_potion",
+    "heldItemGlb": "Instant Damage Potion"
+  },
+  "Splash Instant Damage Potion": {
+    "type": "Item",
+    "textureInfo": "splash_instant_damage_potion"
+  },
+  "Splash Instant Damage Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_instant_damage_potion",
+    "heldItemGlb": "Splash Instant Damage Potion"
+  },
+  "Arrow of Instant Damage": {
+    "type": "Item",
+    "textureInfo": "instant_damage_arrow"
+  },
+  "Milk Potion": {
+    "type": "Chargeable",
+    "textureInfo": "milk_potion"
+  },
+  "Splash Milk Potion": {
+    "type": "Item",
+    "textureInfo": "splash_milk_potion"
+  },
+  "Arrow of Milk": {
+    "type": "Item",
+    "textureInfo": "milk_arrow"
+  },
+  "Speed Potion": {
+    "type": "Chargeable",
+    "textureInfo": "speed_potion"
+  },
+  "Speed Potion II": {
+    "type": "Chargeable",
+    "textureInfo": "speed_potion",
+    "heldItemGlb": "Speed Potion"
+  },
+  "Splash Speed Potion": {
+    "type": "Item",
+    "textureInfo": "splash_speed_potion"
+  },
+  "Splash Speed Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_speed_potion",
+    "heldItemGlb": "Splash Speed Potion"
+  },
+  "Arrow of Speed": {
+    "type": "Item",
+    "textureInfo": "speed_arrow"
+  },
+  "Defense Potion": {
+    "type": "Chargeable",
+    "textureInfo": "defense_potion"
+  },
+  "Defense Potion II": {
+    "type": "Chargeable",
+    "textureInfo": "defense_potion",
+    "heldItemGlb": "Defense Potion"
+  },
+  "Splash Defense Potion": {
+    "type": "Item",
+    "textureInfo": "splash_defense_potion"
+  },
+  "Splash Defense Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_defense_potion",
+    "heldItemGlb": "Splash Defense Potion"
+  },
+  "Arrow of Defense": {
+    "type": "Item",
+    "textureInfo": "defense_arrow"
+  },
+  "Strength Potion": {
+    "type": "Chargeable",
+    "textureInfo": "strength_potion"
+  },
+  "Strength Potion II": {
+    "type": "Chargeable",
+    "textureInfo": "strength_potion",
+    "heldItemGlb": "Strength Potion"
+  },
+  "Splash Strength Potion": {
+    "type": "Item",
+    "textureInfo": "splash_strength_potion"
+  },
+  "Splash Strength Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_strength_potion",
+    "heldItemGlb": "Splash Strength Potion"
+  },
+  "Arrow of Strength": {
+    "type": "Item",
+    "textureInfo": "strength_arrow"
+  },
+  "Invisibility Potion": {
+    "type": "Chargeable",
+    "textureInfo": "invisibility_potion"
+  },
+  "Splash Invisibility Potion": {
+    "type": "Item",
+    "textureInfo": "splash_invisibility_potion"
+  },
+  "Arrow of Invisibility": {
+    "type": "Item",
+    "textureInfo": "invisibility_arrow"
+  },
+  "Jump Potion": {
+    "type": "Chargeable",
+    "textureInfo": "jump_potion"
+  },
+  "Jump Potion II": {
+    "type": "Chargeable",
+    "textureInfo": "jump_potion",
+    "heldItemGlb": "Jump Potion"
+  },
+  "Splash Jump Potion": {
+    "type": "Item",
+    "textureInfo": "splash_jump_potion"
+  },
+  "Splash Jump Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_jump_potion",
+    "heldItemGlb": "Splash Jump Potion"
+  },
+  "Arrow of Jumping": {
+    "type": "Item",
+    "textureInfo": "jump_arrow"
+  },
+  "Knockback Potion": {
+    "type": "Chargeable",
+    "textureInfo": "knockback_potion"
+  },
+  "Splash Knockback Potion": {
+    "type": "Item",
+    "textureInfo": "splash_knockback_potion"
+  },
+  "Splash Knockback Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_knockback_potion",
+    "heldItemGlb": "Splash Knockback Potion"
+  },
+  "Arrow of Knockback": {
+    "type": "Item",
+    "textureInfo": "knockback_arrow"
+  },
+  "Regeneration Potion": {
+    "type": "Chargeable",
+    "textureInfo": "regen_potion"
+  },
+  "Regeneration Potion II": {
+    "type": "Chargeable",
+    "textureInfo": "regen_potion",
+    "heldItemGlb": "Regeneration Potion"
+  },
+  "Splash Regeneration Potion": {
+    "type": "Item",
+    "textureInfo": "splash_regen_potion"
+  },
+  "Splash Regeneration Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_regen_potion",
+    "heldItemGlb": "Splash Regeneration Potion"
+  },
+  "Arrow of Regeneration": {
+    "type": "Item",
+    "textureInfo": "regen_arrow"
+  },
+  "Instant Healing Potion": {
+    "type": "Chargeable",
+    "textureInfo": "heal_potion"
+  },
+  "Instant Healing Potion II": {
+    "type": "Chargeable",
+    "textureInfo": "heal_potion",
+    "heldItemGlb": "Instant Healing Potion"
+  },
+  "Splash Instant Healing Potion": {
+    "type": "Item",
+    "textureInfo": "splash_heal_potion"
+  },
+  "Splash Instant Healing Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_heal_potion",
+    "heldItemGlb": "Splash Instant Healing Potion"
+  },
+  "Arrow of Instant Healing": {
+    "type": "Item",
+    "textureInfo": "heal_arrow"
+  },
+  "Haste Potion": {
+    "type": "Chargeable",
+    "textureInfo": "haste_potion"
+  },
+  "Haste Potion II": {
+    "type": "Chargeable",
+    "textureInfo": "haste_potion",
+    "heldItemGlb": "Haste Potion"
+  },
+  "Splash Haste Potion": {
+    "type": "Item",
+    "textureInfo": "splash_haste_potion"
+  },
+  "Splash Haste Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_haste_potion",
+    "heldItemGlb": "Splash Haste Potion"
+  },
+  "Arrow of Haste": {
+    "type": "Item",
+    "textureInfo": "haste_arrow"
+  },
+  "Shield Potion": {
+    "type": "Chargeable",
+    "textureInfo": "shield_potion"
+  },
+  "Shield Potion II": {
+    "type": "Chargeable",
+    "textureInfo": "shield_potion",
+    "heldItemGlb": "Shield Potion"
+  },
+  "Splash Shield Potion": {
+    "type": "Item",
+    "textureInfo": "splash_shield_potion"
+  },
+  "Splash Shield Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_shield_potion",
+    "heldItemGlb": "Splash Shield Potion"
+  },
+  "Arrow of Shield": {
+    "type": "Item",
+    "textureInfo": "shield_arrow"
+  },
+  "Double Jump Potion": {
+    "type": "Chargeable",
+    "textureInfo": "double_jump_potion"
+  },
+  "Splash Double Jump Potion": {
+    "type": "Item",
+    "textureInfo": "splash_double_jump_potion"
+  },
+  "Arrow of Double Jump": {
+    "type": "Item",
+    "textureInfo": "double_jump_arrow"
+  },
+  "Heat Resistance Potion": {
+    "type": "Chargeable",
+    "textureInfo": "heat_resistance_potion"
+  },
+  "Splash Heat Resistance Potion": {
+    "type": "Item",
+    "textureInfo": "splash_heat_resistance_potion"
+  },
+  "Arrow of Heat Resistance": {
+    "type": "Item",
+    "textureInfo": "heat_resistance_arrow"
+  },
+  "X-Ray Vision Potion": {
+    "type": "Chargeable",
+    "textureInfo": "x_ray_vision_potion"
+  },
+  "Splash X-Ray Vision Potion": {
+    "type": "Item",
+    "textureInfo": "splash_x_ray_vision_potion"
+  },
+  "Arrow of X-Ray Vision": {
+    "type": "Item",
+    "textureInfo": "x_ray_vision_arrow"
+  },
+  "Mining Yield Potion": {
+    "type": "Chargeable",
+    "textureInfo": "mining_yield_potion"
+  },
+  "Mining Yield Potion II": {
+    "type": "Chargeable",
+    "textureInfo": "mining_yield_potion",
+    "heldItemGlb": "Mining Yield Potion"
+  },
+  "Splash Mining Yield Potion": {
+    "type": "Item",
+    "textureInfo": "splash_mining_yield_potion"
+  },
+  "Splash Mining Yield Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_mining_yield_potion",
+    "heldItemGlb": "Splash Mining Yield Potion"
+  },
+  "Arrow of Mining Yield": {
+    "type": "Item",
+    "textureInfo": "mining_yield_arrow"
+  },
+  "Brain Rot Potion": {
+    "type": "Chargeable",
+    "textureInfo": "brain_rot_potion"
+  },
+  "Splash Brain Rot Potion": {
+    "type": "Item",
+    "textureInfo": "splash_brain_rot_potion"
+  },
+  "Arrow of Brain Rot": {
+    "type": "Item",
+    "textureInfo": "brain_rot_arrow"
+  },
+  "Chaos Potion": {
+    "type": "Chargeable",
+    "textureInfo": "chaos_potion"
+  },
+  "Teleportation Potion": {
+    "type": "Chargeable",
+    "textureInfo": "teleportation_potion"
+  },
+  "Ammo": {
+    "type": "Item",
+    "textureInfo": "ammo"
+  },
+  "Gold Coin": {
+    "type": "Item",
+    "textureInfo": "gold_coin"
+  },
+  "Updraft": {
+    "type": "FullAuto",
+    "textureInfo": "updraft"
+  },
+  "Snowdash": {
+    "type": "FullAuto",
+    "textureInfo": "snowdash"
+  },
+  "Floor Creator": {
+    "type": "Item",
+    "textureInfo": "floor_creator"
+  },
+  "Moonstone Remote Explosive": {
+    "type": "Item",
+    "textureInfo": "moonstone_remote_explosive",
+    "heldItemGlb": "Moonstone Remote"
+  },
+  "Moonstone Remote": {
+    "type": "Item",
+    "textureInfo": "moonstone_remote"
+  },
+  "Ice Bridge": {
+    "type": "Item",
+    "textureInfo": "ice_bridge"
+  },
+  "Maple Planks Bridge": {
+    "type": "Item",
+    "textureInfo": "maple_planks_bridge"
+  },
+  "Messy Stone Bridge": {
+    "type": "Item",
+    "textureInfo": "messy_stone_bridge"
+  },
+  "Mob Catcher": {
+    "type": "Item",
+    "textureInfo": "mob_catcher"
+  },
+  "Toxin Ball": {
+    "type": "Item",
+    "textureInfo": "toxin_ball"
+  },
+  "Aura XP Fragment": {
+    "type": "Chargeable",
+    "textureInfo": "aura_xp_fragment"
+  },
+  "Aura XP Orb": {
+    "type": "Chargeable",
+    "textureInfo": "aura_xp_orb"
+  },
+  "Aura XP Potion": {
+    "type": "Chargeable",
+    "textureInfo": "aura_xp_potion"
+  },
+  "Aura XP Potion II": {
+    "type": "Chargeable",
+    "textureInfo": "aura_xp_potion"
+  },
+  "Splash Aura XP Potion": {
+    "type": "Item",
+    "textureInfo": "splash_aura_xp_potion"
+  },
+  "Splash Aura XP Potion II": {
+    "type": "Item",
+    "textureInfo": "splash_aura_xp_potion"
+  },
+  "Arrow of Aura XP": {
+    "type": "Item",
+    "textureInfo": "aura_xp_arrow"
+  },
+  "Firecracker": {
+    "type": "Item",
+    "textureInfo": "firecracker"
+  },
+  "Rainbow Firecracker": {
+    "type": "Item",
+    "textureInfo": "firecracker_rainbow"
+  },
+  "Firecracker Pebble": {
+    "type": "Item",
+    "textureInfo": "firecracker_pebble"
+  },
+  "Rainbow Firecracker Pebble": {
+    "type": "Item",
+    "textureInfo": "firecracker_pebble_rainbow"
+  },
+  "WorldBuilder Wand": {
+    "type": "Item",
+    "textureInfo": "worldbuilder_wand"
+  },
+  "Red Strongfish": {
+    "type": "Item",
+    "textureInfo": "strongfish_red"
+  },
+  "Green Strongfish": {
+    "type": "Item",
+    "textureInfo": "strongfish_green"
+  },
+  "Moon Strongfish": {
+    "type": "Item",
+    "textureInfo": "strongfish_moon"
+  },
+  "Wheatfish": {
+    "type": "Chargeable",
+    "textureInfo": "wheatfish"
+  },
+  "Moonfish": {
+    "type": "Item",
+    "textureInfo": "moonfish"
+  },
+  "Bombfish": {
+    "type": "Item",
+    "textureInfo": "bombfish"
+  },
+  "Boomerang Fish": {
+    "type": "Item",
+    "textureInfo": "boomerang_fish"
+  },
+  "Root Flounder": {
+    "type": "Item",
+    "textureInfo": "root_flounder"
+  },
+  "Abyss Carp": {
+    "type": "Item",
+    "textureInfo": "abyss_carp"
+  },
+  "Boulder Bass": {
+    "type": "Item",
+    "textureInfo": "boulder_bass"
+  },
+  "Barnaclejaw": {
+    "type": "Item",
+    "textureInfo": "barnaclejaw"
+  },
+  "Crystalized Wheatfish": {
+    "type": "Item",
+    "textureInfo": "crystalized_wheatfish"
+  },
+  "Darter": {
+    "type": "Chargeable",
+    "textureInfo": "darter"
+  },
+  "Shadow Darter": {
+    "type": "Item",
+    "textureInfo": "darter_shadow"
+  },
+  "Electric Eel": {
+    "type": "Item",
+    "textureInfo": "electric_eel"
+  },
+  "Grass Snapper": {
+    "type": "Item",
+    "textureInfo": "grass_snapper"
+  },
+  "Jungle Spinefish": {
+    "type": "Item",
+    "textureInfo": "jungle_spinefish"
+  },
+  "Mangler Catfish": {
+    "type": "Item",
+    "textureInfo": "mangler_catfish"
+  },
+  "Mossback Arapaima": {
+    "type": "Item",
+    "textureInfo": "mossback_arapaima"
+  },
+  "Sandbelly Piranha": {
+    "type": "Chargeable",
+    "textureInfo": "sandbelly_piranha"
+  },
+  "Shadeback Ray": {
+    "type": "Item",
+    "textureInfo": "shadeback_ray"
+  },
+  "Mudbelly Tilapia": {
+    "type": "Chargeable",
+    "textureInfo": "mudbelly_tilapia"
+  },
+  "Mireback Carp": {
+    "type": "Item",
+    "textureInfo": "mireback_carp"
+  },
+  "Rotslab Eel": {
+    "type": "Item",
+    "textureInfo": "rotslab_eel"
+  },
+  "Aether Minnow": {
+    "type": "Item",
+    "textureInfo": "aether_minnow"
+  },
+  "Murkborne Ray": {
+    "type": "Item",
+    "textureInfo": "murkborne_ray"
+  },
+  "Eldertide Leviathan": {
+    "type": "Item",
+    "textureInfo": "eldertide_leviathan"
+  },
+  "Oarfish": {
+    "type": "Item",
+    "textureInfo": "oarfish"
+  },
+  "Alpha Moon Strongfish": {
+    "type": "Item",
+    "textureInfo": "alpha_moon_strongfish"
+  },
+  "Bamboo Catfish": {
+    "type": "Item",
+    "textureInfo": "bamboo_catfish"
+  },
+  "Blackwater Bream": {
+    "type": "Item",
+    "textureInfo": "blackwater_bream"
+  },
+  "Blackwater Leviathan": {
+    "type": "Item",
+    "textureInfo": "blackwater_leviathan"
+  },
+  "Boned Sturgeon": {
+    "type": "Item",
+    "textureInfo": "boned_sturgeon"
+  },
+  "Bull Shark": {
+    "type": "Item",
+    "textureInfo": "bull_shark"
+  },
+  "Channel Sawfish": {
+    "type": "Item",
+    "textureInfo": "channel_sawfish"
+  },
+  "Coastal Mullet": {
+    "type": "Item",
+    "textureInfo": "coastal_mullet"
+  },
+  "Coelacanth": {
+    "type": "Item",
+    "textureInfo": "coelacanth"
+  },
+  "Driftwood Catfish": {
+    "type": "Item",
+    "textureInfo": "driftwood_catfish"
+  },
+  "Eagle Ray": {
+    "type": "Item",
+    "textureInfo": "eagle_ray"
+  },
+  "Giant Grouper": {
+    "type": "Item",
+    "textureInfo": "giant_grouper"
+  },
+  "Giant Moray": {
+    "type": "Item",
+    "textureInfo": "giant_moray"
+  },
+  "Giant Stingray": {
+    "type": "Item",
+    "textureInfo": "giant_stingray"
+  },
+  "Golden Mahseer": {
+    "type": "Item",
+    "textureInfo": "golden_mahseer"
+  },
+  "Greenfin Loach": {
+    "type": "Item",
+    "textureInfo": "greenfin_loach"
+  },
+  "Mangrove Herring": {
+    "type": "Item",
+    "textureInfo": "mangrove_herring"
+  },
+  "Moonlit Boomerang Fish": {
+    "type": "Item",
+    "textureInfo": "moonlit_boomerang_fish"
+  },
+  "Moonstone Pupfish": {
+    "type": "Chargeable",
+    "textureInfo": "moonstone_pupfish"
+  },
+  "Mudline Perch": {
+    "type": "Item",
+    "textureInfo": "mudline_perch"
+  },
+  "Murk Stingray": {
+    "type": "Item",
+    "textureInfo": "murk_stingray"
+  },
+  "Needlefish": {
+    "type": "Item",
+    "textureInfo": "needlefish"
+  },
+  "Nomai Moray": {
+    "type": "Item",
+    "textureInfo": "nomai_moray"
+  },
+  "Pearlescent Moonfish": {
+    "type": "Item",
+    "textureInfo": "pearlescent_moonfish"
+  },
+  "Rainbow Guppy": {
+    "type": "Item",
+    "textureInfo": "rainbow_guppy"
+  },
+  "Red Snapper": {
+    "type": "Item",
+    "textureInfo": "red_snapper"
+  },
+  "Reedglass Minnow": {
+    "type": "Item",
+    "textureInfo": "reedglass_minnow"
+  },
+  "Reef Sardine": {
+    "type": "Item",
+    "textureInfo": "reef_sardine"
+  },
+  "Root Perch": {
+    "type": "Item",
+    "textureInfo": "root_perch"
+  },
+  "Rust Scad": {
+    "type": "Item",
+    "textureInfo": "rust_scad"
+  },
+  "Seahorse": {
+    "type": "Item",
+    "textureInfo": "seahorse"
+  },
+  "Snakehead": {
+    "type": "Item",
+    "textureInfo": "snakehead"
+  },
+  "Spined Stickleback": {
+    "type": "Item",
+    "textureInfo": "spined_stickleback"
+  },
+  "Stone Grouper": {
+    "type": "Item",
+    "textureInfo": "stone_grouper"
+  },
+  "Sumpback Carp": {
+    "type": "Item",
+    "textureInfo": "sumpback_carp"
+  },
+  "Sunset Minnow": {
+    "type": "Item",
+    "textureInfo": "sunset_minnow"
+  },
+  "Tarpon": {
+    "type": "Item",
+    "textureInfo": "tarpon"
+  },
+  "Threadfin Bream": {
+    "type": "Item",
+    "textureInfo": "threadfin_bream"
+  },
+  "Tri-Pointed Needlefish": {
+    "type": "Item",
+    "textureInfo": "tri_pointed_needlefish"
+  },
+  "Game Dev Fish": {
+    "type": "Item",
+    "textureInfo": "ellie_fish"
+  },
+  "Armoured Searobin": {
+    "type": "Item",
+    "textureInfo": "armoured_searobin"
+  },
+  "Ash Lionfish": {
+    "type": "Item",
+    "textureInfo": "ash_lionfish"
+  },
+  "Barefrost Toothfish": {
+    "type": "Item",
+    "textureInfo": "barefrost_toothfish"
+  },
+  "Blackfin Icefish": {
+    "type": "Item",
+    "textureInfo": "blackfin_icefish"
+  },
+  "Basalt Pipefish": {
+    "type": "Item",
+    "textureInfo": "basalt_pipefish"
+  },
+  "Brimstone Spikefish": {
+    "type": "Item",
+    "textureInfo": "brimstone_spikefish"
+  },
+  "Cinder Leviathan": {
+    "type": "Item",
+    "textureInfo": "cinder_leviathan"
+  },
+  "Crowned Flame Angelfish": {
+    "type": "Item",
+    "textureInfo": "crowned_flame_angelfish"
+  },
+  "Deepwater Lanternfish": {
+    "type": "Item",
+    "textureInfo": "deepwater_lanternfish"
+  },
+  "Driftice Capelin": {
+    "type": "Item",
+    "textureInfo": "driftice_capelin"
+  },
+  "Ember Chub": {
+    "type": "Item",
+    "textureInfo": "ember_chub"
+  },
+  "Embermark Wrasse": {
+    "type": "Item",
+    "textureInfo": "embermark_wrasse"
+  },
+  "Eviota Vader": {
+    "type": "Item",
+    "textureInfo": "eviota_vader"
+  },
+  "Frost Herring": {
+    "type": "Item",
+    "textureInfo": "frost_herring"
+  },
+  "Frost Wolf Eel": {
+    "type": "Item",
+    "textureInfo": "frost_wolf_eel"
+  },
+  "Frostpaint Notie": {
+    "type": "Item",
+    "textureInfo": "frostpaint_notie"
+  },
+  "Frozen Grenadier": {
+    "type": "Item",
+    "textureInfo": "frozen_grenadier"
+  },
+  "Giant Trevally": {
+    "type": "Item",
+    "textureInfo": "giant_trevally"
+  },
+  "Glacial Lanternfish": {
+    "type": "Item",
+    "textureInfo": "glacial_lanternfish"
+  },
+  "Glacial Silverfish": {
+    "type": "Item",
+    "textureInfo": "glacial_silverfish"
+  },
+  "Heatwarp Flounder": {
+    "type": "Item",
+    "textureInfo": "heatwarp_flounder"
+  },
+  "Hatchetfish": {
+    "type": "Item",
+    "textureInfo": "hatchetfish"
+  },
+  "Ice Spined Notothenia": {
+    "type": "Item",
+    "textureInfo": "ice_spined_notothenia"
+  },
+  "Iceshelf Skate": {
+    "type": "Item",
+    "textureInfo": "iceshelf_skate"
+  },
+  "Icy Sculpin": {
+    "type": "Item",
+    "textureInfo": "icy_sculpin"
+  },
+  "Lavaflow Trout": {
+    "type": "Item",
+    "textureInfo": "lavaflow_trout"
+  },
+  "Lavawake Slopefish": {
+    "type": "Item",
+    "textureInfo": "lavawake_slopefish"
+  },
+  "Magma Sardinella": {
+    "type": "Item",
+    "textureInfo": "magma_sardinella"
+  },
+  "Magma Trout": {
+    "type": "Item",
+    "textureInfo": "magma_trout"
+  },
+  "Marbled Moray Cod": {
+    "type": "Item",
+    "textureInfo": "marbled_moray_cod"
+  },
+  "Molten Lotella Cod": {
+    "type": "Item",
+    "textureInfo": "molten_lotella_cod"
+  },
+  "Northern Wolffish": {
+    "type": "Item",
+    "textureInfo": "northern_wolffish"
+  },
+  "Paleice Rockcod": {
+    "type": "Item",
+    "textureInfo": "paleice_rockcod"
+  },
+  "Permafrost Halibut": {
+    "type": "Item",
+    "textureInfo": "permafrost_halibut"
+  },
+  "Pithead": {
+    "type": "Item",
+    "textureInfo": "pithead"
+  },
+  "Polarflash Electron": {
+    "type": "Item",
+    "textureInfo": "polarflash_electron"
+  },
+  "Pyroclast Eel": {
+    "type": "Item",
+    "textureInfo": "pyroclast_eel"
+  },
+  "Pyroscale Grouper": {
+    "type": "Item",
+    "textureInfo": "pyroscale_grouper"
+  },
+  "Red Pyreside": {
+    "type": "Item",
+    "textureInfo": "red_pyreside"
+  },
+  "Rimesnouted Lancetfish": {
+    "type": "Item",
+    "textureInfo": "rimesnouted_lancetfish"
+  },
+  "Scorched Sunfish": {
+    "type": "Item",
+    "textureInfo": "scorched_sunfish"
+  },
+  "Scored Dace": {
+    "type": "Item",
+    "textureInfo": "scored_dace"
+  },
+  "Silver Dragonfish": {
+    "type": "Item",
+    "textureInfo": "silver_dragonfish"
+  },
+  "Snow Haddock": {
+    "type": "Item",
+    "textureInfo": "snow_haddock"
+  },
+  "Volcanic Catfish": {
+    "type": "Item",
+    "textureInfo": "volcanic_catfish"
+  },
+  "Volcanic Semperi": {
+    "type": "Item",
+    "textureInfo": "volcanic_semperi"
+  },
+  "Rusty Rod": {
+    "type": "Item",
+    "textureInfo": "rusty_rod"
+  },
+  "Lucky Rod": {
+    "type": "Item",
+    "textureInfo": "lucky_rod"
+  },
+  "Sturdy Rod": {
+    "type": "Item",
+    "textureInfo": "sturdy_rod"
+  },
+  "Jungle Rod": {
+    "type": "Item",
+    "textureInfo": "jungle_rod"
+  },
+  "Draugr Rod": {
+    "type": "Item",
+    "textureInfo": "draugr_rod"
+  },
+  "Cursed Rod": {
+    "type": "Item",
+    "textureInfo": "cursed_rod"
+  },
+  "Tangle Resistant Rod": {
+    "type": "Item",
+    "textureInfo": "tangle_resistant_rod"
+  },
+  "Speed Rod": {
+    "type": "Item",
+    "textureInfo": "speed_rod"
+  },
+  "Carbon Rod": {
+    "type": "Item",
+    "textureInfo": "carbon_rod"
+  },
+  "Deep Sea Rod": {
+    "type": "Item",
+    "textureInfo": "deep_sea_rod"
+  },
+  "Master Rod": {
+    "type": "Item",
+    "textureInfo": "master_rod"
+  },
+  "Obsidian Rod": {
+    "type": "Item",
+    "textureInfo": "obsidian_rod"
+  },
+  "Molten Magma Rod": {
+    "type": "Item",
+    "textureInfo": "molten_magma_rod"
+  },
+  "Frost Rod": {
+    "type": "Item",
+    "textureInfo": "frost_rod"
+  },
+  "Black Ice Rod": {
+    "type": "Item",
+    "textureInfo": "black_ice_rod"
+  },
+  "Mythic Rod": {
+    "type": "Item",
+    "textureInfo": "mythic_rod"
+  },
+  "Acorn": {
+    "type": "Chargeable",
+    "textureInfo": "acorn"
+  },
+  "Acorn Jelly": {
+    "type": "Chargeable",
+    "textureInfo": "acorn_jelly"
+  },
+  "Cow's Milk": {
+    "type": "Chargeable",
+    "textureInfo": "cows_milk"
+  },
+  "Cheese": {
+    "type": "Chargeable",
+    "textureInfo": "cheese"
+  },
+  "Caught Fish": {
+    "type": "Chargeable",
+    "textureInfo": "caught_fish"
+  },
+  "Fish Fillet": {
+    "type": "Chargeable",
+    "textureInfo": "fish_fillet"
+  },
+  "Meaty Bone": {
+    "type": "Chargeable",
+    "textureInfo": "meaty_bone"
+  },
+  "Blinding Pebble": {
+    "type": "Item",
+    "textureInfo": "blinding_pebble"
+  },
+  "Sheep's Milk": {
+    "type": "Chargeable",
+    "textureInfo": "sheeps_milk"
+  },
+  "Yoghurt Pot": {
+    "type": "Chargeable",
+    "textureInfo": "yoghurt_pot"
+  },
+  "Truffle": {
+    "type": "Chargeable",
+    "textureInfo": "truffle"
+  },
+  "Truffle Oil": {
+    "type": "Chargeable",
+    "textureInfo": "truffle_oil"
+  },
+  "Oats": {
+    "type": "Chargeable",
+    "textureInfo": "oats"
+  },
+  "Porridge": {
+    "type": "Chargeable",
+    "textureInfo": "porridge"
+  },
+  "Dates": {
+    "type": "Chargeable",
+    "textureInfo": "dates"
+  },
+  "Date Pudding": {
+    "type": "Chargeable",
+    "textureInfo": "date_pudding"
+  },
+  "Poop": {
+    "type": "Item",
+    "textureInfo": "poop"
+  },
+  "Fertiliser": {
+    "type": "Item",
+    "textureInfo": "fertiliser"
+  },
+  "Medkit": {
+    "type": "Item",
+    "textureInfo": "medkit"
+  },
+  "Wood Spear": {
+    "type": "Tool",
+    "textureInfo": "wood_spear"
+  },
+  "Stone Spear": {
+    "type": "Tool",
+    "textureInfo": "stone_spear"
+  },
+  "Iron Spear": {
+    "type": "Tool",
+    "textureInfo": "iron_spear"
+  },
+  "Gold Spear": {
+    "type": "Tool",
+    "textureInfo": "gold_spear"
+  },
+  "Diamond Spear": {
+    "type": "Tool",
+    "textureInfo": "diamond_spear"
+  },
+  "Moonstone Spear": {
+    "type": "Tool",
+    "textureInfo": "moonstone_spear"
+  },
+  "Wood Dagger": {
+    "type": "Tool",
+    "textureInfo": "wood_dagger"
+  },
+  "Stone Dagger": {
+    "type": "Tool",
+    "textureInfo": "stone_dagger"
+  },
+  "Iron Dagger": {
+    "type": "Tool",
+    "textureInfo": "iron_dagger"
+  },
+  "Gold Dagger": {
+    "type": "Tool",
+    "textureInfo": "gold_dagger"
+  },
+  "Diamond Dagger": {
+    "type": "Tool",
+    "textureInfo": "diamond_dagger"
+  },
+  "Moonstone Dagger": {
+    "type": "Tool",
+    "textureInfo": "moonstone_dagger"
+  },
+  "Wood Boomerang": {
+    "type": "Tool",
+    "textureInfo": "wood_boomerang"
+  },
+  "Stone Boomerang": {
+    "type": "Tool",
+    "textureInfo": "stone_boomerang"
+  },
+  "Iron Boomerang": {
+    "type": "Tool",
+    "textureInfo": "iron_boomerang"
+  },
+  "Gold Boomerang": {
+    "type": "Tool",
+    "textureInfo": "gold_boomerang"
+  },
+  "Diamond Boomerang": {
+    "type": "Tool",
+    "textureInfo": "diamond_boomerang"
+  },
+  "Moonstone Boomerang": {
+    "type": "Tool",
+    "textureInfo": "moonstone_boomerang"
+  },
+  "Wood Club": {
+    "type": "Tool",
+    "textureInfo": "wood_club"
+  },
+  "Stone Club": {
+    "type": "Tool",
+    "textureInfo": "stone_club"
+  },
+  "Iron Club": {
+    "type": "Tool",
+    "textureInfo": "iron_club"
+  },
+  "Gold Club": {
+    "type": "Tool",
+    "textureInfo": "gold_club"
+  },
+  "Diamond Club": {
+    "type": "Tool",
+    "textureInfo": "diamond_club"
+  },
+  "Moonstone Club": {
+    "type": "Tool",
+    "textureInfo": "moonstone_club"
+  },
+  "Wood Mace": {
+    "type": "Tool",
+    "textureInfo": "wood_mace"
+  },
+  "Stone Mace": {
+    "type": "Tool",
+    "textureInfo": "stone_mace"
+  },
+  "Iron Mace": {
+    "type": "Tool",
+    "textureInfo": "iron_mace"
+  },
+  "Gold Mace": {
+    "type": "Tool",
+    "textureInfo": "gold_mace"
+  },
+  "Diamond Mace": {
+    "type": "Tool",
+    "textureInfo": "diamond_mace"
+  },
+  "Moonstone Mace": {
+    "type": "Tool",
+    "textureInfo": "moonstone_mace"
+  },
+  "Wood Whip": {
+    "type": "Tool",
+    "textureInfo": "wood_whip"
+  },
+  "Stone Whip": {
+    "type": "Tool",
+    "textureInfo": "stone_whip"
+  },
+  "Iron Whip": {
+    "type": "Tool",
+    "textureInfo": "iron_whip"
+  },
+  "Gold Whip": {
+    "type": "Tool",
+    "textureInfo": "gold_whip"
+  },
+  "Diamond Whip": {
+    "type": "Tool",
+    "textureInfo": "diamond_whip"
+  },
+  "Moonstone Whip": {
+    "type": "Tool",
+    "textureInfo": "moonstone_whip"
+  },
+  "Beef Stew": {
+    "type": "Item",
+    "textureInfo": "beef_stew"
+  },
+  "Chicken": {
+    "type": "Item",
+    "textureInfo": "chicken",
+    "heldItemGlb": "chicken"
+  },
+  "Coleslaw": {
+    "type": "Item",
+    "textureInfo": "coleslaw",
+    "heldItemGlb": "coleslaw"
+  },
+  "Egg": {
+    "type": "Item",
+    "textureInfo": "egg",
+    "heldItemGlb": "egg"
+  },
+  "Fish N Chips": {
+    "type": "Item",
+    "textureInfo": "fish_n_chips"
+  },
+  "Fried Rice": {
+    "type": "Item",
+    "textureInfo": "fried_rice"
+  },
+  "Lettuce": {
+    "type": "Item",
+    "textureInfo": "lettuce",
+    "heldItemGlb": "lettuce"
+  },
+  "Omelette": {
+    "type": "Item",
+    "textureInfo": "omelette",
+    "heldItemGlb": "omelette"
+  },
+  "Onion": {
+    "type": "Item",
+    "textureInfo": "onion",
+    "heldItemGlb": "onion"
+  },
+  "Red Cabbage": {
+    "type": "Item",
+    "textureInfo": "red_cabbage"
+  },
+  "Roast Dinner": {
+    "type": "Item",
+    "textureInfo": "roast_dinner"
+  },
+  "Salad": {
+    "type": "Item",
+    "textureInfo": "salad",
+    "heldItemGlb": "salad"
+  },
+  "Stuffed Pepper": {
+    "type": "Item",
+    "textureInfo": "stuffed_pepper"
+  },
+  "Sushi": {
+    "type": "Item",
+    "textureInfo": "sushi",
+    "heldItemGlb": "sushi"
+  },
+  "Tomato": {
+    "type": "Item",
+    "textureInfo": "tomato",
+    "heldItemGlb": "tomato"
+  },
+  "Vegetable Soup": {
+    "type": "Item",
+    "textureInfo": "veg_soup"
+  },
+  "Common Lottery Ticket": {
+    "type": "Item",
+    "textureInfo": "book",
+    "heldItemGlb": "Book"
+  },
+  "Uncommon Lottery Ticket": {
+    "type": "Item",
+    "textureInfo": "book",
+    "heldItemGlb": "Book"
+  },
+  "Rare Lottery Ticket": {
+    "type": "Item",
+    "textureInfo": "book",
+    "heldItemGlb": "Book"
+  },
+  "Epic Lottery Ticket": {
+    "type": "Item",
+    "textureInfo": "book",
+    "heldItemGlb": "Book"
+  },
+  "Legendary Lottery Ticket": {
+    "type": "Item",
+    "textureInfo": "book",
+    "heldItemGlb": "Book"
+  },
+  "Lucky Sword Upgrade": {
+    "type": "Item",
+    "textureInfo": "lucky_sword_upgrade"
+  },
+  "Lucky Armour Upgrade": {
+    "type": "Item",
+    "textureInfo": "lucky_armour_upgrade"
+  },
+  "Lucky Tools Upgrade": {
+    "type": "Item",
+    "textureInfo": "lucky_tools_upgrade"
+  },
+  "Lucky Clover": {
+    "type": "Item",
+    "textureInfo": "lucky_clover"
+  },
+  "Void Net": {
+    "type": "Item",
+    "textureInfo": "void_net"
+  },
+  "Lucky Bomb": {
+    "type": "Item",
+    "textureInfo": "lucky_bomb"
+  },
+  "Unlucky Bomb": {
+    "type": "Item",
+    "textureInfo": "unlucky_bomb"
+  },
+  "Swap Orb": {
+    "type": "Item",
+    "textureInfo": "swap_orb"
+  },
+  "Golden Lucky Clover": {
+    "type": "Item",
+    "textureInfo": "golden_lucky_clover"
+  },
+  "Unloaded": {
+    "textureInfo": "unloaded"
+  },
+  "Dirt": {
+    "textureInfo": "dirt"
+  },
+  "Messy Dirt": {
+    "textureInfo": "coarse_dirt"
+  },
+  "Grass Block": {
+    "textureInfo": [
+      "grass_block_side",
+      "grass_top",
+      "dirt"
+    ]
+  },
+  "Sand": {
+    "textureInfo": "sand"
+  },
+  "Clay": {
+    "textureInfo": "clay"
+  },
+  "Gravel": {
+    "textureInfo": "gravel"
+  },
+  "Snow": {
+    "textureInfo": "snow"
+  },
+  "Maple Log": {
+    "textureInfo": "log_maple"
+  },
+  "Pine Log": {
+    "textureInfo": "log_pine"
+  },
+  "Plum Log": {
+    "textureInfo": "log_plum"
+  },
+  "Cedar Log": {
+    "textureInfo": "log_cedar"
+  },
+  "Aspen Log": {
+    "textureInfo": "log_aspen"
+  },
+  "Jungle Log": {
+    "textureInfo": "log_jungle"
+  },
+  "Maple Wood Planks": {
+    "textureInfo": "planks_maple"
+  },
+  "Aspen Wood Planks": {
+    "textureInfo": "planks_aspen"
+  },
+  "Plum Wood Planks": {
+    "textureInfo": "planks_plum"
+  },
+  "Jungle Wood Planks": {
+    "textureInfo": "planks_jungle"
+  },
+  "Pine Wood Planks": {
+    "textureInfo": "planks_pine"
+  },
+  "Cedar Wood Planks": {
+    "textureInfo": "planks_cedar"
+  },
+  "Barkless Maple Log": {
+    "textureInfo": "stripped_maple_log"
+  },
+  "Barkless Aspen Log": {
+    "textureInfo": "stripped_aspen_log"
+  },
+  "Barkless Plum Log": {
+    "textureInfo": "stripped_plum_log"
+  },
+  "Barkless Jungle Log": {
+    "textureInfo": "stripped_jungle_log"
+  },
+  "Barkless Pine Log": {
+    "textureInfo": "stripped_pine_log"
+  },
+  "Barkless Cedar Log": {
+    "textureInfo": "stripped_cedar_log"
+  },
+  "free_placeholder2": {
+    "textureInfo": "messy_stone"
+  },
+  "Stone": {
+    "textureInfo": "stone"
+  },
+  "Messy Stone": {
+    "textureInfo": "messy_stone"
+  },
+  "free_placeholder": {
+    "textureInfo": "messy_stone"
+  },
+  "Smooth Stone": {
+    "textureInfo": "smooth_stone"
+  },
+  "Diorite": {
+    "textureInfo": "stone_diorite"
+  },
+  "Smooth Diorite": {
+    "textureInfo": "stone_diorite_smooth"
+  },
+  "Andesite": {
+    "textureInfo": "stone_andesite"
+  },
+  "Smooth Andesite": {
+    "textureInfo": "stone_andesite_smooth"
+  },
+  "Granite": {
+    "textureInfo": "stone_granite"
+  },
+  "Smooth Granite": {
+    "textureInfo": "stone_granite_smooth"
+  },
+  "Sandstone": {
+    "textureInfo": "sandstone_normal"
+  },
+  "Yellowstone": {
+    "textureInfo": "end_stone"
+  },
+  "Coal Ore": {
+    "textureInfo": "coal_ore"
+  },
+  "Iron Ore": {
+    "textureInfo": "iron_ore"
+  },
+  "Gold Ore": {
+    "textureInfo": "gold_ore",
+    "MS": [
+      4,
+      4,
+      0
+    ]
+  },
+  "Lapis Lazuli Ore": {
+    "textureInfo": "lapis_ore",
+    "MS": [
+      0,
+      0,
+      2
+    ]
+  },
+  "Emerald Ore": {
+    "textureInfo": "emerald_ore",
+    "MS": [
+      1,
+      3,
+      1
+    ]
+  },
+  "Diamond Ore": {
+    "textureInfo": "diamond_ore",
+    "MS": [
+      2,
+      5,
+      5
+    ]
+  },
+  "Block of Coal": {
+    "textureInfo": "coal_block"
+  },
+  "Block of Iron": {
+    "textureInfo": "iron_block"
+  },
+  "Block of Gold": {
+    "textureInfo": "gold_block"
+  },
+  "Block of Lapis Lazuli": {
+    "textureInfo": "lapis_block"
+  },
+  "Block of Emerald": {
+    "textureInfo": "emerald_block"
+  },
+  "White Wool": {
+    "textureInfo": "wool_colored_white"
+  },
+  "Orange Wool": {
+    "textureInfo": "wool_colored_orange"
+  },
+  "Magenta Wool": {
+    "textureInfo": "wool_colored_magenta"
+  },
+  "Light Blue Wool": {
+    "textureInfo": "wool_colored_light_blue"
+  },
+  "Yellow Wool": {
+    "textureInfo": "wool_colored_yellow"
+  },
+  "Lime Wool": {
+    "textureInfo": "wool_colored_lime"
+  },
+  "Pink Wool": {
+    "textureInfo": "wool_colored_pink"
+  },
+  "Gray Wool": {
+    "textureInfo": "wool_colored_gray"
+  },
+  "Light Gray Wool": {
+    "textureInfo": "wool_colored_light_grey"
+  },
+  "Cyan Wool": {
+    "textureInfo": "wool_colored_cyan"
+  },
+  "Purple Wool": {
+    "textureInfo": "wool_colored_purple"
+  },
+  "Blue Wool": {
+    "textureInfo": "wool_colored_blue"
+  },
+  "Brown Wool": {
+    "textureInfo": "wool_colored_brown"
+  },
+  "Green Wool": {
+    "textureInfo": "wool_colored_green"
+  },
+  "Red Wool": {
+    "textureInfo": "wool_colored_red"
+  },
+  "Black Wool": {
+    "textureInfo": "wool_colored_black"
+  },
+  "Baked Clay": {
+    "textureInfo": "hardened_clay"
+  },
+  "White Baked Clay": {
+    "textureInfo": "hardened_clay_stained_white"
+  },
+  "Orange Baked Clay": {
+    "textureInfo": "hardened_clay_stained_orange"
+  },
+  "Magenta Baked Clay": {
+    "textureInfo": "hardened_clay_stained_magenta"
+  },
+  "Light Blue Baked Clay": {
+    "textureInfo": "hardened_clay_stained_light_blue"
+  },
+  "Yellow Baked Clay": {
+    "textureInfo": "hardened_clay_stained_yellow"
+  },
+  "Lime Baked Clay": {
+    "textureInfo": "hardened_clay_stained_lime"
+  },
+  "Pink Baked Clay": {
+    "textureInfo": "hardened_clay_stained_pink"
+  },
+  "Gray Baked Clay": {
+    "textureInfo": "hardened_clay_stained_gray"
+  },
+  "Light Gray Baked Clay": {
+    "textureInfo": "hardened_clay_stained_silver"
+  },
+  "Cyan Baked Clay": {
+    "textureInfo": "hardened_clay_stained_cyan"
+  },
+  "Purple Baked Clay": {
+    "textureInfo": "hardened_clay_stained_purple"
+  },
+  "Blue Baked Clay": {
+    "textureInfo": "hardened_clay_stained_blue"
+  },
+  "Brown Baked Clay": {
+    "textureInfo": "hardened_clay_stained_brown"
+  },
+  "Green Baked Clay": {
+    "textureInfo": "hardened_clay_stained_green"
+  },
+  "Red Baked Clay": {
+    "textureInfo": "hardened_clay_stained_red"
+  },
+  "Black Baked Clay": {
+    "textureInfo": "hardened_clay_stained_black"
+  },
+  "Gray Concrete": {
+    "textureInfo": "gray_concrete"
+  },
+  "Light Gray Concrete": {
+    "textureInfo": "light_gray_concrete"
+  },
+  "Black Concrete": {
+    "textureInfo": "black_concrete"
+  },
+  "Blue Concrete": {
+    "textureInfo": "blue_concrete"
+  },
+  "Brown Concrete": {
+    "textureInfo": "brown_concrete"
+  },
+  "Cyan Concrete": {
+    "textureInfo": "cyan_concrete"
+  },
+  "Light Blue Concrete": {
+    "textureInfo": "light_blue_concrete"
+  },
+  "Lime Concrete": {
+    "textureInfo": "lime_concrete"
+  },
+  "Magenta Concrete": {
+    "textureInfo": "magenta_concrete"
+  },
+  "Orange Concrete": {
+    "textureInfo": "orange_concrete"
+  },
+  "Pink Concrete": {
+    "textureInfo": "pink_concrete"
+  },
+  "Purple Concrete": {
+    "textureInfo": "purple_concrete"
+  },
+  "Red Concrete": {
+    "textureInfo": "red_concrete"
+  },
+  "White Concrete": {
+    "textureInfo": "white_concrete"
+  },
+  "Green Concrete": {
+    "textureInfo": "green_concrete"
+  },
+  "Yellow Concrete": {
+    "textureInfo": "yellow_concrete"
+  },
+  "Pine Leaves": {
+    "textureInfo": "leaves_pine"
+  },
+  "Aspen Leaves": {
+    "textureInfo": "leaves_aspen"
+  },
+  "Maple Leaves": {
+    "textureInfo": "leaves_maple"
+  },
+  "Jungle Leaves": {
+    "textureInfo": "leaves_jungle"
+  },
+  "Pumpkin_placeholder": {
+    "textureInfo": "pumpkin_face_on",
+    "MS": [
+      14,
+      10,
+      4
+    ]
+  },
+  "Watermelon": {
+    "textureInfo": [
+      "watermelon_side",
+      "watermelon_top"
+    ]
+  },
+  "Glass": {
+    "textureInfo": "glass"
+  },
+  "Black Glass": {
+    "textureInfo": "glass_black"
+  },
+  "Blue Glass": {
+    "textureInfo": "glass_blue"
+  },
+  "Brown Glass": {
+    "textureInfo": "glass_brown"
+  },
+  "Cyan Glass": {
+    "textureInfo": "glass_cyan"
+  },
+  "Gray Glass": {
+    "textureInfo": "glass_gray"
+  },
+  "Light Gray Glass": {
+    "textureInfo": "glass_light_gray"
+  },
+  "Green Glass": {
+    "textureInfo": "glass_green"
+  },
+  "Light Blue Glass": {
+    "textureInfo": "glass_light_blue"
+  },
+  "Lime Glass": {
+    "textureInfo": "glass_lime"
+  },
+  "Magenta Glass": {
+    "textureInfo": "glass_magenta"
+  },
+  "Orange Glass": {
+    "textureInfo": "glass_orange"
+  },
+  "Pink Glass": {
+    "textureInfo": "glass_pink"
+  },
+  "Purple Glass": {
+    "textureInfo": "glass_purple"
+  },
+  "Red Glass": {
+    "textureInfo": "glass_red"
+  },
+  "White Glass": {
+    "textureInfo": "glass_white"
+  },
+  "Yellow Glass": {
+    "textureInfo": "glass_yellow"
+  },
+  "UNUSED BLOCK TYPE": {
+    "textureInfo": "glass_silver"
+  },
+  "Dim Lamp On": {
+    "textureInfo": "redstone_lamp_on",
+    "MS": [
+      14,
+      14,
+      14
+    ]
+  },
+  "Dim Lamp Off": {
+    "textureInfo": "redstone_lamp_off"
+  },
+  "Water": {
+    "textureInfo": [
+      0.5,
+      0.5,
+      0.8,
+      0.9
+    ]
+  },
+  "Invisible Solid": {
+    "textureInfo": "invisible_solid"
+  },
+  "Bricks": {
+    "textureInfo": "brick"
+  },
+  "Stone Bricks": {
+    "textureInfo": "stonebrick"
+  },
+  "Dark Red Brick": {
+    "textureInfo": "nether_brick"
+  },
+  "Dark Red Stone": {
+    "textureInfo": "netherrack"
+  },
+  "Block of Quartz": {
+    "textureInfo": "quartz_block_side"
+  },
+  "Chiseled Block of Quartz": {
+    "textureInfo": "quartz_block_chiseled"
+  },
+  "Engraved Stone": {
+    "textureInfo": "stonebrick_carved"
+  },
+  "Mossy Stone Bricks": {
+    "textureInfo": "stonebrick_mossy"
+  },
+  "Cracked Stone Bricks": {
+    "textureInfo": "stonebrick_cracked"
+  },
+  "Smooth Sandstone": {
+    "textureInfo": "sandstone_top"
+  },
+  "Engraved Sandstone": {
+    "textureInfo": "chiseled_sandstone"
+  },
+  "Ice": {
+    "textureInfo": "ice"
+  },
+  "Obsidian": {
+    "textureInfo": "obsidian"
+  },
+  "Hay Bale": {
+    "textureInfo": "hay_block_side"
+  },
+  "Sponge": {
+    "textureInfo": "sponge"
+  },
+  "Beacon": {
+    "textureInfo": "beacon",
+    "MS": [
+      5,
+      14,
+      14
+    ]
+  },
+  "Golden Decoration": {
+    "textureInfo": "glowstone",
+    "MS": [
+      15,
+      15,
+      13
+    ]
+  },
+  "Moonstone Explosive": {
+    "textureInfo": [
+      "moonstone_explosive_side",
+      "moonstone_explosive_top"
+    ]
+  },
+  "Bedrock": {
+    "textureInfo": "bedrock"
+  },
+  "Smooth Double Stone Slab": {
+    "textureInfo": "smooth_stone"
+  },
+  "Cactus": {
+    "textureInfo": "small_cactus"
+  },
+  "Grass": {
+    "textureInfo": "tallgrass"
+  },
+  "Dandelion": {
+    "textureInfo": "dandelion",
+    "itemTexture": "dandelion"
+  },
+  "Poppy": {
+    "textureInfo": "poppy",
+    "itemTexture": "poppy"
+  },
+  "Red Tulip": {
+    "textureInfo": "red_tulip",
+    "itemTexture": "red_tulip"
+  },
+  "Pink Tulip": {
+    "textureInfo": "pink_tulip",
+    "itemTexture": "pink_tulip"
+  },
+  "White Tulip": {
+    "textureInfo": "white_tulip",
+    "itemTexture": "white_tulip"
+  },
+  "Orange Tulip": {
+    "textureInfo": "orange_tulip",
+    "itemTexture": "orange_tulip"
+  },
+  "Daisy": {
+    "textureInfo": "oxeye_daisy",
+    "itemTexture": "oxeye_daisy"
+  },
+  "Bluebell": {
+    "textureInfo": "blue_orchid",
+    "itemTexture": "blue_orchid"
+  },
+  "Forget-me-not": {
+    "textureInfo": "cornflower",
+    "itemTexture": "cornflower"
+  },
+  "Allium": {
+    "textureInfo": "allium",
+    "itemTexture": "allium"
+  },
+  "Azure Bluet": {
+    "textureInfo": "azure_bluet",
+    "itemTexture": "azure_bluet"
+  },
+  "Lily of the Valley": {
+    "textureInfo": "lily_of_the_valley",
+    "itemTexture": "lily_of_the_valley"
+  },
+  "Shadow Rose": {
+    "textureInfo": "shadow_rose",
+    "itemTexture": "shadow_rose"
+  },
+  "Block of Diamond": {
+    "textureInfo": "diamond_block"
+  },
+  "Maple Door": {
+    "itemTexture": "maple_door",
+    "blockModel": "Maple Door"
+  },
+  "_Maple Door Top": {
+    "itemTexture": "maple_door",
+    "blockModel": "_Maple Door Top"
+  },
+  "Maple Trapdoor": {
+    "itemTexture": "maple_trapdoor",
+    "blockModel": "Maple Trapdoor"
+  },
+  "Aspen Sapling": {
+    "textureInfo": "aspen_sapling",
+    "itemTexture": "aspen_sapling"
+  },
+  "Maple Sapling": {
+    "textureInfo": "maple_sapling",
+    "itemTexture": "maple_sapling"
+  },
+  "Jungle Sapling": {
+    "textureInfo": "jungle_sapling",
+    "itemTexture": "jungle_sapling"
+  },
+  "Plum Sapling": {
+    "textureInfo": "plum_sapling",
+    "itemTexture": "plum_sapling"
+  },
+  "Pine Sapling": {
+    "textureInfo": "pine_sapling",
+    "itemTexture": "pine_sapling"
+  },
+  "Cedar Sapling": {
+    "textureInfo": "cedar_sapling",
+    "itemTexture": "cedar_sapling"
+  },
+  "Maple Log|TreeBase|Maple": {
+    "textureInfo": "log_maple"
+  },
+  "Pine Leaves|TreeCanopy": {
+    "textureInfo": "leaves_pine"
+  },
+  "Aspen Leaves|TreeCanopy": {
+    "textureInfo": "leaves_aspen"
+  },
+  "Maple Leaves|TreeCanopy": {
+    "textureInfo": "leaves_maple"
+  },
+  "Jungle Leaves|TreeCanopy": {
+    "textureInfo": "leaves_jungle"
+  },
+  "Protector": {
+    "textureInfo": "protector"
+  },
+  "Fat Cactus": {
+    "textureInfo": "cactus_top"
+  },
+  "Dry Fat Cactus": {
+    "textureInfo": "cactus_dry"
+  },
+  "Dirt|GrassRoots": {
+    "textureInfo": "dirt"
+  },
+  "White Planks": {
+    "textureInfo": "white_planks"
+  },
+  "Orange Planks": {
+    "textureInfo": "orange_planks"
+  },
+  "Magenta Planks": {
+    "textureInfo": "magenta_planks"
+  },
+  "Light Blue Planks": {
+    "textureInfo": "light_blue_planks"
+  },
+  "Yellow Planks": {
+    "textureInfo": "yellow_planks"
+  },
+  "Lime Planks": {
+    "textureInfo": "lime_planks"
+  },
+  "Pink Planks": {
+    "textureInfo": "pink_planks"
+  },
+  "Gray Planks": {
+    "textureInfo": "gray_planks"
+  },
+  "Light Gray Planks": {
+    "textureInfo": "light_gray_planks"
+  },
+  "Cyan Planks": {
+    "textureInfo": "cyan_planks"
+  },
+  "Purple Planks": {
+    "textureInfo": "purple_planks"
+  },
+  "Blue Planks": {
+    "textureInfo": "blue_planks"
+  },
+  "Brown Planks": {
+    "textureInfo": "brown_planks"
+  },
+  "Green Planks": {
+    "textureInfo": "green_planks"
+  },
+  "Red Planks": {
+    "textureInfo": "red_planks"
+  },
+  "Black Planks": {
+    "textureInfo": "black_planks"
+  },
+  "Artisan Bench": {
+    "textureInfo": [
+      "artisan_table_side",
+      "artisan_table_top"
+    ]
+  },
+  "White Ceramic": {
+    "textureInfo": [
+      "white_glazed_terracotta[rot[1",
+      "white_glazed_terracotta[rot[2",
+      "white_glazed_terracotta[rot[3",
+      "white_glazed_terracotta[rot[4"
+    ]
+  },
+  "White Ceramic|meta|rot2": {
+    "textureInfo": [
+      "white_glazed_terracotta[rot[1",
+      "white_glazed_terracotta[rot[2",
+      "white_glazed_terracotta[rot[3",
+      "white_glazed_terracotta[rot[4"
+    ]
+  },
+  "White Ceramic|meta|rot3": {
+    "textureInfo": [
+      "white_glazed_terracotta[rot[1",
+      "white_glazed_terracotta[rot[2",
+      "white_glazed_terracotta[rot[3",
+      "white_glazed_terracotta[rot[4"
+    ]
+  },
+  "White Ceramic|meta|rot4": {
+    "textureInfo": [
+      "white_glazed_terracotta[rot[1",
+      "white_glazed_terracotta[rot[2",
+      "white_glazed_terracotta[rot[3",
+      "white_glazed_terracotta[rot[4"
+    ]
+  },
+  "Orange Ceramic": {
+    "textureInfo": [
+      "orange_glazed_terracotta[rot[1",
+      "orange_glazed_terracotta[rot[2",
+      "orange_glazed_terracotta[rot[3",
+      "orange_glazed_terracotta[rot[4"
+    ]
+  },
+  "Orange Ceramic|meta|rot2": {
+    "textureInfo": [
+      "orange_glazed_terracotta[rot[1",
+      "orange_glazed_terracotta[rot[2",
+      "orange_glazed_terracotta[rot[3",
+      "orange_glazed_terracotta[rot[4"
+    ]
+  },
+  "Orange Ceramic|meta|rot3": {
+    "textureInfo": [
+      "orange_glazed_terracotta[rot[1",
+      "orange_glazed_terracotta[rot[2",
+      "orange_glazed_terracotta[rot[3",
+      "orange_glazed_terracotta[rot[4"
+    ]
+  },
+  "Orange Ceramic|meta|rot4": {
+    "textureInfo": [
+      "orange_glazed_terracotta[rot[1",
+      "orange_glazed_terracotta[rot[2",
+      "orange_glazed_terracotta[rot[3",
+      "orange_glazed_terracotta[rot[4"
+    ]
+  },
+  "Magenta Ceramic": {
+    "textureInfo": [
+      "magenta_glazed_terracotta[rot[1",
+      "magenta_glazed_terracotta[rot[2",
+      "magenta_glazed_terracotta[rot[3",
+      "magenta_glazed_terracotta[rot[4"
+    ]
+  },
+  "Magenta Ceramic|meta|rot2": {
+    "textureInfo": [
+      "magenta_glazed_terracotta[rot[1",
+      "magenta_glazed_terracotta[rot[2",
+      "magenta_glazed_terracotta[rot[3",
+      "magenta_glazed_terracotta[rot[4"
+    ]
+  },
+  "Magenta Ceramic|meta|rot3": {
+    "textureInfo": [
+      "magenta_glazed_terracotta[rot[1",
+      "magenta_glazed_terracotta[rot[2",
+      "magenta_glazed_terracotta[rot[3",
+      "magenta_glazed_terracotta[rot[4"
+    ]
+  },
+  "Magenta Ceramic|meta|rot4": {
+    "textureInfo": [
+      "magenta_glazed_terracotta[rot[1",
+      "magenta_glazed_terracotta[rot[2",
+      "magenta_glazed_terracotta[rot[3",
+      "magenta_glazed_terracotta[rot[4"
+    ]
+  },
+  "Light Blue Ceramic": {
+    "textureInfo": [
+      "light_blue_glazed_terracotta[rot[1",
+      "light_blue_glazed_terracotta[rot[2",
+      "light_blue_glazed_terracotta[rot[3",
+      "light_blue_glazed_terracotta[rot[4"
+    ]
+  },
+  "Light Blue Ceramic|meta|rot2": {
+    "textureInfo": [
+      "light_blue_glazed_terracotta[rot[1",
+      "light_blue_glazed_terracotta[rot[2",
+      "light_blue_glazed_terracotta[rot[3",
+      "light_blue_glazed_terracotta[rot[4"
+    ]
+  },
+  "Light Blue Ceramic|meta|rot3": {
+    "textureInfo": [
+      "light_blue_glazed_terracotta[rot[1",
+      "light_blue_glazed_terracotta[rot[2",
+      "light_blue_glazed_terracotta[rot[3",
+      "light_blue_glazed_terracotta[rot[4"
+    ]
+  },
+  "Light Blue Ceramic|meta|rot4": {
+    "textureInfo": [
+      "light_blue_glazed_terracotta[rot[1",
+      "light_blue_glazed_terracotta[rot[2",
+      "light_blue_glazed_terracotta[rot[3",
+      "light_blue_glazed_terracotta[rot[4"
+    ]
+  },
+  "Yellow Ceramic": {
+    "textureInfo": [
+      "yellow_glazed_terracotta[rot[1",
+      "yellow_glazed_terracotta[rot[2",
+      "yellow_glazed_terracotta[rot[3",
+      "yellow_glazed_terracotta[rot[4"
+    ]
+  },
+  "Yellow Ceramic|meta|rot2": {
+    "textureInfo": [
+      "yellow_glazed_terracotta[rot[1",
+      "yellow_glazed_terracotta[rot[2",
+      "yellow_glazed_terracotta[rot[3",
+      "yellow_glazed_terracotta[rot[4"
+    ]
+  },
+  "Yellow Ceramic|meta|rot3": {
+    "textureInfo": [
+      "yellow_glazed_terracotta[rot[1",
+      "yellow_glazed_terracotta[rot[2",
+      "yellow_glazed_terracotta[rot[3",
+      "yellow_glazed_terracotta[rot[4"
+    ]
+  },
+  "Yellow Ceramic|meta|rot4": {
+    "textureInfo": [
+      "yellow_glazed_terracotta[rot[1",
+      "yellow_glazed_terracotta[rot[2",
+      "yellow_glazed_terracotta[rot[3",
+      "yellow_glazed_terracotta[rot[4"
+    ]
+  },
+  "Lime Ceramic": {
+    "textureInfo": [
+      "lime_glazed_terracotta[rot[1",
+      "lime_glazed_terracotta[rot[2",
+      "lime_glazed_terracotta[rot[3",
+      "lime_glazed_terracotta[rot[4"
+    ]
+  },
+  "Lime Ceramic|meta|rot2": {
+    "textureInfo": [
+      "lime_glazed_terracotta[rot[1",
+      "lime_glazed_terracotta[rot[2",
+      "lime_glazed_terracotta[rot[3",
+      "lime_glazed_terracotta[rot[4"
+    ]
+  },
+  "Lime Ceramic|meta|rot3": {
+    "textureInfo": [
+      "lime_glazed_terracotta[rot[1",
+      "lime_glazed_terracotta[rot[2",
+      "lime_glazed_terracotta[rot[3",
+      "lime_glazed_terracotta[rot[4"
+    ]
+  },
+  "Lime Ceramic|meta|rot4": {
+    "textureInfo": [
+      "lime_glazed_terracotta[rot[1",
+      "lime_glazed_terracotta[rot[2",
+      "lime_glazed_terracotta[rot[3",
+      "lime_glazed_terracotta[rot[4"
+    ]
+  },
+  "Pink Ceramic": {
+    "textureInfo": [
+      "pink_glazed_terracotta[rot[1",
+      "pink_glazed_terracotta[rot[2",
+      "pink_glazed_terracotta[rot[3",
+      "pink_glazed_terracotta[rot[4"
+    ]
+  },
+  "Pink Ceramic|meta|rot2": {
+    "textureInfo": [
+      "pink_glazed_terracotta[rot[1",
+      "pink_glazed_terracotta[rot[2",
+      "pink_glazed_terracotta[rot[3",
+      "pink_glazed_terracotta[rot[4"
+    ]
+  },
+  "Pink Ceramic|meta|rot3": {
+    "textureInfo": [
+      "pink_glazed_terracotta[rot[1",
+      "pink_glazed_terracotta[rot[2",
+      "pink_glazed_terracotta[rot[3",
+      "pink_glazed_terracotta[rot[4"
+    ]
+  },
+  "Pink Ceramic|meta|rot4": {
+    "textureInfo": [
+      "pink_glazed_terracotta[rot[1",
+      "pink_glazed_terracotta[rot[2",
+      "pink_glazed_terracotta[rot[3",
+      "pink_glazed_terracotta[rot[4"
+    ]
+  },
+  "Gray Ceramic": {
+    "textureInfo": [
+      "gray_glazed_terracotta[rot[1",
+      "gray_glazed_terracotta[rot[2",
+      "gray_glazed_terracotta[rot[3",
+      "gray_glazed_terracotta[rot[4"
+    ]
+  },
+  "Gray Ceramic|meta|rot2": {
+    "textureInfo": [
+      "gray_glazed_terracotta[rot[1",
+      "gray_glazed_terracotta[rot[2",
+      "gray_glazed_terracotta[rot[3",
+      "gray_glazed_terracotta[rot[4"
+    ]
+  },
+  "Gray Ceramic|meta|rot3": {
+    "textureInfo": [
+      "gray_glazed_terracotta[rot[1",
+      "gray_glazed_terracotta[rot[2",
+      "gray_glazed_terracotta[rot[3",
+      "gray_glazed_terracotta[rot[4"
+    ]
+  },
+  "Gray Ceramic|meta|rot4": {
+    "textureInfo": [
+      "gray_glazed_terracotta[rot[1",
+      "gray_glazed_terracotta[rot[2",
+      "gray_glazed_terracotta[rot[3",
+      "gray_glazed_terracotta[rot[4"
+    ]
+  },
+  "Light Gray Ceramic": {
+    "textureInfo": [
+      "light_gray_glazed_terracotta[rot[1",
+      "light_gray_glazed_terracotta[rot[2",
+      "light_gray_glazed_terracotta[rot[3",
+      "light_gray_glazed_terracotta[rot[4"
+    ]
+  },
+  "Light Gray Ceramic|meta|rot2": {
+    "textureInfo": [
+      "light_gray_glazed_terracotta[rot[1",
+      "light_gray_glazed_terracotta[rot[2",
+      "light_gray_glazed_terracotta[rot[3",
+      "light_gray_glazed_terracotta[rot[4"
+    ]
+  },
+  "Light Gray Ceramic|meta|rot3": {
+    "textureInfo": [
+      "light_gray_glazed_terracotta[rot[1",
+      "light_gray_glazed_terracotta[rot[2",
+      "light_gray_glazed_terracotta[rot[3",
+      "light_gray_glazed_terracotta[rot[4"
+    ]
+  },
+  "Light Gray Ceramic|meta|rot4": {
+    "textureInfo": [
+      "light_gray_glazed_terracotta[rot[1",
+      "light_gray_glazed_terracotta[rot[2",
+      "light_gray_glazed_terracotta[rot[3",
+      "light_gray_glazed_terracotta[rot[4"
+    ]
+  },
+  "Cyan Ceramic": {
+    "textureInfo": [
+      "cyan_glazed_terracotta[rot[1",
+      "cyan_glazed_terracotta[rot[2",
+      "cyan_glazed_terracotta[rot[3",
+      "cyan_glazed_terracotta[rot[4"
+    ]
+  },
+  "Cyan Ceramic|meta|rot2": {
+    "textureInfo": [
+      "cyan_glazed_terracotta[rot[1",
+      "cyan_glazed_terracotta[rot[2",
+      "cyan_glazed_terracotta[rot[3",
+      "cyan_glazed_terracotta[rot[4"
+    ]
+  },
+  "Cyan Ceramic|meta|rot3": {
+    "textureInfo": [
+      "cyan_glazed_terracotta[rot[1",
+      "cyan_glazed_terracotta[rot[2",
+      "cyan_glazed_terracotta[rot[3",
+      "cyan_glazed_terracotta[rot[4"
+    ]
+  },
+  "Cyan Ceramic|meta|rot4": {
+    "textureInfo": [
+      "cyan_glazed_terracotta[rot[1",
+      "cyan_glazed_terracotta[rot[2",
+      "cyan_glazed_terracotta[rot[3",
+      "cyan_glazed_terracotta[rot[4"
+    ]
+  },
+  "Purple Ceramic": {
+    "textureInfo": [
+      "purple_glazed_terracotta[rot[1",
+      "purple_glazed_terracotta[rot[2",
+      "purple_glazed_terracotta[rot[3",
+      "purple_glazed_terracotta[rot[4"
+    ]
+  },
+  "Purple Ceramic|meta|rot2": {
+    "textureInfo": [
+      "purple_glazed_terracotta[rot[1",
+      "purple_glazed_terracotta[rot[2",
+      "purple_glazed_terracotta[rot[3",
+      "purple_glazed_terracotta[rot[4"
+    ]
+  },
+  "Purple Ceramic|meta|rot3": {
+    "textureInfo": [
+      "purple_glazed_terracotta[rot[1",
+      "purple_glazed_terracotta[rot[2",
+      "purple_glazed_terracotta[rot[3",
+      "purple_glazed_terracotta[rot[4"
+    ]
+  },
+  "Purple Ceramic|meta|rot4": {
+    "textureInfo": [
+      "purple_glazed_terracotta[rot[1",
+      "purple_glazed_terracotta[rot[2",
+      "purple_glazed_terracotta[rot[3",
+      "purple_glazed_terracotta[rot[4"
+    ]
+  },
+  "Blue Ceramic": {
+    "textureInfo": [
+      "blue_glazed_terracotta[rot[1",
+      "blue_glazed_terracotta[rot[2",
+      "blue_glazed_terracotta[rot[3",
+      "blue_glazed_terracotta[rot[4"
+    ]
+  },
+  "Blue Ceramic|meta|rot2": {
+    "textureInfo": [
+      "blue_glazed_terracotta[rot[1",
+      "blue_glazed_terracotta[rot[2",
+      "blue_glazed_terracotta[rot[3",
+      "blue_glazed_terracotta[rot[4"
+    ]
+  },
+  "Blue Ceramic|meta|rot3": {
+    "textureInfo": [
+      "blue_glazed_terracotta[rot[1",
+      "blue_glazed_terracotta[rot[2",
+      "blue_glazed_terracotta[rot[3",
+      "blue_glazed_terracotta[rot[4"
+    ]
+  },
+  "Blue Ceramic|meta|rot4": {
+    "textureInfo": [
+      "blue_glazed_terracotta[rot[1",
+      "blue_glazed_terracotta[rot[2",
+      "blue_glazed_terracotta[rot[3",
+      "blue_glazed_terracotta[rot[4"
+    ]
+  },
+  "Brown Ceramic": {
+    "textureInfo": [
+      "brown_glazed_terracotta[rot[1",
+      "brown_glazed_terracotta[rot[2",
+      "brown_glazed_terracotta[rot[3",
+      "brown_glazed_terracotta[rot[4"
+    ]
+  },
+  "Brown Ceramic|meta|rot2": {
+    "textureInfo": [
+      "brown_glazed_terracotta[rot[1",
+      "brown_glazed_terracotta[rot[2",
+      "brown_glazed_terracotta[rot[3",
+      "brown_glazed_terracotta[rot[4"
+    ]
+  },
+  "Brown Ceramic|meta|rot3": {
+    "textureInfo": [
+      "brown_glazed_terracotta[rot[1",
+      "brown_glazed_terracotta[rot[2",
+      "brown_glazed_terracotta[rot[3",
+      "brown_glazed_terracotta[rot[4"
+    ]
+  },
+  "Brown Ceramic|meta|rot4": {
+    "textureInfo": [
+      "brown_glazed_terracotta[rot[1",
+      "brown_glazed_terracotta[rot[2",
+      "brown_glazed_terracotta[rot[3",
+      "brown_glazed_terracotta[rot[4"
+    ]
+  },
+  "Green Ceramic": {
+    "textureInfo": [
+      "green_glazed_terracotta[rot[1",
+      "green_glazed_terracotta[rot[2",
+      "green_glazed_terracotta[rot[3",
+      "green_glazed_terracotta[rot[4"
+    ]
+  },
+  "Green Ceramic|meta|rot2": {
+    "textureInfo": [
+      "green_glazed_terracotta[rot[1",
+      "green_glazed_terracotta[rot[2",
+      "green_glazed_terracotta[rot[3",
+      "green_glazed_terracotta[rot[4"
+    ]
+  },
+  "Green Ceramic|meta|rot3": {
+    "textureInfo": [
+      "green_glazed_terracotta[rot[1",
+      "green_glazed_terracotta[rot[2",
+      "green_glazed_terracotta[rot[3",
+      "green_glazed_terracotta[rot[4"
+    ]
+  },
+  "Green Ceramic|meta|rot4": {
+    "textureInfo": [
+      "green_glazed_terracotta[rot[1",
+      "green_glazed_terracotta[rot[2",
+      "green_glazed_terracotta[rot[3",
+      "green_glazed_terracotta[rot[4"
+    ]
+  },
+  "Red Ceramic": {
+    "textureInfo": [
+      "red_glazed_terracotta[rot[1",
+      "red_glazed_terracotta[rot[2",
+      "red_glazed_terracotta[rot[3",
+      "red_glazed_terracotta[rot[4"
+    ]
+  },
+  "Red Ceramic|meta|rot2": {
+    "textureInfo": [
+      "red_glazed_terracotta[rot[1",
+      "red_glazed_terracotta[rot[2",
+      "red_glazed_terracotta[rot[3",
+      "red_glazed_terracotta[rot[4"
+    ]
+  },
+  "Red Ceramic|meta|rot3": {
+    "textureInfo": [
+      "red_glazed_terracotta[rot[1",
+      "red_glazed_terracotta[rot[2",
+      "red_glazed_terracotta[rot[3",
+      "red_glazed_terracotta[rot[4"
+    ]
+  },
+  "Red Ceramic|meta|rot4": {
+    "textureInfo": [
+      "red_glazed_terracotta[rot[1",
+      "red_glazed_terracotta[rot[2",
+      "red_glazed_terracotta[rot[3",
+      "red_glazed_terracotta[rot[4"
+    ]
+  },
+  "Black Ceramic": {
+    "textureInfo": [
+      "black_glazed_terracotta[rot[1",
+      "black_glazed_terracotta[rot[2",
+      "black_glazed_terracotta[rot[3",
+      "black_glazed_terracotta[rot[4"
+    ]
+  },
+  "Black Ceramic|meta|rot2": {
+    "textureInfo": [
+      "black_glazed_terracotta[rot[1",
+      "black_glazed_terracotta[rot[2",
+      "black_glazed_terracotta[rot[3",
+      "black_glazed_terracotta[rot[4"
+    ]
+  },
+  "Black Ceramic|meta|rot3": {
+    "textureInfo": [
+      "black_glazed_terracotta[rot[1",
+      "black_glazed_terracotta[rot[2",
+      "black_glazed_terracotta[rot[3",
+      "black_glazed_terracotta[rot[4"
+    ]
+  },
+  "Black Ceramic|meta|rot4": {
+    "textureInfo": [
+      "black_glazed_terracotta[rot[1",
+      "black_glazed_terracotta[rot[2",
+      "black_glazed_terracotta[rot[3",
+      "black_glazed_terracotta[rot[4"
+    ]
+  },
+  "Wheat Seeds": {
+    "textureInfo": "wheat_stage0",
+    "itemTexture": "wheat_seeds"
+  },
+  "Wheat": {
+    "textureInfo": "wheat_stage7",
+    "itemTexture": "wheat"
+  },
+  "Wheat|FreshlyGrown": {
+    "textureInfo": "wheat_stage7"
+  },
+  "Tilled Soil": {
+    "textureInfo": "farmland"
+  },
+  "Bread Block": {
+    "textureInfo": [
+      "bread_block_front",
+      "bread_block_back",
+      "bread_block_side",
+      "bread_block_top"
+    ]
+  },
+  "ReservedBread BlockRotation1": {
+    "textureInfo": [
+      "bread_block_front",
+      "bread_block_back",
+      "bread_block_side",
+      "bread_block_top"
+    ]
+  },
+  "ReservedBread BlockRotation2": {
+    "textureInfo": [
+      "bread_block_front",
+      "bread_block_back",
+      "bread_block_side",
+      "bread_block_top"
+    ]
+  },
+  "ReservedBread BlockRotation3": {
+    "textureInfo": [
+      "bread_block_front",
+      "bread_block_back",
+      "bread_block_side",
+      "bread_block_top"
+    ]
+  },
+  "Mossy Messy Stone": {
+    "textureInfo": "mossy_cobblestone"
+  },
+  "Dandelion|Roots": {
+    "textureInfo": "dandelion",
+    "itemTexture": "dandelion"
+  },
+  "Poppy|Roots": {
+    "textureInfo": "poppy",
+    "itemTexture": "poppy"
+  },
+  "Red Tulip|Roots": {
+    "textureInfo": "red_tulip",
+    "itemTexture": "red_tulip"
+  },
+  "Pink Tulip|Roots": {
+    "textureInfo": "pink_tulip",
+    "itemTexture": "pink_tulip"
+  },
+  "White Tulip|Roots": {
+    "textureInfo": "white_tulip",
+    "itemTexture": "white_tulip"
+  },
+  "Orange Tulip|Roots": {
+    "textureInfo": "orange_tulip",
+    "itemTexture": "orange_tulip"
+  },
+  "Daisy|Roots": {
+    "textureInfo": "oxeye_daisy",
+    "itemTexture": "oxeye_daisy"
+  },
+  "Bluebell|Roots": {
+    "textureInfo": "blue_orchid",
+    "itemTexture": "blue_orchid"
+  },
+  "Forget-me-not|Roots": {
+    "textureInfo": "cornflower",
+    "itemTexture": "cornflower"
+  },
+  "Allium|Roots": {
+    "textureInfo": "allium",
+    "itemTexture": "allium"
+  },
+  "Azure Bluet|Roots": {
+    "textureInfo": "azure_bluet",
+    "itemTexture": "azure_bluet"
+  },
+  "Lily of the Valley|Roots": {
+    "textureInfo": "lily_of_the_valley",
+    "itemTexture": "lily_of_the_valley"
+  },
+  "Shadow Rose|Roots": {
+    "textureInfo": "shadow_rose",
+    "itemTexture": "shadow_rose"
+  },
+  "Apple Block": {
+    "textureInfo": [
+      "apple_block_side",
+      "apple_block_top",
+      "apple_block_bottom"
+    ]
+  },
+  "Moonstone Ore": {
+    "textureInfo": "moonstone_ore",
+    "MS": [
+      6,
+      6,
+      6
+    ]
+  },
+  "Block of Moonstone": {
+    "textureInfo": "moonstone_block"
+  },
+  "Magma": {
+    "textureInfo": "magma",
+    "MS": [
+      9,
+      3,
+      1
+    ]
+  },
+  "Useless Soil": {
+    "textureInfo": "podzol_top"
+  },
+  "Marked Sandstone": {
+    "textureInfo": "cut_sandstone"
+  },
+  "Red Sandstone": {
+    "textureInfo": "red_sandstone"
+  },
+  "Smooth Red Sandstone": {
+    "textureInfo": "red_sandstone_top"
+  },
+  "Engraved Red Sandstone": {
+    "textureInfo": "chiseled_red_sandstone"
+  },
+  "Marked Red Sandstone": {
+    "textureInfo": "cut_red_sandstone"
+  },
+  "Green Stone": {
+    "textureInfo": "green_stone"
+  },
+  "Green Bricks": {
+    "textureInfo": "green_bricks"
+  },
+  "Dark Green Bricks": {
+    "textureInfo": "dark_green_bricks"
+  },
+  "Sandstone Bricks": {
+    "textureInfo": "sandstone_brick"
+  },
+  "Engraved Diorite": {
+    "textureInfo": "engraved_diorite"
+  },
+  "Diorite Bricks": {
+    "textureInfo": "diorite_brick"
+  },
+  "Engraved Andesite": {
+    "textureInfo": "engraved_andesite"
+  },
+  "Andesite Bricks": {
+    "textureInfo": "andesite_brick"
+  },
+  "Engraved Granite": {
+    "textureInfo": "engraved_granite"
+  },
+  "Granite Bricks": {
+    "textureInfo": "granite_brick"
+  },
+  "Ice Bricks": {
+    "textureInfo": "ice_brick"
+  },
+  "Placeholder Packed Ice": {
+    "textureInfo": "ice_brick"
+  },
+  "Placeholder Blue Ice": {
+    "textureInfo": "ice_brick"
+  },
+  "Plum Leaves": {
+    "textureInfo": "leaves_plum"
+  },
+  "Cedar Leaves": {
+    "textureInfo": "leaves_cedar"
+  },
+  "Palm Leaves": {
+    "textureInfo": "leaves_palm"
+  },
+  "Plum Leaves|TreeCanopy": {
+    "textureInfo": "leaves_plum"
+  },
+  "Cedar Leaves|TreeCanopy": {
+    "textureInfo": "leaves_cedar"
+  },
+  "Palm Leaves|TreeCanopy": {
+    "textureInfo": "leaves_palm"
+  },
+  "Pine Log|TreeBase|Pine": {
+    "textureInfo": "log_pine"
+  },
+  "Plum Log|TreeBase|Plum": {
+    "textureInfo": "log_plum"
+  },
+  "Cedar Log|TreeBase|Cedar": {
+    "textureInfo": "log_cedar"
+  },
+  "Aspen Log|TreeBase|Aspen": {
+    "textureInfo": "log_aspen"
+  },
+  "Jungle Log|TreeBase|Jungle": {
+    "textureInfo": "log_jungle"
+  },
+  "Palm Log": {
+    "textureInfo": "log_palm"
+  },
+  "Palm Log|TreeBase|Palm": {
+    "textureInfo": "log_palm"
+  },
+  "Palm Wood Planks": {
+    "textureInfo": "planks_palm"
+  },
+  "Palm Sapling": {
+    "textureInfo": "palm_sapling",
+    "itemTexture": "palm_sapling"
+  },
+  "Pine Door": {
+    "itemTexture": "pine_door",
+    "blockModel": "Pine Door"
+  },
+  "_Pine Door Top": {
+    "itemTexture": "pine_door",
+    "blockModel": "_Pine Door Top"
+  },
+  "Plum Door": {
+    "itemTexture": "plum_door",
+    "blockModel": "Plum Door"
+  },
+  "_Plum Door Top": {
+    "itemTexture": "plum_door",
+    "blockModel": "_Plum Door Top"
+  },
+  "Cedar Door": {
+    "itemTexture": "cedar_door",
+    "blockModel": "Cedar Door"
+  },
+  "_Cedar Door Top": {
+    "itemTexture": "cedar_door",
+    "blockModel": "_Cedar Door Top"
+  },
+  "Aspen Door": {
+    "itemTexture": "aspen_door",
+    "blockModel": "Aspen Door"
+  },
+  "_Aspen Door Top": {
+    "itemTexture": "aspen_door",
+    "blockModel": "_Aspen Door Top"
+  },
+  "Jungle Door": {
+    "itemTexture": "jungle_door",
+    "blockModel": "Jungle Door"
+  },
+  "_Jungle Door Top": {
+    "itemTexture": "jungle_door",
+    "blockModel": "_Jungle Door Top"
+  },
+  "Palm Door": {
+    "itemTexture": "palm_door",
+    "blockModel": "Palm Door"
+  },
+  "_Palm Door Top": {
+    "itemTexture": "palm_door",
+    "blockModel": "_Palm Door Top"
+  },
+  "Pine Trapdoor": {
+    "itemTexture": "pine_trapdoor",
+    "blockModel": "Pine Trapdoor"
+  },
+  "Plum Trapdoor": {
+    "itemTexture": "plum_trapdoor",
+    "blockModel": "Plum Trapdoor"
+  },
+  "Cedar Trapdoor": {
+    "itemTexture": "cedar_trapdoor",
+    "blockModel": "Cedar Trapdoor"
+  },
+  "Aspen Trapdoor": {
+    "itemTexture": "aspen_trapdoor",
+    "blockModel": "Aspen Trapdoor"
+  },
+  "Jungle Trapdoor": {
+    "itemTexture": "jungle_trapdoor",
+    "blockModel": "Jungle Trapdoor"
+  },
+  "Palm Trapdoor": {
+    "itemTexture": "palm_trapdoor",
+    "blockModel": "Palm Trapdoor"
+  },
+  "Red Sand": {
+    "textureInfo": "red_sand"
+  },
+  "Red Sandstone Bricks": {
+    "textureInfo": "red_sandstone_brick"
+  },
+  "Rocky Dirt": {
+    "textureInfo": "rocky_dirt"
+  },
+  "Autumn Maple Leaves": {
+    "textureInfo": "leaves_maple_autumn"
+  },
+  "Autumn Maple Leaves|TreeCanopy": {
+    "textureInfo": "leaves_maple_autumn"
+  },
+  "Vines|meta|rot1|Growing": {
+    "itemTexture": "vine_coloured",
+    "blockModel": "Vines",
+    "modelScale": 10
+  },
+  "Vines|meta|rot2|Growing": {
+    "itemTexture": "vine_coloured",
+    "modelScale": 10
+  },
+  "Vines|meta|rot3|Growing": {
+    "itemTexture": "vine_coloured",
+    "modelScale": 10
+  },
+  "Vines|meta|rot4|Growing": {
+    "itemTexture": "vine_coloured",
+    "modelScale": 10
+  },
+  "Cactus|Growing": {
+    "textureInfo": "small_cactus",
+    "itemTexture": "small_cactus"
+  },
+  "Fat Cactus|Growing": {
+    "textureInfo": "cactus_top"
+  },
+  "Plum Block": {
+    "textureInfo": [
+      "plum_block_side",
+      "plum_block_top",
+      "plum_block_bottom"
+    ]
+  },
+  "Coconut Block": {
+    "textureInfo": [
+      "coconut_block_side",
+      "coconut_block_top",
+      "coconut_block_bottom"
+    ]
+  },
+  "Pear Log": {
+    "textureInfo": "log_pear"
+  },
+  "Pear Wood Planks": {
+    "textureInfo": "planks_pear"
+  },
+  "Pear Leaves": {
+    "textureInfo": "leaves_pear"
+  },
+  "Pear Door": {
+    "itemTexture": "pear_door",
+    "blockModel": "Pear Door"
+  },
+  "_Pear Door Top": {
+    "itemTexture": "pear_door",
+    "blockModel": "_Pear Door Top"
+  },
+  "Pear Trapdoor": {
+    "itemTexture": "pear_trapdoor",
+    "blockModel": "Pear Trapdoor"
+  },
+  "Pear Sapling": {
+    "textureInfo": "pear_sapling",
+    "itemTexture": "pear_sapling"
+  },
+  "Pear Log|TreeBase|Pear": {
+    "textureInfo": "log_pear"
+  },
+  "Pear Leaves|TreeCanopy": {
+    "textureInfo": "leaves_pear"
+  },
+  "Pear Block": {
+    "textureInfo": [
+      "pear_block_side",
+      "pear_block_top",
+      "pear_block_bottom"
+    ]
+  },
+  "Compressed Messy Stone": {
+    "textureInfo": "compressed_messy_stone"
+  },
+  "Extra Compressed Messy Stone": {
+    "textureInfo": "extra_compressed_messy_stone"
+  },
+  "Super Compressed Messy Stone": {
+    "textureInfo": "super_compressed_messy_stone"
+  },
+  "Hyper Compressed Messy Stone": {
+    "textureInfo": "hyper_compressed_messy_stone"
+  },
+  "Ultra Compressed Messy Stone": {
+    "textureInfo": "ultra_compressed_messy_stone"
+  },
+  "Mega Compressed Messy Stone": {
+    "textureInfo": "mega_compressed_messy_stone"
+  },
+  "Net": {
+    "textureInfo": "net",
+    "itemTexture": "net"
+  },
+  "Cobweb": {
+    "textureInfo": "cobweb",
+    "itemTexture": "cobweb"
+  },
+  "Brown Mushroom Block": {
+    "textureInfo": "brown_mushroom_block"
+  },
+  "Red Mushroom Block": {
+    "textureInfo": "red_mushroom_block"
+  },
+  "Mushroom Stem": {
+    "textureInfo": "mushroom_stem"
+  },
+  "Fireball Block": {
+    "textureInfo": "fireball_block"
+  },
+  "Iceball Block": {
+    "textureInfo": "iceball_block"
+  },
+  "Watermelon Seeds": {
+    "textureInfo": "melon_stem",
+    "itemTexture": "watermelon_seeds"
+  },
+  "Watermelon Seeds|Growing": {
+    "textureInfo": "melon_stem"
+  },
+  "Pumpkin Seeds": {
+    "textureInfo": "melon_stem",
+    "itemTexture": "pumpkin_seeds"
+  },
+  "Pumpkin Seeds|Growing": {
+    "textureInfo": "melon_stem"
+  },
+  "Pumpkin": {
+    "textureInfo": [
+      "pumpkin_side",
+      "pumpkin_top"
+    ]
+  },
+  "Melon Seeds": {
+    "textureInfo": "melon_stem",
+    "itemTexture": "melon_seeds"
+  },
+  "Melon Seeds|Growing": {
+    "textureInfo": "melon_stem"
+  },
+  "Melon": {
+    "textureInfo": [
+      "melon_side",
+      "melon_top"
+    ]
+  },
+  "Iron Watermelon": {
+    "textureInfo": [
+      "iron_watermelon_side",
+      "iron_watermelon_top"
+    ]
+  },
+  "Patterned Black Glass": {
+    "textureInfo": "patterned_glass_black"
+  },
+  "Patterned Blue Glass": {
+    "textureInfo": "patterned_glass_blue"
+  },
+  "Patterned Brown Glass": {
+    "textureInfo": "patterned_glass_brown"
+  },
+  "Patterned Cyan Glass": {
+    "textureInfo": "patterned_glass_cyan"
+  },
+  "Patterned Gray Glass": {
+    "textureInfo": "patterned_glass_gray"
+  },
+  "Patterned Light Gray Glass": {
+    "textureInfo": "patterned_glass_light_gray"
+  },
+  "Patterned Green Glass": {
+    "textureInfo": "patterned_glass_green"
+  },
+  "Patterned Light Blue Glass": {
+    "textureInfo": "patterned_glass_light_blue"
+  },
+  "Patterned Lime Glass": {
+    "textureInfo": "patterned_glass_lime"
+  },
+  "Patterned Magenta Glass": {
+    "textureInfo": "patterned_glass_magenta"
+  },
+  "Patterned Orange Glass": {
+    "textureInfo": "patterned_glass_orange"
+  },
+  "Patterned Pink Glass": {
+    "textureInfo": "patterned_glass_pink"
+  },
+  "Patterned Purple Glass": {
+    "textureInfo": "patterned_glass_purple"
+  },
+  "Patterned Red Glass": {
+    "textureInfo": "patterned_glass_red"
+  },
+  "Patterned White Glass": {
+    "textureInfo": "patterned_glass_white"
+  },
+  "Patterned Yellow Glass": {
+    "textureInfo": "patterned_glass_yellow"
+  },
+  "Black Carpet": {
+    "itemTexture": "carpet_black_icon",
+    "blockModel": "carpet_black_model",
+    "modelScale": 10
+  },
+  "Blue Carpet": {
+    "itemTexture": "carpet_blue_icon",
+    "blockModel": "carpet_blue_model",
+    "modelScale": 10
+  },
+  "Brown Carpet": {
+    "itemTexture": "carpet_brown_icon",
+    "blockModel": "carpet_brown_model",
+    "modelScale": 10
+  },
+  "Cyan Carpet": {
+    "itemTexture": "carpet_cyan_icon",
+    "blockModel": "carpet_cyan_model",
+    "modelScale": 10
+  },
+  "Gray Carpet": {
+    "itemTexture": "carpet_gray_icon",
+    "blockModel": "carpet_gray_model",
+    "modelScale": 10
+  },
+  "Light Gray Carpet": {
+    "itemTexture": "carpet_light_gray_icon",
+    "blockModel": "carpet_light_gray_model",
+    "modelScale": 10
+  },
+  "Green Carpet": {
+    "itemTexture": "carpet_green_icon",
+    "blockModel": "carpet_green_model",
+    "modelScale": 10
+  },
+  "Light Blue Carpet": {
+    "itemTexture": "carpet_light_blue_icon",
+    "blockModel": "carpet_light_blue_model",
+    "modelScale": 10
+  },
+  "Lime Carpet": {
+    "itemTexture": "carpet_lime_icon",
+    "blockModel": "carpet_lime_model",
+    "modelScale": 10
+  },
+  "Magenta Carpet": {
+    "itemTexture": "carpet_magenta_icon",
+    "blockModel": "carpet_magenta_model",
+    "modelScale": 10
+  },
+  "Orange Carpet": {
+    "itemTexture": "carpet_orange_icon",
+    "blockModel": "carpet_orange_model",
+    "modelScale": 10
+  },
+  "Pink Carpet": {
+    "itemTexture": "carpet_pink_icon",
+    "blockModel": "carpet_pink_model",
+    "modelScale": 10
+  },
+  "Purple Carpet": {
+    "itemTexture": "carpet_purple_icon",
+    "blockModel": "carpet_purple_model",
+    "modelScale": 10
+  },
+  "Red Carpet": {
+    "itemTexture": "carpet_red_icon",
+    "blockModel": "carpet_red_model",
+    "modelScale": 10
+  },
+  "White Carpet": {
+    "itemTexture": "carpet_white_icon",
+    "blockModel": "carpet_white_model",
+    "modelScale": 10
+  },
+  "Yellow Carpet": {
+    "itemTexture": "carpet_yellow_icon",
+    "blockModel": "carpet_yellow_model",
+    "modelScale": 10
+  },
+  "Rice": {
+    "textureInfo": "rice_stage0",
+    "itemTexture": "rice"
+  },
+  "Rice|FreshlyGrown": {
+    "textureInfo": "rice_stage7"
+  },
+  "Cranberries": {
+    "textureInfo": "berry_bush_stage0",
+    "itemTexture": "cranberries"
+  },
+  "Red Mushroom": {
+    "textureInfo": "red_mushroom",
+    "itemTexture": "red_mushroom"
+  },
+  "Brown Mushroom": {
+    "textureInfo": "brown_mushroom",
+    "itemTexture": "brown_mushroom"
+  },
+  "Cotton Seeds": {
+    "textureInfo": "cotton_plant_stage0",
+    "itemTexture": "cotton_seeds"
+  },
+  "Tribe Protector": {
+    "textureInfo": "protector_tribe"
+  },
+  "Tall Grass": {
+    "textureInfo": "tall_grass_bottom",
+    "itemTexture": "tall_grass_bottom"
+  },
+  "Tall Grass|Top": {
+    "textureInfo": "tall_grass_top",
+    "itemTexture": "tall_grass_top"
+  },
+  "Faction Protector": {
+    "textureInfo": "protector_faction"
+  },
+  "Barkless Palm Log": {
+    "textureInfo": "stripped_palm_log"
+  },
+  "Barkless Pear Log": {
+    "textureInfo": "stripped_pear_log"
+  },
+  "Barkless Maple Log|TreeBase|Maple": {
+    "textureInfo": "stripped_maple_log"
+  },
+  "Barkless Plum Log|TreeBase|Plum": {
+    "textureInfo": "stripped_plum_log"
+  },
+  "Barkless Cedar Log|TreeBase|Cedar": {
+    "textureInfo": "stripped_cedar_log"
+  },
+  "Barkless Aspen Log|TreeBase|Aspen": {
+    "textureInfo": "stripped_aspen_log"
+  },
+  "Barkless Jungle Log|TreeBase|Jungle": {
+    "textureInfo": "stripped_jungle_log"
+  },
+  "Barkless Pine Log|TreeBase|Pine": {
+    "textureInfo": "stripped_pine_log"
+  },
+  "Barkless Palm Log|TreeBase|Palm": {
+    "textureInfo": "stripped_palm_log"
+  },
+  "Barkless Pear Log|TreeBase|Pear": {
+    "textureInfo": "stripped_pear_log"
+  },
+  "Mystery Block": {
+    "textureInfo": "mystery_block"
+  },
+  "Rocket": {
+    "textureInfo": "rocket_block"
+  },
+  "Super Rocket": {
+    "textureInfo": "super_rocket_block"
+  },
+  "Grenade": {
+    "textureInfo": "grenade_block"
+  },
+  "Cherry Log": {
+    "textureInfo": "log_cherry"
+  },
+  "Barkless Cherry Log": {
+    "textureInfo": "stripped_cherry_log"
+  },
+  "Barkless Cherry Log|TreeBase|Cherry": {
+    "textureInfo": "stripped_cherry_log"
+  },
+  "Cherry Wood Planks": {
+    "textureInfo": "planks_cherry"
+  },
+  "Cherry Leaves": {
+    "textureInfo": "leaves_cherry"
+  },
+  "Cherry Door": {
+    "itemTexture": "cherry_door",
+    "blockModel": "Cherry Door"
+  },
+  "_Cherry Door Top": {
+    "itemTexture": "cherry_door",
+    "blockModel": "_Cherry Door Top"
+  },
+  "Cherry Trapdoor": {
+    "itemTexture": "cherry_trapdoor",
+    "blockModel": "Cherry Trapdoor"
+  },
+  "Cherry Sapling": {
+    "textureInfo": "cherry_sapling",
+    "itemTexture": "cherry_sapling"
+  },
+  "Cherry Log|TreeBase|Cherry": {
+    "textureInfo": "log_cherry"
+  },
+  "Cherry Leaves|TreeCanopy": {
+    "textureInfo": "leaves_cherry"
+  },
+  "Cherry Block": {
+    "textureInfo": [
+      "cherry_block_side",
+      "cherry_block_top",
+      "cherry_block_bottom"
+    ]
+  },
+  "Bouncy Bomb Block": {
+    "textureInfo": "bouncy_bomb_block"
+  },
+  "Obby Rocket": {
+    "textureInfo": "rocket_block"
+  },
+  "Wood Spikes": {
+    "itemTexture": "spikes_wood",
+    "modelScale": 10,
+    "blockModel": "Spikes_Wood"
+  },
+  "Stone Spikes": {
+    "itemTexture": "spikes_stone",
+    "modelScale": 10,
+    "blockModel": "Spikes_Stone"
+  },
+  "Iron Spikes": {
+    "itemTexture": "spikes_iron",
+    "modelScale": 10,
+    "blockModel": "Spikes_Iron"
+  },
+  "Gold Spikes": {
+    "itemTexture": "spikes_gold",
+    "modelScale": 10,
+    "blockModel": "Spikes_Gold"
+  },
+  "Diamond Spikes": {
+    "itemTexture": "spikes_diamond",
+    "modelScale": 10,
+    "blockModel": "Spikes_Diamond"
+  },
+  "Kill Spikes": {
+    "itemTexture": "spikes_kill",
+    "modelScale": 10,
+    "blockModel": "Spikes_Kill"
+  },
+  "Corn Block": {
+    "textureInfo": [
+      "corn_block_side",
+      "corn_block_top",
+      "corn_block_bottom"
+    ]
+  },
+  "Corn Seeds": {
+    "textureInfo": "corn_stage0",
+    "itemTexture": "corn_seeds"
+  },
+  "Corn Seeds|FreshlyGrown": {
+    "textureInfo": "corn_stage2"
+  },
+  "Corn Seeds|Growing": {
+    "textureInfo": "corn_stage2"
+  },
+  "Corn Plant": {
+    "textureInfo": "corn_stage5"
+  },
+  "Corn Plant|FreshlyGrown": {
+    "textureInfo": "corn_stage5"
+  },
+  "Melting Ice": {
+    "textureInfo": "ice"
+  },
+  "Melting Ice|Breaking": {
+    "textureInfo": "melting_ice"
+  },
+  "Timed Spike Bomb Block": {
+    "itemTexture": "timed_spike_bomb",
+    "modelScale": 10,
+    "blockModel": "Timed Spike Bomb Block"
+  },
+  "Timed Spike Bomb Block|Flashing": {
+    "itemTexture": "timed_spike_bomb",
+    "modelScale": 10,
+    "blockModel": "Timed Spike Bomb Block"
+  },
+  "Lava": {
+    "textureInfo": {
+      "colour": [
+        0.95,
+        0.4,
+        0.05,
+        0.95
+      ],
+      "animTextures": [
+        "lava0",
+        "lava1",
+        "lava2",
+        "lava3",
+        "lava4",
+        "lava5",
+        "lava6",
+        "lava7"
+      ],
+      "animationInterval": 200
+    },
+    "MS": [
+      14,
+      8,
+      2
+    ]
+  },
+  "Fat Brown Mushroom": {
+    "itemTexture": "fatBrownMushroom",
+    "blockModel": "Fat Brown Mushroom",
+    "modelScale": 10
+  },
+  "Fat Red Mushroom": {
+    "itemTexture": "fatRedMushroom",
+    "blockModel": "Fat Red Mushroom",
+    "modelScale": 10
+  },
+  "Chili Pepper Block": {
+    "textureInfo": [
+      "chili_pepper_block_side",
+      "chili_pepper_block_top",
+      "chili_pepper_block_bottom"
+    ]
+  },
+  "Chili Pepper Seeds": {
+    "itemTexture": "chili_pepper_seeds",
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage0_model"
+  },
+  "Chili Pepper Plant_stage1": {
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage1_model"
+  },
+  "Chili Pepper Plant_stage2": {
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage2_model"
+  },
+  "Chili Pepper Plant_stage3": {
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage3_model"
+  },
+  "Chili Pepper Plant_stage4": {
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage4_model"
+  },
+  "Chili Pepper Plant": {
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage5_model"
+  },
+  "Chili Pepper Plant|FreshlyGrown": {
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage5_model"
+  },
+  "Chili Pepper Seeds|Lava": {
+    "itemTexture": "chili_pepper_seeds",
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage0_lava_model"
+  },
+  "Chili Pepper Plant_stage1|Lava": {
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage1_lava_model"
+  },
+  "Chili Pepper Plant_stage2|Lava": {
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage2_lava_model"
+  },
+  "Chili Pepper Plant_stage3|Lava": {
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage3_lava_model"
+  },
+  "Chili Pepper Plant_stage4|Lava": {
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage4_lava_model"
+  },
+  "Chili Pepper Plant_stage5": {
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage5_model"
+  },
+  "Chili Pepper Plant_stage5|Lava": {
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage5_lava_model"
+  },
+  "Chili Pepper Plant|Lava|FreshlyGrown": {
+    "modelScale": 10,
+    "blockModel": "chili_pepper_stage6_lava_model"
+  },
+  "Code Block": {
+    "textureInfo": "code_block"
+  },
+  "Toxin Ball Block": {
+    "textureInfo": "toxin_ball_block"
+  },
+  "Generator Spawn Block (Diamond)": {
+    "textureInfo": [
+      "diamond_gen_spawn_top",
+      "diamond_gen_spawn_side"
+    ]
+  },
+  "Generator Spawn Block (Moonstone)": {
+    "textureInfo": [
+      "moonstone_gen_spawn_top",
+      "moonstone_gen_spawn_side"
+    ]
+  },
+  "Generator Spawn Block (Ore)": {
+    "textureInfo": [
+      "ore_gen_spawn_top",
+      "ore_gen_spawn_side"
+    ]
+  },
+  "Goal Block (Red)": {
+    "textureInfo": [
+      "explosive_paint_red_top",
+      "red_spawn_block_top[rot[3"
+    ]
+  },
+  "Goal Block (Blue)": {
+    "textureInfo": [
+      "explosive_paint_blue_top",
+      "blue_spawn_block_top[rot[3"
+    ]
+  },
+  "Finish Block": {
+    "textureInfo": "finish_block"
+  },
+  "Drop Location Block": {
+    "textureInfo": [
+      "drop_location_block_top",
+      "drop_location_block_side"
+    ]
+  },
+  "Obby Death Block": {
+    "textureInfo": "obby_death_block"
+  },
+  "Obby Absorb Block": {
+    "textureInfo": "obby_absorb_block"
+  },
+  "Obby Absorb Death Block": {
+    "textureInfo": "obby_absorb_death_block"
+  },
+  "Bone Block": {
+    "textureInfo": [
+      "bone_block_side",
+      "bone_block_top"
+    ]
+  },
+  "Empty Spawner Block": {
+    "itemTexture": "empty_spawner_block_icon",
+    "textureInfo": [
+      "mob_spawner_block_empty_side",
+      "mob_spawner_block_top"
+    ]
+  },
+  "Snowy Messy Stone": {
+    "textureInfo": "snowy_messy_stone"
+  },
+  "Packed Snow": {
+    "textureInfo": "packed_snow"
+  },
+  "Carved Messy Stone": {
+    "textureInfo": "carved_messy_stone"
+  },
+  "Spectral Grass": {
+    "textureInfo": "spectral_grass"
+  },
+  "Spectral Log": {
+    "textureInfo": "log_spectral"
+  },
+  "Barkless Spectral Log": {
+    "textureInfo": "stripped_spectral_log"
+  },
+  "Barkless Spectral Log|TreeBase|Spectral": {
+    "textureInfo": "stripped_spectral_log"
+  },
+  "Spectral Wood Planks": {
+    "textureInfo": "planks_spectral"
+  },
+  "Spectral Leaves": {
+    "textureInfo": "leaves_spectral"
+  },
+  "Spectral Door": {
+    "itemTexture": "spectral_door",
+    "blockModel": "Spectral Door"
+  },
+  "_Spectral Door Top": {
+    "itemTexture": "spectral_door",
+    "blockModel": "_Spectral Door Top"
+  },
+  "Spectral Trapdoor": {
+    "itemTexture": "spectral_trapdoor",
+    "blockModel": "Spectral Trapdoor"
+  },
+  "Spectral Sapling": {
+    "textureInfo": "spectral_sapling",
+    "itemTexture": "spectral_sapling"
+  },
+  "Spectral Log|TreeBase|Spectral": {
+    "textureInfo": "log_spectral"
+  },
+  "Spectral Leaves|TreeCanopy": {
+    "textureInfo": "leaves_spectral"
+  },
+  "Pine Grass Block": {
+    "textureInfo": [
+      "pine_grass_block_side",
+      "pine_grass_block",
+      "dirt"
+    ]
+  },
+  "Pine Grass": {
+    "textureInfo": "pine_grass"
+  },
+  "Pine Fern": {
+    "textureInfo": "pine_fern"
+  },
+  "Fallen Pine Cone": {
+    "textureInfo": "fallen_pine_cone"
+  },
+  "Pine Cone Block": {
+    "textureInfo": [
+      "pine_cone_block_side",
+      "pine_cone_block_top"
+    ]
+  },
+  "Chalk": {
+    "textureInfo": "chalk"
+  },
+  "Jungle Grass Block": {
+    "textureInfo": [
+      "jungle_grass_block_side",
+      "jungle_grass_block",
+      "dirt"
+    ]
+  },
+  "Jungle Tall Grass": {
+    "textureInfo": "jungle_tall_grass_bottom",
+    "itemTexture": "jungle_tall_grass_bottom"
+  },
+  "Jungle Tall Grass|Top": {
+    "textureInfo": "jungle_tall_grass_top",
+    "itemTexture": "jungle_tall_grass_top"
+  },
+  "Catnip": {
+    "textureInfo": "catnip"
+  },
+  "Mango Log": {
+    "textureInfo": "log_mango"
+  },
+  "Barkless Mango Log": {
+    "textureInfo": "stripped_mango_log"
+  },
+  "Barkless Mango Log|TreeBase|Mango": {
+    "textureInfo": "stripped_mango_log"
+  },
+  "Mango Wood Planks": {
+    "textureInfo": "planks_mango"
+  },
+  "Mango Leaves": {
+    "textureInfo": "leaves_mango"
+  },
+  "Mango Door": {
+    "itemTexture": "mango_door",
+    "blockModel": "Mango Door"
+  },
+  "_Mango Door Top": {
+    "itemTexture": "mango_door",
+    "blockModel": "_Mango Door Top"
+  },
+  "Mango Trapdoor": {
+    "itemTexture": "mango_trapdoor",
+    "blockModel": "Mango Trapdoor"
+  },
+  "Mango Sapling": {
+    "textureInfo": "mango_sapling",
+    "itemTexture": "mango_sapling"
+  },
+  "Mango Log|TreeBase|Mango": {
+    "textureInfo": "log_mango"
+  },
+  "Mango Leaves|TreeCanopy": {
+    "textureInfo": "leaves_mango"
+  },
+  "Mango Block": {
+    "textureInfo": [
+      "mango_block_side",
+      "mango_block_top",
+      "mango_block_bottom"
+    ]
+  },
+  "Banana Block": {
+    "textureInfo": [
+      "banana_block_side",
+      "banana_block_top"
+    ]
+  },
+  "Banana Seeds": {
+    "textureInfo": "banana_stem",
+    "itemTexture": "banana_seeds"
+  },
+  "Banana Seeds|Growing": {
+    "textureInfo": "banana_stem"
+  },
+  "Dangling Rope": {
+    "itemTexture": "dangling_rope",
+    "blockModel": "Dangling Rope",
+    "modelScale": 10
+  },
+  "Dangling Vine": {
+    "itemTexture": "dangling_vine",
+    "blockModel": "Dangling Vine",
+    "modelScale": 10
+  },
+  "Fruity Maple Leaves": {
+    "textureInfo": "leaves_maple_fruity"
+  },
+  "Pine Cone Leaves": {
+    "textureInfo": "leaves_pine_cone"
+  },
+  "Fruity Plum Leaves": {
+    "textureInfo": "leaves_plum_fruity"
+  },
+  "Fruity Palm Leaves": {
+    "textureInfo": "leaves_palm_fruity"
+  },
+  "Fruity Pear Leaves": {
+    "textureInfo": "leaves_pear_fruity"
+  },
+  "Fruity Cherry Leaves": {
+    "textureInfo": "leaves_cherry_fruity"
+  },
+  "Fruity Mango Leaves": {
+    "textureInfo": "leaves_mango_fruity"
+  },
+  "Black Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "black_portal0",
+        "black_portal1",
+        "black_portal2",
+        "black_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Blue Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "blue_portal0",
+        "blue_portal1",
+        "blue_portal2",
+        "blue_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Brown Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "brown_portal0",
+        "brown_portal1",
+        "brown_portal2",
+        "brown_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Cyan Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "cyan_portal0",
+        "cyan_portal1",
+        "cyan_portal2",
+        "cyan_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Gray Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "gray_portal0",
+        "gray_portal1",
+        "gray_portal2",
+        "gray_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Green Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "green_portal0",
+        "green_portal1",
+        "green_portal2",
+        "green_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Grey Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "grey_portal0",
+        "grey_portal1",
+        "grey_portal2",
+        "grey_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Light Blue Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "lightblue_portal0",
+        "lightblue_portal1",
+        "lightblue_portal2",
+        "lightblue_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Light Gray Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "lightgray_portal0",
+        "lightgray_portal1",
+        "lightgray_portal2",
+        "lightgray_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Lime Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "lime_portal0",
+        "lime_portal1",
+        "lime_portal2",
+        "lime_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Magenta Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "magenta_portal0",
+        "magenta_portal1",
+        "magenta_portal2",
+        "magenta_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Orange Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "orange_portal0",
+        "orange_portal1",
+        "orange_portal2",
+        "orange_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Pink Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "pink_portal0",
+        "pink_portal1",
+        "pink_portal2",
+        "pink_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Purple Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "purple_portal0",
+        "purple_portal1",
+        "purple_portal2",
+        "purple_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Red Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "red_portal0",
+        "red_portal1",
+        "red_portal2",
+        "red_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "White Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "white_portal0",
+        "white_portal1",
+        "white_portal2",
+        "white_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Yellow Portal": {
+    "textureInfo": {
+      "animTextures": [
+        "yellow_portal0",
+        "yellow_portal1",
+        "yellow_portal2",
+        "yellow_portal3"
+      ],
+      "animationInterval": 300
+    }
+  },
+  "Leather Block": {
+    "textureInfo": [
+      "leather_block_side",
+      "leather_block_top"
+    ]
+  },
+  "Tomato Plant": {
+    "textureInfo": "tomato_plant_stage0",
+    "itemTexture": "tomato_plant_stage0"
+  },
+  "Tomato Plant|FreshlyGrown": {
+    "textureInfo": "tomato_plant_stage2",
+    "itemTexture": "tomato_plant_stage2"
+  },
+  "Tomato Plant|Top|FreshlyGrown": {
+    "textureInfo": "tomato_plant_stage2_top",
+    "itemTexture": "tomato_plant_stage2_top"
+  },
+  "Carrot Plant": {
+    "textureInfo": "carrot_plant_stage0",
+    "itemTexture": "carrot_seeds"
+  },
+  "Carrot Plant|FreshlyGrown": {
+    "textureInfo": "carrot_plant_stage2",
+    "itemTexture": "carrot_seeds"
+  },
+  "Potato Plant": {
+    "textureInfo": "potato_plant_stage0",
+    "itemTexture": "potato_seeds"
+  },
+  "Potato Plant|FreshlyGrown": {
+    "textureInfo": "potato_plant_stage2",
+    "itemTexture": "potato_seeds"
+  },
+  "Strawberry Bush": {
+    "textureInfo": "strawberry_bush_stage0",
+    "itemTexture": "strawberry_bush_stage0"
+  },
+  "Sugar Cane Plant": {
+    "textureInfo": "sugar_cane_plant_stage0",
+    "itemTexture": "sugar_cane_plant_stage0"
+  },
+  "Sugar Cane Plant|FreshlyGrown": {
+    "textureInfo": "sugar_cane_plant_stage2",
+    "itemTexture": "sugar_cane_plant_stage2"
+  },
+  "Sugar Cane Plant|Top|FreshlyGrown": {
+    "textureInfo": "sugar_cane_plant_stage2_top",
+    "itemTexture": "sugar_cane_plant_stage2_top"
+  },
+  "Lettuce Plant": {
+    "textureInfo": "lettuce_plant_stage0",
+    "itemTexture": "lettuce_plant_stage0"
+  },
+  "Lettuce Plant|FreshlyGrown": {
+    "textureInfo": "lettuce_plant_stage2",
+    "itemTexture": "lettuce_plant_stage2"
+  },
+  "Coffee Plant": {
+    "textureInfo": "coffee_plant_stage0",
+    "itemTexture": "coffee_plant_stage0"
+  },
+  "Coffee Plant|FreshlyGrown": {
+    "textureInfo": "coffee_plant_stage2",
+    "itemTexture": "coffee_plant_stage2"
+  },
+  "Cauliflower Plant": {
+    "textureInfo": "cauliflower_plant_stage0",
+    "itemTexture": "cauliflower_plant_stage0"
+  },
+  "Cauliflower Plant|FreshlyGrown": {
+    "textureInfo": "cauliflower_plant_stage2",
+    "itemTexture": "cauliflower_plant_stage2"
+  },
+  "Parsnip Plant": {
+    "textureInfo": "parsnip_plant_stage0",
+    "itemTexture": "parsnip_plant_stage0"
+  },
+  "Parsnip Plant|FreshlyGrown": {
+    "textureInfo": "parsnip_plant_stage2",
+    "itemTexture": "parsnip_plant_stage2"
+  },
+  "Blueberry Bush": {
+    "textureInfo": "blueberry_bush_stage0",
+    "itemTexture": "blueberry_bush_stage0"
+  },
+  "Red Cabbage Plant": {
+    "textureInfo": "red_cabbage_stage0",
+    "itemTexture": "red_cabbage_stage0"
+  },
+  "Red Cabbage Plant|FreshlyGrown": {
+    "textureInfo": "red_cabbage_stage2",
+    "itemTexture": "red_cabbage_stage2"
+  },
+  "Beetroot Plant": {
+    "textureInfo": "beetroot_plant_stage0",
+    "itemTexture": "beetroot_seeds"
+  },
+  "Beetroot Plant|FreshlyGrown": {
+    "textureInfo": "beetroot_plant_stage2",
+    "itemTexture": "beetroot_seeds"
+  },
+  "Autumn Aspen Leaves": {
+    "textureInfo": "leaves_aspen_autumn"
+  },
+  "Autumn Aspen Leaves|TreeCanopy": {
+    "textureInfo": "leaves_aspen_autumn"
+  },
+  "Autumn Fern": {
+    "textureInfo": "autumn_fern"
+  },
+  "Crate": {
+    "textureInfo": "crate"
+  },
+  "Carrot Block": {
+    "textureInfo": [
+      "carrot_block_side",
+      "carrot_block_top",
+      "carrot_block_bottom"
+    ]
+  },
+  "Carrot Seeds": {
+    "textureInfo": "carrot_plant_stage0",
+    "itemTexture": "carrot_seeds"
+  },
+  "Potato Block": {
+    "textureInfo": "potato_block"
+  },
+  "Potato Seeds": {
+    "textureInfo": "potato_plant_stage0",
+    "itemTexture": "potato_seeds"
+  },
+  "Beetroot Block": {
+    "textureInfo": [
+      "beetroot_block_side",
+      "beetroot_block_top",
+      "beetroot_block_bottom"
+    ]
+  },
+  "Beetroot Seeds": {
+    "textureInfo": "beetroot_plant_stage0",
+    "itemTexture": "beetroot_seeds"
+  },
+  "Fertilised Soil": {
+    "textureInfo": "fertilised_soil"
+  },
+  "Hollow Crate": {
+    "textureInfo": "crate"
+  },
+  "Lucky Block": {
+    "textureInfo": "yellow_lucky_block"
+  },
+  "Ultra Lucky Block": {
+    "textureInfo": "light_blue_lucky_block"
+  },
+  "INTERNAL_MESH_Gold Trophy": {
+    "blockModel": "Gold Trophy",
+    "modelScale": 1
+  },
+  "Duo Blocchino Statue": {
+    "itemTexture": "2_block",
+    "blockModel": "2_block",
+    "modelScale": 3
+  },
+  "Bebek Bebek Bebek Statue": {
+    "itemTexture": "bebek_bebek_bebek",
+    "blockModel": "bebek_bebek_bebek",
+    "modelScale": 3
+  },
+  "Bobino Musculino Statue": {
+    "itemTexture": "bobino_musculino",
+    "blockModel": "bobino_musculino",
+    "modelScale": 3
+  },
+  "Bobzilla Statue": {
+    "itemTexture": "bobzilla",
+    "blockModel": "bobzilla",
+    "modelScale": 3
+  },
+  "Brra Brra Pachim Statue": {
+    "itemTexture": "brra_brra_pachim",
+    "blockModel": "brra_brra_pachim",
+    "modelScale": 2.5
+  },
+  "Capitano Explovissimo Statue": {
+    "itemTexture": "capitano_explovissimo",
+    "blockModel": "capitano_explovissimo",
+    "modelScale": 3
+  },
+  "Cappuccino Ninjino Statue": {
+    "itemTexture": "cappuccino_ninjino",
+    "blockModel": "cappuccino_ninjino",
+    "modelScale": 3
+  },
+  "Chimpanzano Bananano Statue": {
+    "itemTexture": "chimpanzano_bananano",
+    "blockModel": "chimpanzano_bananano",
+    "modelScale": 3
+  },
+  "Il Wizardini Del Porko Statue": {
+    "itemTexture": "il_wizardini_del_porko",
+    "blockModel": "il_wizardini_del_porko",
+    "modelScale": 3
+  },
+  "Lucchia Blocchi Statue": {
+    "itemTexture": "lucchia_blocchi",
+    "blockModel": "lucchia_blocchi",
+    "modelScale": 3
+  },
+  "Monsieur Bedwar Statue": {
+    "itemTexture": "monsieur_bedwar",
+    "blockModel": "monsieur_bedwar",
+    "modelScale": 3
+  },
+  "Twirlina Cappucina Statue": {
+    "itemTexture": "twirlina_cappucina",
+    "blockModel": "twirlina_cappucina",
+    "modelScale": 3
+  },
+  "Weapon Lucky Block": {
+    "textureInfo": [
+      "red_lucky_block",
+      "weapon_lucky_block"
+    ]
+  },
+  "Boiling Pot": {
+    "itemTexture": "boiling_pot",
+    "blockModel": "boiling_pot",
+    "modelScale": 8
+  },
+  "Chopping Board": {
+    "itemTexture": "chopping_board",
+    "blockModel": "chopping_board",
+    "modelScale": 8
+  },
+  "Frying Pan": {
+    "itemTexture": "frying_pan",
+    "blockModel": "frying_pan",
+    "modelScale": 8
+  },
+  "Hob Boiling": {
+    "itemTexture": "hob_boiling",
+    "blockModel": "hob_boiling",
+    "modelScale": 8
+  },
+  "Hob Frying": {
+    "itemTexture": "hob_frying",
+    "blockModel": "hob_frying",
+    "modelScale": 8
+  },
+  "Kitchen Worktop": {
+    "itemTexture": "kitchen_worktop",
+    "blockModel": "kitchen_worktop",
+    "modelScale": 8
+  },
+  "Slicing Board": {
+    "itemTexture": "slicing_board",
+    "blockModel": "slicing_board",
+    "modelScale": 8
+  },
+  "INTERNAL_MESH_Wood Trophy": {
+    "blockModel": "Wood Trophy",
+    "modelScale": 1
+  },
+  "INTERNAL_MESH_Stone Trophy": {
+    "blockModel": "Stone Trophy",
+    "modelScale": 1
+  },
+  "INTERNAL_MESH_Iron Trophy": {
+    "blockModel": "Iron Trophy",
+    "modelScale": 1
+  },
+  "INTERNAL_MESH_Diamond Trophy": {
+    "blockModel": "Diamond Trophy",
+    "modelScale": 1
+  },
+  "INTERNAL_MESH_Moonstone Trophy": {
+    "blockModel": "Moonstone Trophy",
+    "modelScale": 1
+  },
+  "Black Wave": {
+    "blockModel": "wave_black",
+    "modelScale": 1
+  },
+  "Blue Wave": {
+    "blockModel": "wave_blue",
+    "modelScale": 1
+  },
+  "Brown Wave": {
+    "blockModel": "wave_brown",
+    "modelScale": 1
+  },
+  "Cyan Wave": {
+    "blockModel": "wave_cyan",
+    "modelScale": 1
+  },
+  "Green Wave": {
+    "blockModel": "wave_green",
+    "modelScale": 1
+  },
+  "Grey Wave": {
+    "blockModel": "wave_grey",
+    "modelScale": 1
+  },
+  "Light Blue Wave": {
+    "blockModel": "wave_light_blue",
+    "modelScale": 1
+  },
+  "Light Grey Wave": {
+    "blockModel": "wave_light_grey",
+    "modelScale": 1
+  },
+  "Lime Wave": {
+    "blockModel": "wave_lime",
+    "modelScale": 1
+  },
+  "Magenta Wave": {
+    "blockModel": "wave_magenta",
+    "modelScale": 1
+  },
+  "Orange Wave": {
+    "blockModel": "wave_orange",
+    "modelScale": 1
+  },
+  "Pink Wave": {
+    "blockModel": "wave_pink",
+    "modelScale": 1
+  },
+  "Purple Wave": {
+    "blockModel": "wave_purple",
+    "modelScale": 1
+  },
+  "Red Wave": {
+    "blockModel": "wave_red",
+    "modelScale": 1
+  },
+  "White Wave": {
+    "blockModel": "wave_white",
+    "modelScale": 1
+  },
+  "Yellow Wave": {
+    "blockModel": "wave_yellow",
+    "modelScale": 1
+  },
+  "Bin": {
+    "itemTexture": "bin",
+    "blockModel": "bin",
+    "modelScale": 8
+  },
+  "Job Application Statue": {
+    "itemTexture": "job_application",
+    "blockModel": "job_application",
+    "modelScale": 3
+  },
+  "John Beef Statue": {
+    "itemTexture": "john_beef",
+    "blockModel": "john_beef",
+    "modelScale": 3
+  },
+  "67 Statue": {
+    "itemTexture": "67",
+    "blockModel": "67",
+    "modelScale": 3
+  },
+  "Coloured Wheel": {
+    "itemTexture": "wheel",
+    "blockModel": "wheel",
+    "modelScale": 4
+  },
+  "UFO": {
+    "blockModel": "ufo",
+    "modelScale": 1
+  },
+  "Invisible Sky Light": {
+    "textureInfo": "invisible_solid"
+  },
+  "Dirt|PineGrassRoots": {
+    "textureInfo": "dirt"
+  },
+  "Dirt|JungleGrassRoots": {
+    "textureInfo": "dirt"
+  },
+  "Gun Lucky Block": {
+    "textureInfo": [
+      "red_lucky_block",
+      "gun_lucky_block"
+    ]
+  },
+  "Ghost Chest": {
+    "textureInfo": [
+      "ghost_chest_front",
+      "ghost_chest_side",
+      "ghost_chest_top_1",
+      "ghost_chest_top_2",
+      "ghost_chest_back"
+    ]
+  },
+  "Ghost Lucky Block": {
+    "textureInfo": "ghost_lucky_block"
+  },
+  "Ghost Mystery Block": {
+    "textureInfo": "ghost_mystery_block"
+  },
+  "Football": {
+    "textureInfo": "football",
+    "itemTexture": "football",
+    "blockModel": "football",
+    "modelScale": 8
+  },
+  "Pet Lucky Block": {
+    "textureInfo": [
+      "lucky_block_pink_question",
+      "pet_lucky_block"
+    ]
+  },
+  "Overgrown Grass Block": {
+    "textureInfo": "grass_top"
+  },
+  "Overgrown Pine Grass Block": {
+    "textureInfo": "pine_grass_block"
+  },
+  "Overgrown Jungle Grass Block": {
+    "textureInfo": "jungle_grass_block"
+  },
+  "Smoke Block": {
+    "textureInfo": {
+      "animTextures": [
+        "smoke0",
+        "smoke1",
+        "smoke2",
+        "smoke3"
+      ],
+      "animationInterval": 250
+    }
+  },
+  "Auto Crafter": {
+    "textureInfo": [
+      "autocrafter_side",
+      "crafting_table_top",
+      "autocrafter_bottom"
+    ]
+  },
+  "Splitter Pipe": {
+    "itemTexture": "splitter_pipe",
+    "blockModel": "splitter_pipe",
+    "modelScale": 8
+  },
+  "Auto Harvester": {
+    "textureInfo": [
+      "harvester_side0",
+      "harvester_side1",
+      "harvester_top",
+      "harvester_bottom"
+    ]
+  },
+  "Lunite Ore": {
+    "textureInfo": "lunite_ore",
+    "MS": [
+      10,
+      3,
+      12
+    ]
+  },
+  "Block of Lunite": {
+    "textureInfo": "lunite_block"
+  },
+  "Lunite Auto Crafter": {
+    "textureInfo": [
+      "autocrafter_lunite_side",
+      "crafting_table_top",
+      "autocrafter_lunite_bottom"
+    ]
+  },
+  "Lunite Auto Harvester": {
+    "textureInfo": [
+      "harvester_lunite_side_0",
+      "harvester_lunite_side_1",
+      "harvester_lunite_top",
+      "harvester_lunite_bottom"
+    ]
+  },
+  "Bowling Alley Floor": {
+    "textureInfo": "bowling_alley_floor"
+  },
+  "Dry Grass Block": {
+    "textureInfo": [
+      "dry_grass_block_side",
+      "dry_grass_block",
+      "dirt"
+    ]
+  },
+  "Overgrown Dry Grass Block": {
+    "textureInfo": "dry_grass_block"
+  },
+  "Dead Bush": {
+    "textureInfo": "dead_bush"
+  },
+  "Dirt|DryGrassRoots": {
+    "textureInfo": "dirt"
+  },
+  "Rare Lucky Block": {
+    "textureInfo": "yellow_lucky_block_rare"
+  },
+  "Super Lucky Block": {
+    "textureInfo": "yellow_lucky_block_super"
+  },
+  "Rare Weapon Lucky Block": {
+    "textureInfo": [
+      "red_lucky_block_rare",
+      "weapon_lucky_block_rare"
+    ]
+  },
+  "Super Weapon Lucky Block": {
+    "textureInfo": [
+      "red_lucky_block_super",
+      "weapon_lucky_block_super"
+    ]
+  },
+  "Building Lucky Block": {
+    "textureInfo": [
+      "purple_lucky_block",
+      "building_lucky_block"
+    ]
+  },
+  "Rare Building Lucky Block": {
+    "textureInfo": [
+      "purple_lucky_block_rare",
+      "building_lucky_block_rare"
+    ]
+  },
+  "Super Building Lucky Block": {
+    "textureInfo": [
+      "purple_lucky_block_super",
+      "building_lucky_block_super"
+    ]
+  },
+  "Armour Lucky Block": {
+    "textureInfo": [
+      "blue_lucky_block",
+      "armour_lucky_block"
+    ]
+  },
+  "Rare Armour Lucky Block": {
+    "textureInfo": [
+      "blue_lucky_block_rare",
+      "armour_lucky_block_rare"
+    ]
+  },
+  "Super Armour Lucky Block": {
+    "textureInfo": [
+      "blue_lucky_block_super",
+      "armour_lucky_block_super"
+    ]
+  },
+  "Tools Lucky Block": {
+    "textureInfo": [
+      "orange_lucky_block",
+      "tools_lucky_block"
+    ]
+  },
+  "Rare Tools Lucky Block": {
+    "textureInfo": [
+      "orange_lucky_block_rare",
+      "tools_lucky_block_rare"
+    ]
+  },
+  "Super Tools Lucky Block": {
+    "textureInfo": [
+      "orange_lucky_block_super",
+      "tools_lucky_block_super"
+    ]
+  },
+  "Food Lucky Block": {
+    "textureInfo": [
+      "green_lucky_block",
+      "food_lucky_block"
+    ]
+  },
+  "Rare Food Lucky Block": {
+    "textureInfo": [
+      "green_lucky_block_rare",
+      "food_lucky_block_rare"
+    ]
+  },
+  "Super Food Lucky Block": {
+    "textureInfo": [
+      "green_lucky_block_super",
+      "food_lucky_block_super"
+    ]
+  },
+  "Potion Lucky Block": {
+    "textureInfo": [
+      "lucky_block_pink_question",
+      "potion_lucky_block"
+    ]
+  },
+  "Rare Potion Lucky Block": {
+    "textureInfo": [
+      "lucky_block_pink_question_rare",
+      "potion_lucky_block_rare"
+    ]
+  },
+  "Super Potion Lucky Block": {
+    "textureInfo": [
+      "lucky_block_pink_question_super",
+      "potion_lucky_block_super"
+    ]
+  },
+  "Block Destroyer TNT": {
+    "textureInfo": [
+      "block_destroyer_tnt_side",
+      "block_destroyer_tnt_top"
+    ]
+  },
+  "Toxic Waste Barrel": {
+    "textureInfo": [
+      "toxic_waste_barrel_side",
+      "toxic_waste_barrel_bottom",
+      {
+        "animTextures": [
+          "toxic_waste_barrel_top0",
+          "toxic_waste_barrel_top1",
+          "toxic_waste_barrel_top2",
+          "toxic_waste_barrel_top3"
+        ],
+        "animationInterval": 300
+      }
+    ]
+  },
+  "Toxic Waste": {
+    "textureInfo": {
+      "colour": [
+        0.36,
+        0.93,
+        0.3,
+        0.95
+      ],
+      "animTextures": [
+        "toxic_waste0",
+        "toxic_waste1",
+        "toxic_waste2",
+        "toxic_waste3",
+        "toxic_waste4",
+        "toxic_waste5",
+        "toxic_waste6",
+        "toxic_waste7"
+      ],
+      "animationInterval": 200
+    },
+    "MS": [
+      6,
+      14,
+      4
+    ]
+  },
+  "Ancient Maple Log": {
+    "textureInfo": "log_ancient_maple"
+  },
+  "Evil Lucky Block": {
+    "textureInfo": [
+      "evil_lucky_block",
+      "evil_lucky_block_face"
+    ]
+  },
+  "INTERNAL_MESH_Small Twin Icicle": {
+    "blockModel": "Small Twin Icicle",
+    "modelScale": 1
+  },
+  "INTERNAL_MESH_Medium Icicle": {
+    "blockModel": "Medium Icicle",
+    "modelScale": 1
+  },
+  "INTERNAL_MESH_Large Icicle": {
+    "blockModel": "Large Icicle",
+    "modelScale": 1
+  },
+  "INTERNAL_MESH_Large Twin Icicle": {
+    "blockModel": "Large Twin Icicle",
+    "modelScale": 1
+  },
+  "Pure Coal Ore": {
+    "textureInfo": "pure_coal_ore",
+    "MS": [
+      6,
+      6,
+      6
+    ]
+  },
+  "Pure Iron Ore": {
+    "textureInfo": "pure_iron_ore",
+    "MS": [
+      6,
+      6,
+      6
+    ]
+  },
+  "Pure Gold Ore": {
+    "textureInfo": "pure_gold_ore",
+    "MS": [
+      6,
+      6,
+      0
+    ]
+  },
+  "Pure Diamond Ore": {
+    "textureInfo": "pure_diamond_ore",
+    "MS": [
+      2,
+      6,
+      6
+    ]
+  },
+  "Pure Moonstone Ore": {
+    "textureInfo": "pure_moonstone_ore",
+    "MS": [
+      6,
+      6,
+      6
+    ]
+  },
+  "Crystal Block": {
+    "textureInfo": "crystal_block",
+    "MS": [
+      9,
+      15,
+      5
+    ]
+  },
+  "Rope Block": {
+    "textureInfo": "rope_block"
+  },
+  "Ash": {
+    "textureInfo": "ash"
+  },
+  "textureInfo": {},
+  "Homestead Core": {
+    "textureInfo": "homestead_core",
+    "MS": [
+      4,
+      12,
+      14
+    ]
+  },
+  "Drop Pad": {
+    "textureInfo": [
+      "drop_pad",
+      "machine_side"
+    ]
+  },
+  "Copper Ore": {
+    "textureInfo": "copper_ore"
+  },
+  "Voltite Ore": {
+    "textureInfo": "voltite_ore",
+    "MS": [
+      2,
+      6,
+      6
+    ]
+  },
+  "Starframe": {
+    "textureInfo": "starframe",
+    "MS": [
+      6,
+      6,
+      10
+    ]
+  },
+  "Comet Ore": {
+    "textureInfo": "comet_ore",
+    "MS": [
+      8,
+      6,
+      10
+    ]
+  },
+  "Comet Heart": {
+    "textureInfo": "comet_heart",
+    "MS": [
+      12,
+      10,
+      14
+    ]
+  },
+  "_Starframe Spire": {
+    "textureInfo": "starframe",
+    "MS": [
+      6,
+      6,
+      10
+    ]
+  },
+  "Pure Copper Ore": {
+    "textureInfo": "pure_copper_ore",
+    "MS": [
+      6,
+      6,
+      6
+    ]
+  },
+  "Pure Voltite Ore": {
+    "textureInfo": "pure_voltite_ore",
+    "MS": [
+      2,
+      6,
+      6
+    ]
+  },
+  "Landing Pad": {
+    "itemTexture": "landing_pad",
+    "blockModel": "landing_pad"
+  },
+  "Weak Jump Pad": {
+    "itemTexture": "jump_pad_weak",
+    "blockModel": "jump_pad_weak"
+  },
+  "Jump Pad": {
+    "itemTexture": "jump_pad",
+    "blockModel": "jump_pad"
+  },
+  "Strong Jump Pad": {
+    "itemTexture": "jump_pad_strong",
+    "blockModel": "jump_pad_strong"
+  },
+  "Super Jump Pad": {
+    "itemTexture": "jump_pad_super",
+    "blockModel": "jump_pad_super"
+  },
+  "args": {},
+  "sets": {},
+  "__array__": {},
+  "normalTexture": {},
+  "pbrMetallicRoughness": {},
+  "KHR_materials_anisotropy": {},
+  "KHR_materials_clearcoat": {},
+  "KHR_materials_iridescence": {},
+  "KHR_materials_sheen": {},
+  "KHR_materials_specular": {},
+  "KHR_materials_transmission": {},
+  "KHR_materials_diffuse_transmission": {},
+  "KHR_materials_volume": {},
+  "clearcoatNormalTexture": {},
+  "nodePositions": {},
+  "hat_none": {},
+  "head_none": {},
+  "head_0": {},
+  "zombie": {},
+  "trader": {},
+  "trader_blue": {},
+  "trader_black": {},
+  "wizard": {},
+  "portal_mage": {},
+  "npc_pig_head": {},
+  "piggy_banker": {},
+  "farmer": {},
+  "farmer_gill": {},
+  "tentacle_guy": {},
+  "tentacle_guy_fisherman": {},
+  "minotaur": {},
+  "pig_napoleon": {},
+  "dwarf_red_hair": {},
+  "beaver_lumberjack": {},
+  "rabbit_aristocrat": {},
+  "pig_worker": {},
+  "wolf_in_suit": {},
+  "wolf_security": {},
+  "dwarf_grey_beard": {},
+  "dwarf_ginger_beard": {},
+  "dwarf_braided_hair": {},
+  "goblin_mad_scientist": {},
+  "dwarf_forked_beard": {},
+  "dwarf_child": {},
+  "dwarf_blue_hair": {},
+  "dwarf_hair_buns": {},
+  "dwarf_short_beard": {},
+  "dwarf_purple_beard": {},
+  "general": {},
+  "monster_hunter_lorenzo": {},
+  "painter_spencer": {},
+  "body_none": {},
+  "body_25_0": {},
+  "body_25_1": {},
+  "body_25_2": {},
+  "body_27_0": {},
+  "body_27_1": {},
+  "body_27_2": {},
+  "body_27_3": {},
+  "body_27_4": {},
+  "body_28_0": {},
+  "body_28_1": {},
+  "body_28_2": {},
+  "body_29_0": {},
+  "body_29_1": {},
+  "body_29_2": {},
+  "body_29_3": {},
+  "body_30_0": {},
+  "body_30_1": {},
+  "body_30_2": {},
+  "legs_none": {},
+  "legs_19": {},
+  "legs_21_0": {},
+  "legs_21_1": {},
+  "legs_21_2": {},
+  "legs_23": {},
+  "legs_24_0": {},
+  "legs_24_1": {},
+  "legs_24_2": {},
+  "legs_25_0": {},
+  "legs_25_1": {},
+  "legs_25_2": {},
+  "legs_25_3": {},
+  "legs_26_0": {},
+  "legs_26_1": {},
+  "legs_26_2": {},
+  "shoes_none": {},
+  "shoes_20_0": {},
+  "shoes_20_1": {},
+  "shoes_20_2": {},
+  "shoes_20_3": {},
+  "eyebrows_none": {},
+  "eyebrows_0": {},
+  "eyes_none": {},
+  "skin_none": {},
+  "skin_preview": {},
+  "skin_preview_body": {},
+  "skin_preview_shoes": {},
+  "skin_preview_head": {},
+  "skin_preview_legs": {}
+}

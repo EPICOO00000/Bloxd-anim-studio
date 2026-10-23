@@ -1,0 +1,309 @@
+{
+  "date": "2026-10-22",
+  "version": 2,
+  "checks": [
+    {
+      "name": "v2 starter boots and stores v2 project data",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Place and Remove are visible, separate buttons",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "original pickaxe texture is visible in the inspector",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "all 32 original equipment choices still have their own PNG map",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the original equipment set keeps thin pixel-extruded geometry",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the original equipment set keeps crisp original-color textures",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "gold tools use golden PNGs, not iron fallback textures",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rendered front-face pixel colors match the source PNGs",
+      "pass": true,
+      "detail": "{\"comparisons\":225,\"maxError\":0}"
+    },
+    {
+      "name": "Place item creates an independently selectable tool",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "placing a tool does not group it with a pedestal",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "item pivot is centered for rotation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "placing an item automatically shows its rotation rings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "XYZ numeric angles and +90 degree button rotate a tool",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "undo restores item rotation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "redo reapplies item rotation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "opt-in Full spins mode preserves explicitly authored turn counts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "tool transform keys appear on its timeline",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "item animation survives project round-trip",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "real canvas click picks a visible tool, not terrain behind it",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Place mode adds a block on the clicked face",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Remove mode erases with ordinary left click",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "undo restores a block erased in Remove mode",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "click selects an individual terrain block",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "selection promotes exactly one cell without duplicating it",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "editable block has a centered pivot and correct face maps",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "undo conversion restores the instanced terrain cell",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "redo conversion selects the editable block again",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "block rotation rings and optional 15 degree snapping work",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "individual blocks have animated transform tracks",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Delete object removes the selected block, not neighboring terrain",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "undo deleted block restores its rotation and keys",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "block selection, textures and animation persist through save/load",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "clicking Bob\u2019s head selects the head rather than hidden terrain",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rotation gizmo attaches to the actual joint, not the player root",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "body-part numeric edits persist with joint overlays enabled",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Whole player rotates the root without resetting the head pose",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "a visible joint rotation ring is pointer-pickable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "real mouse drag rotates a joint and stores its pose",
+      "pass": true,
+      "detail": "0.0 \u2192 -44.2"
+    },
+    {
+      "name": "undo restores a dragged joint pose",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "redo restores a dragged joint pose",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "held pickaxe can be selected and rotated independently",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "held-item offsets survive undo and redo",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "held-item rotation follows a shortest arc within character keys",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "held-item animation survives project round-trip",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "explicit Equip player applies the chosen original-textured tool",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "undo equip restores the previous tool and its offset",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "deleting a selected held item does not delete its player",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "MP3 and video have separate, clearly labeled export buttons",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "MP3 download has actual MPEG frame headers, not renamed video",
+      "pass": true,
+      "detail": "128731 bytes"
+    },
+    {
+      "name": "downloaded MP3 decodes to the clip\u2019s duration",
+      "pass": true,
+      "detail": "{\"duration\":8.045714285714286,\"rate\":44100,\"rms\":0.009800033025031414,\"peak\":0.20660822093486786}"
+    },
+    {
+      "name": "MP3 contains audible synthesized effects, not silence",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sound preview creates a local Web Audio source",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Stop sound disconnects audio preview",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "local audio import is decoded and embedded for saving",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "imported sound is resampled, volume-adjusted and positioned in time",
+      "pass": true,
+      "detail": "{\"first\":0,\"middle\":0.054931829547652695,\"end\":0}"
+    },
+    {
+      "name": "imported audio can loop to fill a longer animation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "project reload preserves imported audio, timing, volume and loop",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "imported audio also exports as actual MP3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Silence is an explicit source option",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no unexpected browser or asset-loading errors",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "verifiedEditorVersion": "4.0.0",
+  "verifiedOn": "2026-10-23"
+}

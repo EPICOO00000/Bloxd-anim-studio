@@ -1,0 +1,287 @@
+{
+  "smoke0": {
+    "file": "live-textures/smoke0.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/smoke0.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "pipe": {
+    "file": "live-textures/pipe.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/pipe.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "auto_miner": {
+    "file": "live-textures/auto_miner.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/auto_miner.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "autocrafter_side": {
+    "file": "live-textures/autocrafter_side.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/autocrafter_side.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "extractor_pipe": {
+    "file": "live-textures/extractor_pipe.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/extractor_pipe.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "splitter_pipe": {
+    "file": "live-textures/splitter_pipe.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/splitter_pipe.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "solar_panel": {
+    "file": "live-textures/solar_panel.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/solar_panel.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "solar_panel_side": {
+    "file": "live-textures/solar_panel_side.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/solar_panel_side.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "wire": {
+    "file": "live-textures/wire.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/wire.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "filter_pipe": {
+    "file": "live-textures/filter_pipe.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/filter_pipe.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "merger_pipe": {
+    "file": "live-textures/merger_pipe.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/merger_pipe.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "harvester_side0": {
+    "file": "live-textures/harvester_side0.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/harvester_side0.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "stalker_spawner_block_icon": {
+    "file": "live-textures/stalker_spawner_block_icon.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/stalker_spawner_block_icon.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "lunite_ore": {
+    "file": "live-textures/lunite_ore.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/lunite_ore.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "lunite_block": {
+    "file": "live-textures/lunite_block.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/lunite_block.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "autominer_lunite": {
+    "file": "live-textures/autominer_lunite.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/autominer_lunite.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "autocrafter_lunite_side": {
+    "file": "live-textures/autocrafter_lunite_side.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/autocrafter_lunite_side.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "harvester_lunite_side_0": {
+    "file": "live-textures/harvester_lunite_side_0.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/harvester_lunite_side_0.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "bowling_alley_floor": {
+    "file": "live-textures/bowling_alley_floor.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/bowling_alley_floor.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "crone_spawner_block_icon": {
+    "file": "live-textures/crone_spawner_block_icon.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/crone_spawner_block_icon.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "slime_spawner_block_icon": {
+    "file": "live-textures/slime_spawner_block_icon.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/slime_spawner_block_icon.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "iron_guardian_spawner_block_icon": {
+    "file": "live-textures/iron_guardian_spawner_block_icon.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/iron_guardian_spawner_block_icon.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "gold_guardian_spawner_block_icon": {
+    "file": "live-textures/gold_guardian_spawner_block_icon.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/gold_guardian_spawner_block_icon.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "diamond_guardian_spawner_block_icon": {
+    "file": "live-textures/diamond_guardian_spawner_block_icon.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/diamond_guardian_spawner_block_icon.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "moonstone_guardian_spawner_block_icon": {
+    "file": "live-textures/moonstone_guardian_spawner_block_icon.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/moonstone_guardian_spawner_block_icon.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "dry_grass_block_side": {
+    "file": "live-textures/dry_grass_block_side.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/dry_grass_block_side.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "dry_grass_block": {
+    "file": "live-textures/dry_grass_block.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/dry_grass_block.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "dead_bush": {
+    "file": "live-textures/dead_bush.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/dead_bush.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "slab_dry_grass_top_side": {
+    "file": "live-textures/slab_dry_grass_top_side.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/slab_dry_grass_top_side.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "lantern": {
+    "file": "live-textures/lantern.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/lantern.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "lily_pad": {
+    "file": "live-textures/lily_pad.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/lily_pad.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "camel_spawner_block_icon": {
+    "file": "live-textures/camel_spawner_block_icon.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/camel_spawner_block_icon.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "camel_painting": {
+    "file": "live-textures/camel_painting.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/camel_painting.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "yellow_lucky_block_rare": {
+    "file": "live-textures/yellow_lucky_block_rare.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/yellow_lucky_block_rare.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "yellow_lucky_block_super": {
+    "file": "live-textures/yellow_lucky_block_super.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/yellow_lucky_block_super.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "weapon_lucky_block_rare": {
+    "file": "live-textures/weapon_lucky_block_rare.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/weapon_lucky_block_rare.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "weapon_lucky_block_super": {
+    "file": "live-textures/weapon_lucky_block_super.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/weapon_lucky_block_super.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "building_lucky_block": {
+    "file": "live-textures/building_lucky_block.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/building_lucky_block.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "building_lucky_block_rare": {
+    "file": "live-textures/building_lucky_block_rare.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/building_lucky_block_rare.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "building_lucky_block_super": {
+    "file": "live-textures/building_lucky_block_super.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/building_lucky_block_super.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "armour_lucky_block": {
+    "file": "live-textures/armour_lucky_block.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/armour_lucky_block.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "armour_lucky_block_rare": {
+    "file": "live-textures/armour_lucky_block_rare.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/armour_lucky_block_rare.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "armour_lucky_block_super": {
+    "file": "live-textures/armour_lucky_block_super.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/armour_lucky_block_super.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "tools_lucky_block": {
+    "file": "live-textures/tools_lucky_block.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/tools_lucky_block.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "tools_lucky_block_rare": {
+    "file": "live-textures/tools_lucky_block_rare.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/tools_lucky_block_rare.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "tools_lucky_block_super": {
+    "file": "live-textures/tools_lucky_block_super.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/tools_lucky_block_super.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "food_lucky_block": {
+    "file": "live-textures/food_lucky_block.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/food_lucky_block.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "food_lucky_block_rare": {
+    "file": "live-textures/food_lucky_block_rare.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/food_lucky_block_rare.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "food_lucky_block_super": {
+    "file": "live-textures/food_lucky_block_super.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/food_lucky_block_super.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "potion_lucky_block": {
+    "file": "live-textures/potion_lucky_block.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/potion_lucky_block.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "potion_lucky_block_rare": {
+    "file": "live-textures/potion_lucky_block_rare.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/potion_lucky_block_rare.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "potion_lucky_block_super": {
+    "file": "live-textures/potion_lucky_block_super.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/potion_lucky_block_super.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "block_destroyer_tnt_side": {
+    "file": "live-textures/block_destroyer_tnt_side.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/block_destroyer_tnt_side.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "toxic_waste_barrel_side": {
+    "file": "live-textures/toxic_waste_barrel_side.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/toxic_waste_barrel_side.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "toxic_waste0": {
+    "file": "live-textures/toxic_waste0.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/toxic_waste0.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "log_ancient_maple": {
+    "file": "live-textures/log_ancient_maple.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/log_ancient_maple.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  },
+  "evil_lucky_block_face": {
+    "file": "live-textures/evil_lucky_block_face.png",
+    "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/evil_lucky_block_face.png",
+    "fromBundle": "https://bloxdhub.com/images/builder-studio/bloxd-icons.b64.json"
+  }
+}

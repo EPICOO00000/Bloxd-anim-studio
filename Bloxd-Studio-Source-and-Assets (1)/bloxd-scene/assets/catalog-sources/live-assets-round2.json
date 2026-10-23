@@ -1,0 +1,866 @@
+{
+  "got": [
+    {
+      "kind": "texture",
+      "name": "bandolier",
+      "paths": [
+        "item/bandolier.png",
+        "block/bandolier.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/bandolier.png",
+      "file": "live-textures/bandolier.png",
+      "bytes": 229
+    },
+    {
+      "kind": "texture",
+      "name": "black_kart",
+      "paths": [
+        "item/black_kart.png",
+        "block/black_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/black_kart.png",
+      "file": "live-textures/black_kart.png",
+      "bytes": 182
+    },
+    {
+      "kind": "texture",
+      "name": "blue_kart",
+      "paths": [
+        "item/blue_kart.png",
+        "block/blue_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/blue_kart.png",
+      "file": "live-textures/blue_kart.png",
+      "bytes": 178
+    },
+    {
+      "kind": "texture",
+      "name": "brown_kart",
+      "paths": [
+        "item/brown_kart.png",
+        "block/brown_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/brown_kart.png",
+      "file": "live-textures/brown_kart.png",
+      "bytes": 181
+    },
+    {
+      "kind": "texture",
+      "name": "brood_sac",
+      "paths": [
+        "item/brood_sac.png",
+        "block/brood_sac.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/brood_sac.png",
+      "file": "live-textures/brood_sac.png",
+      "bytes": 185
+    },
+    {
+      "kind": "texture",
+      "name": "caught_crone_default",
+      "paths": [
+        "item/caught_crone_default.png",
+        "block/caught_crone_default.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/caught_crone_default.png",
+      "file": "live-textures/caught_crone_default.png",
+      "bytes": 151
+    },
+    {
+      "kind": "texture",
+      "name": "caught_slime_default",
+      "paths": [
+        "item/caught_slime_default.png",
+        "block/caught_slime_default.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/caught_slime_default.png",
+      "file": "live-textures/caught_slime_default.png",
+      "bytes": 162
+    },
+    {
+      "kind": "texture",
+      "name": "caught_stalker_crimson",
+      "paths": [
+        "item/caught_stalker_crimson.png",
+        "block/caught_stalker_crimson.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/caught_stalker_crimson.png",
+      "file": "live-textures/caught_stalker_crimson.png",
+      "bytes": 1952
+    },
+    {
+      "kind": "texture",
+      "name": "caught_stalker_default",
+      "paths": [
+        "item/caught_stalker_default.png",
+        "block/caught_stalker_default.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/caught_stalker_default.png",
+      "file": "live-textures/caught_stalker_default.png",
+      "bytes": 1952
+    },
+    {
+      "kind": "texture",
+      "name": "caught_stalker_frost",
+      "paths": [
+        "item/caught_stalker_frost.png",
+        "block/caught_stalker_frost.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/caught_stalker_frost.png",
+      "file": "live-textures/caught_stalker_frost.png",
+      "bytes": 1952
+    },
+    {
+      "kind": "texture",
+      "name": "caught_stalker_void",
+      "paths": [
+        "item/caught_stalker_void.png",
+        "block/caught_stalker_void.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/caught_stalker_void.png",
+      "file": "live-textures/caught_stalker_void.png",
+      "bytes": 1956
+    },
+    {
+      "kind": "texture",
+      "name": "choir_bell",
+      "paths": [
+        "item/choir_bell.png",
+        "block/choir_bell.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/choir_bell.png",
+      "file": "live-textures/choir_bell.png",
+      "bytes": 162
+    },
+    {
+      "kind": "texture",
+      "name": "clock_gold_early_night",
+      "paths": [
+        "item/clock_gold_early_night.png",
+        "block/clock_gold_early_night.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_gold_early_night.png",
+      "file": "live-textures/clock_gold_early_night.png",
+      "bytes": 184
+    },
+    {
+      "kind": "texture",
+      "name": "clock_gold_early_day",
+      "paths": [
+        "item/clock_gold_early_day.png",
+        "block/clock_gold_early_day.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_gold_early_day.png",
+      "file": "live-textures/clock_gold_early_day.png",
+      "bytes": 184
+    },
+    {
+      "kind": "texture",
+      "name": "clock_gold_late_day",
+      "paths": [
+        "item/clock_gold_late_day.png",
+        "block/clock_gold_late_day.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_gold_late_day.png",
+      "file": "live-textures/clock_gold_late_day.png",
+      "bytes": 179
+    },
+    {
+      "kind": "texture",
+      "name": "clock_gold_late_night",
+      "paths": [
+        "item/clock_gold_late_night.png",
+        "block/clock_gold_late_night.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_gold_late_night.png",
+      "file": "live-textures/clock_gold_late_night.png",
+      "bytes": 187
+    },
+    {
+      "kind": "texture",
+      "name": "clock_gold_midday",
+      "paths": [
+        "item/clock_gold_midday.png",
+        "block/clock_gold_midday.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_gold_midday.png",
+      "file": "live-textures/clock_gold_midday.png",
+      "bytes": 176
+    },
+    {
+      "kind": "texture",
+      "name": "clock_gold_midnight",
+      "paths": [
+        "item/clock_gold_midnight.png",
+        "block/clock_gold_midnight.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_gold_midnight.png",
+      "file": "live-textures/clock_gold_midnight.png",
+      "bytes": 186
+    },
+    {
+      "kind": "texture",
+      "name": "clock_gold_sunrise",
+      "paths": [
+        "item/clock_gold_sunrise.png",
+        "block/clock_gold_sunrise.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_gold_sunrise.png",
+      "file": "live-textures/clock_gold_sunrise.png",
+      "bytes": 201
+    },
+    {
+      "kind": "texture",
+      "name": "clock_wood_early_day",
+      "paths": [
+        "item/clock_wood_early_day.png",
+        "block/clock_wood_early_day.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_wood_early_day.png",
+      "file": "live-textures/clock_wood_early_day.png",
+      "bytes": 186
+    },
+    {
+      "kind": "texture",
+      "name": "clock_gold_sunset",
+      "paths": [
+        "item/clock_gold_sunset.png",
+        "block/clock_gold_sunset.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_gold_sunset.png",
+      "file": "live-textures/clock_gold_sunset.png",
+      "bytes": 219
+    },
+    {
+      "kind": "texture",
+      "name": "clock_wood_late_night",
+      "paths": [
+        "item/clock_wood_late_night.png",
+        "block/clock_wood_late_night.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_wood_late_night.png",
+      "file": "live-textures/clock_wood_late_night.png",
+      "bytes": 188
+    },
+    {
+      "kind": "texture",
+      "name": "clock_wood_midday",
+      "paths": [
+        "item/clock_wood_midday.png",
+        "block/clock_wood_midday.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_wood_midday.png",
+      "file": "live-textures/clock_wood_midday.png",
+      "bytes": 185
+    },
+    {
+      "kind": "texture",
+      "name": "clock_wood_late_day",
+      "paths": [
+        "item/clock_wood_late_day.png",
+        "block/clock_wood_late_day.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_wood_late_day.png",
+      "file": "live-textures/clock_wood_late_day.png",
+      "bytes": 184
+    },
+    {
+      "kind": "texture",
+      "name": "clock_wood_early_night",
+      "paths": [
+        "item/clock_wood_early_night.png",
+        "block/clock_wood_early_night.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_wood_early_night.png",
+      "file": "live-textures/clock_wood_early_night.png",
+      "bytes": 182
+    },
+    {
+      "kind": "texture",
+      "name": "clock_wood_sunrise",
+      "paths": [
+        "item/clock_wood_sunrise.png",
+        "block/clock_wood_sunrise.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_wood_sunrise.png",
+      "file": "live-textures/clock_wood_sunrise.png",
+      "bytes": 212
+    },
+    {
+      "kind": "texture",
+      "name": "clock_wood_midnight",
+      "paths": [
+        "item/clock_wood_midnight.png",
+        "block/clock_wood_midnight.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_wood_midnight.png",
+      "file": "live-textures/clock_wood_midnight.png",
+      "bytes": 182
+    },
+    {
+      "kind": "texture",
+      "name": "crone_spawn_orb",
+      "paths": [
+        "item/crone_spawn_orb.png",
+        "block/crone_spawn_orb.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/crone_spawn_orb.png",
+      "file": "live-textures/crone_spawn_orb.png",
+      "bytes": 173
+    },
+    {
+      "kind": "texture",
+      "name": "cyan_kart",
+      "paths": [
+        "item/cyan_kart.png",
+        "block/cyan_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/cyan_kart.png",
+      "file": "live-textures/cyan_kart.png",
+      "bytes": 170
+    },
+    {
+      "kind": "texture",
+      "name": "clock_wood_sunset",
+      "paths": [
+        "item/clock_wood_sunset.png",
+        "block/clock_wood_sunset.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/clock_wood_sunset.png",
+      "file": "live-textures/clock_wood_sunset.png",
+      "bytes": 216
+    },
+    {
+      "kind": "texture",
+      "name": "frost_shard",
+      "paths": [
+        "item/frost_shard.png",
+        "block/frost_shard.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/frost_shard.png",
+      "file": "live-textures/frost_shard.png",
+      "bytes": 172
+    },
+    {
+      "kind": "texture",
+      "name": "flywheel",
+      "paths": [
+        "item/flywheel.png",
+        "block/flywheel.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/flywheel.png",
+      "file": "live-textures/flywheel.png",
+      "bytes": 213
+    },
+    {
+      "kind": "texture",
+      "name": "glowing_soup",
+      "paths": [
+        "item/glowing_soup.png",
+        "block/glowing_soup.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/glowing_soup.png",
+      "file": "live-textures/glowing_soup.png",
+      "bytes": 161
+    },
+    {
+      "kind": "texture",
+      "name": "gray_kart",
+      "paths": [
+        "item/gray_kart.png",
+        "block/gray_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/gray_kart.png",
+      "file": "live-textures/gray_kart.png",
+      "bytes": 183
+    },
+    {
+      "kind": "texture",
+      "name": "light_blue_car",
+      "paths": [
+        "item/light_blue_car.png",
+        "block/light_blue_car.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/light_blue_car.png",
+      "file": "live-textures/light_blue_car.png",
+      "bytes": 176
+    },
+    {
+      "kind": "texture",
+      "name": "green_kart",
+      "paths": [
+        "item/green_kart.png",
+        "block/green_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/green_kart.png",
+      "file": "live-textures/green_kart.png",
+      "bytes": 177
+    },
+    {
+      "kind": "texture",
+      "name": "light_blue_kart",
+      "paths": [
+        "item/light_blue_kart.png",
+        "block/light_blue_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/light_blue_kart.png",
+      "file": "live-textures/light_blue_kart.png",
+      "bytes": 169
+    },
+    {
+      "kind": "texture",
+      "name": "lime_kart",
+      "paths": [
+        "item/lime_kart.png",
+        "block/lime_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/lime_kart.png",
+      "file": "live-textures/lime_kart.png",
+      "bytes": 181
+    },
+    {
+      "kind": "texture",
+      "name": "light_gray_kart",
+      "paths": [
+        "item/light_gray_kart.png",
+        "block/light_gray_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/light_gray_kart.png",
+      "file": "live-textures/light_gray_kart.png",
+      "bytes": 181
+    },
+    {
+      "kind": "texture",
+      "name": "magenta_kart",
+      "paths": [
+        "item/magenta_kart.png",
+        "block/magenta_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/magenta_kart.png",
+      "file": "live-textures/magenta_kart.png",
+      "bytes": 169
+    },
+    {
+      "kind": "texture",
+      "name": "maple_planks_bridge",
+      "paths": [
+        "item/maple_planks_bridge.png",
+        "block/maple_planks_bridge.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/maple_planks_bridge.png",
+      "file": "live-textures/maple_planks_bridge.png",
+      "bytes": 136
+    },
+    {
+      "kind": "texture",
+      "name": "messy_stone_bridge",
+      "paths": [
+        "item/messy_stone_bridge.png",
+        "block/messy_stone_bridge.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/messy_stone_bridge.png",
+      "file": "live-textures/messy_stone_bridge.png",
+      "bytes": 165
+    },
+    {
+      "kind": "texture",
+      "name": "military_boots",
+      "paths": [
+        "item/military_boots.png",
+        "block/military_boots.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/military_boots.png",
+      "file": "live-textures/military_boots.png",
+      "bytes": 138
+    },
+    {
+      "kind": "texture",
+      "name": "military_chestplate",
+      "paths": [
+        "item/military_chestplate.png",
+        "block/military_chestplate.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/military_chestplate.png",
+      "file": "live-textures/military_chestplate.png",
+      "bytes": 171
+    },
+    {
+      "kind": "texture",
+      "name": "military_gauntlets",
+      "paths": [
+        "item/military_gauntlets.png",
+        "block/military_gauntlets.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/military_gauntlets.png",
+      "file": "live-textures/military_gauntlets.png",
+      "bytes": 129
+    },
+    {
+      "kind": "texture",
+      "name": "military_helmet",
+      "paths": [
+        "item/military_helmet.png",
+        "block/military_helmet.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/military_helmet.png",
+      "file": "live-textures/military_helmet.png",
+      "bytes": 215
+    },
+    {
+      "kind": "texture",
+      "name": "military_leggings",
+      "paths": [
+        "item/military_leggings.png",
+        "block/military_leggings.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/military_leggings.png",
+      "file": "live-textures/military_leggings.png",
+      "bytes": 161
+    },
+    {
+      "kind": "texture",
+      "name": "molten_cog",
+      "paths": [
+        "item/molten_cog.png",
+        "block/molten_cog.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/molten_cog.png",
+      "file": "live-textures/molten_cog.png",
+      "bytes": 197
+    },
+    {
+      "kind": "texture",
+      "name": "night_vision_soup",
+      "paths": [
+        "item/night_vision_soup.png",
+        "block/night_vision_soup.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/night_vision_soup.png",
+      "file": "live-textures/night_vision_soup.png",
+      "bytes": 170
+    },
+    {
+      "kind": "texture",
+      "name": "orange_kart",
+      "paths": [
+        "item/orange_kart.png",
+        "block/orange_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/orange_kart.png",
+      "file": "live-textures/orange_kart.png",
+      "bytes": 177
+    },
+    {
+      "kind": "texture",
+      "name": "pink_kart",
+      "paths": [
+        "item/pink_kart.png",
+        "block/pink_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/pink_kart.png",
+      "file": "live-textures/pink_kart.png",
+      "bytes": 169
+    },
+    {
+      "kind": "texture",
+      "name": "purple_kart",
+      "paths": [
+        "item/purple_kart.png",
+        "block/purple_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/purple_kart.png",
+      "file": "live-textures/purple_kart.png",
+      "bytes": 172
+    },
+    {
+      "kind": "texture",
+      "name": "radiant_spark",
+      "paths": [
+        "item/radiant_spark.png",
+        "block/radiant_spark.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/radiant_spark.png",
+      "file": "live-textures/radiant_spark.png",
+      "bytes": 136
+    },
+    {
+      "kind": "texture",
+      "name": "red_kart",
+      "paths": [
+        "item/red_kart.png",
+        "block/red_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/red_kart.png",
+      "file": "live-textures/red_kart.png",
+      "bytes": 171
+    },
+    {
+      "kind": "texture",
+      "name": "siege_core",
+      "paths": [
+        "item/siege_core.png",
+        "block/siege_core.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/siege_core.png",
+      "file": "live-textures/siege_core.png",
+      "bytes": 262
+    },
+    {
+      "kind": "texture",
+      "name": "slime_spawn_orb",
+      "paths": [
+        "item/slime_spawn_orb.png",
+        "block/slime_spawn_orb.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/slime_spawn_orb.png",
+      "file": "live-textures/slime_spawn_orb.png",
+      "bytes": 190
+    },
+    {
+      "kind": "texture",
+      "name": "stalker_spawn_orb",
+      "paths": [
+        "item/stalker_spawn_orb.png",
+        "block/stalker_spawn_orb.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/stalker_spawn_orb.png",
+      "file": "live-textures/stalker_spawn_orb.png",
+      "bytes": 1958
+    },
+    {
+      "kind": "texture",
+      "name": "teleport_heart",
+      "paths": [
+        "item/teleport_heart.png",
+        "block/teleport_heart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/teleport_heart.png",
+      "file": "live-textures/teleport_heart.png",
+      "bytes": 199
+    },
+    {
+      "kind": "texture",
+      "name": "white_kart",
+      "paths": [
+        "item/white_kart.png",
+        "block/white_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/white_kart.png",
+      "file": "live-textures/white_kart.png",
+      "bytes": 169
+    },
+    {
+      "kind": "texture",
+      "name": "yellow_kart",
+      "paths": [
+        "item/yellow_kart.png",
+        "block/yellow_kart.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/yellow_kart.png",
+      "file": "live-textures/yellow_kart.png",
+      "bytes": 174
+    }
+  ],
+  "failed": [
+    {
+      "kind": "texture",
+      "name": "caught_bobino_musculino_default",
+      "paths": [
+        "item/caught_bobino_musculino_default.png",
+        "block/caught_bobino_musculino_default.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "caught_67_default",
+      "paths": [
+        "item/caught_67_default.png",
+        "block/caught_67_default.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "caught_npc_emma",
+      "paths": [
+        "item/caught_npc_emma.png",
+        "block/caught_npc_emma.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "caught_npc_default",
+      "paths": [
+        "item/caught_npc_default.png",
+        "block/caught_npc_default.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "caught_capitano_explovissimo_default",
+      "paths": [
+        "item/caught_capitano_explovissimo_default.png",
+        "block/caught_capitano_explovissimo_default.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "caught_npc_carmen",
+      "paths": [
+        "item/caught_npc_carmen.png",
+        "block/caught_npc_carmen.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "caught_npc_isabel",
+      "paths": [
+        "item/caught_npc_isabel.png",
+        "block/caught_npc_isabel.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "caught_npc_enoch",
+      "paths": [
+        "item/caught_npc_enoch.png",
+        "block/caught_npc_enoch.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "caught_npc_imara",
+      "paths": [
+        "item/caught_npc_imara.png",
+        "block/caught_npc_imara.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "caught_npc_leo",
+      "paths": [
+        "item/caught_npc_leo.png",
+        "block/caught_npc_leo.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "caught_npc_sanjay",
+      "paths": [
+        "item/caught_npc_sanjay.png",
+        "block/caught_npc_sanjay.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "caught_npc_sara",
+      "paths": [
+        "item/caught_npc_sara.png",
+        "block/caught_npc_sara.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "dates",
+      "paths": [
+        "item/dates.png",
+        "block/dates.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "date_pudding",
+      "paths": [
+        "item/date_pudding.png",
+        "block/date_pudding.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "golden_lucky_clover",
+      "paths": [
+        "item/golden_lucky_clover.png",
+        "block/golden_lucky_clover.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "gold_carrot",
+      "paths": [
+        "item/gold_carrot.png",
+        "block/gold_carrot.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "lucky_bomb",
+      "paths": [
+        "item/lucky_bomb.png",
+        "block/lucky_bomb.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "lucky_clover",
+      "paths": [
+        "item/lucky_clover.png",
+        "block/lucky_clover.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "lucky_armour_upgrade",
+      "paths": [
+        "item/lucky_armour_upgrade.png",
+        "block/lucky_armour_upgrade.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "lucky_sword_upgrade",
+      "paths": [
+        "item/lucky_sword_upgrade.png",
+        "block/lucky_sword_upgrade.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "lucky_tools_upgrade",
+      "paths": [
+        "item/lucky_tools_upgrade.png",
+        "block/lucky_tools_upgrade.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "swap_orb",
+      "paths": [
+        "item/swap_orb.png",
+        "block/swap_orb.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "unlucky_bomb",
+      "paths": [
+        "item/unlucky_bomb.png",
+        "block/unlucky_bomb.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "teleportation_potion",
+      "paths": [
+        "item/teleportation_potion.png",
+        "block/teleportation_potion.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "void_net",
+      "paths": [
+        "item/void_net.png",
+        "block/void_net.png"
+      ]
+    }
+  ]
+}

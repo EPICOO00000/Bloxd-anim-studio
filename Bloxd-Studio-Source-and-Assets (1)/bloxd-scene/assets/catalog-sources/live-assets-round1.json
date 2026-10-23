@@ -1,0 +1,3320 @@
+{
+  "got": [
+    {
+      "kind": "texture",
+      "name": "block_destroyer_tnt_top",
+      "paths": [
+        "block/block_destroyer_tnt_top.png",
+        "item/block_destroyer_tnt_top.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/block_destroyer_tnt_top.png",
+      "file": "live-textures/block_destroyer_tnt_top.png",
+      "bytes": 139
+    },
+    {
+      "kind": "texture",
+      "name": "blue_lucky_block_rare",
+      "paths": [
+        "block/blue_lucky_block_rare.png",
+        "item/blue_lucky_block_rare.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/blue_lucky_block_rare.png",
+      "file": "live-textures/blue_lucky_block_rare.png",
+      "bytes": 165
+    },
+    {
+      "kind": "texture",
+      "name": "blue_lucky_block",
+      "paths": [
+        "block/blue_lucky_block.png",
+        "item/blue_lucky_block.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/blue_lucky_block.png",
+      "file": "live-textures/blue_lucky_block.png",
+      "bytes": 147
+    },
+    {
+      "kind": "texture",
+      "name": "autocrafter_bottom",
+      "paths": [
+        "block/autocrafter_bottom.png",
+        "item/autocrafter_bottom.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/autocrafter_bottom.png",
+      "file": "live-textures/autocrafter_bottom.png",
+      "bytes": 152
+    },
+    {
+      "kind": "texture",
+      "name": "autocrafter_lunite_bottom",
+      "paths": [
+        "block/autocrafter_lunite_bottom.png",
+        "item/autocrafter_lunite_bottom.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/autocrafter_lunite_bottom.png",
+      "file": "live-textures/autocrafter_lunite_bottom.png",
+      "bytes": 156
+    },
+    {
+      "kind": "texture",
+      "name": "blue_lucky_block_super",
+      "paths": [
+        "block/blue_lucky_block_super.png",
+        "item/blue_lucky_block_super.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/blue_lucky_block_super.png",
+      "file": "live-textures/blue_lucky_block_super.png",
+      "bytes": 165
+    },
+    {
+      "kind": "texture",
+      "name": "chunk_map",
+      "paths": [
+        "block/chunk_map.png",
+        "item/chunk_map.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/chunk_map.png",
+      "file": "live-textures/chunk_map.png",
+      "bytes": 196
+    },
+    {
+      "kind": "texture",
+      "name": "evil_lucky_block",
+      "paths": [
+        "block/evil_lucky_block.png",
+        "item/evil_lucky_block.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/evil_lucky_block.png",
+      "file": "live-textures/evil_lucky_block.png",
+      "bytes": 181
+    },
+    {
+      "kind": "texture",
+      "name": "green_lucky_block",
+      "paths": [
+        "block/green_lucky_block.png",
+        "item/green_lucky_block.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/green_lucky_block.png",
+      "file": "live-textures/green_lucky_block.png",
+      "bytes": 147
+    },
+    {
+      "kind": "texture",
+      "name": "green_lucky_block_rare",
+      "paths": [
+        "block/green_lucky_block_rare.png",
+        "item/green_lucky_block_rare.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/green_lucky_block_rare.png",
+      "file": "live-textures/green_lucky_block_rare.png",
+      "bytes": 165
+    },
+    {
+      "kind": "texture",
+      "name": "green_lucky_block_super",
+      "paths": [
+        "block/green_lucky_block_super.png",
+        "item/green_lucky_block_super.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/green_lucky_block_super.png",
+      "file": "live-textures/green_lucky_block_super.png",
+      "bytes": 165
+    },
+    {
+      "kind": "texture",
+      "name": "harvester_bottom",
+      "paths": [
+        "block/harvester_bottom.png",
+        "item/harvester_bottom.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/harvester_bottom.png",
+      "file": "live-textures/harvester_bottom.png",
+      "bytes": 123
+    },
+    {
+      "kind": "texture",
+      "name": "flashlight",
+      "paths": [
+        "block/flashlight.png",
+        "item/flashlight.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/flashlight.png",
+      "file": "live-textures/flashlight.png",
+      "bytes": 167
+    },
+    {
+      "kind": "texture",
+      "name": "harvester_lunite_bottom",
+      "paths": [
+        "block/harvester_lunite_bottom.png",
+        "item/harvester_lunite_bottom.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/harvester_lunite_bottom.png",
+      "file": "live-textures/harvester_lunite_bottom.png",
+      "bytes": 174
+    },
+    {
+      "kind": "texture",
+      "name": "harvester_lunite_side_1",
+      "paths": [
+        "block/harvester_lunite_side_1.png",
+        "item/harvester_lunite_side_1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/harvester_lunite_side_1.png",
+      "file": "live-textures/harvester_lunite_side_1.png",
+      "bytes": 494
+    },
+    {
+      "kind": "texture",
+      "name": "frag_grenade",
+      "paths": [
+        "block/frag_grenade.png",
+        "item/frag_grenade.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/frag_grenade.png",
+      "file": "live-textures/frag_grenade.png",
+      "bytes": 175
+    },
+    {
+      "kind": "texture",
+      "name": "gold_crop",
+      "paths": [
+        "block/gold_crop.png",
+        "item/gold_crop.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/gold_crop.png",
+      "file": "live-textures/gold_crop.png",
+      "bytes": 147
+    },
+    {
+      "kind": "texture",
+      "name": "harvester_lunite_top",
+      "paths": [
+        "block/harvester_lunite_top.png",
+        "item/harvester_lunite_top.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/harvester_lunite_top.png",
+      "file": "live-textures/harvester_lunite_top.png",
+      "bytes": 174
+    },
+    {
+      "kind": "texture",
+      "name": "harvester_side1",
+      "paths": [
+        "block/harvester_side1.png",
+        "item/harvester_side1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/harvester_side1.png",
+      "file": "live-textures/harvester_side1.png",
+      "bytes": 165
+    },
+    {
+      "kind": "texture",
+      "name": "harvester_top",
+      "paths": [
+        "block/harvester_top.png",
+        "item/harvester_top.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/harvester_top.png",
+      "file": "live-textures/harvester_top.png",
+      "bytes": 123
+    },
+    {
+      "kind": "texture",
+      "name": "lucky_block_pink_question_rare",
+      "paths": [
+        "block/lucky_block_pink_question_rare.png",
+        "item/lucky_block_pink_question_rare.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/lucky_block_pink_question_rare.png",
+      "file": "live-textures/lucky_block_pink_question_rare.png",
+      "bytes": 165
+    },
+    {
+      "kind": "texture",
+      "name": "lucky_block_pink_question_super",
+      "paths": [
+        "block/lucky_block_pink_question_super.png",
+        "item/lucky_block_pink_question_super.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/lucky_block_pink_question_super.png",
+      "file": "live-textures/lucky_block_pink_question_super.png",
+      "bytes": 165
+    },
+    {
+      "kind": "texture",
+      "name": "hovercraft",
+      "paths": [
+        "block/hovercraft.png",
+        "item/hovercraft.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/hovercraft.png",
+      "file": "live-textures/hovercraft.png",
+      "bytes": 181
+    },
+    {
+      "kind": "texture",
+      "name": "lunite",
+      "paths": [
+        "block/lunite.png",
+        "item/lunite.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/lunite.png",
+      "file": "live-textures/lunite.png",
+      "bytes": 206
+    },
+    {
+      "kind": "texture",
+      "name": "orange_lucky_block",
+      "paths": [
+        "block/orange_lucky_block.png",
+        "item/orange_lucky_block.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/orange_lucky_block.png",
+      "file": "live-textures/orange_lucky_block.png",
+      "bytes": 147
+    },
+    {
+      "kind": "texture",
+      "name": "orange_lucky_block_rare",
+      "paths": [
+        "block/orange_lucky_block_rare.png",
+        "item/orange_lucky_block_rare.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/orange_lucky_block_rare.png",
+      "file": "live-textures/orange_lucky_block_rare.png",
+      "bytes": 165
+    },
+    {
+      "kind": "texture",
+      "name": "orange_lucky_block_super",
+      "paths": [
+        "block/orange_lucky_block_super.png",
+        "item/orange_lucky_block_super.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/orange_lucky_block_super.png",
+      "file": "live-textures/orange_lucky_block_super.png",
+      "bytes": 165
+    },
+    {
+      "kind": "texture",
+      "name": "mining_grenade",
+      "paths": [
+        "block/mining_grenade.png",
+        "item/mining_grenade.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/mining_grenade.png",
+      "file": "live-textures/mining_grenade.png",
+      "bytes": 182
+    },
+    {
+      "kind": "texture",
+      "name": "purple_lucky_block",
+      "paths": [
+        "block/purple_lucky_block.png",
+        "item/purple_lucky_block.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/purple_lucky_block.png",
+      "file": "live-textures/purple_lucky_block.png",
+      "bytes": 148
+    },
+    {
+      "kind": "texture",
+      "name": "purple_lucky_block_rare",
+      "paths": [
+        "block/purple_lucky_block_rare.png",
+        "item/purple_lucky_block_rare.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/purple_lucky_block_rare.png",
+      "file": "live-textures/purple_lucky_block_rare.png",
+      "bytes": 165
+    },
+    {
+      "kind": "texture",
+      "name": "mining_helmet",
+      "paths": [
+        "block/mining_helmet.png",
+        "item/mining_helmet.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/mining_helmet.png",
+      "file": "live-textures/mining_helmet.png",
+      "bytes": 178
+    },
+    {
+      "kind": "texture",
+      "name": "purple_lucky_block_super",
+      "paths": [
+        "block/purple_lucky_block_super.png",
+        "item/purple_lucky_block_super.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/purple_lucky_block_super.png",
+      "file": "live-textures/purple_lucky_block_super.png",
+      "bytes": 165
+    },
+    {
+      "kind": "texture",
+      "name": "red_lucky_block_rare",
+      "paths": [
+        "block/red_lucky_block_rare.png",
+        "item/red_lucky_block_rare.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/red_lucky_block_rare.png",
+      "file": "live-textures/red_lucky_block_rare.png",
+      "bytes": 165
+    },
+    {
+      "kind": "texture",
+      "name": "red_lucky_block_super",
+      "paths": [
+        "block/red_lucky_block_super.png",
+        "item/red_lucky_block_super.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/red_lucky_block_super.png",
+      "file": "live-textures/red_lucky_block_super.png",
+      "bytes": 165
+    },
+    {
+      "kind": "texture",
+      "name": "off_roader",
+      "paths": [
+        "block/off_roader.png",
+        "item/off_roader.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/off_roader.png",
+      "file": "live-textures/off_roader.png",
+      "bytes": 159
+    },
+    {
+      "kind": "texture",
+      "name": "smoke1",
+      "paths": [
+        "block/smoke1.png",
+        "item/smoke1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/smoke1.png",
+      "file": "live-textures/smoke1.png",
+      "bytes": 145
+    },
+    {
+      "kind": "texture",
+      "name": "smoke2",
+      "paths": [
+        "block/smoke2.png",
+        "item/smoke2.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/smoke2.png",
+      "file": "live-textures/smoke2.png",
+      "bytes": 138
+    },
+    {
+      "kind": "texture",
+      "name": "smoke3",
+      "paths": [
+        "block/smoke3.png",
+        "item/smoke3.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/smoke3.png",
+      "file": "live-textures/smoke3.png",
+      "bytes": 150
+    },
+    {
+      "kind": "texture",
+      "name": "solar_panel_bottom",
+      "paths": [
+        "block/solar_panel_bottom.png",
+        "item/solar_panel_bottom.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/solar_panel_bottom.png",
+      "file": "live-textures/solar_panel_bottom.png",
+      "bytes": 145
+    },
+    {
+      "kind": "texture",
+      "name": "solar_panel_top",
+      "paths": [
+        "block/solar_panel_top.png",
+        "item/solar_panel_top.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/solar_panel_top.png",
+      "file": "live-textures/solar_panel_top.png",
+      "bytes": 183
+    },
+    {
+      "kind": "texture",
+      "name": "toxic_waste1",
+      "paths": [
+        "block/toxic_waste1.png",
+        "item/toxic_waste1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/toxic_waste1.png",
+      "file": "live-textures/toxic_waste1.png",
+      "bytes": 131
+    },
+    {
+      "kind": "texture",
+      "name": "toxic_waste2",
+      "paths": [
+        "block/toxic_waste2.png",
+        "item/toxic_waste2.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/toxic_waste2.png",
+      "file": "live-textures/toxic_waste2.png",
+      "bytes": 128
+    },
+    {
+      "kind": "texture",
+      "name": "toxic_waste3",
+      "paths": [
+        "block/toxic_waste3.png",
+        "item/toxic_waste3.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/toxic_waste3.png",
+      "file": "live-textures/toxic_waste3.png",
+      "bytes": 126
+    },
+    {
+      "kind": "texture",
+      "name": "toxic_waste4",
+      "paths": [
+        "block/toxic_waste4.png",
+        "item/toxic_waste4.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/toxic_waste4.png",
+      "file": "live-textures/toxic_waste4.png",
+      "bytes": 128
+    },
+    {
+      "kind": "texture",
+      "name": "toxic_waste5",
+      "paths": [
+        "block/toxic_waste5.png",
+        "item/toxic_waste5.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/toxic_waste5.png",
+      "file": "live-textures/toxic_waste5.png",
+      "bytes": 131
+    },
+    {
+      "kind": "texture",
+      "name": "toxic_waste6",
+      "paths": [
+        "block/toxic_waste6.png",
+        "item/toxic_waste6.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/toxic_waste6.png",
+      "file": "live-textures/toxic_waste6.png",
+      "bytes": 132
+    },
+    {
+      "kind": "texture",
+      "name": "smoke_grenade",
+      "paths": [
+        "block/smoke_grenade.png",
+        "item/smoke_grenade.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/smoke_grenade.png",
+      "file": "live-textures/smoke_grenade.png",
+      "bytes": 175
+    },
+    {
+      "kind": "texture",
+      "name": "toxic_waste7",
+      "paths": [
+        "block/toxic_waste7.png",
+        "item/toxic_waste7.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/toxic_waste7.png",
+      "file": "live-textures/toxic_waste7.png",
+      "bytes": 131
+    },
+    {
+      "kind": "texture",
+      "name": "toxic_waste_barrel_bottom",
+      "paths": [
+        "block/toxic_waste_barrel_bottom.png",
+        "item/toxic_waste_barrel_bottom.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/toxic_waste_barrel_bottom.png",
+      "file": "live-textures/toxic_waste_barrel_bottom.png",
+      "bytes": 154
+    },
+    {
+      "kind": "texture",
+      "name": "speedboat",
+      "paths": [
+        "block/speedboat.png",
+        "item/speedboat.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/item/speedboat.png",
+      "file": "live-textures/speedboat.png",
+      "bytes": 154
+    },
+    {
+      "kind": "texture",
+      "name": "toxic_waste_barrel_top0",
+      "paths": [
+        "block/toxic_waste_barrel_top0.png",
+        "item/toxic_waste_barrel_top0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/toxic_waste_barrel_top0.png",
+      "file": "live-textures/toxic_waste_barrel_top0.png",
+      "bytes": 130
+    },
+    {
+      "kind": "texture",
+      "name": "toxic_waste_barrel_top1",
+      "paths": [
+        "block/toxic_waste_barrel_top1.png",
+        "item/toxic_waste_barrel_top1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/toxic_waste_barrel_top1.png",
+      "file": "live-textures/toxic_waste_barrel_top1.png",
+      "bytes": 131
+    },
+    {
+      "kind": "texture",
+      "name": "toxic_waste_barrel_top3",
+      "paths": [
+        "block/toxic_waste_barrel_top3.png",
+        "item/toxic_waste_barrel_top3.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/toxic_waste_barrel_top3.png",
+      "file": "live-textures/toxic_waste_barrel_top3.png",
+      "bytes": 131
+    },
+    {
+      "kind": "texture",
+      "name": "toxic_waste_barrel_top2",
+      "paths": [
+        "block/toxic_waste_barrel_top2.png",
+        "item/toxic_waste_barrel_top2.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/block/toxic_waste_barrel_top2.png",
+      "file": "live-textures/toxic_waste_barrel_top2.png",
+      "bytes": 128
+    },
+    {
+      "kind": "model",
+      "name": "_Camel Painting Bottom Left",
+      "paths": [
+        "mesh/_Camel Painting Bottom Left.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/_Camel%20Painting%20Bottom%20Left.json",
+      "file": "live-models/_Camel Painting Bottom Left.json",
+      "bytes": 1885
+    },
+    {
+      "kind": "model",
+      "name": "_Camel Painting Top Left",
+      "paths": [
+        "mesh/_Camel Painting Top Left.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/_Camel%20Painting%20Top%20Left.json",
+      "file": "live-models/_Camel Painting Top Left.json",
+      "bytes": 1882
+    },
+    {
+      "kind": "model",
+      "name": "_Camel Painting Top Right",
+      "paths": [
+        "mesh/_Camel Painting Top Right.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/_Camel%20Painting%20Top%20Right.json",
+      "file": "live-models/_Camel Painting Top Right.json",
+      "bytes": 1901
+    },
+    {
+      "kind": "model",
+      "name": "_Camel Painting Bottom Right",
+      "paths": [
+        "mesh/_Camel Painting Bottom Right.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/_Camel%20Painting%20Bottom%20Right.json",
+      "file": "live-models/_Camel Painting Bottom Right.json",
+      "bytes": 1886
+    },
+    {
+      "kind": "model",
+      "name": "auto_miner_drill_back",
+      "paths": [
+        "mesh/auto_miner_drill_back.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_drill_back.json",
+      "file": "live-models/auto_miner_drill_back.json",
+      "bytes": 3413
+    },
+    {
+      "kind": "model",
+      "name": "auto_miner_body",
+      "paths": [
+        "mesh/auto_miner_body.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_body.json",
+      "file": "live-models/auto_miner_body.json",
+      "bytes": 1662
+    },
+    {
+      "kind": "model",
+      "name": "auto_miner_drill_front",
+      "paths": [
+        "mesh/auto_miner_drill_front.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_drill_front.json",
+      "file": "live-models/auto_miner_drill_front.json",
+      "bytes": 3390
+    },
+    {
+      "kind": "model",
+      "name": "auto_miner_foot_back",
+      "paths": [
+        "mesh/auto_miner_foot_back.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_foot_back.json",
+      "file": "live-models/auto_miner_foot_back.json",
+      "bytes": 4348
+    },
+    {
+      "kind": "model",
+      "name": "auto_miner_foot_front",
+      "paths": [
+        "mesh/auto_miner_foot_front.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_foot_front.json",
+      "file": "live-models/auto_miner_foot_front.json",
+      "bytes": 4349
+    },
+    {
+      "kind": "model",
+      "name": "auto_miner_lunite_body",
+      "paths": [
+        "mesh/auto_miner_lunite_body.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_lunite_body.json",
+      "file": "live-models/auto_miner_lunite_body.json",
+      "bytes": 1668
+    },
+    {
+      "kind": "model",
+      "name": "auto_miner_lunite_drill_back",
+      "paths": [
+        "mesh/auto_miner_lunite_drill_back.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_lunite_drill_back.json",
+      "file": "live-models/auto_miner_lunite_drill_back.json",
+      "bytes": 3420
+    },
+    {
+      "kind": "model",
+      "name": "auto_miner_lunite_drill_front",
+      "paths": [
+        "mesh/auto_miner_lunite_drill_front.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_lunite_drill_front.json",
+      "file": "live-models/auto_miner_lunite_drill_front.json",
+      "bytes": 3397
+    },
+    {
+      "kind": "model",
+      "name": "auto_miner_lunite_foot_back",
+      "paths": [
+        "mesh/auto_miner_lunite_foot_back.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_lunite_foot_back.json",
+      "file": "live-models/auto_miner_lunite_foot_back.json",
+      "bytes": 4355
+    },
+    {
+      "kind": "model",
+      "name": "auto_miner_lunite_foot_front",
+      "paths": [
+        "mesh/auto_miner_lunite_foot_front.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_lunite_foot_front.json",
+      "file": "live-models/auto_miner_lunite_foot_front.json",
+      "bytes": 4356
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_elbow_nx_ny",
+      "paths": [
+        "mesh/extractor_pipe_elbow_nx_ny.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_nx_ny.json",
+      "file": "live-models/extractor_pipe_elbow_nx_ny.json",
+      "bytes": 4573
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_elbow_nx_nz",
+      "paths": [
+        "mesh/extractor_pipe_elbow_nx_nz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_nx_nz.json",
+      "file": "live-models/extractor_pipe_elbow_nx_nz.json",
+      "bytes": 4573
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_elbow_nx_py",
+      "paths": [
+        "mesh/extractor_pipe_elbow_nx_py.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_nx_py.json",
+      "file": "live-models/extractor_pipe_elbow_nx_py.json",
+      "bytes": 4549
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_elbow_nx_pz",
+      "paths": [
+        "mesh/extractor_pipe_elbow_nx_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_nx_pz.json",
+      "file": "live-models/extractor_pipe_elbow_nx_pz.json",
+      "bytes": 4549
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_elbow_ny_nz",
+      "paths": [
+        "mesh/extractor_pipe_elbow_ny_nz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_ny_nz.json",
+      "file": "live-models/extractor_pipe_elbow_ny_nz.json",
+      "bytes": 4597
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_elbow_ny_px",
+      "paths": [
+        "mesh/extractor_pipe_elbow_ny_px.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_ny_px.json",
+      "file": "live-models/extractor_pipe_elbow_ny_px.json",
+      "bytes": 4597
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_elbow_nz_px",
+      "paths": [
+        "mesh/extractor_pipe_elbow_nz_px.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_nz_px.json",
+      "file": "live-models/extractor_pipe_elbow_nz_px.json",
+      "bytes": 4597
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_elbow_ny_pz",
+      "paths": [
+        "mesh/extractor_pipe_elbow_ny_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_ny_pz.json",
+      "file": "live-models/extractor_pipe_elbow_ny_pz.json",
+      "bytes": 4573
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_elbow_nz_py",
+      "paths": [
+        "mesh/extractor_pipe_elbow_nz_py.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_nz_py.json",
+      "file": "live-models/extractor_pipe_elbow_nz_py.json",
+      "bytes": 4573
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_elbow_px_py",
+      "paths": [
+        "mesh/extractor_pipe_elbow_px_py.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_px_py.json",
+      "file": "live-models/extractor_pipe_elbow_px_py.json",
+      "bytes": 4573
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_elbow_py_pz",
+      "paths": [
+        "mesh/extractor_pipe_elbow_py_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_py_pz.json",
+      "file": "live-models/extractor_pipe_elbow_py_pz.json",
+      "bytes": 4549
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_elbow_px_pz",
+      "paths": [
+        "mesh/extractor_pipe_elbow_px_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_px_pz.json",
+      "file": "live-models/extractor_pipe_elbow_px_pz.json",
+      "bytes": 4573
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_end_nx",
+      "paths": [
+        "mesh/extractor_pipe_end_nx.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_end_nx.json",
+      "file": "live-models/extractor_pipe_end_nx.json",
+      "bytes": 3096
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_end_ny",
+      "paths": [
+        "mesh/extractor_pipe_end_ny.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_end_ny.json",
+      "file": "live-models/extractor_pipe_end_ny.json",
+      "bytes": 3120
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_end_nz",
+      "paths": [
+        "mesh/extractor_pipe_end_nz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_end_nz.json",
+      "file": "live-models/extractor_pipe_end_nz.json",
+      "bytes": 3120
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_end_px",
+      "paths": [
+        "mesh/extractor_pipe_end_px.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_end_px.json",
+      "file": "live-models/extractor_pipe_end_px.json",
+      "bytes": 3120
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_end_py",
+      "paths": [
+        "mesh/extractor_pipe_end_py.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_end_py.json",
+      "file": "live-models/extractor_pipe_end_py.json",
+      "bytes": 3096
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_end_pz",
+      "paths": [
+        "mesh/extractor_pipe_end_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_end_pz.json",
+      "file": "live-models/extractor_pipe_end_pz.json",
+      "bytes": 3096
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_isolated",
+      "paths": [
+        "mesh/extractor_pipe_isolated.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_isolated.json",
+      "file": "live-models/extractor_pipe_isolated.json",
+      "bytes": 1510
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_straight_x",
+      "paths": [
+        "mesh/extractor_pipe_straight_x.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_straight_x.json",
+      "file": "live-models/extractor_pipe_straight_x.json",
+      "bytes": 6344
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_straight_y",
+      "paths": [
+        "mesh/extractor_pipe_straight_y.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_straight_y.json",
+      "file": "live-models/extractor_pipe_straight_y.json",
+      "bytes": 6344
+    },
+    {
+      "kind": "model",
+      "name": "extractor_pipe_straight_z",
+      "paths": [
+        "mesh/extractor_pipe_straight_z.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_straight_z.json",
+      "file": "live-models/extractor_pipe_straight_z.json",
+      "bytes": 6344
+    },
+    {
+      "kind": "model",
+      "name": "filter_pipe_input_nx",
+      "paths": [
+        "mesh/filter_pipe_input_nx.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_nx.json",
+      "file": "live-models/filter_pipe_input_nx.json",
+      "bytes": 34792
+    },
+    {
+      "kind": "model",
+      "name": "filter_pipe_input_ny",
+      "paths": [
+        "mesh/filter_pipe_input_ny.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_ny.json",
+      "file": "live-models/filter_pipe_input_ny.json",
+      "bytes": 34820
+    },
+    {
+      "kind": "model",
+      "name": "filter_pipe_input_nz",
+      "paths": [
+        "mesh/filter_pipe_input_nz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_nz.json",
+      "file": "live-models/filter_pipe_input_nz.json",
+      "bytes": 34854
+    },
+    {
+      "kind": "model",
+      "name": "filter_pipe_input_px",
+      "paths": [
+        "mesh/filter_pipe_input_px.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_px.json",
+      "file": "live-models/filter_pipe_input_px.json",
+      "bytes": 34788
+    },
+    {
+      "kind": "model",
+      "name": "filter_pipe_input_py",
+      "paths": [
+        "mesh/filter_pipe_input_py.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_py.json",
+      "file": "live-models/filter_pipe_input_py.json",
+      "bytes": 34792
+    },
+    {
+      "kind": "model",
+      "name": "lantern",
+      "paths": [
+        "mesh/lantern.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/lantern.json",
+      "file": "live-models/lantern.json",
+      "bytes": 9568
+    },
+    {
+      "kind": "model",
+      "name": "filter_pipe_input_pz",
+      "paths": [
+        "mesh/filter_pipe_input_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_pz.json",
+      "file": "live-models/filter_pipe_input_pz.json",
+      "bytes": 34832
+    },
+    {
+      "kind": "model",
+      "name": "lantern_wall",
+      "paths": [
+        "mesh/lantern_wall.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/lantern_wall.json",
+      "file": "live-models/lantern_wall.json",
+      "bytes": 9151
+    },
+    {
+      "kind": "model",
+      "name": "lily_pad_model",
+      "paths": [
+        "mesh/lily_pad_model.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/lily_pad_model.json",
+      "file": "live-models/lily_pad_model.json",
+      "bytes": 6387
+    },
+    {
+      "kind": "model",
+      "name": "merger_pipe_output_nx",
+      "paths": [
+        "mesh/merger_pipe_output_nx.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_nx.json",
+      "file": "live-models/merger_pipe_output_nx.json",
+      "bytes": 34538
+    },
+    {
+      "kind": "model",
+      "name": "merger_pipe_output_ny",
+      "paths": [
+        "mesh/merger_pipe_output_ny.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_ny.json",
+      "file": "live-models/merger_pipe_output_ny.json",
+      "bytes": 34550
+    },
+    {
+      "kind": "model",
+      "name": "merger_pipe_output_nz",
+      "paths": [
+        "mesh/merger_pipe_output_nz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_nz.json",
+      "file": "live-models/merger_pipe_output_nz.json",
+      "bytes": 34550
+    },
+    {
+      "kind": "model",
+      "name": "merger_pipe_output_pz",
+      "paths": [
+        "mesh/merger_pipe_output_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_pz.json",
+      "file": "live-models/merger_pipe_output_pz.json",
+      "bytes": 34538
+    },
+    {
+      "kind": "model",
+      "name": "merger_pipe_output_px",
+      "paths": [
+        "mesh/merger_pipe_output_px.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_px.json",
+      "file": "live-models/merger_pipe_output_px.json",
+      "bytes": 34550
+    },
+    {
+      "kind": "model",
+      "name": "merger_pipe_output_py",
+      "paths": [
+        "mesh/merger_pipe_output_py.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_py.json",
+      "file": "live-models/merger_pipe_output_py.json",
+      "bytes": 34538
+    },
+    {
+      "kind": "model",
+      "name": "pipe_elbow_nx_nz",
+      "paths": [
+        "mesh/pipe_elbow_nx_nz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_nx_nz.json",
+      "file": "live-models/pipe_elbow_nx_nz.json",
+      "bytes": 4563
+    },
+    {
+      "kind": "model",
+      "name": "pipe_elbow_nx_ny",
+      "paths": [
+        "mesh/pipe_elbow_nx_ny.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_nx_ny.json",
+      "file": "live-models/pipe_elbow_nx_ny.json",
+      "bytes": 4563
+    },
+    {
+      "kind": "model",
+      "name": "pipe_elbow_nx_py",
+      "paths": [
+        "mesh/pipe_elbow_nx_py.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_nx_py.json",
+      "file": "live-models/pipe_elbow_nx_py.json",
+      "bytes": 4539
+    },
+    {
+      "kind": "model",
+      "name": "pipe_elbow_nx_pz",
+      "paths": [
+        "mesh/pipe_elbow_nx_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_nx_pz.json",
+      "file": "live-models/pipe_elbow_nx_pz.json",
+      "bytes": 4539
+    },
+    {
+      "kind": "model",
+      "name": "pipe_elbow_ny_nz",
+      "paths": [
+        "mesh/pipe_elbow_ny_nz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_ny_nz.json",
+      "file": "live-models/pipe_elbow_ny_nz.json",
+      "bytes": 4587
+    },
+    {
+      "kind": "model",
+      "name": "pipe_elbow_ny_px",
+      "paths": [
+        "mesh/pipe_elbow_ny_px.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_ny_px.json",
+      "file": "live-models/pipe_elbow_ny_px.json",
+      "bytes": 4587
+    },
+    {
+      "kind": "model",
+      "name": "pipe_elbow_nz_py",
+      "paths": [
+        "mesh/pipe_elbow_nz_py.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_nz_py.json",
+      "file": "live-models/pipe_elbow_nz_py.json",
+      "bytes": 4563
+    },
+    {
+      "kind": "model",
+      "name": "pipe_elbow_nz_px",
+      "paths": [
+        "mesh/pipe_elbow_nz_px.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_nz_px.json",
+      "file": "live-models/pipe_elbow_nz_px.json",
+      "bytes": 4587
+    },
+    {
+      "kind": "model",
+      "name": "pipe_elbow_ny_pz",
+      "paths": [
+        "mesh/pipe_elbow_ny_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_ny_pz.json",
+      "file": "live-models/pipe_elbow_ny_pz.json",
+      "bytes": 4563
+    },
+    {
+      "kind": "model",
+      "name": "pipe_elbow_px_py",
+      "paths": [
+        "mesh/pipe_elbow_px_py.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_px_py.json",
+      "file": "live-models/pipe_elbow_px_py.json",
+      "bytes": 4563
+    },
+    {
+      "kind": "model",
+      "name": "pipe_elbow_px_pz",
+      "paths": [
+        "mesh/pipe_elbow_px_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_px_pz.json",
+      "file": "live-models/pipe_elbow_px_pz.json",
+      "bytes": 4563
+    },
+    {
+      "kind": "model",
+      "name": "pipe_elbow_py_pz",
+      "paths": [
+        "mesh/pipe_elbow_py_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_py_pz.json",
+      "file": "live-models/pipe_elbow_py_pz.json",
+      "bytes": 4539
+    },
+    {
+      "kind": "model",
+      "name": "pipe_end_nx",
+      "paths": [
+        "mesh/pipe_end_nx.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_end_nx.json",
+      "file": "live-models/pipe_end_nx.json",
+      "bytes": 3086
+    },
+    {
+      "kind": "model",
+      "name": "pipe_end_ny",
+      "paths": [
+        "mesh/pipe_end_ny.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_end_ny.json",
+      "file": "live-models/pipe_end_ny.json",
+      "bytes": 3110
+    },
+    {
+      "kind": "model",
+      "name": "pipe_end_py",
+      "paths": [
+        "mesh/pipe_end_py.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_end_py.json",
+      "file": "live-models/pipe_end_py.json",
+      "bytes": 3086
+    },
+    {
+      "kind": "model",
+      "name": "pipe_end_px",
+      "paths": [
+        "mesh/pipe_end_px.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_end_px.json",
+      "file": "live-models/pipe_end_px.json",
+      "bytes": 3110
+    },
+    {
+      "kind": "model",
+      "name": "pipe_isolated",
+      "paths": [
+        "mesh/pipe_isolated.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_isolated.json",
+      "file": "live-models/pipe_isolated.json",
+      "bytes": 1500
+    },
+    {
+      "kind": "model",
+      "name": "pipe_end_nz",
+      "paths": [
+        "mesh/pipe_end_nz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_end_nz.json",
+      "file": "live-models/pipe_end_nz.json",
+      "bytes": 3110
+    },
+    {
+      "kind": "model",
+      "name": "pipe_end_pz",
+      "paths": [
+        "mesh/pipe_end_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_end_pz.json",
+      "file": "live-models/pipe_end_pz.json",
+      "bytes": 3086
+    },
+    {
+      "kind": "model",
+      "name": "pipe_straight_x",
+      "paths": [
+        "mesh/pipe_straight_x.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_straight_x.json",
+      "file": "live-models/pipe_straight_x.json",
+      "bytes": 6334
+    },
+    {
+      "kind": "model",
+      "name": "pipe_straight_y",
+      "paths": [
+        "mesh/pipe_straight_y.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_straight_y.json",
+      "file": "live-models/pipe_straight_y.json",
+      "bytes": 6334
+    },
+    {
+      "kind": "model",
+      "name": "pipe_straight_z",
+      "paths": [
+        "mesh/pipe_straight_z.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_straight_z.json",
+      "file": "live-models/pipe_straight_z.json",
+      "bytes": 6334
+    },
+    {
+      "kind": "model",
+      "name": "rocket_full",
+      "paths": [
+        "mesh/rocket_full.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_full.json",
+      "file": "live-models/rocket_full.json",
+      "bytes": 48560
+    },
+    {
+      "kind": "model",
+      "name": "rocket_northeast_3",
+      "paths": [
+        "mesh/rocket_northeast_3.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northeast_3.json",
+      "file": "live-models/rocket_northeast_3.json",
+      "bytes": 6292
+    },
+    {
+      "kind": "model",
+      "name": "rocket_northeast_1",
+      "paths": [
+        "mesh/rocket_northeast_1.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northeast_1.json",
+      "file": "live-models/rocket_northeast_1.json",
+      "bytes": 9334
+    },
+    {
+      "kind": "model",
+      "name": "rocket_northeast_2",
+      "paths": [
+        "mesh/rocket_northeast_2.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northeast_2.json",
+      "file": "live-models/rocket_northeast_2.json",
+      "bytes": 4724
+    },
+    {
+      "kind": "model",
+      "name": "rocket_northeast_4",
+      "paths": [
+        "mesh/rocket_northeast_4.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northeast_4.json",
+      "file": "live-models/rocket_northeast_4.json",
+      "bytes": 3956
+    },
+    {
+      "kind": "model",
+      "name": "rocket_northeast_5",
+      "paths": [
+        "mesh/rocket_northeast_5.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northeast_5.json",
+      "file": "live-models/rocket_northeast_5.json",
+      "bytes": 4562
+    },
+    {
+      "kind": "model",
+      "name": "rocket_northwest_1",
+      "paths": [
+        "mesh/rocket_northwest_1.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northwest_1.json",
+      "file": "live-models/rocket_northwest_1.json",
+      "bytes": 9370
+    },
+    {
+      "kind": "model",
+      "name": "rocket_northwest_2",
+      "paths": [
+        "mesh/rocket_northwest_2.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northwest_2.json",
+      "file": "live-models/rocket_northwest_2.json",
+      "bytes": 4532
+    },
+    {
+      "kind": "model",
+      "name": "rocket_northwest_3",
+      "paths": [
+        "mesh/rocket_northwest_3.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northwest_3.json",
+      "file": "live-models/rocket_northwest_3.json",
+      "bytes": 5988
+    },
+    {
+      "kind": "model",
+      "name": "rocket_northwest_5",
+      "paths": [
+        "mesh/rocket_northwest_5.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northwest_5.json",
+      "file": "live-models/rocket_northwest_5.json",
+      "bytes": 4466
+    },
+    {
+      "kind": "model",
+      "name": "rocket_northwest_4",
+      "paths": [
+        "mesh/rocket_northwest_4.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northwest_4.json",
+      "file": "live-models/rocket_northwest_4.json",
+      "bytes": 3956
+    },
+    {
+      "kind": "model",
+      "name": "rocket_southeast_1",
+      "paths": [
+        "mesh/rocket_southeast_1.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southeast_1.json",
+      "file": "live-models/rocket_southeast_1.json",
+      "bytes": 9370
+    },
+    {
+      "kind": "model",
+      "name": "rocket_southeast_3",
+      "paths": [
+        "mesh/rocket_southeast_3.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southeast_3.json",
+      "file": "live-models/rocket_southeast_3.json",
+      "bytes": 5988
+    },
+    {
+      "kind": "model",
+      "name": "rocket_southeast_2",
+      "paths": [
+        "mesh/rocket_southeast_2.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southeast_2.json",
+      "file": "live-models/rocket_southeast_2.json",
+      "bytes": 4532
+    },
+    {
+      "kind": "model",
+      "name": "rocket_southeast_4",
+      "paths": [
+        "mesh/rocket_southeast_4.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southeast_4.json",
+      "file": "live-models/rocket_southeast_4.json",
+      "bytes": 3956
+    },
+    {
+      "kind": "model",
+      "name": "rocket_southeast_5",
+      "paths": [
+        "mesh/rocket_southeast_5.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southeast_5.json",
+      "file": "live-models/rocket_southeast_5.json",
+      "bytes": 4466
+    },
+    {
+      "kind": "model",
+      "name": "rocket_southwest_2",
+      "paths": [
+        "mesh/rocket_southwest_2.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southwest_2.json",
+      "file": "live-models/rocket_southwest_2.json",
+      "bytes": 4340
+    },
+    {
+      "kind": "model",
+      "name": "rocket_southwest_5",
+      "paths": [
+        "mesh/rocket_southwest_5.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southwest_5.json",
+      "file": "live-models/rocket_southwest_5.json",
+      "bytes": 4370
+    },
+    {
+      "kind": "model",
+      "name": "splitter_pipe",
+      "paths": [
+        "mesh/splitter_pipe.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/splitter_pipe.json",
+      "file": "live-models/splitter_pipe.json",
+      "bytes": 31963
+    },
+    {
+      "kind": "model",
+      "name": "rocket_southwest_4",
+      "paths": [
+        "mesh/rocket_southwest_4.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southwest_4.json",
+      "file": "live-models/rocket_southwest_4.json",
+      "bytes": 3956
+    },
+    {
+      "kind": "model",
+      "name": "rocket_southwest_3",
+      "paths": [
+        "mesh/rocket_southwest_3.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southwest_3.json",
+      "file": "live-models/rocket_southwest_3.json",
+      "bytes": 5852
+    },
+    {
+      "kind": "model",
+      "name": "torch",
+      "paths": [
+        "mesh/torch.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/torch.json",
+      "file": "live-models/torch.json",
+      "bytes": 7346
+    },
+    {
+      "kind": "model",
+      "name": "rocket_southwest_1",
+      "paths": [
+        "mesh/rocket_southwest_1.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southwest_1.json",
+      "file": "live-models/rocket_southwest_1.json",
+      "bytes": 9406
+    },
+    {
+      "kind": "model",
+      "name": "wire_elbow_nx_nz",
+      "paths": [
+        "mesh/wire_elbow_nx_nz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_nx_nz.json",
+      "file": "live-models/wire_elbow_nx_nz.json",
+      "bytes": 4144
+    },
+    {
+      "kind": "model",
+      "name": "wire_elbow_nx_ny",
+      "paths": [
+        "mesh/wire_elbow_nx_ny.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_nx_ny.json",
+      "file": "live-models/wire_elbow_nx_ny.json",
+      "bytes": 4144
+    },
+    {
+      "kind": "model",
+      "name": "wire_elbow_nx_py",
+      "paths": [
+        "mesh/wire_elbow_nx_py.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_nx_py.json",
+      "file": "live-models/wire_elbow_nx_py.json",
+      "bytes": 4120
+    },
+    {
+      "kind": "model",
+      "name": "wire_elbow_nx_pz",
+      "paths": [
+        "mesh/wire_elbow_nx_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_nx_pz.json",
+      "file": "live-models/wire_elbow_nx_pz.json",
+      "bytes": 4120
+    },
+    {
+      "kind": "model",
+      "name": "wire_elbow_ny_nz",
+      "paths": [
+        "mesh/wire_elbow_ny_nz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_ny_nz.json",
+      "file": "live-models/wire_elbow_ny_nz.json",
+      "bytes": 4168
+    },
+    {
+      "kind": "model",
+      "name": "wire_elbow_ny_pz",
+      "paths": [
+        "mesh/wire_elbow_ny_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_ny_pz.json",
+      "file": "live-models/wire_elbow_ny_pz.json",
+      "bytes": 4144
+    },
+    {
+      "kind": "model",
+      "name": "wire_elbow_ny_px",
+      "paths": [
+        "mesh/wire_elbow_ny_px.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_ny_px.json",
+      "file": "live-models/wire_elbow_ny_px.json",
+      "bytes": 4168
+    },
+    {
+      "kind": "model",
+      "name": "wire_elbow_nz_py",
+      "paths": [
+        "mesh/wire_elbow_nz_py.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_nz_py.json",
+      "file": "live-models/wire_elbow_nz_py.json",
+      "bytes": 4144
+    },
+    {
+      "kind": "model",
+      "name": "wire_elbow_nz_px",
+      "paths": [
+        "mesh/wire_elbow_nz_px.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_nz_px.json",
+      "file": "live-models/wire_elbow_nz_px.json",
+      "bytes": 4168
+    },
+    {
+      "kind": "model",
+      "name": "wire_elbow_px_py",
+      "paths": [
+        "mesh/wire_elbow_px_py.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_px_py.json",
+      "file": "live-models/wire_elbow_px_py.json",
+      "bytes": 4144
+    },
+    {
+      "kind": "model",
+      "name": "wire_elbow_px_pz",
+      "paths": [
+        "mesh/wire_elbow_px_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_px_pz.json",
+      "file": "live-models/wire_elbow_px_pz.json",
+      "bytes": 4144
+    },
+    {
+      "kind": "model",
+      "name": "wire_end_nx",
+      "paths": [
+        "mesh/wire_end_nx.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_end_nx.json",
+      "file": "live-models/wire_end_nx.json",
+      "bytes": 2843
+    },
+    {
+      "kind": "model",
+      "name": "wire_end_ny",
+      "paths": [
+        "mesh/wire_end_ny.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_end_ny.json",
+      "file": "live-models/wire_end_ny.json",
+      "bytes": 2867
+    },
+    {
+      "kind": "model",
+      "name": "wire_end_nz",
+      "paths": [
+        "mesh/wire_end_nz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_end_nz.json",
+      "file": "live-models/wire_end_nz.json",
+      "bytes": 2867
+    },
+    {
+      "kind": "model",
+      "name": "wire_end_px",
+      "paths": [
+        "mesh/wire_end_px.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_end_px.json",
+      "file": "live-models/wire_end_px.json",
+      "bytes": 2867
+    },
+    {
+      "kind": "model",
+      "name": "wire_end_py",
+      "paths": [
+        "mesh/wire_end_py.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_end_py.json",
+      "file": "live-models/wire_end_py.json",
+      "bytes": 2843
+    },
+    {
+      "kind": "model",
+      "name": "wire_end_pz",
+      "paths": [
+        "mesh/wire_end_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_end_pz.json",
+      "file": "live-models/wire_end_pz.json",
+      "bytes": 2843
+    },
+    {
+      "kind": "model",
+      "name": "wire_elbow_py_pz",
+      "paths": [
+        "mesh/wire_elbow_py_pz.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_py_pz.json",
+      "file": "live-models/wire_elbow_py_pz.json",
+      "bytes": 4120
+    },
+    {
+      "kind": "model",
+      "name": "wire_isolated",
+      "paths": [
+        "mesh/wire_isolated.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_isolated.json",
+      "file": "live-models/wire_isolated.json",
+      "bytes": 1573
+    },
+    {
+      "kind": "model",
+      "name": "wire_straight_x",
+      "paths": [
+        "mesh/wire_straight_x.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_straight_x.json",
+      "file": "live-models/wire_straight_x.json",
+      "bytes": 5823
+    },
+    {
+      "kind": "model",
+      "name": "wire_straight_y",
+      "paths": [
+        "mesh/wire_straight_y.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_straight_y.json",
+      "file": "live-models/wire_straight_y.json",
+      "bytes": 5823
+    },
+    {
+      "kind": "model",
+      "name": "wire_straight_z",
+      "paths": [
+        "mesh/wire_straight_z.json"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_straight_z.json",
+      "file": "live-models/wire_straight_z.json",
+      "bytes": 5823
+    },
+    {
+      "kind": "model-image",
+      "name": "_Camel Painting Bottom Left.0.png",
+      "paths": [
+        "mesh/_Camel Painting Bottom Left.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/_Camel%20Painting%20Bottom%20Left.0.png",
+      "file": "live-model-images/_Camel Painting Bottom Left.0.png",
+      "bytes": 288
+    },
+    {
+      "kind": "model-image",
+      "name": "_Camel Painting Top Left.0.png",
+      "paths": [
+        "mesh/_Camel Painting Top Left.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/_Camel%20Painting%20Top%20Left.0.png",
+      "file": "live-model-images/_Camel Painting Top Left.0.png",
+      "bytes": 340
+    },
+    {
+      "kind": "model-image",
+      "name": "_Camel Painting Top Right.0.png",
+      "paths": [
+        "mesh/_Camel Painting Top Right.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/_Camel%20Painting%20Top%20Right.0.png",
+      "file": "live-model-images/_Camel Painting Top Right.0.png",
+      "bytes": 412
+    },
+    {
+      "kind": "model-image",
+      "name": "_Camel Painting Bottom Right.0.png",
+      "paths": [
+        "mesh/_Camel Painting Bottom Right.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/_Camel%20Painting%20Bottom%20Right.0.png",
+      "file": "live-model-images/_Camel Painting Bottom Right.0.png",
+      "bytes": 340
+    },
+    {
+      "kind": "model-image",
+      "name": "auto_miner_drill_back.0.png",
+      "paths": [
+        "mesh/auto_miner_drill_back.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_drill_back.0.png",
+      "file": "live-model-images/auto_miner_drill_back.0.png",
+      "bytes": 2296
+    },
+    {
+      "kind": "model-image",
+      "name": "auto_miner_body.0.png",
+      "paths": [
+        "mesh/auto_miner_body.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_body.0.png",
+      "file": "live-model-images/auto_miner_body.0.png",
+      "bytes": 2296
+    },
+    {
+      "kind": "model-image",
+      "name": "auto_miner_foot_back.0.png",
+      "paths": [
+        "mesh/auto_miner_foot_back.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_foot_back.0.png",
+      "file": "live-model-images/auto_miner_foot_back.0.png",
+      "bytes": 2296
+    },
+    {
+      "kind": "model-image",
+      "name": "auto_miner_drill_front.0.png",
+      "paths": [
+        "mesh/auto_miner_drill_front.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_drill_front.0.png",
+      "file": "live-model-images/auto_miner_drill_front.0.png",
+      "bytes": 2296
+    },
+    {
+      "kind": "model-image",
+      "name": "auto_miner_foot_front.0.png",
+      "paths": [
+        "mesh/auto_miner_foot_front.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_foot_front.0.png",
+      "file": "live-model-images/auto_miner_foot_front.0.png",
+      "bytes": 2296
+    },
+    {
+      "kind": "model-image",
+      "name": "auto_miner_lunite_drill_back.0.png",
+      "paths": [
+        "mesh/auto_miner_lunite_drill_back.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_lunite_drill_back.0.png",
+      "file": "live-model-images/auto_miner_lunite_drill_back.0.png",
+      "bytes": 2288
+    },
+    {
+      "kind": "model-image",
+      "name": "auto_miner_lunite_body.0.png",
+      "paths": [
+        "mesh/auto_miner_lunite_body.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_lunite_body.0.png",
+      "file": "live-model-images/auto_miner_lunite_body.0.png",
+      "bytes": 2288
+    },
+    {
+      "kind": "model-image",
+      "name": "auto_miner_lunite_drill_front.0.png",
+      "paths": [
+        "mesh/auto_miner_lunite_drill_front.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_lunite_drill_front.0.png",
+      "file": "live-model-images/auto_miner_lunite_drill_front.0.png",
+      "bytes": 2288
+    },
+    {
+      "kind": "model-image",
+      "name": "auto_miner_lunite_foot_back.0.png",
+      "paths": [
+        "mesh/auto_miner_lunite_foot_back.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_lunite_foot_back.0.png",
+      "file": "live-model-images/auto_miner_lunite_foot_back.0.png",
+      "bytes": 2288
+    },
+    {
+      "kind": "model-image",
+      "name": "auto_miner_lunite_foot_front.0.png",
+      "paths": [
+        "mesh/auto_miner_lunite_foot_front.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/auto_miner_lunite_foot_front.0.png",
+      "file": "live-model-images/auto_miner_lunite_foot_front.0.png",
+      "bytes": 2288
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_elbow_nx_nz.0.png",
+      "paths": [
+        "mesh/extractor_pipe_elbow_nx_nz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_nx_nz.0.png",
+      "file": "live-model-images/extractor_pipe_elbow_nx_nz.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_elbow_nx_ny.0.png",
+      "paths": [
+        "mesh/extractor_pipe_elbow_nx_ny.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_nx_ny.0.png",
+      "file": "live-model-images/extractor_pipe_elbow_nx_ny.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_elbow_nx_py.0.png",
+      "paths": [
+        "mesh/extractor_pipe_elbow_nx_py.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_nx_py.0.png",
+      "file": "live-model-images/extractor_pipe_elbow_nx_py.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_elbow_nx_pz.0.png",
+      "paths": [
+        "mesh/extractor_pipe_elbow_nx_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_nx_pz.0.png",
+      "file": "live-model-images/extractor_pipe_elbow_nx_pz.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_elbow_ny_nz.0.png",
+      "paths": [
+        "mesh/extractor_pipe_elbow_ny_nz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_ny_nz.0.png",
+      "file": "live-model-images/extractor_pipe_elbow_ny_nz.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_elbow_ny_px.0.png",
+      "paths": [
+        "mesh/extractor_pipe_elbow_ny_px.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_ny_px.0.png",
+      "file": "live-model-images/extractor_pipe_elbow_ny_px.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_elbow_ny_pz.0.png",
+      "paths": [
+        "mesh/extractor_pipe_elbow_ny_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_ny_pz.0.png",
+      "file": "live-model-images/extractor_pipe_elbow_ny_pz.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_elbow_nz_px.0.png",
+      "paths": [
+        "mesh/extractor_pipe_elbow_nz_px.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_nz_px.0.png",
+      "file": "live-model-images/extractor_pipe_elbow_nz_px.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_elbow_px_py.0.png",
+      "paths": [
+        "mesh/extractor_pipe_elbow_px_py.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_px_py.0.png",
+      "file": "live-model-images/extractor_pipe_elbow_px_py.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_elbow_nz_py.0.png",
+      "paths": [
+        "mesh/extractor_pipe_elbow_nz_py.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_nz_py.0.png",
+      "file": "live-model-images/extractor_pipe_elbow_nz_py.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_elbow_px_pz.0.png",
+      "paths": [
+        "mesh/extractor_pipe_elbow_px_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_px_pz.0.png",
+      "file": "live-model-images/extractor_pipe_elbow_px_pz.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_elbow_py_pz.0.png",
+      "paths": [
+        "mesh/extractor_pipe_elbow_py_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_elbow_py_pz.0.png",
+      "file": "live-model-images/extractor_pipe_elbow_py_pz.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_end_nx.0.png",
+      "paths": [
+        "mesh/extractor_pipe_end_nx.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_end_nx.0.png",
+      "file": "live-model-images/extractor_pipe_end_nx.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_end_nz.0.png",
+      "paths": [
+        "mesh/extractor_pipe_end_nz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_end_nz.0.png",
+      "file": "live-model-images/extractor_pipe_end_nz.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_end_ny.0.png",
+      "paths": [
+        "mesh/extractor_pipe_end_ny.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_end_ny.0.png",
+      "file": "live-model-images/extractor_pipe_end_ny.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_end_px.0.png",
+      "paths": [
+        "mesh/extractor_pipe_end_px.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_end_px.0.png",
+      "file": "live-model-images/extractor_pipe_end_px.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_end_py.0.png",
+      "paths": [
+        "mesh/extractor_pipe_end_py.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_end_py.0.png",
+      "file": "live-model-images/extractor_pipe_end_py.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_end_pz.0.png",
+      "paths": [
+        "mesh/extractor_pipe_end_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_end_pz.0.png",
+      "file": "live-model-images/extractor_pipe_end_pz.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_isolated.0.png",
+      "paths": [
+        "mesh/extractor_pipe_isolated.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_isolated.0.png",
+      "file": "live-model-images/extractor_pipe_isolated.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_straight_y.0.png",
+      "paths": [
+        "mesh/extractor_pipe_straight_y.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_straight_y.0.png",
+      "file": "live-model-images/extractor_pipe_straight_y.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_straight_x.0.png",
+      "paths": [
+        "mesh/extractor_pipe_straight_x.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_straight_x.0.png",
+      "file": "live-model-images/extractor_pipe_straight_x.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "extractor_pipe_straight_z.0.png",
+      "paths": [
+        "mesh/extractor_pipe_straight_z.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/extractor_pipe_straight_z.0.png",
+      "file": "live-model-images/extractor_pipe_straight_z.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "filter_pipe_input_nx.0.png",
+      "paths": [
+        "mesh/filter_pipe_input_nx.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_nx.0.png",
+      "file": "live-model-images/filter_pipe_input_nx.0.png",
+      "bytes": 386
+    },
+    {
+      "kind": "model-image",
+      "name": "filter_pipe_input_ny.1.png",
+      "paths": [
+        "mesh/filter_pipe_input_ny.1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_ny.1.png",
+      "file": "live-model-images/filter_pipe_input_ny.1.png",
+      "bytes": 91
+    },
+    {
+      "kind": "model-image",
+      "name": "filter_pipe_input_nx.1.png",
+      "paths": [
+        "mesh/filter_pipe_input_nx.1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_nx.1.png",
+      "file": "live-model-images/filter_pipe_input_nx.1.png",
+      "bytes": 91
+    },
+    {
+      "kind": "model-image",
+      "name": "filter_pipe_input_ny.0.png",
+      "paths": [
+        "mesh/filter_pipe_input_ny.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_ny.0.png",
+      "file": "live-model-images/filter_pipe_input_ny.0.png",
+      "bytes": 386
+    },
+    {
+      "kind": "model-image",
+      "name": "filter_pipe_input_nz.1.png",
+      "paths": [
+        "mesh/filter_pipe_input_nz.1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_nz.1.png",
+      "file": "live-model-images/filter_pipe_input_nz.1.png",
+      "bytes": 91
+    },
+    {
+      "kind": "model-image",
+      "name": "filter_pipe_input_nz.0.png",
+      "paths": [
+        "mesh/filter_pipe_input_nz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_nz.0.png",
+      "file": "live-model-images/filter_pipe_input_nz.0.png",
+      "bytes": 386
+    },
+    {
+      "kind": "model-image",
+      "name": "filter_pipe_input_px.1.png",
+      "paths": [
+        "mesh/filter_pipe_input_px.1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_px.1.png",
+      "file": "live-model-images/filter_pipe_input_px.1.png",
+      "bytes": 91
+    },
+    {
+      "kind": "model-image",
+      "name": "filter_pipe_input_px.0.png",
+      "paths": [
+        "mesh/filter_pipe_input_px.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_px.0.png",
+      "file": "live-model-images/filter_pipe_input_px.0.png",
+      "bytes": 386
+    },
+    {
+      "kind": "model-image",
+      "name": "filter_pipe_input_pz.0.png",
+      "paths": [
+        "mesh/filter_pipe_input_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_pz.0.png",
+      "file": "live-model-images/filter_pipe_input_pz.0.png",
+      "bytes": 386
+    },
+    {
+      "kind": "model-image",
+      "name": "filter_pipe_input_py.1.png",
+      "paths": [
+        "mesh/filter_pipe_input_py.1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_py.1.png",
+      "file": "live-model-images/filter_pipe_input_py.1.png",
+      "bytes": 91
+    },
+    {
+      "kind": "model-image",
+      "name": "filter_pipe_input_py.0.png",
+      "paths": [
+        "mesh/filter_pipe_input_py.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_py.0.png",
+      "file": "live-model-images/filter_pipe_input_py.0.png",
+      "bytes": 386
+    },
+    {
+      "kind": "model-image",
+      "name": "filter_pipe_input_pz.1.png",
+      "paths": [
+        "mesh/filter_pipe_input_pz.1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/filter_pipe_input_pz.1.png",
+      "file": "live-model-images/filter_pipe_input_pz.1.png",
+      "bytes": 91
+    },
+    {
+      "kind": "model-image",
+      "name": "lily_pad_model.0.png",
+      "paths": [
+        "mesh/lily_pad_model.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/lily_pad_model.0.png",
+      "file": "live-model-images/lily_pad_model.0.png",
+      "bytes": 448
+    },
+    {
+      "kind": "model-image",
+      "name": "lantern_wall.0.png",
+      "paths": [
+        "mesh/lantern_wall.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/lantern_wall.0.png",
+      "file": "live-model-images/lantern_wall.0.png",
+      "bytes": 932
+    },
+    {
+      "kind": "model-image",
+      "name": "merger_pipe_output_nx.0.png",
+      "paths": [
+        "mesh/merger_pipe_output_nx.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_nx.0.png",
+      "file": "live-model-images/merger_pipe_output_nx.0.png",
+      "bytes": 183
+    },
+    {
+      "kind": "model-image",
+      "name": "lantern.0.png",
+      "paths": [
+        "mesh/lantern.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/lantern.0.png",
+      "file": "live-model-images/lantern.0.png",
+      "bytes": 704
+    },
+    {
+      "kind": "model-image",
+      "name": "merger_pipe_output_nx.1.png",
+      "paths": [
+        "mesh/merger_pipe_output_nx.1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_nx.1.png",
+      "file": "live-model-images/merger_pipe_output_nx.1.png",
+      "bytes": 91
+    },
+    {
+      "kind": "model-image",
+      "name": "merger_pipe_output_nz.0.png",
+      "paths": [
+        "mesh/merger_pipe_output_nz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_nz.0.png",
+      "file": "live-model-images/merger_pipe_output_nz.0.png",
+      "bytes": 183
+    },
+    {
+      "kind": "model-image",
+      "name": "merger_pipe_output_ny.1.png",
+      "paths": [
+        "mesh/merger_pipe_output_ny.1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_ny.1.png",
+      "file": "live-model-images/merger_pipe_output_ny.1.png",
+      "bytes": 91
+    },
+    {
+      "kind": "model-image",
+      "name": "merger_pipe_output_ny.0.png",
+      "paths": [
+        "mesh/merger_pipe_output_ny.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_ny.0.png",
+      "file": "live-model-images/merger_pipe_output_ny.0.png",
+      "bytes": 183
+    },
+    {
+      "kind": "model-image",
+      "name": "merger_pipe_output_nz.1.png",
+      "paths": [
+        "mesh/merger_pipe_output_nz.1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_nz.1.png",
+      "file": "live-model-images/merger_pipe_output_nz.1.png",
+      "bytes": 91
+    },
+    {
+      "kind": "model-image",
+      "name": "merger_pipe_output_pz.0.png",
+      "paths": [
+        "mesh/merger_pipe_output_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_pz.0.png",
+      "file": "live-model-images/merger_pipe_output_pz.0.png",
+      "bytes": 183
+    },
+    {
+      "kind": "model-image",
+      "name": "merger_pipe_output_px.0.png",
+      "paths": [
+        "mesh/merger_pipe_output_px.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_px.0.png",
+      "file": "live-model-images/merger_pipe_output_px.0.png",
+      "bytes": 183
+    },
+    {
+      "kind": "model-image",
+      "name": "merger_pipe_output_pz.1.png",
+      "paths": [
+        "mesh/merger_pipe_output_pz.1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_pz.1.png",
+      "file": "live-model-images/merger_pipe_output_pz.1.png",
+      "bytes": 91
+    },
+    {
+      "kind": "model-image",
+      "name": "merger_pipe_output_px.1.png",
+      "paths": [
+        "mesh/merger_pipe_output_px.1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_px.1.png",
+      "file": "live-model-images/merger_pipe_output_px.1.png",
+      "bytes": 91
+    },
+    {
+      "kind": "model-image",
+      "name": "merger_pipe_output_py.0.png",
+      "paths": [
+        "mesh/merger_pipe_output_py.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_py.0.png",
+      "file": "live-model-images/merger_pipe_output_py.0.png",
+      "bytes": 183
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_elbow_nx_nz.0.png",
+      "paths": [
+        "mesh/pipe_elbow_nx_nz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_nx_nz.0.png",
+      "file": "live-model-images/pipe_elbow_nx_nz.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "merger_pipe_output_py.1.png",
+      "paths": [
+        "mesh/merger_pipe_output_py.1.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/merger_pipe_output_py.1.png",
+      "file": "live-model-images/merger_pipe_output_py.1.png",
+      "bytes": 91
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_elbow_nx_ny.0.png",
+      "paths": [
+        "mesh/pipe_elbow_nx_ny.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_nx_ny.0.png",
+      "file": "live-model-images/pipe_elbow_nx_ny.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_elbow_nz_px.0.png",
+      "paths": [
+        "mesh/pipe_elbow_nz_px.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_nz_px.0.png",
+      "file": "live-model-images/pipe_elbow_nz_px.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_elbow_nz_py.0.png",
+      "paths": [
+        "mesh/pipe_elbow_nz_py.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_nz_py.0.png",
+      "file": "live-model-images/pipe_elbow_nz_py.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_elbow_nx_py.0.png",
+      "paths": [
+        "mesh/pipe_elbow_nx_py.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_nx_py.0.png",
+      "file": "live-model-images/pipe_elbow_nx_py.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_elbow_nx_pz.0.png",
+      "paths": [
+        "mesh/pipe_elbow_nx_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_nx_pz.0.png",
+      "file": "live-model-images/pipe_elbow_nx_pz.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_elbow_ny_nz.0.png",
+      "paths": [
+        "mesh/pipe_elbow_ny_nz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_ny_nz.0.png",
+      "file": "live-model-images/pipe_elbow_ny_nz.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_elbow_ny_px.0.png",
+      "paths": [
+        "mesh/pipe_elbow_ny_px.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_ny_px.0.png",
+      "file": "live-model-images/pipe_elbow_ny_px.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_elbow_ny_pz.0.png",
+      "paths": [
+        "mesh/pipe_elbow_ny_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_ny_pz.0.png",
+      "file": "live-model-images/pipe_elbow_ny_pz.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_elbow_px_pz.0.png",
+      "paths": [
+        "mesh/pipe_elbow_px_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_px_pz.0.png",
+      "file": "live-model-images/pipe_elbow_px_pz.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_elbow_py_pz.0.png",
+      "paths": [
+        "mesh/pipe_elbow_py_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_py_pz.0.png",
+      "file": "live-model-images/pipe_elbow_py_pz.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_elbow_px_py.0.png",
+      "paths": [
+        "mesh/pipe_elbow_px_py.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_elbow_px_py.0.png",
+      "file": "live-model-images/pipe_elbow_px_py.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_end_nx.0.png",
+      "paths": [
+        "mesh/pipe_end_nx.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_end_nx.0.png",
+      "file": "live-model-images/pipe_end_nx.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_end_ny.0.png",
+      "paths": [
+        "mesh/pipe_end_ny.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_end_ny.0.png",
+      "file": "live-model-images/pipe_end_ny.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_end_py.0.png",
+      "paths": [
+        "mesh/pipe_end_py.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_end_py.0.png",
+      "file": "live-model-images/pipe_end_py.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_end_px.0.png",
+      "paths": [
+        "mesh/pipe_end_px.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_end_px.0.png",
+      "file": "live-model-images/pipe_end_px.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_isolated.0.png",
+      "paths": [
+        "mesh/pipe_isolated.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_isolated.0.png",
+      "file": "live-model-images/pipe_isolated.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_end_nz.0.png",
+      "paths": [
+        "mesh/pipe_end_nz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_end_nz.0.png",
+      "file": "live-model-images/pipe_end_nz.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_end_pz.0.png",
+      "paths": [
+        "mesh/pipe_end_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_end_pz.0.png",
+      "file": "live-model-images/pipe_end_pz.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_straight_x.0.png",
+      "paths": [
+        "mesh/pipe_straight_x.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_straight_x.0.png",
+      "file": "live-model-images/pipe_straight_x.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_full.0.png",
+      "paths": [
+        "mesh/rocket_full.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_full.0.png",
+      "file": "live-model-images/rocket_full.0.png",
+      "bytes": 5188
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_straight_y.0.png",
+      "paths": [
+        "mesh/pipe_straight_y.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_straight_y.0.png",
+      "file": "live-model-images/pipe_straight_y.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "pipe_straight_z.0.png",
+      "paths": [
+        "mesh/pipe_straight_z.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/pipe_straight_z.0.png",
+      "file": "live-model-images/pipe_straight_z.0.png",
+      "bytes": 244
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_northeast_3.0.png",
+      "paths": [
+        "mesh/rocket_northeast_3.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northeast_3.0.png",
+      "file": "live-model-images/rocket_northeast_3.0.png",
+      "bytes": 3680
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_northeast_1.0.png",
+      "paths": [
+        "mesh/rocket_northeast_1.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northeast_1.0.png",
+      "file": "live-model-images/rocket_northeast_1.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_northeast_2.0.png",
+      "paths": [
+        "mesh/rocket_northeast_2.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northeast_2.0.png",
+      "file": "live-model-images/rocket_northeast_2.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_northeast_4.0.png",
+      "paths": [
+        "mesh/rocket_northeast_4.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northeast_4.0.png",
+      "file": "live-model-images/rocket_northeast_4.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_northeast_5.0.png",
+      "paths": [
+        "mesh/rocket_northeast_5.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northeast_5.0.png",
+      "file": "live-model-images/rocket_northeast_5.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_northwest_1.0.png",
+      "paths": [
+        "mesh/rocket_northwest_1.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northwest_1.0.png",
+      "file": "live-model-images/rocket_northwest_1.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_northwest_2.0.png",
+      "paths": [
+        "mesh/rocket_northwest_2.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northwest_2.0.png",
+      "file": "live-model-images/rocket_northwest_2.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_northwest_3.0.png",
+      "paths": [
+        "mesh/rocket_northwest_3.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northwest_3.0.png",
+      "file": "live-model-images/rocket_northwest_3.0.png",
+      "bytes": 3680
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_northwest_5.0.png",
+      "paths": [
+        "mesh/rocket_northwest_5.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northwest_5.0.png",
+      "file": "live-model-images/rocket_northwest_5.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_northwest_4.0.png",
+      "paths": [
+        "mesh/rocket_northwest_4.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_northwest_4.0.png",
+      "file": "live-model-images/rocket_northwest_4.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_southeast_1.0.png",
+      "paths": [
+        "mesh/rocket_southeast_1.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southeast_1.0.png",
+      "file": "live-model-images/rocket_southeast_1.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_southeast_2.0.png",
+      "paths": [
+        "mesh/rocket_southeast_2.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southeast_2.0.png",
+      "file": "live-model-images/rocket_southeast_2.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_southeast_4.0.png",
+      "paths": [
+        "mesh/rocket_southeast_4.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southeast_4.0.png",
+      "file": "live-model-images/rocket_southeast_4.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_southeast_5.0.png",
+      "paths": [
+        "mesh/rocket_southeast_5.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southeast_5.0.png",
+      "file": "live-model-images/rocket_southeast_5.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_southwest_2.0.png",
+      "paths": [
+        "mesh/rocket_southwest_2.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southwest_2.0.png",
+      "file": "live-model-images/rocket_southwest_2.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_southwest_5.0.png",
+      "paths": [
+        "mesh/rocket_southwest_5.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southwest_5.0.png",
+      "file": "live-model-images/rocket_southwest_5.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "splitter_pipe.0.png",
+      "paths": [
+        "mesh/splitter_pipe.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/splitter_pipe.0.png",
+      "file": "live-model-images/splitter_pipe.0.png",
+      "bytes": 139
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_southeast_3.0.png",
+      "paths": [
+        "mesh/rocket_southeast_3.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southeast_3.0.png",
+      "file": "live-model-images/rocket_southeast_3.0.png",
+      "bytes": 3680
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_southwest_4.0.png",
+      "paths": [
+        "mesh/rocket_southwest_4.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southwest_4.0.png",
+      "file": "live-model-images/rocket_southwest_4.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_southwest_3.0.png",
+      "paths": [
+        "mesh/rocket_southwest_3.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southwest_3.0.png",
+      "file": "live-model-images/rocket_southwest_3.0.png",
+      "bytes": 3680
+    },
+    {
+      "kind": "model-image",
+      "name": "torch.0.png",
+      "paths": [
+        "mesh/torch.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/torch.0.png",
+      "file": "live-model-images/torch.0.png",
+      "bytes": 376
+    },
+    {
+      "kind": "model-image",
+      "name": "rocket_southwest_1.0.png",
+      "paths": [
+        "mesh/rocket_southwest_1.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/rocket_southwest_1.0.png",
+      "file": "live-model-images/rocket_southwest_1.0.png",
+      "bytes": 3228
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_elbow_nx_nz.0.png",
+      "paths": [
+        "mesh/wire_elbow_nx_nz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_nx_nz.0.png",
+      "file": "live-model-images/wire_elbow_nx_nz.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_elbow_nx_ny.0.png",
+      "paths": [
+        "mesh/wire_elbow_nx_ny.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_nx_ny.0.png",
+      "file": "live-model-images/wire_elbow_nx_ny.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_elbow_ny_nz.0.png",
+      "paths": [
+        "mesh/wire_elbow_ny_nz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_ny_nz.0.png",
+      "file": "live-model-images/wire_elbow_ny_nz.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_elbow_ny_pz.0.png",
+      "paths": [
+        "mesh/wire_elbow_ny_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_ny_pz.0.png",
+      "file": "live-model-images/wire_elbow_ny_pz.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_elbow_nx_pz.0.png",
+      "paths": [
+        "mesh/wire_elbow_nx_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_nx_pz.0.png",
+      "file": "live-model-images/wire_elbow_nx_pz.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_elbow_ny_px.0.png",
+      "paths": [
+        "mesh/wire_elbow_ny_px.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_ny_px.0.png",
+      "file": "live-model-images/wire_elbow_ny_px.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_elbow_nz_py.0.png",
+      "paths": [
+        "mesh/wire_elbow_nz_py.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_nz_py.0.png",
+      "file": "live-model-images/wire_elbow_nz_py.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_elbow_nz_px.0.png",
+      "paths": [
+        "mesh/wire_elbow_nz_px.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_nz_px.0.png",
+      "file": "live-model-images/wire_elbow_nz_px.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_elbow_px_py.0.png",
+      "paths": [
+        "mesh/wire_elbow_px_py.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_px_py.0.png",
+      "file": "live-model-images/wire_elbow_px_py.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_elbow_px_pz.0.png",
+      "paths": [
+        "mesh/wire_elbow_px_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_px_pz.0.png",
+      "file": "live-model-images/wire_elbow_px_pz.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_end_nx.0.png",
+      "paths": [
+        "mesh/wire_end_nx.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_end_nx.0.png",
+      "file": "live-model-images/wire_end_nx.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_elbow_nx_py.0.png",
+      "paths": [
+        "mesh/wire_elbow_nx_py.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_nx_py.0.png",
+      "file": "live-model-images/wire_elbow_nx_py.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_end_ny.0.png",
+      "paths": [
+        "mesh/wire_end_ny.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_end_ny.0.png",
+      "file": "live-model-images/wire_end_ny.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_end_nz.0.png",
+      "paths": [
+        "mesh/wire_end_nz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_end_nz.0.png",
+      "file": "live-model-images/wire_end_nz.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_end_px.0.png",
+      "paths": [
+        "mesh/wire_end_px.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_end_px.0.png",
+      "file": "live-model-images/wire_end_px.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_isolated.0.png",
+      "paths": [
+        "mesh/wire_isolated.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_isolated.0.png",
+      "file": "live-model-images/wire_isolated.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_end_py.0.png",
+      "paths": [
+        "mesh/wire_end_py.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_end_py.0.png",
+      "file": "live-model-images/wire_end_py.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_end_pz.0.png",
+      "paths": [
+        "mesh/wire_end_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_end_pz.0.png",
+      "file": "live-model-images/wire_end_pz.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_straight_x.0.png",
+      "paths": [
+        "mesh/wire_straight_x.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_straight_x.0.png",
+      "file": "live-model-images/wire_straight_x.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_elbow_py_pz.0.png",
+      "paths": [
+        "mesh/wire_elbow_py_pz.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_elbow_py_pz.0.png",
+      "file": "live-model-images/wire_elbow_py_pz.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_straight_y.0.png",
+      "paths": [
+        "mesh/wire_straight_y.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_straight_y.0.png",
+      "file": "live-model-images/wire_straight_y.0.png",
+      "bytes": 96
+    },
+    {
+      "kind": "model-image",
+      "name": "wire_straight_z.0.png",
+      "paths": [
+        "mesh/wire_straight_z.0.png"
+      ],
+      "url": "https://bloxdhub.com/images/builder-studio/bloxd-live/mesh/wire_straight_z.0.png",
+      "file": "live-model-images/wire_straight_z.0.png",
+      "bytes": 96
+    }
+  ],
+  "failed": [
+    {
+      "kind": "texture",
+      "name": "bebek_bebek_bebek",
+      "paths": [
+        "block/bebek_bebek_bebek.png",
+        "item/bebek_bebek_bebek.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "2_block",
+      "paths": [
+        "block/2_block.png",
+        "item/2_block.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "bobino_musculino",
+      "paths": [
+        "block/bobino_musculino.png",
+        "item/bobino_musculino.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "boiling_pot",
+      "paths": [
+        "block/boiling_pot.png",
+        "item/boiling_pot.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "brra_brra_pachim",
+      "paths": [
+        "block/brra_brra_pachim.png",
+        "item/brra_brra_pachim.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "bobzilla",
+      "paths": [
+        "block/bobzilla.png",
+        "item/bobzilla.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "capitano_explovissimo",
+      "paths": [
+        "block/capitano_explovissimo.png",
+        "item/capitano_explovissimo.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "chimpanzano_bananano",
+      "paths": [
+        "block/chimpanzano_bananano.png",
+        "item/chimpanzano_bananano.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "cappuccino_ninjino",
+      "paths": [
+        "block/cappuccino_ninjino.png",
+        "item/cappuccino_ninjino.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "chopping_board",
+      "paths": [
+        "block/chopping_board.png",
+        "item/chopping_board.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "compass_1",
+      "paths": [
+        "block/compass_1.png",
+        "item/compass_1.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "compass_10",
+      "paths": [
+        "block/compass_10.png",
+        "item/compass_10.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "compass_11",
+      "paths": [
+        "block/compass_11.png",
+        "item/compass_11.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "compass_3",
+      "paths": [
+        "block/compass_3.png",
+        "item/compass_3.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "compass_2",
+      "paths": [
+        "block/compass_2.png",
+        "item/compass_2.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "compass_4",
+      "paths": [
+        "block/compass_4.png",
+        "item/compass_4.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "compass_6",
+      "paths": [
+        "block/compass_6.png",
+        "item/compass_6.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "compass_5",
+      "paths": [
+        "block/compass_5.png",
+        "item/compass_5.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "compass_7",
+      "paths": [
+        "block/compass_7.png",
+        "item/compass_7.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "compass_8",
+      "paths": [
+        "block/compass_8.png",
+        "item/compass_8.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "compass_9",
+      "paths": [
+        "block/compass_9.png",
+        "item/compass_9.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "frying_pan",
+      "paths": [
+        "block/frying_pan.png",
+        "item/frying_pan.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "hob_boiling",
+      "paths": [
+        "block/hob_boiling.png",
+        "item/hob_boiling.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "lucchia_blocchi",
+      "paths": [
+        "block/lucchia_blocchi.png",
+        "item/lucchia_blocchi.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "il_wizardini_del_porko",
+      "paths": [
+        "block/il_wizardini_del_porko.png",
+        "item/il_wizardini_del_porko.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "kitchen_worktop",
+      "paths": [
+        "block/kitchen_worktop.png",
+        "item/kitchen_worktop.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "hob_frying",
+      "paths": [
+        "block/hob_frying.png",
+        "item/hob_frying.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "monsieur_bedwar",
+      "paths": [
+        "block/monsieur_bedwar.png",
+        "item/monsieur_bedwar.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "slicing_board",
+      "paths": [
+        "block/slicing_board.png",
+        "item/slicing_board.png"
+      ]
+    },
+    {
+      "kind": "texture",
+      "name": "twirlina_cappucina",
+      "paths": [
+        "block/twirlina_cappucina.png",
+        "item/twirlina_cappucina.png"
+      ]
+    }
+  ]
+}

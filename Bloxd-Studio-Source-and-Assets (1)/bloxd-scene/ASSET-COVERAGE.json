@@ -1,0 +1,46 @@
+{
+  "counts": {
+    "officialPng": 2074,
+    "officialModels": 1382,
+    "officialSkyFaces": 30,
+    "documentedBlockRoots": 1179,
+    "liveBlockRoots": 1309,
+    "blockStates": 4032,
+    "documentedItems": 1044,
+    "liveItemEntries": 1110,
+    "missingItemVisuals": 12,
+    "availableInventoryEntries": 2406,
+    "modelChoices": 1674,
+    "texturesTotal": 3588,
+    "rawSourceFiles": 3486
+  },
+  "unavailableItems": [
+    "Caught Mob NPC Default",
+    "Caught Mob NPC Emma",
+    "Caught Mob NPC Leo",
+    "Caught Mob NPC Isabel",
+    "Caught Mob NPC Sanjay",
+    "Caught Mob NPC Imara",
+    "Caught Mob NPC Enoch",
+    "Caught Mob NPC Sara",
+    "Caught Mob NPC Carmen",
+    "Caught Mob 67 Default",
+    "Caught Mob Bobino_Musculino Default",
+    "Caught Mob Capitano_Explovissimo Default"
+  ],
+  "unavailableBlocks": [
+    "temp"
+  ],
+  "modelDecodeFailures": [],
+  "provenance": {
+    "texturePack": "https://github.com/Bloxdy/texture-packs",
+    "texturePackRevision": "e7c5a7e17f895c7df6bfe788667ccb7cbdee00c9",
+    "codeApiRevision": "dad3ae7adee0b3d9b2e281c830d776698db4ca1c",
+    "blockMappingUrl": "https://bloxdhub.com/build/assets/blocks-DzukVGOz.js",
+    "gameMappingUrl": "https://bloxd.io/static/js/9s8fb.main.a0c909b6.js",
+    "retrieved": "2026-10-23",
+    "blockMappingSHA256": "a9ba61a860d82f5b765772413b32f244def5149143808b1f4e837b85e313f589",
+    "gameMappingSHA256": "85ab7195a06765cd0d3c5b46f831caf6938d9b43c89260f5e2609fe121b56a88"
+  },
+  "note": "Complete public default pack; complete published block/item name lists plus mapped live extras. Some internal metadata-only entries have no published visual. Shapes/state simulation are editor renderings, not the game engine."
+}

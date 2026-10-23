@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#171d21"><title>Bloxd Studio 4.0 — expanded game asset library</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23d0ef8b' d='M16 1 30 9v15l-14 8L2 24V9z'/%3E%3Cpath fill='%237b9a46' d='m16 16 14-7v15l-14 8z'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<svg class="icon-defs" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7Z M3 7l9 5 9-5M12 12v10"/></symbol>
+<symbol id="i-move" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M8 6l4-4 4 4M8 18l4 4 4-4M6 8l-4 4 4 4M18 8l4 4-4 4"/></symbol>
+<symbol id="i-cursor" viewBox="0 0 24 24"><path d="m5 3 14 9-7 1-4 7Z"/></symbol>
+<symbol id="i-rotate" viewBox="0 0 24 24"><path d="M20 10a8 8 0 1 0-1 7M20 3v7h-7"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><path d="M14 3h7v7M21 3l-9 9M10 5H3v16h16v-7"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 4v16M16 4v16"/></symbol>
+<symbol id="i-stop" viewBox="0 0 24 24"><path d="M5 4v16m14-16L7 12l12 8Z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v2m0 18v2M1 12h2m18 0h2M4.2 4.2l1.5 1.5m12.6 12.6 1.5 1.5M4.2 19.8l1.5-1.5M18.3 5.7l1.5-1.5"/></symbol>
+<symbol id="i-camera" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="13" rx="2"/><path d="m16 10 6-3v11l-6-3"/></symbol>
+<symbol id="i-person" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 21v-7a7 7 0 0 1 14 0v7M9 21v-5m6 5v-5"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-import" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 15v6h16v-6"/></symbol>
+<symbol id="i-save" viewBox="0 0 24 24"><path d="M5 3h12l4 4v14H3V3Zm2 0v7h10V3M7 21v-7h10v7"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7V4h7l2 3h9v13H3Z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><path d="m12 3 9 9-9 9-9-9Z"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></symbol>
+<symbol id="i-undo" viewBox="0 0 24 24"><path d="M3 11h11a6 6 0 0 1 0 12M8 6l-5 5 5 5" transform="translate(0 -3)"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></symbol>
+<symbol id="i-focus" viewBox="0 0 24 24"><path d="M3 8V3h5m8 0h5v5M3 16v5h5m8 0h5v-5"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+<symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 4-6 5 7"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4 2l-1.5 1v2m0 3v.1"/></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4ZM19 2v4m-2-2h4"/></symbol>
+<symbol id="i-sound" viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3ZM16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol></defs></svg>
+<header class="app-header">
+  <div class="brand"><div class="brand-mark"><svg><use href="#i-cube"/></svg></div><div>bloxd<span>studio</span><small>BUILD · POSE · ANIMATE</small></div></div>
+  <div class="project-title"><span class="project-slash">/</span><span id="project-scene-name">Maple clearing<small>Untitled animation</small></span><span class="local-badge"><i></i> VERSION 4.0</span></div>
+  <div class="header-actions">
+    <button id="open-ai" class="ai-launch" title="Generate editable animations using your Gemini API key"><svg><use href="#i-sparkles"/></svg>Gemini<span>AI</span></button>
+    <button id="help-btn" class="icon-btn" title="Quick guide & credits"><svg><use href="#i-help"/></svg></button>
+    <button id="open-project" class="quiet"><svg><use href="#i-folder"/></svg><span>Open</span></button>
+    <button id="save-project"><svg><use href="#i-save"/></svg><span>Save project</span></button>
+    <button id="open-export" class="accent"><svg><use href="#i-camera"/></svg>Export <span class="export-arrow">↗</span></button>
+  </div>
+</header>
+<div class="workspace">
+  <aside class="library">
+    <div class="panel-heading"><span>ASSET LIBRARY</span><span class="small-badge">LOCAL</span></div>
+    <div class="library-top"><h1>The game asset library.</h1><p id="catalog-summary">Loading the complete public collection…</p></div>
+    <nav class="tabs library-tabs" aria-label="Asset categories"><button class="active" data-library="blocks">Blocks</button><button data-library="tools">Items</button><button data-library="models">Models</button><button data-library="textures">Textures</button><button data-library="characters">Bob</button></nav>
+    <div id="block-edit-actions" class="asset-actions"><button id="place-blocks" title="Place blocks (B)">＋ Place</button><button id="erase-blocks" title="Remove blocks (X)">− Remove</button></div>
+    <div id="tool-edit-actions" class="asset-actions" hidden><button id="place-tools" class="active">＋ Place item</button><button id="equip-tools">Equip player</button></div>
+    <p id="asset-action-note">Select a block in the scene, then Rotate.</p>
+    <label class="search"><svg><use href="#i-search"/></svg><input id="asset-search" placeholder="Find an asset…" aria-label="Search assets"><kbd>/</kbd></label>
+    <div class="catalog-filters"><select id="catalog-group" aria-label="Filter asset group"><option value="">All groups</option></select><label><input id="catalog-advanced" type="checkbox">States / internal</label></div><div class="catalog-results"><span id="catalog-count"></span><button id="catalog-info" class="text-btn">Coverage ↗</button></div>
+<div class="asset-scroll"><div id="asset-grid" class="asset-grid"></div><p id="asset-empty" hidden>No matching assets.</p></div><div class="catalog-pages"><button id="catalog-prev" aria-label="Previous asset page">←</button><span id="catalog-page"></span><button id="catalog-next" aria-label="Next asset page">→</button></div>
+    <div class="library-extras"><button id="add-tree" title="Add a maple tree">＋ Tree</button><button id="add-rock" title="Add a stone outcrop">＋ Rock</button><button id="add-lamp" title="Add a lantern">＋ Lamp</button></div>
+    <button id="import-btn" class="import-button"><svg><use href="#i-import"/></svg>Import 3D model<span>＋</span></button>
+    <div class="outliner-heading"><span>SCENE OBJECTS <b id="obj-count">0</b></span><button id="duplicate" class="icon-btn" title="Duplicate selected (Ctrl+D)"><svg><use href="#i-copy"/></svg></button></div>
+    <div id="outliner" class="outliner"></div>
+    <button id="credits-btn" class="asset-credit"><span class="source-dot"></span>Bloxd default assets <span>↗</span></button>
+  </aside>
+  <main id="viewport" tabindex="0" aria-label="Interactive 3D viewport">
+    <canvas id="scene"></canvas>
+    <div class="viewport-toolbar">
+      <div class="tool-group" aria-label="Editing tools">
+        <button data-mode="select" class="icon-btn labeled-tool active" title="Select a block, item or player (V)"><svg><use href="#i-cursor"/></svg><span>Select</span></button>
+        <button data-mode="translate" class="icon-btn" title="Move (W)"><svg><use href="#i-move"/></svg></button>
+        <button data-mode="rotate" class="icon-btn labeled-tool" title="Rotate the selection with colored rings (E)"><svg><use href="#i-rotate"/></svg><span>Rotate</span></button>
+        <button data-mode="scale" class="icon-btn" title="Scale (R)"><svg><use href="#i-scale"/></svg></button>
+        <span class="tool-divider"></span>
+        <button id="undo" class="icon-btn" title="Undo (Ctrl+Z)"><svg><use href="#i-undo"/></svg></button>
+        <button id="redo" class="icon-btn" title="Redo (Ctrl+Shift+Z)"><svg class="flip"><use href="#i-undo"/></svg></button>
+      </div>
+      <div class="tool-group view-tools"><select id="view-select" aria-label="Camera view"><option value="wide">Perspective</option><option value="front">Front</option><option value="top">Top</option><option value="side">Side</option><option value="close">Close-up</option></select><button id="focus" class="icon-btn" title="Focus selected (F)"><svg><use href="#i-focus"/></svg></button><button id="grid-toggle" class="icon-btn" title="Toggle grid"><svg><use href="#i-grid"/></svg></button><button id="clean-view" class="icon-btn" title="Clean view (H)"><svg><use href="#i-eye"/></svg></button></div>
+    </div>
+    <div class="viewport-label"><span id="playback-status"><i></i> EDIT MODE</span><span id="selected-target">Bob · whole player</span><span id="build-badge" hidden>Placing grass · right-click to erase</span></div>
+    <div class="scene-caption"><span class="eyebrow">SCENE 01</span><h2 id="scene-title">Maple clearing<span>.</span></h2></div>
+    <div class="viewport-footer"><span id="viewport-hint">Drag to orbit <b>·</b> Scroll to zoom <b>·</b> Click to select</span><span id="viewport-size"></span></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <div id="drop-overlay" hidden><svg><use href="#i-import"/></svg><h2>Bring your world in.</h2><p>Drop a GLB, OBJ, STL or PLY model</p></div>
+  </main>
+  <aside class="inspector">
+    <div class="panel-heading"><span>INSPECTOR</span><span id="selection-type" class="small-badge">CHARACTER</span></div>
+    <nav class="tabs inspector-tabs" aria-label="Inspector sections"><button data-inspector="object" class="active"><svg><use href="#i-cube"/></svg>Object</button><button data-inspector="light"><svg><use href="#i-sun"/></svg>Light</button><button data-inspector="camera"><svg><use href="#i-camera"/></svg>Camera</button></nav>
+    <div class="inspector-scroll">
+      <section id="inspect-object" class="inspector-section">
+        <p id="object-empty" class="empty-note" hidden>Select a character or prop in the scene to edit it.</p>
+        <div id="object-controls">
+          <div class="object-title"><div id="object-icon" class="object-icon"><svg><use href="#i-person"/></svg></div><div><input id="object-name" aria-label="Object name" value="Bob"><span id="object-kind">Classic character · recreated rig</span></div><button id="delete-object" class="icon-btn" title="Delete object"><svg><use href="#i-trash"/></svg></button></div>
+          <div id="scope-actions" class="scope-actions"><button id="whole-player" class="active">Whole player</button><button id="pose-part">Body part</button><button id="scope-held">Held item</button></div>
+          <div class="selection-target"><span>EDITING</span><strong id="target-name">Whole player</strong></div>
+          <div class="transform-actions"><button id="rotate-selected" class="accent"><svg><use href="#i-rotate"/></svg>Rotate selected</button><label><input id="snap-rotation" type="checkbox">15° snap</label></div>
+          <div id="pending-edit" class="pending-edit" hidden><span id="pending-edit-label">Edit ready — choose a time</span><button id="revert-edit" class="text-btn">Revert edit</button></div>
+          <div class="section-title">Transform<button id="drop-ground" class="text-btn">↓ Ground</button></div>
+          <label class="field-label">Position</label><div class="triplet"><label><span class="x-axis">X</span><input id="obj-x" type="number" step="0.1" value="0" aria-label="Position X"></label><label><span class="y-axis">Y</span><input id="obj-y" type="number" step="0.1" value="1" aria-label="Position Y"></label><label><span class="z-axis">Z</span><input id="obj-z" type="number" step="0.1" value="0" aria-label="Position Z"></label></div>
+          <label class="field-label">Rotation</label><div class="triplet"><label><span class="x-axis">X</span><input id="rot-x" type="number" step="5" value="0" aria-label="Rotation X"></label><label><span class="y-axis">Y</span><input id="rot-y" type="number" step="5" value="0" aria-label="Rotation Y"></label><label><span class="z-axis">Z</span><input id="rot-z" type="number" step="5" value="0" aria-label="Rotation Z"></label></div>
+          <label class="field-label" for="rotation-path">Motion between saved poses</label><select id="rotation-path" class="wide-select"><option value="shortest">Direct · shortest rotation (default)</option><option value="spins">Full spins · use numeric turn counts</option></select><p id="rotation-path-note" class="rotation-path-note">Direct motion between saved poses; drag direction is ignored.</p>
+          <div class="quarter-turns"><button data-turn="x">X +90°</button><button data-turn="y">Y +90°</button><button data-turn="z">Z +90°</button></div>
+          <div class="inline-field"><label for="obj-scale">Uniform scale</label><input id="obj-scale" type="number" min="0.05" max="20" step="0.1" value="1"></div>
+          <div id="texture-preview" class="texture-preview" hidden><div><img id="texture-image" alt="Applied original pixel texture"><div><b>Applied texture</b><code id="texture-filename"></code><button id="download-texture" class="text-btn">Download PNG ↗</button></div></div><label id="tool-shading-row"><input id="tool-shading" type="checkbox">Shade tools with scene lighting</label><p>Original PNG colors are preserved by default.</p></div>
+          <div id="char-controls">
+            <div class="section-title">Pose rig <button id="reset-pose" class="text-btn">Reset</button></div>
+            <label class="field-label" for="joint-select">Body part</label><select id="joint-select" class="wide-select"></select>
+            <label class="range-label x-axis" for="joint-x">X <span>Rotate</span><output id="joint-x-value">0°</output></label><input id="joint-x" type="range" min="-180" max="180" step="1" value="0">
+            <label class="range-label y-axis" for="joint-y">Y <span>Turn</span><output id="joint-y-value">0°</output></label><input id="joint-y" type="range" min="-180" max="180" step="1" value="0">
+            <label class="range-label z-axis" for="joint-z">Z <span>Tilt</span><output id="joint-z-value">0°</output></label><input id="joint-z" type="range" min="-180" max="180" step="1" value="0">
+            <label class="range-label" for="body-height">Body lift<output id="body-height-value">0.00</output></label><input id="body-height" type="range" min="-0.75" max="2" step="0.01" value="0">
+            <div class="preset-grid"><button data-pose="idle">Idle</button><button data-pose="walk">Walk</button><button data-pose="wave">Wave</button><button data-pose="mine">Mine</button><button data-pose="jump">Jump</button><button data-pose="tpose">T-pose</button></div>
+            <div class="checks"><label><input type="checkbox" id="live-motion"> Animate preset</label><label><input type="checkbox" id="show-joints"> Joints</label></div>
+            <button id="clear-pose-track" class="text-btn" title="Clear this character's keys. Undo is available.">Clear pose track</button>
+            <div class="section-title">Equipment</div><label class="field-label" for="held-tool">Right hand</label><select id="held-tool" class="wide-select"></select><button id="select-held-tool" class="full-button">Select &amp; rotate held item</button>
+            <button id="load-skin" class="full-button"><svg><use href="#i-image"/></svg>Load skin PNG <small>64 × 64</small></button>
+          </div>
+          <div id="model-controls" hidden>
+            <div class="section-title">Imported model</div><p class="muted">Your model keeps its mesh. Make it blocky with the optional voxel converter.</p>
+            <label class="range-label" for="vox-res">Voxel resolution<output id="vox-value">16</output></label><input id="vox-res" type="range" min="6" max="24" step="1" value="16">
+            <button id="voxelize" class="full-button">Convert to voxels</button><label class="check-row"><input type="checkbox" id="model-anim">Play embedded animation</label><p id="model-note" class="muted"></p>
+          </div>
+          <button id="clear-object-track" class="text-btn" hidden>Clear object animation keys</button>
+          <button id="export-model" class="full-button subdued"><svg><use href="#i-import"/></svg>Download selected GLB</button>
+        </div>
+      </section>
+      <section id="inspect-light" class="inspector-section" hidden>
+        <div class="inspector-intro"><span class="eyebrow">LIGHTING</span><h2>Set the mood.</h2><p>Real-time light. Real-time shadows.</p></div>
+        <div id="sun-pad" title="Drag to change sun direction"><div class="sun-orbit"></div><div id="sun-handle"><svg><use href="#i-sun"/></svg></div><span>DRAG TO MOVE THE SUN</span><b class="sun-w">W</b><b class="sun-e">E</b></div>
+        <div class="preset-grid light-presets"><button data-light="day">Daylight</button><button data-light="golden" class="active">Golden</button><button data-light="night">Moonlight</button><button data-light="studio">Studio</button></div>
+        <div class="section-title">Direction</div>
+        <label class="range-label" for="sun-az">Azimuth<output id="sun-az-value">−38°</output></label><input id="sun-az" type="range" min="-180" max="180" step="1" value="-38">
+        <label class="range-label" for="sun-el">Elevation<output id="sun-el-value">42°</output></label><input id="sun-el" type="range" min="5" max="90" step="1" value="42">
+        <div class="section-title">Intensity & color</div>
+        <label class="range-label" for="sun-power">Sun strength<output id="sun-power-value">3.0</output></label><input id="sun-power" type="range" min="0" max="6" step="0.1" value="3">
+        <label class="range-label" for="fill-power">Ambient fill<output id="fill-power-value">1.4</output></label><input id="fill-power" type="range" min="0" max="3" step="0.1" value="1.4">
+        <div class="color-fields"><label>Sun tint <input type="color" id="sun-color" value="#ffe5b5"></label><label>Sky color <input type="color" id="sky-color" value="#c5d6d3"></label></div>
+        <div class="section-title">Render</div><div class="checks"><label><input id="shadows" type="checkbox" checked> Shadows</label><label><input id="soft-shadow" type="checkbox" checked> Soft edges</label></div><div class="checks"><label><input id="show-fog" type="checkbox" checked> Distance fog</label><label><input id="sun-helper" type="checkbox"> Sun guide</label></div>
+      </section>
+      <section id="inspect-camera" class="inspector-section" hidden>
+        <div class="inspector-intro"><span class="eyebrow">CAMERA TRAVEL</span><h2>Find your angle.</h2><p>Move the view, then save a camera key.</p></div>
+        <label class="range-label" for="camera-fov">Field of view<output id="camera-fov-value">45°</output></label><input id="camera-fov" type="range" min="25" max="90" step="1" value="45">
+        <button id="cam-capture" class="full-button accent"><svg><use href="#i-key"/></svg>Key this camera view</button>
+        <div class="section-title">Ready-made moves</div><div class="preset-grid tour-presets"><button data-tour="dolly">Dolly</button><button data-tour="orbit">Orbit</button><button data-tour="close">Close-up</button></div>
+        <div class="checks stack"><label><input id="camera-enabled" type="checkbox" checked> Preview camera track on playback</label><label><input id="camera-smooth" type="checkbox" checked> Smooth spline travel</label><label><input id="show-path" type="checkbox"> Show camera path</label></div>
+        <div class="section-title">Camera keys<button id="clear-cam" class="text-btn">Clear</button></div><div id="camera-keys" class="key-list"></div>
+        <p class="muted">Key positions are exact. Smooth mode uses arc-length sampling between keys for steadier travel.</p><button id="frame-scene" class="full-button">Frame the whole scene</button>
+      </section>
+    </div>
+  </aside>
+</div>
+<footer class="timeline">
+  <div class="timeline-toolbar">
+    <div class="transport"><button id="stop" class="icon-btn" title="Back to start"><svg><use href="#i-stop"/></svg></button><button id="play" class="play-button" title="Play / pause (Space)"><svg><use href="#i-play"/></svg></button><button id="preview-start" class="from-start" title="Apply pending edits and preview the complete animation from 0 seconds"><svg><use href="#i-play"/></svg>From start</button><span id="time-display">00:00.00</span><span class="time-total">/ <span id="duration-display">08.00</span></span></div>
+    <span class="timeline-caption">TIMELINE <span>30 FPS</span></span>
+    <div class="timeline-actions"><label class="key-time-field" for="key-time">Time<input id="key-time" type="number" min="0" max="8" step="0.01" value="0.00" aria-label="Keyframe time in seconds">s</label><button id="key-pose"><svg><use href="#i-key"/></svg>Apply pose</button><button id="key-camera"><svg><use href="#i-camera"/></svg>Key camera</button><button id="delete-key" class="icon-btn" title="Delete selected key"><svg><use href="#i-trash"/></svg></button><span class="tool-divider"></span><label class="duration-field"><input id="duration" type="number" min="2" max="60" step="1" value="8" aria-label="Clip duration">s</label><label class="loop-check"><input type="checkbox" id="loop">Loop</label></div>
+  </div>
+  <div class="tracks"><div class="track-headings"><span class="track-header">SCENE TRACKS</span><span><svg><use href="#i-camera"/></svg>Camera travel <b id="camera-key-count">3</b></span><span><i class="pose-dot"></i><span id="pose-track-name">Bob · pose</span><b id="pose-key-count">5</b></span></div><div id="track-area"><div id="ruler"></div><div id="cam-track" class="track-lane camera-lane"></div><div id="pose-track" class="track-lane pose-lane"></div><div id="playhead"><span></span></div></div></div>
+  <div class="timeline-footnote"><span id="keyframe-hint">Choose a time → edit → Apply pose / transform. From start previews the full animation.</span><span>Drag keys to retime <b>·</b> Space to play <b>·</b> H for clean view</span></div>
+</footer>
+<button id="clean-return">← Back to editor <kbd>H</kbd></button>
+<div id="record-overlay" hidden><i></i><span id="record-clock">Rendering video…</span><button id="stop-record">Cancel</button></div>
+<dialog id="export-dialog"><div class="dialog-head"><span class="eyebrow">EXPORT · PICTURE &amp; SOUND</span><button class="icon-btn dialog-close" title="Close"><svg><use href="#i-close"/></svg></button></div><h2>Share what you made.</h2><p class="muted">Video for the moving animation. MP3 for its sound track.</p>
+<div class="export-choices"><button id="shot"><svg><use href="#i-image"/></svg><b>PNG frame</b><span>A clean still image</span></button><button id="rec"><svg><use href="#i-camera"/></svg><b>Render video</b><span>MP4 / WebM · then download</span></button><button id="export-mp3"><svg><use href="#i-sound"/></svg><b>MP3 audio</b><span>Audio only · 128 kbps</span></button></div>
+<div class="video-settings"><label>Video format<select id="video-format"><option value="auto">Auto · MP4 when supported</option><option value="mp4">MP4 · H.264</option><option value="webm">WebM · browser-friendly</option></select></label><label>Resolution<select id="video-size"><option value="640x360">360p · faster</option><option value="960x540" selected>540p · recommended</option><option value="1280x720">720p · HD</option><option value="1920x1080">1080p · full HD</option></select></label><label>Frames / sec<select id="video-fps"><option value="24">24</option><option value="30">30</option></select></label></div>
+<p class="video-explain">Render the whole timeline, then click Download. Frame-by-frame export keeps the video timing correct even when rendering is slow.</p>
+<div id="video-progress" class="video-progress" hidden><div><b id="video-progress-label">Checking video encoders…</b><button id="cancel-video">Cancel</button></div><progress id="video-progress-bar" max="1" value="0"></progress><p id="video-progress-note"></p></div>
+<div id="video-ready" class="video-ready" hidden><div class="video-ready-heading"><span>VIDEO READY</span><span id="video-info"></span></div><video id="video-preview" controls playsinline preload="metadata"></video><div class="video-file-row"><a id="video-download" class="video-download" download><svg><use href="#i-save"/></svg><span id="video-download-label">Download video</span></a><span id="video-filename"></span></div><p id="video-download-note">The finished file stays available until you replace it or close this tab.</p></div>
+<div class="soundtrack-panel"><div class="section-title">Sound track<span id="audio-duration"></span></div><select id="audio-source" class="wide-select"><option value="builtin">Built-in mining + footsteps (synthesized)</option><option value="import" disabled>Your imported audio</option><option value="silent">Silence</option></select>
+<div class="audio-import-row"><button id="load-audio"><svg><use href="#i-import"/></svg>Import audio…</button><span id="audio-file-name">MP3, WAV or OGG · up to 15 MB</span></div>
+<label class="range-label" for="sound-volume">Volume<output id="sound-volume-value">70%</output></label><input id="sound-volume" type="range" min="0" max="1" step=".05" value=".7">
+<div id="import-audio-options" class="audio-import-options" hidden><label>Start at <input id="audio-offset" type="number" value="0" min="0" max="60" step=".1"> s</label><label><input id="audio-loop" type="checkbox">Loop imported audio</label></div>
+<div class="audio-preview-row"><button id="preview-sound">▶ Preview sound</button><button id="stop-sound">Stop sound</button><label><input id="preview-audio" type="checkbox">Sound on timeline</label></div>
+</div><div class="checks"><label><input id="record-audio" type="checkbox" checked>Include sound in video</label><span>Entire timeline · loops rendered once</span></div>
+<p id="sandbox-note" class="sandbox-note" hidden>This embedded preview may block downloads even after a video is rendered. Use the live app in its own tab, or open the downloaded HTML in Chrome / Edge. A preview is kept here; no automatic download is assumed.</p><p id="record-state" class="muted">Ready to render. After processing, use the Download video button. MP3 is a separate audio-only export.</p></dialog>
+<dialog id="ai-dialog" class="ai-dialog">
+  <div class="dialog-head"><span class="eyebrow ai-eyebrow"><svg><use href="#i-sparkles"/></svg>GEMINI DIRECTOR</span><button class="icon-btn dialog-close" title="Close Gemini panel"><svg><use href="#i-close"/></svg></button></div>
+  <div class="ai-heading"><div><h2>Describe it. Build it. Animate it.</h2><p class="muted">Turn an idea into editable terrain, characters and keyframes.</p></div><span class="ai-local-tag">YOUR KEY · YOUR SCENE</span></div>
+  <div class="ai-columns"><section class="ai-create">
+    <div class="ai-step"><span>01</span><b>Connect &amp; describe</b></div>
+    <label class="field-label" for="ai-key">Gemini API key <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Get a key ↗</a></label>
+    <div class="ai-key-row"><input id="ai-key" type="password" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="Paste your own API key" aria-label="Gemini API key"><button id="ai-show-key" type="button" aria-pressed="false">Show</button><button id="ai-forget-key" type="button" title="Forget the key held in this tab">Forget</button></div>
+    <p class="ai-key-note">Kept only in this tab’s memory. Never included in saved projects.</p>
+    <div class="ai-model-row"><label class="field-label" for="ai-model">Text model</label><button id="ai-models" class="text-btn">Check key / load models</button></div>
+    <select id="ai-model" class="wide-select" aria-label="Gemini model"><option value="auto">Auto · available Flash text model</option><option value="custom">Custom model ID…</option></select>
+    <div id="ai-custom-row" hidden><label class="field-label" for="ai-custom-model">Model ID</label><input id="ai-custom-model" placeholder="gemini-3.8-flash" spellcheck="false" autocomplete="off"></div>
+    <details class="ai-api-options"><summary>Compatibility options</summary><label class="ai-check"><input type="checkbox" id="ai-json-only">JSON-only mode for models that reject the full schema</label><p class="ai-key-note">Local command validation stays strict. This does not enable code execution or automatic retries.</p></details>
+    <label class="field-label" for="ai-mode">Work on</label><select id="ai-mode" class="wide-select"><option value="edit">This scene · keep what I don’t change</option><option value="new">A new scene · replace after review</option></select>
+    <label class="field-label" for="ai-prompt">What should happen?</label><textarea id="ai-prompt" rows="6" maxlength="6000" placeholder="Make a 10-second animation: build a small stone bridge, add a second Bob with a diamond pickaxe, have him walk across and wave. Slowly orbit the camera and use warm sunset light."></textarea>
+    <div class="ai-prompt-chips"><button data-ai-prompt="Keep this scene. Make Bob walk toward the diamond ore, mine it, then wave at the camera. Make a smooth 10-second camera move and use warm sunset lighting.">Mining scene</button><button data-ai-prompt="Keep this scene. Build a small stone bridge near Bob and add a second character who walks across it. Add an orbiting camera for an eight-second shot.">Build a bridge</button><button data-ai-prompt="Animate a diamond sword floating above a maple-log pedestal and spinning through two full turns in eight seconds. Slowly dolly the camera closer and change the lighting to moonlight.">Floating item</button></div>
+    <div class="ai-send"><button id="ai-generate" class="ai-primary"><svg><use href="#i-sparkles"/></svg>Generate plan</button><button id="ai-cancel" hidden>Cancel request</button><span id="ai-busy" class="ai-spinner" hidden aria-label="Working"></span></div>
+    <p class="ai-privacy">Clicking Generate sends your prompt and the scene summary to <b>Google’s Gemini API</b>. Textures, model files, skins and audio are not uploaded. Uses your API quota; charges may apply. No automatic retries.</p>
+    <p id="ai-preview-note" class="sandbox-note" hidden>Embedded file previews can block Google requests. Use the live app or open the downloaded HTML in Chrome / Edge. The offline command example still works here.</p>
+    <div id="ai-status" role="status" aria-live="polite">No scene changes until you review and apply a plan.</div>
+    <button id="ai-example" class="full-button subdued"><svg><use href="#i-play"/></svg>Try an offline command example <small>Not Gemini</small></button>
+    <details class="ai-context-details"><summary>What scene data is sent? <span id="ai-context-note"></span></summary><p class="muted">Object names/transforms and limited key summaries; character poses; camera/light settings; nearby terrain surface heights and block types. Large scenes are summarized.</p><pre id="ai-context"></pre></details>
+  </section><section class="ai-review">
+    <div class="ai-step"><span>02</span><b>Review &amp; apply</b><button id="ai-undo" class="text-btn" disabled>Undo last AI change</button></div>
+    <div id="ai-result" hidden><p id="ai-source" class="ai-source"></p><h3 id="ai-plan-title"></h3><p id="ai-plan-summary" class="muted"></p><div id="ai-stats" class="ai-stats"></div><ol id="ai-command-list" class="ai-command-list"></ol><div id="ai-warnings" class="ai-warnings" hidden></div></div>
+    <details class="ai-json-details"><summary>Command JSON <span>View or edit safely</span></summary><textarea id="ai-json" rows="12" spellcheck="false" placeholder="Generated commands appear here. You can also paste a command plan and Validate it."></textarea><button id="ai-validate" class="full-button">Validate commands · no scene changes</button></details>
+    <label id="ai-ack-row" class="ai-check" hidden><input type="checkbox" id="ai-ack">I reviewed the replacements / removals above.</label>
+    <label class="ai-check"><input type="checkbox" id="ai-play-after" checked>Preview from the start after applying</label>
+    <button id="ai-apply" class="ai-primary ai-apply" disabled><svg><use href="#i-play"/></svg>Apply &amp; play</button>
+    <p class="ai-safety">Validated, bounded scene commands only. No generated code runs. One Undo restores the full previous scene; everything remains editable.</p>
+    <details class="ai-help-details" open><summary>What can Gemini control?</summary><div id="ai-command-help"></div></details>
+  </section></div>
+</dialog>
+<dialog id="asset-dialog"><div class="dialog-head"><span class="eyebrow">ASSET SOURCE</span><button class="icon-btn dialog-close" title="Close"><svg><use href="#i-close"/></svg></button></div><h2 id="asset-detail-name"></h2><img id="asset-detail-image" alt="Selected texture"><p id="asset-detail-note" class="muted"></p><button id="asset-detail-download" class="full-button accent">Download this PNG</button></dialog>
+<dialog id="catalog-dialog"><div class="dialog-head"><span class="eyebrow">COLLECTION COVERAGE</span><button class="icon-btn dialog-close" title="Close"><svg><use href="#i-close"/></svg></button></div><h2>A much bigger library.</h2><div id="catalog-coverage"></div><p class="muted">The full public default pack is included in the ZIP, unchanged. The editor adds live-client / BloxdHub mappings and newer public assets, plus extracted model images and explicitly tinted variants. This is not a claim to include every private skin or unpublished game asset.</p><details><summary>Entries without a published graphic</summary><p id="catalog-missing" class="muted"></p></details><p class="muted">Internal states and partial blocks are available through search or “States / internal”. Doors, beds and similar multi-block objects include separate part states. Shapes and transparent / animated materials are editor renderings—not the full game’s physics or gameplay.</p></dialog>
+<dialog id="help-dialog"><div class="dialog-head"><span class="eyebrow">YOUR LITTLE ANIMATION STUDIO</span><button class="icon-btn dialog-close" title="Close"><svg><use href="#i-close"/></svg></button></div><h2>Build. Pose. Action.</h2><ol class="guide"><li><b>Build a scene.</b> Choose a block, then use Place (B) or Remove (X). Click a block in Select mode (V) to edit it individually. E shows colored rotation rings; Delete removes the selection.</li><li><b>Pose Bob.</b> Click a body part to rotate it directly, or use Whole player to turn the entire character. Held item selects the pickaxe separately. Motion between poses defaults to the shortest rotation, not the direction you dragged. Enable Full spins only for intentional turns. W / E / R show move, rotate and scale handles. Use the +90° buttons for quick turns.</li><li><b>Make it move.</b> Choose a time (or type it in the Time field), rotate or move your selection, then click Apply pose / transform. You can also edit first: unapplied changes stay while choosing the time. A first key after 0 seconds automatically adds the original starting pose. From start previews the whole clip. Revert edit cancels an unapplied change. This works for blocks, items, players, body parts and held tools.</li><li><b>Light & export.</b> Drag the sun in the Light tab. Export PNG or MP3 audio, or Render video and then click the retained Download MP4 / WebM button. The audio track can use the built-in synthesized effects or your own local file. MP3 does not contain video. Save a project JSON to keep your work.</li><li><b>Gemini director.</b> Use the Gemini button, enter your own key, describe the animation and Generate plan. Review the commands before Apply. A single Undo restores the previous scene. AI generation needs internet; manual editing remains offline.</li></ol><div class="credits"><b>About the assets</b><p>The full public default texture/model pack is included. Blocks, item names, face mappings and states are cross-referenced with the official Code API, BloxdHub and the public game client. The original equipment set keeps its corrected pixel-sprite geometry. Other assets use source models or catalog-based block shapes, with derived tints and unavailable entries labeled in Coverage. Bob’s classic red hoodie skin and editable rig are a reference-based recreation, not a verified original model. This is an unofficial fan-made editor.</p><p><a href="https://github.com/Bloxdy/texture-packs" target="_blank" rel="noreferrer">Default asset pack ↗</a> <a href="https://bloxd-io.fandom.com/wiki/Bob" target="_blank" rel="noreferrer">Bob reference ↗</a></p><p>Imports: self-contained GLB (with textures/animations), OBJ geometry, STL and PLY. Compressed GLB and external OBJ materials are not supported. Models stay local in your browser. Source assets retain their owners’ rights; no blanket redistribution license is implied.</p><p>MP3 encoding uses <a href="https://github.com/zhuker/lamejs" target="_blank" rel="noreferrer">lamejs 1.2.1</a> by Alex Zhukov and <a href="https://lame.sourceforge.net/" target="_blank" rel="noreferrer">LAME</a>, under the LGPL. Video export uses Mediabunny 1.62.1 (MPL-2.0) with browser-native encoders. Full licenses, upstream sources and rebuildable editor sources are included in the source bundle.</p></div></dialog>
+<input type="file" id="audio-file" accept="audio/*,.mp3,.wav,.ogg,.m4a" hidden><input type="file" id="file" accept=".glb,.obj,.stl,.ply" multiple hidden><input type="file" id="project-file" accept=".json" hidden><input type="file" id="skin-file" accept="image/png" hidden>
+<div id="loader"><div class="loading-cube"><svg><use href="#i-cube"/></svg></div><h2>Setting the scene.</h2><p id="load-message">Loading the Bloxd asset library…</p><div class="loading-bar"><span id="load-progress"></span></div></div>
+<script type="module" src="app.js"></script>
+</body></html>

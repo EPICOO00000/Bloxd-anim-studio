@@ -1,0 +1,174 @@
+{
+  "title": "A little mining adventure",
+  "summary": "Offline command example — not a Gemini response. A second Bob walks along a wooden path, waves, and watches a rotating diamond pickaxe. Golden light and a camera dolly complete the shot.",
+  "commands": [
+    {
+      "op": "duration",
+      "seconds": 10
+    },
+    {
+      "op": "terrain_fill",
+      "from": [
+        -4,
+        0,
+        -1
+      ],
+      "to": [
+        3,
+        0,
+        0
+      ],
+      "block": "planks"
+    },
+    {
+      "op": "add",
+      "id": "walker",
+      "kind": "character",
+      "name": "Bob the explorer",
+      "position": [
+        -3,
+        1,
+        0
+      ],
+      "tool": "Diamond Sword",
+      "grounded": true
+    },
+    {
+      "op": "motion",
+      "id": "walker",
+      "preset": "walk",
+      "start": 0,
+      "end": 5,
+      "from": [
+        -3,
+        1,
+        0
+      ],
+      "to": [
+        1,
+        1,
+        0
+      ],
+      "grounded": true
+    },
+    {
+      "op": "motion",
+      "id": "walker",
+      "preset": "wave",
+      "start": 5,
+      "end": 10,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "op": "add",
+      "id": "treasure",
+      "kind": "tool",
+      "name": "Floating diamond pickaxe",
+      "asset": "Diamond Pickaxe",
+      "position": [
+        3,
+        2.2,
+        0
+      ]
+    },
+    {
+      "op": "animate",
+      "id": "treasure",
+      "rotationMode": "spins",
+      "keys": [
+        {
+          "time": 0,
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "time": 5,
+          "position": [
+            3,
+            2.8,
+            0
+          ],
+          "rotation": [
+            0,
+            180,
+            0
+          ]
+        },
+        {
+          "time": 10,
+          "position": [
+            3,
+            2.2,
+            0
+          ],
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "op": "camera",
+      "smooth": true,
+      "keys": [
+        {
+          "time": 0,
+          "position": [
+            12,
+            8,
+            14
+          ],
+          "target": [
+            0,
+            1.8,
+            0
+          ],
+          "fov": 45
+        },
+        {
+          "time": 5,
+          "position": [
+            8,
+            5,
+            12
+          ],
+          "target": [
+            0.5,
+            2,
+            0
+          ],
+          "fov": 45
+        },
+        {
+          "time": 10,
+          "position": [
+            -7,
+            5,
+            11
+          ],
+          "target": [
+            1,
+            2,
+            0
+          ],
+          "fov": 45
+        }
+      ]
+    },
+    {
+      "op": "lighting",
+      "preset": "golden",
+      "azimuth": -50,
+      "shadows": true
+    }
+  ]
+}

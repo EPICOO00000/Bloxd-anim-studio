@@ -1,0 +1,196 @@
+{
+  "date": "2026-10-23",
+  "version": "4.0.0",
+  "checks": [
+    {
+      "name": "all 3,486 original pack files retain their verified upstream bytes",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "complete published PNG/model/sky-face counts are included",
+      "pass": true,
+      "detail": "{\"officialPng\":2074,\"officialModels\":1382,\"officialSkyFaces\":30,\"documentedBlockRoots\":1179,\"liveBlockRoots\":1309,\"blockStates\":4032,\"documentedItems\":1044,\"liveItemEntries\":1110,\"missingItemVisuals\":12,\"availableInventoryEntries\":2406,\"modelChoices\":1674,\"texturesTotal\":3588,\"rawSourceFiles\":3486}"
+    },
+    {
+      "name": "all 1,179 published block root names are indexed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "all 1,044 published item names are indexed, with no silent omissions",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "live additions and all 4,032 block states are cataloged",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the 12 unavailable internal item graphics are explicit, not fake placeholders",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "starter scene and existing animation remain intact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the library renders at most 48 cards rather than thousands",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "paging changes the visible catalog slice",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "search includes named rotation / placement states",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "category filter matches the actual asset family",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "every enabled block/state builds finite, nonempty geometry",
+      "pass": true,
+      "detail": "{\"blocks\":4031,\"items\":4080,\"bad\":[]}"
+    },
+    {
+      "name": "every enabled inventory/source-model choice can be instantiated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "slabs have actual half-height geometry",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "stairs use their two-box shape instead of a fake full cube",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "door open/closed variants use different geometry orientation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "furniture/lamps retain source-model geometry",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "cross-plane plants and square-sided crops are not solid cubes",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "transparent glass uses alpha-tested materials and does not occlude as stone",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "colored equipment is selectable with a labeled game-palette tint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "wood / white / red equipment are not all the same gray sprite",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "newer live-game items can be placed as real models",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unpublished internal entry is visible as unavailable when searched",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "new inventory items can be equipped and individually rotated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "expanded-library held item uses the existing pose controls",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "raw source models have a separate, working library tab",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "raw textures can be inspected with their exact dimensions/source",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "texture download preserves the original PNG bytes",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "coverage dialog discloses unavailable entries and scope",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Gemini gets the expanded usable inventory and block catalog",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Gemini context remains below the request-size cap despite the full catalog",
+      "pass": true,
+      "detail": "59383 characters"
+    },
+    {
+      "name": "Gemini accepts canonical block names as well as legacy IDs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "terrain instances use the selected non-cube geometry",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "ground height respects non-cube block surfaces",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "expanded block types persist through project save/load",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no unexpected browser or missing-asset errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no remote runtime downloads are needed for the asset library",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "remote": [],
+  "verifiedEditorVersion": "4.0.0",
+  "verifiedOn": "2026-10-23",
+  "testedFile": "Bloxd-Studio-4.0.html opened with file://; same suite also passed over HTTP"
+}

@@ -1,0 +1,186 @@
+# Bloxd Studio 4.0
+
+A small, local 3D animation editor with an editable **8-second Maple clearing**. Version 4.0 expands the public game asset library to 1,309 base block names / 4,032 block states, 1,110 item entries and 1,674 source-model choices. It retains reliable video downloads and direct shortest-path motion between saved poses. It keeps the optional **Gemini Director** that plans terrain, characters, item movement, camera travel and lighting using your own API key. Version 2.1’s keyframe fixes, original-color tool textures, manual editing, model imports and MP3 export are retained.
+
+## Open it
+
+Double-click **START-HERE.html** in Chrome, Edge or another modern desktop WebGL browser. The separately supplied **Bloxd-Studio-4.0.html** and **Bloxd-Studio.html** are identical. Manual editing assets/libraries are embedded; no install, account, CDN or internet connection is needed for the editor itself. **Gemini generation is optional and requires internet and your own Google API key.**
+
+The live preview also works. The embedded file viewer may block downloads: **download the HTML and open it in a browser to export or save projects**. There is no automatic persistent save—save a project before closing.
+
+## New in 4.0: the expanded game library
+
+- **Blocks:** 1,309 base names (including the 1,179 published Code API roots), with **4,032** orientation/placement/state entries.
+- **Items:** all **1,044** published item names plus **66** newer live entries. **1,098** have published usable visuals; 12 internal caught-NPC/brainrot entries are clearly disabled. Blocks can also be placed/held as inventory objects.
+- **Models:** **1,674** static source models, including all 1,382 original default-pack GLBs.
+- **Textures:** browse/download **3,588 PNG images**, comprising all **2,074 unchanged original-pack PNGs**, newer public images, model-image extractions and labeled equipment tints.
+- The ZIP includes the complete public default pack: **3,486 original PNG/GLB/JPEG files**, including all **30 skybox faces**. Skybox files are supplied separately, not as a new background selector.
+
+Use text search, group filters and the page arrows. **States / internal** shows advanced variants; search also reveals matching internal/state names. **Coverage** explains what is included and unavailable. The `temp` block and 12 internal items have no published graphic; no fake replacement is advertised as original.
+
+See **ASSET-LIBRARY.md**, **ASSET-CATALOG.csv** and **ASSET-COVERAGE.json** for the exact scope and sources. This is the complete public default-pack collection and the catalog that could be verified—not every private cosmetic, skin or future asset.
+
+## Fixed in 3.1: video downloads and direct motion
+
+**Video:** use **Export → Render video**, wait for **Video ready**, then click **Download MP4 / WebM** underneath the player. This is a real, user-clicked download—not a delayed automatic download that can be silently blocked. The finished clip stays in the tab for preview and repeated downloading. Render again after editing the scene; the ready clip is the last completed export.
+
+**Motion:** the editor calculates the transition between saved positions, scales and orientations. Rotation now uses the **shortest quaternion path**, independent of which way you dragged or how many extra turns the angle value contains. For example, 355° → 5° is a 10° turn, and 0° → 270° takes the direct −90° route. Multi-axis and body-part poses use the same method. Explicitly saved intermediate keys remain intentional waypoints.
+
+If you really want revolutions, select **Motion between saved poses → Full spins** for that object. Then 0° → 720° produces two turns. On a player, this setting covers its root, body-part and held-item keys together. The choice is undoable and saved with the project. Old projects without the setting now use shortest-path rotation by default; no authored keys are deleted.
+
+## Gemini Director
+
+1. Open the downloaded HTML in a full browser (or use the live app), then click **Gemini**.
+2. Enter your key in the password-style field. It stays in tab memory and is not saved in projects.
+3. Describe a scene, for example: **“Build a stone bridge, add another Bob with a diamond pickaxe, make him walk across and wave, orbit the camera and use sunset lighting.”**
+4. Click **Generate plan**. Review the commands and any replacement/removal warnings.
+5. **Apply & play** creates real editable objects and keys. One **Undo** restores the complete old scene.
+
+Gemini can fill/erase terrain, create rolling terrain, extract a terrain block for animation, add characters/items/props, equip and pose characters, bake walk/run/wave/mine/jump motion, set precise root/held-item keys, create camera travel and adjust lighting. Ground-aware walking follows voxel terrain heights. You can edit the result with all existing controls.
+
+**Google receives your prompt and a limited scene summary**, not actual textures, model files, skins or audio. API quota/charges can apply; no automatic retries. A generated plan is checked against a restricted command vocabulary, not executed as JavaScript. **Forget** clears the key. The embedded file preview can block Google requests; use the live app or downloaded file for real generation.
+
+**Try an offline command example** demonstrates the same command runner without a key. It is labeled as a local example, **not a Gemini response**.
+
+See **GEMINI-COMMANDS.md** for privacy/security details, supported operations, limits, the exact JSON format and troubleshooting. `gemini-command-schema.json` is the machine-readable schema. Live model quality/availability was not tested with a real key; browser integration tests use mocked Google responses.
+
+## Quick controls
+
+| What you want | What to click |
+|---|---|
+| Generate an animation with your Gemini key | **Gemini → describe → Generate plan → review → Apply & play** |
+| Add blocks | **Blocks → choose a texture → Place**, then click a block face |
+| Remove blocks | **Remove**, then ordinary left-click; right-click in Place mode also erases |
+| Rotate one block | **Select**, click the block, then **Rotate selected** or **E** |
+| Rotate the player | Select Bob in the scene list → **Whole player** → Rotate |
+| Pose an arm, head or leg | Click the visible body part, or choose a part in **Pose rig** |
+| Rotate the held pickaxe | **Held item**, then drag a colored ring or type XYZ angles |
+| Put a separate tool in the scene | **Tools → Place item → choose an item** |
+| Equip a player | Select Bob → **Tools → Equip player → choose an item** |
+| Make the edit move | Set **Time**, edit, click **Apply pose / transform**, then **From start** |
+| Hear/export sound | **Export → Sound track → MP3 audio** |
+| Export the moving picture | **Export → Render video → Download** |
+
+Rotation has exact XYZ angle fields, **+90°** buttons and optional **15° snap**. Selecting a terrain block converts that one instanced cell into an independent, centered block without duplicating it. That conversion, block placement/removal, transforms and animation-key edits support Undo/Redo.
+
+Body parts rotate at fixed joint pivots; use **Whole player** to move or scale the character. A held item can move, rotate and scale independently. Deleting a selected held item clears the hand, not the player. Choose Whole player before deleting the character itself.
+
+### Reliable keyframing in 2.1
+
+For example, to rotate a block over three seconds:
+1. Select the block.
+2. Type **3.00** into the timeline's **Time** field.
+3. Rotate it (for example, Y = 90°).
+4. Click **Apply transform**.
+5. Click **From start** to preview the complete motion.
+
+Its original pose is automatically saved at **0 seconds**, so the result actually animates instead of holding a single later key for the whole clip. You can also **rotate first, then choose the time**: the amber pending-edit indicator means your changes are kept, not wiped out by scrubbing. Only edited channels are carried; other animated positions, body parts and held-item channels continue to sample at the chosen time.
+
+**Revert edit** cancels a pending change without deleting existing keys. Apply is undoable as one action, including an automatically added starting key. Play, From start, video recording and Save project also apply pending edits at their chosen times, so they are not silently lost. Raw project data preserves pending edits as well.
+
+Normal Play resumes from the playhead. **From start** rewinds before playing, so a key at 3 seconds is not previewed only from its already-finished pose. Your editing view stays put while choosing key times; playback restores the animated camera, and the Camera inspector still previews camera keys.
+
+If an older saved project contains only a later key, its original pre-edit pose was never stored. Applying another key now adds a safe 0-second key from that track's earliest saved pose; it does not invent the missing original. You can explicitly edit and apply a new pose at Time = 0 to choose a different start.
+
+### Shortcuts
+
+- **V** Select; **B** Place blocks; **X** Remove blocks.
+- **W / E / R** move / rotate / scale. **F** focus selection.
+- Drag to orbit; right-drag to pan; scroll to zoom.
+- **Space** play/pause; **H** clean view / return to editor.
+- **Ctrl+Z / Ctrl+Shift+Z** Undo / Redo; **Ctrl+D** duplicate.
+- **Delete** removes the selected timeline key, or otherwise the selected object.
+- **Ctrl+S** downloads the project JSON. Use **Open** to continue later.
+
+## What changed about the tools?
+
+The original 32-equipment selection keeps its source PNGs on thin pixel-extruded meshes. The expanded library uses original-textured sprites and decoded source-model geometry, depending on the asset. Opaque pixels form the silhouette; transparent pixels are holes, not a rectangle. Nearest-neighbor filtering and unlit, non-tone-mapped face materials preserve the PNG colors. The five gold textures are included explicitly, not substituted with iron icons.
+
+Select a tool or Bob to see the **Applied texture** preview and download the PNG. **Shade tools with scene lighting** is optional; original colors are the default. The sword/axe display stands are separate selectable blocks, not part of the tool pivots.
+
+Original source GLBs remain unchanged in `assets/default-pack/models/`; the old small sample remains under `assets/models/` for compatibility. The Models tab exposes source geometry, while selected inventory tools retain the thinner PNG-derived display. Bob is still a reference-based classic-skin recreation, not a verified game extraction.
+
+## Animation and cameras
+
+- Every character has an independent pose track. Keys store its root transform, all ten joint rotations, body lift and held-item transform.
+- Separate blocks, tools, trees, lamps and imported models have their own transform tracks. Select an object to reveal its keys.
+- Rotation defaults to the shortest orientation-to-orientation path. **Full spins** is an explicit per-object option for intentional revolutions. Positions/scales interpolate directly between their saved endpoints with smooth timing; mouse gestures are not replayed.
+- Scrubbing previews all tracks, while pending edits are preserved until applied or reverted. Apply stores the edited channels together with the rest of the sampled pose/transform at that time.
+- Click a key to preview it; drag to retime; use the timeline trash button to delete it. Applying or dragging onto the same moment replaces the key instead of creating duplicate timestamps. Closely spaced keys (including adjacent 30 fps frames) stay separate. Clear track buttons support Undo.
+- **Animate preset** provides idle/walk/wave/mining/jump motion. Existing pose keys take precedence during playback; clear that track to use the procedural preset throughout.
+- Orbit/pan to a view and click **Key camera**. Keys store position, target and field of view. Smooth mode uses an arc-length-sampled spline; linear mode is also available.
+- Duration is 2–60 seconds. Keys beyond a shortened end remain saved. Non-looping playback holds on the final frame.
+- In **Light**, drag the sun pad or adjust direction, intensity, color, shadows and fog. The camera and lighting features from version 1 are retained.
+
+## MP3, sound and video
+
+**MP3 is audio only. It cannot contain moving images.** The Export dialog keeps MP3 and video separate.
+
+Choose a sound source:
+1. **Built-in mining + footsteps:** original synthesized demo effects, repeated every eight seconds for longer clips. These are not copied Bloxd sounds and are not automatically inferred from your edits/movements.
+2. **Imported audio:** load a local, browser-decodable MP3, WAV, OGG or supported M4A (up to 15 MB). Set volume, the start time within the scene, and optional looping. Without looping, the remainder after the audio ends is silent. The audio is embedded in the saved project.
+3. **Silence:** an explicit silent track.
+
+**Preview sound** plays the whole track; **Stop sound** stops it. **Sound on timeline** enables sound during animation preview. Export produces real **128 kbps, 44.1 kHz, mono MP3**, synthesized/decoded/resampled and encoded locally. Imported stereo audio is mixed to mono. A few tens of milliseconds of MP3 encoder padding are normal. The separately provided `Maple-Clearing-Soundtrack.mp3` is the built-in eight-second demo track, not a video.
+
+**Video:** real MP4 (H.264, with AAC audio when supported) or WebM (VP9/VP8 + optional Opus sound). **Auto** selects a compatible combination; it never renames WebM bytes to `.mp4` or silently drops requested audio. Some browsers, including the tested Linux Chromium, lack AAC encoding: use WebM for sound, or uncheck Include sound for a silent MP4.
+
+Choose 360p / 540p / 720p / 1080p and 24 or 30 fps. Modern browsers use local WebCodecs to render the whole timeline **frame by frame with explicit timestamps**. Rendering may take longer than the clip, but the video is not stretched by that wait. Normal codec padding can add a few milliseconds (the tested Opus/WebM files add 20 ms). Loop is exported once. Imported clips and live character presets are sampled deterministically, not recorded from your mouse gestures.
+
+The export panel shows actual frame progress, cancellation and a retained video player/download link. Export restores the editor's scene, view and playhead afterward; failed/cancelled work does not replace the last good file. PNG and video omit editor controls, selection rings, handles, path overlays and joint markers.
+
+If WebCodecs is unavailable, the editor uses a clearly labeled real-time compatibility capture, then re-muxes the packets into a valid, seekable file. This fallback is hardware-dependent and can have lower frame rate / timing variation; keep the tab visible. It no longer uses the old WebM duration patch that could produce container warnings.
+
+**Embedded previews can still forbid downloads at the platform level.** The app cannot override its parent iframe's sandbox. Use the live app in its own tab or open the downloaded HTML in a full Chrome/Edge browser. Save your current project before refreshing or switching versions.
+
+## Bring your own models
+
+Imports: self-contained, uncompressed **GLB** with textures/optional animation; **OBJ** geometry; **STL**; **PLY** meshes. Imports stay in your browser. The first embedded GLB animation can be previewed.
+
+Limits: 20 MB per model; 1.5 million vertices. Draco/KTX/meshopt compression and external OBJ/MTL textures are not supported. There is no automatic humanoid rigging for arbitrary imports. Bob is the built-in poseable character; the recreated neutral rig and atlas are included as `assets/bob-classic-rig.glb` and `assets/bob-classic-skin.png`. You can load a standard 64×64 skin PNG.
+
+Optional voxel conversion uses uniform cubes and works best on closed meshes. Fine details/open surfaces may disappear; Undo restores the original mesh.
+
+**Download selected GLB** exports the selected whole object, held item or body-part hierarchy in its current pose. It does **not** export the editor's full timeline. Keep the project JSON for editable animation data.
+
+## Project compatibility and assets
+
+Version 4.0 saves blocks, object keys, held-item transforms, rotation-path settings, embedded audio, scene titles and optional pending edits. Old block IDs are retained through aliases. Projects using newly added assets need this expanded editor to reopen correctly. It retains the version-2 project format with an editor-version marker. Generated scenes need no key or internet to reopen. Gemini API credentials and request history are not saved. Version 1 projects can also be opened; legacy tool stands are separated into editable blocks during conversion. Project-file limit: 40 MB, 50,000 terrain cells and 1,000 scene objects.
+
+The full public default pack and expanded live/catalog mappings are included. Exact counts and the 13 unavailable/internal entries are documented in ASSET-LIBRARY.md. The Bob atlas/rig is still a separate reference-based recreation. See `CREDITS.md` and `assets/manifest.json` for exact provenance and rights notices. This is an unofficial fan-made editor.
+
+## Modify / rebuild
+
+Run the modular app with Python 3:
+
+```sh
+python3 -m http.server 8000 --bind 0.0.0.0
+```
+
+Open `http://localhost:8000`. To rebuild the standalone file using Node 20+:
+
+```sh
+npm ci
+npm run build
+```
+
+Key source files:
+- `app.js`: scene editing, scoped selection, timeline, history, recording and persistence.
+- `lib/assets.js`: source textures, source-model/procedural geometry, lazy materials and previews; `lib/asset-data.js`: locally compressed complete asset bank.
+- `assets/catalog.json`, `assets/catalog-sources/`: source-aware catalog and normalized provenance.
+- `tools/build-asset-library.py`: reproducible public asset-bank builder (Pillow / NumPy / DracoPy needed only for rebuilding).
+- `lib/character.js`: recreated Bob rig; `lib/world.js`: instanced terrain/props.
+- `lib/tracks.js`, `lib/interpolation.js`: keyframe sampling and shortest-path quaternion interpolation.
+- `lib/video-export.js`: capability detection, exact-timestamp frame rendering, real-time fallback and container muxing.
+- `lib/key-edit.js`: per-channel pending edits, key snapshots and draft validation.
+- `lib/ai-commands.js`: command schema, planner instructions, safe compiler and offline example.
+- `lib/gemini-client.js`: fixed-origin Google API requests, model discovery, cancellation and error handling.
+- `lib/ai-panel.js`: key entry, prompt UI, command review and apply workflow.
+- `lib/audio.js`: local effects, audio import/mixing/preview and MP3 encoding.
+- `lib/importers.js`: model loaders and voxel conversion.
+- `index.html`, `style.css`: editor UI.
+- `vendor/`: local libraries, full licenses and lamejs's complete upstream source archive.
+
+The LGPL MP3 library is replaceable. Its only local changes are an attribution comment and ESM export. Extract `vendor/lamejs-1.2.1-source.tgz`, modify or replace `vendor/lamejs.js`, and run `npm run build` to relink the standalone editor. The full application source is included; no restriction is imposed on reverse engineering for debugging modifications to the LGPL library.
+
+For regression tests, install Chromium with `npx playwright install --with-deps chromium`, start the server above, then run `npm test`. Run `npm run build && npm run test:offline` for file/offline/sandbox checks. `npm run test:video` uses `ffprobe` / `ffmpeg` (QA only) to decode and inspect the actual video downloads. See `TESTED.md` for the actual verified results.

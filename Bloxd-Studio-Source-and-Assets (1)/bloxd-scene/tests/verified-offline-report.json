@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-23",
+  "version": "4.0.0",
+  "checks": [
+    {
+      "name": "standalone v2 opens with the network disabled",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "standalone keeps a typed rotation while selecting the key time",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "standalone fixes the first-late-key animation, not only the modular app",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "standalone can encode and download MP3 fully offline",
+      "pass": true,
+      "detail": "128731 bytes"
+    },
+    {
+      "name": "version 1 projects migrate without losing tool stands",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scope buttons correctly identify the selected held item",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "WebM export contains decodable moving-picture and audio tracks",
+      "pass": true,
+      "detail": "{\"duration\":8.02,\"width\":640,\"height\":360,\"audioDuration\":8.013492063492064,\"rms\":0.00984022452735262}"
+    },
+    {
+      "name": "standalone Gemini panel starts without a saved key",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "standalone validates the local command example without networking",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "standalone command execution creates real editable animation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "standalone Undo restores the entire pre-command scene",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "opaque sandbox preview renders all local assets",
+      "pass": true,
+      "detail": "{\"blocks\":956,\"tools\":4080,\"png\":267234,\"mp3\":32600,\"held\":true,\"downloadNote\":true}"
+    },
+    {
+      "name": "rotation and MP3 encoding work inside the restricted preview",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "embedded preview explains the download restriction",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "fixed edit-first / time-second workflow animates inside the opaque preview",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "local AI command execution also works in the opaque file preview",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "opaque preview does not fabricate Gemini API access",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "restricted preview can retain a locally rendered clip without an auto-download",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "restricted preview still explains that its parent can block downloads",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no remote runtime requests",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no offline or sandbox runtime errors",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "verifiedEditorVersion": "4.0.0",
+  "verifiedOn": "2026-10-23"
+}

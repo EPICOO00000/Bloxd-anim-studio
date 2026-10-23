@@ -1,0 +1,362 @@
+{
+  "date": "2026-10-23",
+  "version": "4.0.0",
+  "appURL": "http://127.0.0.1:8000/",
+  "apiTesting": "Mocked Google responses only; no real API key, paid request or live model-quality claim.",
+  "checks": [
+    {
+      "name": "Gemini entry point is available without changing manual editing",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "opening the editor makes no Gemini requests automatically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "password field and explicit Generate / review / Apply controls are visible",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "privacy, quota and no-auto-retry notices are visible",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "key check fetches Google models with an authentication header",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "model picker excludes speech and embedding-only models",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Generate uses the real Gemini generateContent request shape",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Gemini receives a strict command union and structured JSON mode",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "schema includes terrain-aware grounding and explicit camera targets",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API key is not in request URLs, instructions or scene data",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Gemini sees scene refs, limited keys, terrain surfaces, lights and asset names",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene context omits image/model/audio file payloads",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "generation is review-only, with no live mutation or history changes",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "generated operations are shown for review",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "destructive changes require acknowledgement before Apply",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Apply executes the plan and previews the animation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the whole command batch is one Undo entry",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "terrain fill, water and terrain extraction affect the real voxel map",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "height terrain contains varying surface heights",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "characters, original-textured equipment and props are actually added",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "object deletion and static transforms/rename execute correctly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "grounded characters are placed on terrain, not at the requested floating Y",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "walk / mine / wave are baked as real pose keys with changing limbs",
+      "pass": true,
+      "detail": "{\"position\":[-2.25,1,0.6],\"keys\":97,\"poses\":48,\"head\":15}"
+    },
+    {
+      "name": "partial head pose edits preserve the baked body motion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "object keys really spin and lift the extracted block/item",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "camera travel samples the generated path",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "lighting commands affect actual editor lighting",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unmentioned original Bob demo keys remain intact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "one Undo restores the old terrain, objects, keys, lighting and duration",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Redo restores the generated scene without another API call",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "saved projects contain generated animation, not the API key",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API key is not written to browser storage",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "generated scenes reload with working object and camera animation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "new-scene replacement is explicit and gated by review",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "new mode replaces the scene and persists its new title",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "ground-following motion uses the newly built bridge height",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Undo last AI change restores a whole replaced scene",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rejects arbitrary code atomically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rejects unknown item atomically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rejects oversized terrain atomically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rejects unknown target atomically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rejects wrong numeric type atomically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rejects invalid light atomically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rejects reserved alias atomically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rejects unsafe property atomically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rejects camera on target atomically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "generated code has never been executed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "clear_terrain clears terrain but preserves independent objects",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "custom skins/audio/private option payloads stay out of AI context",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unsafe model output is blocked at the UI, not executed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "quota response is handled without mutation or automatic retry",
+      "pass": true,
+      "detail": "Your Google quota or rate limit was reached. Check usage/billing or try again later. Test quota exceeded."
+    },
+    {
+      "name": "bad-json response is handled without mutation or automatic retry",
+      "pass": true,
+      "detail": "Gemini returned invalid JSON. Nothing was executed. Try a shorter, more specific request."
+    },
+    {
+      "name": "truncated response is handled without mutation or automatic retry",
+      "pass": true,
+      "detail": "The response was cut off at the token limit. Ask for a smaller scene or fewer actions. Nothing was applied."
+    },
+    {
+      "name": "blocked response is handled without mutation or automatic retry",
+      "pass": true,
+      "detail": "Google did not process this request (SAFETY). No scene changes were made."
+    },
+    {
+      "name": "API errors redact the key",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "JSON compatibility mode omits only the remote schema, not local validation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "custom model field cannot redirect a key to another endpoint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "a plan cannot overwrite changes made after its review snapshot",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "explicit revalidation safely uses the current scene",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Cancel aborts generation and keeps Apply disabled",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "late responses after cancellation cannot mutate the scene",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "network timeout is reported without applying anything",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Forget clears the session key and disables generation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "offline command example works without a key or API request",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "applying a plan preserves pending manual keyframe edits",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Undo AI restores pending manual edits, not just the keyed scene",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "AI commands animate an existing imported model without replacing its geometry",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Undo retains the exact imported object rather than reparsing it",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no unexpected JavaScript or local-asset errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no request was sent to an unexpected external service",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "unexpected": [],
+  "verifiedEditorVersion": "4.0.0",
+  "verifiedOn": "2026-10-23"
+}

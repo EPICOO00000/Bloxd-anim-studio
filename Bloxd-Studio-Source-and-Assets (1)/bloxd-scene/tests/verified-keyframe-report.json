@@ -1,0 +1,224 @@
+{
+  "date": "2026-10-22",
+  "version": "2.1.0",
+  "checks": [
+    {
+      "name": "updated editor exposes exact key time and From start controls",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "real scene click selects an editable block",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "first late block key automatically includes its original 0s transform",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "block actually interpolates 0\u00b0 \u2192 45\u00b0 \u2192 90\u00b0, not one frozen pose",
+      "pass": true,
+      "detail": "[0,45.00000000000001,90]"
+    },
+    {
+      "name": "undo Apply removes both automatically created keys as one action",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "redo Apply restores both keys and clears the pending edit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "choosing a moment after typing rotation does not wipe the unblurred edit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pending change is visible and has an explicit Revert action",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "choosing key time preserves the editing camera",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "edit-first / time-second workflow writes a usable later key",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "block editing leaves Bob\u2019s eight demo keys and three camera keys unchanged",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "From start rewinds and plays the new block animation",
+      "pass": true,
+      "detail": "{\"t\":0.8097999999998138,\"rot\":0.18771557101470962,\"head\":-71.97051196713217,\"camera\":0}"
+    },
+    {
+      "name": "Bob\u2019s demo and travelling camera still play alongside object keys",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pausing updates the inspector to the actual sampled transform",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "typing a transform during playback pauses without overwriting the typed value",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "new whole-player transforms get the same automatic starting key",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pending head edit follows the chosen time without freezing animated root channels",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "custom body-part key interpolates while preserving whole-player movement",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "held tool rotation and position key correctly, without resetting the body pose",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "block: rotate first, pick time, Apply produces a real midpoint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "tool: rotate first, pick time, Apply produces a real midpoint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "tree: rotate first, pick time, Apply produces a real midpoint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rock: rotate first, pick time, Apply produces a real midpoint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "lamp: rotate first, pick time, Apply produces a real midpoint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "imported models use the corrected transform-key path",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "voxelized items use the corrected transform-key path",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "block rotation ring is accessible to a real pointer",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "real dragged rotation survives choosing a later time",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "real dragged rotation is animated, not only stored as a static edit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Save project applies a pending transform at its chosen time",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "saved block keyframes replay correctly after opening the project",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "raw project data also retains an unapplied draft",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pending edit survives project round-trip and another time selection",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Revert cancels only the pending edit, leaving animation keys intact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Revert itself can be undone",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "From start applies a pending key at its target time before rewinding",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "closely spaced keys are not wrongly merged",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "retiming onto an existing moment replaces the key without duplicate timestamps",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "interpolation remains finite after overlapping-key retime",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "editing an older late-only track adds a safe starting key, without guessing its lost original pose",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "duplicated animation keeps its copied offset at every key",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "loading the starter still restores Bob\u2019s untouched working demo",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no unexpected browser errors during the keyframe workflows",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "verifiedEditorVersion": "4.0.0",
+  "verifiedOn": "2026-10-23"
+}
