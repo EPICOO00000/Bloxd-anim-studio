@@ -592,9 +592,11 @@ async function main(){
     try{
       for(const f of [...files]){
         if(f.size>20*1024*1024){toast(f.name+': please use a file under 20 MB.');continue;}
-        if(/\.(json|schem(atic)?|vf|vfsh|bloxd)$/i.test(f.name)){
+        const SCHEMATIC_EXT=/\.(json|schem(atic)?|vf|vfsh|bloxd|bloxdschem|bloxsd|bschem)$/i;
+        if(SCHEMATIC_EXT.test(f.name)||/^[{[]/.test((await f.slice(0,64).text()).trimStart())){
           let sch=null;try{sch=parseSchematic(await f.text());}catch(e){sch=null;}
           if(sch){toast('Importing schematic '+f.name+'…');importSchematic(f.name,sch);continue;}
+          if(SCHEMATIC_EXT.test(f.name)){toast(f.name+': no usable block list found inside.');continue;}
         }
         toast('Importing '+f.name+'…');
         try{
