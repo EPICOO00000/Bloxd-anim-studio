@@ -11,6 +11,7 @@ import { parseModel, voxelise } from './lib/importers.js';
 import { setWaterTime, updateWaterEnv } from './lib/water.js';
 import { parseSchematic, mapBloxdschem } from './lib/schematics.js';
 import { parseBloxdschem, isBloxdschem } from './lib/bloxdschem.js';
+import { loadPrefabs, prefabAssets, prefabCells } from './lib/prefabs.js';
 import { chooseVideoConfig, renderVideoFrames, renderRealtimeVideo } from './lib/video-export.js';
 import { Soundtrack } from './lib/audio.js';
 import { plainState, stageEdit, mergeEdit, keyFromState, stateFromKey, validateDraft } from './lib/key-edit.js';
@@ -31,6 +32,7 @@ function setTransform(root,t){root.position.fromArray(t.position);root.rotation.
 
 async function main(){
   await loadAssets(p=>{$('#load-progress').style.width=(p*100)+'%';});
+  loadPrefabs();
   $('#load-message').textContent='Arranging the maple clearing…';
   const viewport=$('#viewport'),canvas=$('#scene');
   const renderer=new THREE.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true,powerPreference:'high-performance'});
@@ -319,28 +321,29 @@ async function main(){
     $('#asset-detail-note').textContent=meta.width+' × '+meta.height+' pixels · '+(meta.kind==='original-pack'?'Unchanged PNG from the official public default pack.':meta.kind==='live-png'?'Newer public game texture, retrieved from the BloxdHub live asset mirror.':meta.kind==='palette-tint'?'Derived from '+meta.base+' using the game’s '+meta.color+' equipment tint.':'Image extracted from source model '+meta.model+'.')+' This view is a texture file, not a promise that every atlas is a placeable block.';$('#asset-dialog').showModal();
   }
   function refreshLibrary(){
-    const token=++libraryToken,isBlocks=state.category==='blocks',isItems=state.category==='tools',isModels=state.category==='models',isTextures=state.category==='textures',isBob=state.category==='characters';
+    const token=++libraryToken,isBlocks=state.category==='blocks',isItems=state.category==='tools',isModels=state.category==='models',isTextures=state.category==='textures',isBob=state.category==='characters',isBuilds=state.category==='builds';
     $$('[data-library]').forEach(b=>b.classList.toggle('active',b.dataset.library===state.category));$('#block-edit-actions').hidden=!isBlocks;$('#tool-edit-actions').hidden=!(isItems||isModels);
-    $('#asset-action-note').textContent=isBlocks?'Place / Remove to build. Select + Rotate to animate a block.':isItems||isModels?(state.toolAction==='place'?'Place a separate, rotatable asset. Models are static source geometry.':'Select a player, then choose an asset to hold. Adjust its grip in Held item.') :isTextures?'All PNG files, embedded model images and labeled palette variants. Click to inspect / download.':'The built-in, editable classic Bob recreation.';
+    $('#asset-action-note').textContent=isBlocks?'Place / Remove to build. Select + Rotate to animate a block.':isItems||isModels?(state.toolAction==='place'?'Place a separate, rotatable asset. A ghost preview follows your cursor — click to set it down, Esc cancels. Models are static source geometry.':'Select a player, then choose an asset to hold. Adjust its grip in Held item.') :isBuilds?'Whole builds from the open map-editor pack. Click one, then click the world — a ghost shows where it lands. Esc cancels.':isTextures?'All PNG files, embedded model images and labeled palette variants. Click to inspect / download.':'The built-in, editable classic Bob recreation.';
     $('#place-tools').classList.toggle('active',state.toolAction==='place');$('#equip-tools').classList.toggle('active',state.toolAction==='equip');
-    $('#catalog-summary').textContent=catalog.counts.liveBlockRoots.toLocaleString()+' base blocks · '+catalog.counts.liveItemEntries.toLocaleString()+' item entries';
+    $('#catalog-summary').textContent=isBuilds?prefabAssets.length.toLocaleString()+' prefab builds · houses, trees, rocks & stands':catalog.counts.liveBlockRoots.toLocaleString()+' base blocks · '+catalog.counts.liveItemEntries.toLocaleString()+' item entries';
     const query=$('#asset-search').value.trim().toLowerCase(),words=query.split(/\s+/).filter(Boolean),host=$('#asset-grid');host.replaceChildren();host.classList.toggle('characters',isBob);
-    let rows=isBlocks?catalog.blockOrder.map(id=>({id,...blockDefs[id],name:blockDefs[id].label,kind:'block'})):isItems?catalog.itemOrder.map(id=>({id,...itemDefs[id]})):isModels?catalog.sourceModels.map(r=>({...r,id:r.asset,name:r.name,kind:'model'})):isTextures?Object.entries(catalog.textureMeta).map(([id,m])=>({id,name:m.name,kind:'texture',group:({'original-pack':'Original pack PNGs','live-png':'Live additions','model-image':'Model images','palette-tint':'Equipment color variants'})[m.kind],available:true,meta:m})): [{id:'bob',name:'Bob',kind:'character',group:'Poseable',available:true}];
+    let rows=isBlocks?catalog.blockOrder.map(id=>({id,...blockDefs[id],name:blockDefs[id].label,kind:'block'})):isItems?catalog.itemOrder.map(id=>({id,...itemDefs[id]})):isModels?catalog.sourceModels.map(r=>({...r,id:r.asset,name:r.name,kind:'model'})):isBuilds?prefabAssets.map(a=>({id:a.n,name:prefabLabel(a),kind:'build',group:a.t[0].toUpperCase()+a.t.slice(1),available:true,meta:a})):isTextures?Object.entries(catalog.textureMeta).map(([id,m])=>({id,name:m.name,kind:'texture',group:({'original-pack':'Original pack PNGs','live-png':'Live additions','model-image':'Model images','palette-tint':'Equipment color variants'})[m.kind],available:true,meta:m})): [{id:'bob',name:'Bob',kind:'character',group:'Poseable',available:true}];
     const groupSelect=$('#catalog-group'),groups=[...new Set(rows.map(r=>r.group).filter(Boolean))].sort();groupSelect.replaceChildren();const all=document.createElement('option');all.value='';all.textContent='All groups';groupSelect.append(all);for(const g of groups){const o=document.createElement('option');o.value=g;o.textContent=g;groupSelect.append(o);}groupSelect.value=groups.includes(state.libraryGroup)?state.libraryGroup:'';state.libraryGroup=groupSelect.value;
-    $('.catalog-filters').hidden=isBob;$('.catalog-filters label').hidden=isTextures||isModels;$('#catalog-advanced').checked=state.libraryAdvanced;
+    $('.catalog-filters').hidden=isBob;$('.catalog-filters label').hidden=isTextures||isModels||isBuilds;$('#catalog-advanced').checked=state.libraryAdvanced;
     rows=rows.filter(r=>(!state.libraryGroup||r.group===state.libraryGroup)&&((query||state.libraryAdvanced)||(!r.variant&&!r.internal))&&words.every(w=>(r.name+' '+r.id+' '+(r.group||'')).toLowerCase().includes(w)));
     const pageSize=48,pages=Math.max(1,Math.ceil(rows.length/pageSize));state.libraryPage=Math.max(0,Math.min(state.libraryPage,pages-1));const offset=state.libraryPage*pageSize,visible=rows.slice(offset,offset+pageSize);
     $('#catalog-count').textContent=rows.length?(offset+1)+'–'+(offset+visible.length)+' of '+rows.length.toLocaleString():'No matches';$('#catalog-page').textContent=(state.libraryPage+1)+' / '+pages;$('#catalog-prev').disabled=state.libraryPage===0;$('#catalog-next').disabled=state.libraryPage>=pages-1;$('.catalog-pages').hidden=isBob;
     for(const r of visible){
       const button=document.createElement('button');button.className='asset-card'+(!r.available?' unavailable':'');button.title=r.name;button.dataset.asset=r.id;
-      const image=document.createElement('img');image.alt='';image.loading='lazy';image.src=isBlocks?blockIcon(r.id):isTextures?textureURL(r.id):isBob?skinThumb:toolIcon(isModels?r.asset:r.id)||fallbackIcon();if(isBlocks&&!r.model&&r.shape==='cube')image.className='block-thumb';button.append(image);
-      const label=document.createElement('span');label.textContent=r.name;button.append(label);const tag=document.createElement('i');tag.className='asset-tag';tag.textContent=!r.available?'No published visual':r.variant?'State variant':isModels?'Source model':r.kind==='block-item'?'Held block':r.kind==='texture'?(r.meta.kind==='original-pack'?'Original PNG':r.group):isBlocks&&r.shape!=='cube'?r.shape.replace('|rotatable',''):'';button.append(tag);
+      const image=document.createElement('img');image.alt='';image.loading='lazy';image.src=isBlocks?blockIcon(r.id):isBuilds?prefabIcon(r.meta.t):isTextures?textureURL(r.id):isBob?skinThumb:toolIcon(isModels?r.asset:r.id)||fallbackIcon();if(isBlocks&&!r.model&&r.shape==='cube')image.className='block-thumb';button.append(image);
+      const label=document.createElement('span');label.textContent=r.name;button.append(label);const tag=document.createElement('i');tag.className='asset-tag';tag.textContent=!r.available?'No published visual':isBuilds?r.meta.b.toLocaleString()+' blocks':r.variant?'State variant':isModels?'Source model':r.kind==='block-item'?'Held block':r.kind==='texture'?(r.meta.kind==='original-pack'?'Original PNG':r.group):isBlocks&&r.shape!=='cube'?r.shape.replace('|rotatable',''):'';button.append(tag);
       if(!r.available){button.disabled=true;button.title=r.name+' — listed in the catalog, but no published graphic was found.';}
       else button.onclick=()=>{
         if(isBlocks){state.block=r.id;setPlaying(false);setMode('build');refreshLibrary();}
         else if(isTextures)showTextureAsset(r.id);
         else if(isBob){const n=objects.filter(o=>o.character).length+1;added(addBob(spawnPosition(),'Bob '+String(n).padStart(2,'0')));}
-        else{const asset=isModels?r.asset:r.id;if(state.toolAction==='equip'){if(!selected?.character){toast('Select a player first, then choose an item.');return;}equipTool(selected,asset);setScope('held');setMode('rotate');showInspector('object');}else{added(addProp('tool',spawnPosition(),{asset}));setMode('rotate');}}
+        else if(isBuilds){try{startSchemGhost(prefabLabel(r.meta),prefabCells(r.meta));}catch(err){toast('Could not read '+r.meta.n+': '+err.message);}}
+        else{const asset=isModels?r.asset:r.id;if(state.toolAction==='equip'){if(!selected?.character){toast('Select a player first, then choose an item.');return;}equipTool(selected,asset);setScope('held');setMode('rotate');showInspector('object');}else startPropGhost(asset);}
       };
       if(isBlocks&&state.mode==='build'&&r.id===state.block)button.classList.add('active');
       if(isBob){button.classList.add('character-card');const note=document.createElement('small');note.textContent='Classic skin recreation · 10-joint rig';button.append(note);}
@@ -427,6 +430,9 @@ async function main(){
   // Pointer picking uses the viewport rectangle, never the full window.
   const ray=new THREE.Raycaster(),pointer=new THREE.Vector2();
   const hover=new THREE.Mesh(new THREE.BoxGeometry(1.005,1.005,1.005),new THREE.MeshBasicMaterial({color:0xd6f29e,wireframe:true,transparent:true,opacity:.8,depthWrite:false}));hover.visible=false;helpers.add(hover);
+  // Ghost placement preview (ported from the Bloxd Map Editor asset placer): a translucent
+  // copy of the schematic/asset follows the cursor, left-click commits, right-click/Esc cancels.
+  let ghostState=null;
   function aim(e){const r=canvas.getBoundingClientRect();pointer.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);camera.updateMatrixWorld();ray.setFromCamera(pointer,camera);}
   function visibleMesh(o){if(!o.isMesh)return false;for(let p=o;p;p=p.parent)if(!p.visible)return false;return true;}
   function recordForHit(hit){let obj=hit?.object;while(obj&&!obj.userData.studioId)obj=obj.parent;return objects.find(r=>r.id===obj?.userData.studioId)||null;}
@@ -466,12 +472,14 @@ async function main(){
   canvas.addEventListener('contextmenu',e=>e.preventDefault());
   canvas.addEventListener('pointerdown',e=>{pointerDown={x:e.clientX,y:e.clientY,button:e.button,gizmo:!!gizmo.axis};});
   canvas.addEventListener('pointermove',e=>{
+    if(ghostState){hover.visible=false;updateGhost(e);return;}
     if(!['build','erase'].includes(state.mode)){hover.visible=false;return;}const hit=sceneHit(e),dig=state.mode==='erase'||e.buttons===2||e.shiftKey;hover.visible=editableHit(hit,dig);
     if(hover.visible){const rec=recordForHit(hit);hover.rotation.set(0,0,0);hover.scale.set(1,1,1);if(dig&&rec?.type==='block'){hover.position.copy(rec.root.position);hover.rotation.copy(rec.root.rotation);hover.scale.copy(rec.root.scale);}else{const p=cellFromHit(hit,dig);hover.position.set(p[0]+.5,p[1]+.5,p[2]+.5);}hover.material.color.set(dig?0xf5a179:0xd6f29e);}
   });
   canvas.addEventListener('pointerleave',()=>hover.visible=false);
   canvas.addEventListener('pointerup',e=>{
     const down=pointerDown;pointerDown=null;if(!down||Math.hypot(down.x-e.clientX,down.y-e.clientY)>5||down.gizmo)return;
+    if(ghostState){if(down.button===0){updateGhost(e);commitGhost();}else{cancelGhost();toast('Placement canceled.');}return;}
     if(['build','erase'].includes(state.mode)){editBlock(sceneHit(e),state.mode==='erase'||down.button===2||e.shiftKey);return;}
     if(down.button!==0)return;const hit=sceneHit(e);if(!hit||hit.object===floor){selectObject(null);return;}
     if(world.meshes.includes(hit.object)){selectTerrainBlock(hit);return;}
@@ -570,9 +578,12 @@ async function main(){
   };
 
   function importSchematic(name,sch){
+    const cx=Math.round(orbit.target.x),cz=Math.round(orbit.target.z);
+    placeSchematic(name,sch,cx,Math.max(0,Math.ceil(world.heightAt(cx,cz))),cz);
+  }
+  function placeSchematic(name,sch,cx,baseY,cz){
     let minX=Infinity,minY=Infinity,minZ=Infinity,maxX=-Infinity,maxZ=-Infinity;
     for(const key of sch.cells.keys()){const [x,y,z]=key.split(',').map(Number);minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxZ=Math.max(maxZ,z);minZ=Math.min(minZ,z);}
-    const cx=Math.round(orbit.target.x),cz=Math.round(orbit.target.z),baseY=Math.max(0,Math.ceil(world.heightAt(cx,cz)));
     const ox=cx-Math.round((minX+maxX)/2),oy=baseY-minY,oz=cz-Math.round((minZ+maxZ)/2);
     const old=new Map(),placed=new Map();
     for(const [key,type] of sch.cells){
@@ -588,6 +599,64 @@ async function main(){
     pushHistory('import schematic '+name,undo,redo);
     toast('Imported '+placed.size.toLocaleString()+' blocks from '+name+(sch.unmapped.length?' · '+sch.unmapped.length+' unknown type(s) skipped':'')+'.');
   }
+  // ── Ghost placement previews ──────────────────────────────────────────────
+  function prefabLabel(a){return a.t[0].toUpperCase()+a.t.slice(1)+' '+a.n.slice(a.t.length);}
+  function prefabIcon(t){
+    const c={house:'#d3a06a',tree:'#5aa757',rock:'#9aa3b2',stand:'#d07a7a'}[t]||'#8fa07f';
+    const shape=t==='house'?'<path d="M8 19 20 8l12 11v13H8z"/><rect x="17" y="22" width="6" height="10" fill="#1c2318"/>':t==='tree'?'<rect x="18" y="22" width="4" height="12"/><circle cx="20" cy="14" r="9"/>':t==='rock'?'<path d="M8 30 14 14l8-4 10 8-2 12z"/>':'<rect x="13" y="8" width="14" height="24" rx="5"/>';
+    return 'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" rx="7" fill="#1c2318"/><g fill="'+c+'">'+shape+'</g></svg>');
+  }
+  function cancelGhost(){
+    if(!ghostState)return;
+    ghostState.dispose();ghostState=null;canvas.style.cursor='';
+  }
+  function startSchemGhost(name,sch){
+    cancelGhost();
+    let minX=Infinity,minY=Infinity,minZ=Infinity,maxX=-Infinity,maxZ=-Infinity;
+    for(const key of sch.cells.keys()){const [x,y,z]=key.split(',').map(Number);minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxZ=Math.max(maxZ,z);minZ=Math.min(minZ,z);}
+    const midX=Math.round((minX+maxX)/2),midZ=Math.round((minZ+maxZ)/2);
+    const geo=new THREE.BoxGeometry(1,1,1),mat=new THREE.MeshLambertMaterial({transparent:true,opacity:.45,depthWrite:false});
+    const mesh=new THREE.InstancedMesh(geo,mat,sch.cells.size);
+    const m=new THREE.Matrix4(),col=new THREE.Color();let i=0;
+    for(const [key,type] of sch.cells){
+      const [x,y,z]=key.split(',').map(Number);
+      m.setPosition(x-midX+.5,y-minY+.5,z-midZ+.5);mesh.setMatrixAt(i,m);
+      const c=blockDefs[type]?.color;col.setRGB(c?c[0]:.62,c?c[1]:.72,c?c[2]:.55);mesh.setColorAt(i,col);i++;
+    }
+    if(mesh.instanceColor)mesh.instanceColor.needsUpdate=true;
+    mesh.frustumCulled=false;
+    const group=new THREE.Group();group.add(mesh);group.visible=false;helpers.add(group);
+    ghostState={kind:'schem',name,sch,group,dispose(){helpers.remove(group);geo.dispose();mat.dispose();}};
+    canvas.style.cursor='copy';
+    toast('Ghost ready for '+name+' — click the world to build it. Right-click or Esc cancels.');
+  }
+  function startPropGhost(asset){
+    cancelGhost();
+    let root;try{root=makeTool(asset,1.2);}catch(e){toast('Could not build a preview for '+asset+'.');return;}
+    const clones=[];
+    root.traverse(o=>{if(o.isMesh){
+      const list=Array.isArray(o.material)?o.material:[o.material];
+      const ghostMats=list.map(mm=>{const g=mm.clone();g.transparent=true;g.opacity=.45;g.depthWrite=false;clones.push(g);return g;});
+      o.material=Array.isArray(o.material)?ghostMats:ghostMats[0];o.castShadow=false;o.receiveShadow=false;
+    }});
+    const group=new THREE.Group();group.add(root);group.visible=false;helpers.add(group);
+    ghostState={kind:'prop',asset,group,dispose(){helpers.remove(group);for(const g of clones)g.dispose();}};
+    canvas.style.cursor='copy';
+    toast('Ghost ready for '+asset+' — click the world to place it. Right-click or Esc cancels.');
+  }
+  function updateGhost(e){
+    if(!ghostState)return;
+    const hit=sceneHit(e);if(!hit)return;
+    const ax=Math.round(hit.point.x),az=Math.round(hit.point.z);
+    const ay=ghostState.kind==='schem'?Math.max(0,Math.ceil(world.heightAt(ax,az))):world.heightAt(ax,az);
+    ghostState.group.position.set(ax,ay,az);ghostState.group.visible=true;ghostState.anchor=[ax,ay,az];
+  }
+  function commitGhost(){
+    const g=ghostState;if(!g)return;
+    const ax=g.anchor?g.anchor[0]:Math.round(orbit.target.x),ay=g.anchor?g.anchor[1]:Math.max(0,Math.ceil(world.heightAt(ax,Math.round(orbit.target.z)))),az=g.anchor?g.anchor[2]:Math.round(orbit.target.z);
+    if(g.kind==='schem'){const name=g.name,sch=g.sch;cancelGhost();placeSchematic(name,sch,ax,ay,az);}
+    else{const asset=g.asset;cancelGhost();added(addProp('tool',new THREE.Vector3(ax,ay,az),{asset}));setMode('rotate');}
+  }
   async function handleFiles(files){
     if(importBusy)return;importBusy=true;
     try{
@@ -599,7 +668,7 @@ async function main(){
         if(binary||SCHEMATIC_EXT.test(f.name)||/^[{[]/.test(new TextDecoder().decode(u8.subarray(0,64)).trimStart())){
           let sch=null;
           try{sch=binary?mapBloxdschem(parseBloxdschem(u8,f.name)):parseSchematic(new TextDecoder().decode(u8));}catch(e){sch=null;console.warn('[schematic]',e);}
-          if(sch){toast('Importing schematic '+f.name+'…');importSchematic(f.name,sch);continue;}
+          if(sch){startSchemGhost(f.name,sch);continue;}
           if(binary||SCHEMATIC_EXT.test(f.name)){toast(f.name+': no usable block list found inside.');continue;}
         }
         toast('Importing '+f.name+'…');
@@ -833,6 +902,7 @@ async function main(){
     if(['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)||document.activeElement.isContentEditable)return;
     if($$('dialog').some(d=>d.open))return;
     const k=e.key.toLowerCase();
+    if(k==='escape'&&ghostState){cancelGhost();toast('Placement canceled.');return;}
     if((e.ctrlKey||e.metaKey)&&k==='z'){e.preventDefault();e.shiftKey?redo():undo();return;}
     if((e.ctrlKey||e.metaKey)&&k==='d'){e.preventDefault();duplicateSelected();return;}
     if((e.ctrlKey||e.metaKey)&&k==='s'){e.preventDefault();$('#save-project').click();return;}
