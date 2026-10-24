@@ -9,7 +9,8 @@ import { CameraTrack, samplePose, sampleTransform, putKey, KEY_EPS } from './lib
 import { interpolateRotation } from './lib/interpolation.js';
 import { parseModel, voxelise } from './lib/importers.js';
 import { setWaterTime, updateWaterEnv } from './lib/water.js';
-import { parseSchematic } from './lib/schematics.js';
+import { parseSchematic, mapBloxdschem } from './lib/schematics.js';
+import { parseBloxdschem, isBloxdschem } from './lib/bloxdschem.js';
 import { chooseVideoConfig, renderVideoFrames, renderRealtimeVideo } from './lib/video-export.js';
 import { Soundtrack } from './lib/audio.js';
 import { plainState, stageEdit, mergeEdit, keyFromState, stateFromKey, validateDraft } from './lib/key-edit.js';
@@ -593,10 +594,13 @@ async function main(){
       for(const f of [...files]){
         if(f.size>20*1024*1024){toast(f.name+': please use a file under 20 MB.');continue;}
         const SCHEMATIC_EXT=/\.(json|schem(atic)?|vf|vfsh|bloxd|bloxdschem|bloxsd|bschem)$/i;
-        if(SCHEMATIC_EXT.test(f.name)||/^[{[]/.test((await f.slice(0,64).text()).trimStart())){
-          let sch=null;try{sch=parseSchematic(await f.text());}catch(e){sch=null;}
+        const u8=new Uint8Array(await f.arrayBuffer());
+        const binary=isBloxdschem(u8);
+        if(binary||SCHEMATIC_EXT.test(f.name)||/^[{[]/.test(new TextDecoder().decode(u8.subarray(0,64)).trimStart())){
+          let sch=null;
+          try{sch=binary?mapBloxdschem(parseBloxdschem(u8,f.name)):parseSchematic(new TextDecoder().decode(u8));}catch(e){sch=null;console.warn('[schematic]',e);}
           if(sch){toast('Importing schematic '+f.name+'…');importSchematic(f.name,sch);continue;}
-          if(SCHEMATIC_EXT.test(f.name)){toast(f.name+': no usable block list found inside.');continue;}
+          if(binary||SCHEMATIC_EXT.test(f.name)){toast(f.name+': no usable block list found inside.');continue;}
         }
         toast('Importing '+f.name+'…');
         try{
