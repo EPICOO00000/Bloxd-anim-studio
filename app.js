@@ -261,7 +261,7 @@ async function main(){
     canvas.style.cursor=building?'crosshair':'default';
   }
   function selectObject(r,scope='root',joint=state.joint){finishInputEdit();selected=r;if(r?.draft)r.draft.time=timeline.time;state.selectedKey=null;state.scope=r?.character?scope:'root';state.joint=joint;$('#joint-select').value=joint;refreshOutliner();refreshInspector();refreshTimeline();setMode(['build','erase'].includes(state.mode)?'select':state.mode);}
-  function showInspector(tab){$('.inspector-scroll').scrollTop=0;state.inspector=tab;$$('[data-inspector]').forEach(b=>b.classList.toggle('active',b.dataset.inspector===tab));for(const n of ['object','light','camera'])$('#inspect-'+n).hidden=n!==tab;}
+  function showInspector(tab){$('.inspector-scroll').scrollTop=0;state.inspector=tab;$$('[data-inspector]').forEach(b=>b.classList.toggle('active',b.dataset.inspector===tab));for(const n of ['object','light','camera'])$('#inspect-'+n).hidden=n!==tab;syncDock();}
   function refreshOutliner(){
     const host=$('#outliner');host.replaceChildren();$('#obj-count').textContent=objects.length+1;
     const terrain=document.createElement('button');terrain.className='object-row';terrain.innerHTML=icon('grid')+'<span>Terrain</span><small>BLOCKS</small>';terrain.title='Select an individual block in the viewport';terrain.onclick=()=>{state.category='blocks';refreshLibrary();setMode('select');toast('Click a block to select it, or use Place / Remove in the library.');};host.append(terrain);
@@ -830,8 +830,9 @@ async function main(){
     if((e.ctrlKey||e.metaKey)&&k==='d'){e.preventDefault();duplicateSelected();return;}
     if((e.ctrlKey||e.metaKey)&&k==='s'){e.preventDefault();$('#save-project').click();return;}
     if(e.code==='Space'){e.preventDefault();setPlaying(!timeline.playing);}
-    if(k==='h')toggleClean();if(k==='f')focusObject(selected);if(k==='/'){e.preventDefault();$('#asset-search').focus();}
+    if(k==='h')toggleClean();if(k==='f')focusObject(selected);if(k==='/'){e.preventDefault();document.body.classList.add('panel-library');syncDock();$('#asset-search').focus();}
     if(k==='b'){state.category='blocks';setMode('build');refreshLibrary();}if(k==='x'){state.category='blocks';setMode('erase');refreshLibrary();}
+    if(k==='escape'&&(document.body.classList.contains('panel-library')||document.body.classList.contains('panel-inspector')||document.body.classList.contains('panel-timeline'))){closePanels();return;}
     if(k==='v'||k==='escape')setMode('select');if(k==='w')setMode('translate');if(k==='e')setMode('rotate');if(k==='r')setMode('scale');
     if(k==='delete'||k==='backspace'){e.preventDefault();if(state.selectedKey)deleteKey(state.selectedKey.type,state.selectedKey.index);else deleteObject();}
   });
@@ -868,6 +869,37 @@ async function main(){
   }
   animate();
   $('#loader').classList.add('gone');setTimeout(()=>$('#loader').remove(),500);
+  // ── Dock: small round buttons open the studio menus as drawers ──
+  const PANEL_CLASS={library:'panel-library',inspector:'panel-inspector',timeline:'panel-timeline'};
+  function syncDock(){$$('.dock-btn[data-panel]').forEach(b=>{const on=document.body.classList.contains(PANEL_CLASS[b.dataset.panel]);b.classList.toggle('active',on&&(b.dataset.panel!=='inspector'||!b.dataset.tab||b.dataset.tab===state.inspector));});}
+  function closePanels(){document.body.classList.remove('panel-library','panel-inspector','panel-timeline');syncDock();}
+  $$('.dock-btn[data-panel]').forEach(b=>b.onclick=()=>{
+    const cls=PANEL_CLASS[b.dataset.panel],was=document.body.classList.contains(cls);
+    closePanels();
+    if(!was){document.body.classList.add(cls);if(b.dataset.panel==='inspector')showInspector(b.dataset.tab||state.inspector);}
+    syncDock();resize();
+  });
+  const projectMenu=$('#project-menu');
+  $('#open-project-menu').onclick=e=>{e.stopPropagation();projectMenu.hidden=!projectMenu.hidden;};
+  projectMenu.addEventListener('click',()=>{projectMenu.hidden=true;});
+  addEventListener('pointerdown',e=>{if(!projectMenu.hidden&&!e.target.closest('#project-menu,#open-project-menu'))projectMenu.hidden=true;},true);
+  // ── Device gate: adapt menus, sizes and gestures to computer or phone ──
+  const deviceDialog=$('#device-dialog');
+  function applyDevice(dev,remember){
+    document.body.dataset.device=dev;
+    try{if(remember)localStorage.setItem('studioDevice',dev);else localStorage.removeItem('studioDevice');}catch(e){}
+    $('#device-switch').innerHTML=icon(dev==='touch'?'phone':'desktop');
+    $('#viewport-hint').innerHTML=dev==='touch'?'One finger orbits <b>·</b> Pinch to zoom <b>·</b> Two fingers pan <b>·</b> Tap to select':'Drag to orbit <b>·</b> Scroll to zoom <b>·</b> Click to select';
+  }
+  function openDeviceDialog(){
+    const coarse=matchMedia('(pointer:coarse)').matches;
+    $('#choose-touch').classList.toggle('suggested',coarse);$('#choose-desktop').classList.toggle('suggested',!coarse);
+    deviceDialog.showModal();
+  }
+  for(const [id,dev] of [['choose-desktop','desktop'],['choose-touch','touch']])$('#'+id).onclick=()=>{applyDevice(dev,$('#device-remember').checked);deviceDialog.close();toast(dev==='touch'?'Interface adapted to touch: big buttons and full-screen menus.':'Interface adapted to computer: shortcuts and compact menus.');};
+  $('#device-switch').onclick=()=>openDeviceDialog();
+  let savedDevice=null;try{savedDevice=localStorage.getItem('studioDevice');}catch(e){}
+  if(savedDevice)applyDevice(savedDevice,false);else openDeviceDialog();
   // Public debug API is also used by the real-browser regression suite.
   window.STUDIO={THREE,interpolateRotation,scene,camera,renderer,orbit,gizmo,world,objects,camTrack,timeline,light,state,blockDefs,toolNames,
     video:{start:startRecording,cancel:stopRecording,get result(){return videoResult;},get busy(){return!!recording;}},

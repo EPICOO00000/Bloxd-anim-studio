@@ -36,17 +36,14 @@
 <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 4-6 5 7"/></symbol>
 <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4 2l-1.5 1v2m0 3v.1"/></symbol>
 <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4ZM19 2v4m-2-2h4"/></symbol>
-<symbol id="i-sound" viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3ZM16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol></defs></svg>
+<symbol id="i-sound" viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3ZM16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+<symbol id="i-desktop" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="13" rx="2"/><path d="M8 21h8m-4-5v5"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+<symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 8h10m4 0h2M4 16h2m4 0h10M14 5v6m-4 5v6"/></symbol></defs></svg>
 <header class="app-header">
   <div class="brand"><div class="brand-mark"><svg><use href="#i-cube"/></svg></div><div>bloxd<span>studio</span><small>BUILD · POSE · ANIMATE</small></div></div>
   <div class="project-title"><span class="project-slash">/</span><span id="project-scene-name">Maple clearing<small>Untitled animation</small></span><span class="local-badge"><i></i> VERSION 4.0</span></div>
-  <div class="header-actions">
-    <button id="open-ai" class="ai-launch" title="Generate editable animations using your Gemini API key"><svg><use href="#i-sparkles"/></svg>Gemini<span>AI</span></button>
-    <button id="help-btn" class="icon-btn" title="Quick guide & credits"><svg><use href="#i-help"/></svg></button>
-    <button id="open-project" class="quiet"><svg><use href="#i-folder"/></svg><span>Open</span></button>
-    <button id="save-project"><svg><use href="#i-save"/></svg><span>Save project</span></button>
-    <button id="open-export" class="accent"><svg><use href="#i-camera"/></svg>Export <span class="export-arrow">↗</span></button>
-  </div>
+  <div class="header-actions"><button id="device-switch" class="icon-btn" title="Interface mode: computer or phone"><svg><use href="#i-desktop"/></svg></button></div>
 </header>
 <div class="workspace">
   <aside class="library">
@@ -161,6 +158,31 @@
   <div class="tracks"><div class="track-headings"><span class="track-header">SCENE TRACKS</span><span><svg><use href="#i-camera"/></svg>Camera travel <b id="camera-key-count">3</b></span><span><i class="pose-dot"></i><span id="pose-track-name">Bob · pose</span><b id="pose-key-count">5</b></span></div><div id="track-area"><div id="ruler"></div><div id="cam-track" class="track-lane camera-lane"></div><div id="pose-track" class="track-lane pose-lane"></div><div id="playhead"><span></span></div></div></div>
   <div class="timeline-footnote"><span id="keyframe-hint">Choose a time → edit → Apply pose / transform. From start previews the full animation.</span><span>Drag keys to retime <b>·</b> Space to play <b>·</b> H for clean view</span></div>
 </footer>
+<nav class="dock" aria-label="Studio menus">
+  <button class="dock-btn" data-panel="library" title="Asset library — blocks, items, models, textures"><svg><use href="#i-cube"/></svg></button>
+  <button class="dock-btn" data-panel="inspector" data-tab="object" title="Selection, objects & tools"><svg><use href="#i-sliders"/></svg></button>
+  <button class="dock-btn" data-panel="inspector" data-tab="light" title="Sun & lighting"><svg><use href="#i-sun"/></svg></button>
+  <button class="dock-btn" data-panel="inspector" data-tab="camera" title="Camera keys & view"><svg><use href="#i-focus"/></svg></button>
+  <button class="dock-btn" data-panel="timeline" title="Timeline & playback"><svg><use href="#i-play"/></svg></button>
+  <button class="dock-btn" id="open-project-menu" title="Project: open, save, clean view"><svg><use href="#i-folder"/></svg></button>
+  <button class="dock-btn" id="open-export" title="Export PNG, video or MP3"><svg><use href="#i-camera"/></svg></button>
+  <button class="dock-btn ai" id="open-ai" title="Generate editable animations with your Gemini key"><svg><use href="#i-sparkles"/></svg></button>
+  <button class="dock-btn" id="help-btn" title="Quick guide & credits"><svg><use href="#i-help"/></svg></button>
+</nav>
+<div class="project-menu" id="project-menu" hidden>
+  <button id="open-project"><svg><use href="#i-folder"/></svg>Open project…</button>
+  <button id="save-project"><svg><use href="#i-save"/></svg>Save project</button>
+</div>
+<dialog id="device-dialog"><div class="device-choice">
+  <span class="eyebrow">ONE QUICK QUESTION</span>
+  <h2>How will you create today?</h2>
+  <p class="muted">The studio adapts its menus, button sizes and gestures to your device — you can switch anytime with the little screen button in the header.</p>
+  <div class="device-options">
+    <button id="choose-desktop" class="device-card"><svg><use href="#i-desktop"/></svg><b>Computer</b><span>Keyboard shortcuts, mouse orbit, side menus</span></button>
+    <button id="choose-touch" class="device-card"><svg><use href="#i-phone"/></svg><b>Phone / tablet</b><span>Big tap targets, touch gestures, full-screen menus</span></button>
+  </div>
+  <label class="device-remember"><input type="checkbox" id="device-remember" checked> Remember this choice on this device</label>
+</div></dialog>
 <button id="clean-return">← Back to editor <kbd>H</kbd></button>
 <div id="record-overlay" hidden><i></i><span id="record-clock">Rendering video…</span><button id="stop-record">Cancel</button></div>
 <dialog id="export-dialog"><div class="dialog-head"><span class="eyebrow">EXPORT · PICTURE &amp; SOUND</span><button class="icon-btn dialog-close" title="Close"><svg><use href="#i-close"/></svg></button></div><h2>Share what you made.</h2><p class="muted">Video for the moving animation. MP3 for its sound track.</p>
