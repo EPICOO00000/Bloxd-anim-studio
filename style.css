@@ -34,3 +34,70 @@
 
 /* Full catalog: paginated cards and source-aware asset inspection. */
 .library-tabs{padding:0 7px;gap:0}.library-tabs button{padding:9px 4px;font-size:9px}.catalog-filters{display:flex;align-items:center;gap:7px;padding:0 13px 7px;flex:none}.catalog-filters select{width:115px;min-width:0;font-size:8px;padding:6px!important}.catalog-filters label{display:flex;align-items:center;gap:4px;font-size:7px;color:#9eb298}.catalog-filters input{width:11px;height:11px}.catalog-results{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:0 14px 7px;font-size:8px;color:#91aa91;flex:none}.catalog-results button{font-size:8px}.catalog-pages{display:flex;align-items:center;justify-content:space-between;padding:5px 14px 1px;flex:none}.catalog-pages button{font-size:11px;padding:3px 10px}.catalog-pages span{font-size:8px;color:#91a38e}.asset-card{height:83px}.asset-card span{max-height:28px;overflow:hidden;font-size:8px}.asset-card .asset-tag{font-size:6px;color:#8fbd86;position:absolute;bottom:4px;left:3px;right:3px;text-align:center;font-style:normal;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.asset-card.unavailable{opacity:.45;border-style:dashed}.asset-card.unavailable .asset-tag{color:#f0af91}.asset-card img.model-thumb{width:40px;height:38px}.asset-scroll{max-height:270px;flex-basis:235px}.library-top p{font-size:8px;line-height:1.6}#asset-dialog{width:470px}#asset-detail-image{display:block;width:250px;height:250px;object-fit:contain;image-rendering:pixelated;margin:16px auto;background:repeating-conic-gradient(#34443c 0% 25%,#27372f 0% 50%) 50% / 20px 20px;border-radius:6px}#asset-detail-note{font-size:11px;line-height:1.7}#catalog-dialog{width:580px;max-height:85vh;overflow:auto}#catalog-coverage{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:20px 0}#catalog-coverage>div{padding:12px;background:#24352d;border:1px solid #405b41;border-radius:6px}#catalog-coverage b{font:22px ui-monospace,monospace;color:#d4edaf;display:block}#catalog-coverage span{font-size:10px;color:#a2b79b}#catalog-dialog p{font-size:11px;line-height:1.7;margin:13px 0}#catalog-dialog details{border:1px solid #495747;padding:10px;border-radius:6px;font-size:11px}#catalog-missing{white-space:pre-line}#catalog-summary{min-height:25px}.texture-preview code{overflow-wrap:anywhere}
+
+/* ── Minimal dock UI: full-bleed viewport, panels as drawers ─────────────── */
+.workspace{display:block;position:fixed;left:0;right:0;top:var(--header);bottom:0;height:auto}
+#viewport{position:absolute;inset:0;height:100%;width:100%}
+.library,.inspector{position:fixed;top:var(--header);bottom:0;width:min(370px,94vw);z-index:30;transition:transform .26s ease;box-shadow:0 0 0 transparent}
+.library{left:0;border-right:1px solid var(--line);transform:translateX(-104%)}
+.inspector{right:0;width:min(340px,94vw);border-left:1px solid var(--line);transform:translateX(104%)}
+body.panel-library .library{transform:none;box-shadow:18px 0 50px #0006}
+body.panel-inspector .inspector{transform:none;box-shadow:-18px 0 50px #0006}
+.timeline{position:fixed;left:0;right:0;bottom:0;z-index:29;transform:translateY(104%);transition:transform .26s ease;box-shadow:0 -18px 50px #0000}
+body.panel-timeline .timeline{transform:none;box-shadow:0 -18px 50px #0006}
+.dock{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:40;display:flex;gap:7px;padding:7px;border:1px solid var(--line);border-radius:999px;background:#141b1ee8;backdrop-filter:blur(10px)}
+body.panel-timeline .dock{bottom:calc(var(--timeline) + 12px)}
+.dock-btn{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#222b30;border:1px solid #3a4740;color:#cfdcd7;padding:0}
+.dock-btn svg{width:18px;height:18px;stroke-width:1.6}
+.dock-btn:hover{background:#2e3a39;color:#e8f3e2}
+.dock-btn.active{background:var(--lime);border-color:var(--lime);color:#243222}
+.dock-btn.ai{color:#e3c6f4;border-color:#5c4767}
+.dock-btn.ai:hover{background:#3a2c42}
+.project-menu{position:fixed;left:50%;transform:translateX(-50%);bottom:66px;z-index:41;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:6px;display:flex;flex-direction:column;gap:2px;min-width:200px;box-shadow:0 18px 50px #0008}
+body.panel-timeline .project-menu{bottom:calc(var(--timeline) + 64px)}
+.project-menu button{display:flex;align-items:center;gap:9px;background:transparent;border:0;border-radius:7px;padding:10px 12px;font-size:11px;color:#c4d2cd;text-align:left}
+.project-menu button:hover{background:#2c3736;color:#eaf5e4}
+.project-menu svg{width:14px;height:14px;color:#9db1a6}
+.project-menu kbd{margin-left:auto;font-size:8px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:1px 4px}
+body.clean .dock,body.clean .project-menu{display:none}
+.header-actions #device-switch svg{width:16px;height:16px}
+/* device gate dialog */
+#device-dialog{border:1px solid #3c4a44;border-radius:16px;background:var(--panel);color:var(--text);padding:0;max-width:430px;width:calc(100vw - 40px)}
+#device-dialog::backdrop{background:#0c1113cc;backdrop-filter:blur(3px)}
+.device-choice{padding:26px 26px 20px;display:flex;flex-direction:column;gap:14px}
+.device-choice h2{font-size:19px;letter-spacing:-.4px}
+.device-choice .eyebrow{font-size:8px;letter-spacing:1.6px;color:var(--lime)}
+.device-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.device-card{display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 10px;background:#222b30;border:1px solid #3a4740;border-radius:12px;color:#d5e2dc;font-size:12px}
+.device-card svg{width:30px;height:30px;stroke-width:1.4;color:var(--lime)}
+.device-card span{font-size:9px;color:var(--muted);line-height:1.45}
+.device-card:hover,.device-card.suggested{border-color:var(--lime);background:#2c3a2e}
+.device-remember{display:flex;gap:8px;align-items:center;font-size:10px;color:var(--muted)}
+/* ── Phone / tablet adaptations ──────────────────────────────────────────── */
+body[data-device="touch"]{--timeline:212px}
+body[data-device="touch"] .dock{gap:9px;padding:9px;bottom:10px}
+body[data-device="touch"] .dock-btn{width:52px;height:52px}
+body[data-device="touch"] .dock-btn svg{width:23px;height:23px}
+body[data-device="touch"] .library{width:min(430px,100vw)}
+body[data-device="touch"] .inspector{width:min(400px,100vw)}
+body[data-device="touch"] button,body[data-device="touch"] select,body[data-device="touch"] input{min-height:40px}
+body[data-device="touch"] .tabs button{padding:14px 6px;font-size:12px}
+body[data-device="touch"] .search{height:44px}
+body[data-device="touch"] .search input{font-size:16px}
+body[data-device="touch"] .asset-card{height:98px}
+body[data-device="touch"] .asset-card img,body[data-device="touch"] .asset-card .block-thumb{width:44px;height:44px}
+body[data-device="touch"] .asset-card span{font-size:10px}
+body[data-device="touch"] .object-row{padding:12px 10px;font-size:12px}
+body[data-device="touch"] .import-button{padding:14px 12px;font-size:12px}
+body[data-device="touch"] .timeline-actions button{height:40px;font-size:11px;padding:6px 10px}
+body[data-device="touch"] .play-button{width:40px;height:38px}
+body[data-device="touch"] .key-marker{width:16px;height:16px;top:8px}
+body[data-device="touch"] .track-lane{height:40px}
+body[data-device="touch"] .tracks{height:111px}
+body[data-device="touch"] .timeline-footnote{display:none}
+body[data-device="touch"] .viewport-footer{font-size:9px}
+body[data-device="touch"] .project-menu{bottom:78px}
+body[data-device="touch"] .project-menu button{padding:14px 12px;font-size:13px}
+body[data-device="touch"] dialog{width:calc(100vw - 24px)}
+body[data-device="touch"] .device-options{grid-template-columns:1fr}
+@media (max-width:760px){.brand small,.project-title small,.local-badge{display:none}.brand{width:auto}.timeline-toolbar{gap:10px;padding:0 10px}.transport{min-width:0}}
