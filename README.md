@@ -56,6 +56,12 @@ jobs:
 
 </details>
 
+## New in this update: living water, bigger builds, schematics
+
+- **Realistic water.** Water is now a single welded, full-block surface per pond with an animated shader: scrolling wave normals, depth-based color absorption (turquoise shallows → deep blue), Fresnel sky reflection at grazing angles, sun glints and shoreline foam. Waves follow the timeline during playback and explicit timestamps during video export, so renders stay deterministic. Placed water blocks use the same surface.
+- **Bigger builds.** The placement limit is raised from ±50 to ±400 blocks from the center, the camera far plane from 180 to 4,000 units, orbit distance to 600, shadows cover ±70, and fog starts at 160 instead of 30 — distant blocks no longer fade out or vanish. Voxel batches also no longer frustum-cull incorrectly, so off-center builds stay visible from every angle.
+- **Bloxd schematic import.** *Import schematic* (or drop a `.json` / `.schem` / `.vf` file) parses tolerant schematic formats — block maps (`"x,y,z": "name"`), block lists (`{x,y,z,name}`), paletted lists (Sponge-style `palette` + `state` index) and studio project worlds — resolves names against the public asset library, places the build on the terrain with Undo/Redo, and reports unmapped block types.
+
 ## Open it locally
 
 Double-click **START-HERE.html** in Chrome, Edge or another modern desktop WebGL browser. The separately supplied **Bloxd-Studio-4.0.html** and **Bloxd-Studio.html** are identical. Manual editing assets/libraries are embedded; no install, account, CDN or internet connection is needed for the editor itself. **Gemini generation is optional and requires internet and your own Google API key.**

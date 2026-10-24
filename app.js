@@ -8,6 +8,8 @@ import { JOINTS, createCharacter, copyPose, neutralPose, presetPose, applyPose, 
 import { CameraTrack, samplePose, sampleTransform, putKey, KEY_EPS } from './lib/tracks.js';
 import { interpolateRotation } from './lib/interpolation.js';
 import { parseModel, voxelise } from './lib/importers.js';
+import { setWaterTime, updateWaterEnv } from './lib/water.js';
+import { parseSchematic } from './lib/schematics.js';
 import { chooseVideoConfig, renderVideoFrames, renderRealtimeVideo } from './lib/video-export.js';
 import { Soundtrack } from './lib/audio.js';
 import { plainState, stageEdit, mergeEdit, keyFromState, stateFromKey, validateDraft } from './lib/key-edit.js';
@@ -33,11 +35,11 @@ async function main(){
   renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputColorSpace=THREE.SRGBColorSpace;
   renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.13;
   renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
-  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(45,1,.1,180);
-  const orbit=new OrbitControls(camera,canvas);orbit.enableDamping=true;orbit.dampingFactor=.09;orbit.minDistance=1.2;orbit.maxDistance=85;orbit.maxPolarAngle=Math.PI*.495;
+  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(45,1,.1,4000);
+  const orbit=new OrbitControls(camera,canvas);orbit.enableDamping=true;orbit.dampingFactor=.09;orbit.minDistance=1.2;orbit.maxDistance=600;orbit.maxPolarAngle=Math.PI*.495;
   camera.position.set(15,12,19);orbit.target.set(0,1.5,0);orbit.update();
   const sun=new THREE.DirectionalLight(0xffe6b9,3.1);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.normalBias=.025;sun.shadow.bias=-.00008;
-  Object.assign(sun.shadow.camera,{left:-18,right:18,top:18,bottom:-18,near:.5,far:90});sun.shadow.camera.updateProjectionMatrix();
+  Object.assign(sun.shadow.camera,{left:-70,right:70,top:70,bottom:-70,near:.5,far:300});sun.shadow.camera.updateProjectionMatrix();
   const hemi=new THREE.HemisphereLight(0xe8f4f5,0x84917c,1.5);scene.add(sun,sun.target,hemi);
   const light={az:-38,el:42,power:3.1,fill:1.5,color:'#ffe6b9',sky:'#c5d6d3',shadows:true,soft:true,fog:true,toolLit:false,preset:'golden'};
   const LIGHTS={
@@ -195,7 +197,8 @@ async function main(){
     sun.position.set(Math.sin(az)*Math.cos(el)*distance,Math.sin(el)*distance,Math.cos(az)*Math.cos(el)*distance);
     sun.target.position.set(0,1,0);sun.target.updateMatrixWorld();sun.color.set(light.color);sun.intensity=light.power;hemi.intensity=light.fill;
     scene.background=new THREE.Color(light.sky);floor.material.color.set(light.sky).multiplyScalar(.88);
-    scene.fog=light.fog?new THREE.Fog(light.sky,30,90):null;viewport.classList.toggle('night-scene',light.fill<.6);
+    scene.fog=light.fog?new THREE.Fog(light.sky,160,1400):null;viewport.classList.toggle('night-scene',light.fill<.6);
+    updateWaterEnv({sunDir:sun.position,sky:light.sky,fog:scene.fog?{color:light.sky,near:scene.fog.near,far:scene.fog.far}:null});
     if(renderer.shadowMap.enabled!==light.shadows||renderer.shadowMap.type!==(light.soft?THREE.PCFSoftShadowMap:THREE.PCFShadowMap)){
       renderer.shadowMap.enabled=light.shadows;renderer.shadowMap.type=light.soft?THREE.PCFSoftShadowMap:THREE.PCFShadowMap;
       scene.traverse(o=>{if(o.material)for(const m of (Array.isArray(o.material)?o.material:[o.material]))m.needsUpdate=true;});
@@ -431,6 +434,7 @@ async function main(){
     if(dig&&world.meshes.includes(hit.object)&&hit.instanceId!==undefined)return hit.object.userData.cells[hit.instanceId].slice();
     if(hit.object===floor)return[Math.floor(hit.point.x),-3,Math.floor(hit.point.z)];
     const normal=hit.face.normal.clone().applyMatrix3(new THREE.Matrix3().getNormalMatrix(hit.object.matrixWorld)).normalize();
+    if(hit.object.userData.waterCells){const p=hit.point.clone().addScaledVector(normal,-.5);return[Math.floor(p.x),Math.floor(p.y),Math.floor(p.z)];}
     const p=hit.point.clone().addScaledVector(normal,.025);return[Math.floor(p.x),Math.floor(p.y),Math.floor(p.z)];
   }
   function editableHit(hit,dig){if(!hit)return false;if(hit.object===floor)return !dig;if(world.meshes.includes(hit.object))return true;return recordForHit(hit)?.type==='block';}
@@ -438,16 +442,20 @@ async function main(){
     if(!editableHit(hit,dig))return false;
     const rec=recordForHit(hit);
     if(dig&&rec?.type==='block'){const mode=state.mode;detachRecord(rec);pushHistory('remove '+rec.name,()=>attachRecord(rec),()=>detachRecord(rec));setMode(mode);return true;}
-    const p=cellFromHit(hit,dig);if(p.some(n=>Math.abs(n)>50)){toast('Keep the scene within 50 blocks of its center.');return false;}
+    const p=cellFromHit(hit,dig);if(p.some(n=>Math.abs(n)>400)){toast('Keep the scene within 400 blocks of its center.');return false;}
     const old=world.get(...p),next=dig?null:state.block;if(old===next||(!old&&dig))return false;
     if(!dig&&objects.some(r=>r.type==='block'&&r.root.position.distanceTo(new THREE.Vector3(p[0]+.5,p[1]+.5,p[2]+.5))<.15)){toast('There is already an editable block in this cell.');return false;}
     world.set(...p,next);world.rebuild();
     pushHistory(dig?'erase block':'place '+blockDefs[next].label,()=>{world.set(...p,old||null);world.rebuild();},()=>{world.set(...p,next);world.rebuild();});return true;
   }
   function selectTerrainBlock(hit){
-    if(!world.meshes.includes(hit.object)||hit.instanceId===undefined)return null;
-    const cell=hit.object.userData.cells[hit.instanceId].slice(),type=world.get(...cell);if(!type)return null;
-    const r=addProp('block',new THREE.Vector3(cell[0]+.5,cell[1]+.5,cell[2]+.5),{block:type,terrainCell:cell});if(type==='water')r.root.scale.y=.86;
+    if(!world.meshes.includes(hit.object))return null;
+    let cell;
+    if(hit.instanceId!==undefined)cell=hit.object.userData.cells[hit.instanceId].slice();
+    else if(hit.object.userData.waterCells){const p=hit.point.clone().addScaledVector(hit.face.normal,-.5);cell=[Math.floor(p.x),Math.floor(p.y),Math.floor(p.z)];}
+    else return null;
+    const type=world.get(...cell);if(!type)return null;
+    const r=addProp('block',new THREE.Vector3(cell[0]+.5,cell[1]+.5,cell[2]+.5),{block:type,terrainCell:cell});
     world.set(...cell,null);world.rebuild();selectObject(r);showInspector('object');
     pushHistory('make block editable',()=>{detachRecord(r);world.set(...cell,type);world.rebuild();},()=>{world.set(...cell,null);world.rebuild();attachRecord(r);});
     toast(type==='water'?'Water block selected. Rotate, move or add a transform key.':'Block selected. Rotate, move or add a transform key.');return r;
@@ -559,11 +567,34 @@ async function main(){
     const up=()=>{area.removeEventListener('pointermove',move);area.removeEventListener('pointerup',up);refreshTimeline();};area.addEventListener('pointermove',move);area.addEventListener('pointerup',up,{once:true});
   };
 
+  function importSchematic(name,sch){
+    let minX=Infinity,minY=Infinity,minZ=Infinity,maxX=-Infinity,maxZ=-Infinity;
+    for(const key of sch.cells.keys()){const [x,y,z]=key.split(',').map(Number);minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxZ=Math.max(maxZ,z);minZ=Math.min(minZ,z);}
+    const cx=Math.round(orbit.target.x),cz=Math.round(orbit.target.z),baseY=Math.max(0,Math.ceil(world.heightAt(cx,cz)));
+    const ox=cx-Math.round((minX+maxX)/2),oy=baseY-minY,oz=cz-Math.round((minZ+maxZ)/2);
+    const old=new Map(),placed=new Map();
+    for(const [key,type] of sch.cells){
+      const [x,y,z]=key.split(',').map(Number),p=[x+ox,y+oy,z+oz];
+      if(p.some(n=>Math.abs(n)>400))continue;
+      const k=p.join(',');if(!old.has(k))old.set(k,world.get(...p)||null);
+      placed.set(k,type);world.set(...p,type);
+    }
+    if(!placed.size){toast('Nothing from '+name+' could be placed here.');return;}
+    world.rebuild();
+    const undo=()=>{for(const [k,v] of old){const [x,y,z]=k.split(',').map(Number);world.set(x,y,z,v);}world.rebuild();};
+    const redo=()=>{for(const [k,v] of placed){const [x,y,z]=k.split(',').map(Number);world.set(x,y,z,v);}world.rebuild();};
+    pushHistory('import schematic '+name,undo,redo);
+    toast('Imported '+placed.size.toLocaleString()+' blocks from '+name+(sch.unmapped.length?' · '+sch.unmapped.length+' unknown type(s) skipped':'')+'.');
+  }
   async function handleFiles(files){
     if(importBusy)return;importBusy=true;
     try{
       for(const f of [...files]){
-        if(f.size>20*1024*1024){toast(f.name+': please use a model under 20 MB.');continue;}
+        if(f.size>20*1024*1024){toast(f.name+': please use a file under 20 MB.');continue;}
+        if(/\.(json|schem(atic)?|vf|vfsh|bloxd)$/i.test(f.name)){
+          let sch=null;try{sch=parseSchematic(await f.text());}catch(e){sch=null;}
+          if(sch){toast('Importing schematic '+f.name+'…');importSchematic(f.name,sch);continue;}
+        }
         toast('Importing '+f.name+'…');
         try{
           const result=await parseModel(f.name,await f.arrayBuffer()),r=register(result.root,'import',result.root.name,{animations:result.animations});r.root.position.copy(spawnPosition());added(r);focusObject(r);
@@ -572,6 +603,8 @@ async function main(){
     }finally{importBusy=false;$('#file').value='';}
   }
   $('#import-btn').onclick=()=>$('#file').click();$('#file').onchange=e=>handleFiles(e.target.files);
+  $('#import-schematic').onclick=()=>$('#schematic-file').click();
+  $('#schematic-file').onchange=e=>{if(e.target.files.length)handleFiles(e.target.files);e.target.value='';};
   let dragDepth=0;
   addEventListener('dragenter',e=>{if(e.dataTransfer?.types.includes('Files')){e.preventDefault();dragDepth++;$('#drop-overlay').hidden=false;}});
   addEventListener('dragover',e=>{if(e.dataTransfer?.types.includes('Files'))e.preventDefault();});
@@ -763,7 +796,7 @@ async function main(){
       const config=await chooseVideoConfig({format:$('#video-format').value,width,height,fps,withAudio,signal:controller.signal});
       $('#video-progress-note').textContent=config.notice||(config.format.toUpperCase()+' · exact timeline frame timestamps · all processing stays in your browser.');
       renderer.setPixelRatio(1);renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();orbit.enabled=false;gizmo.enabled=false;viewOverride=false;
-      const drawFrame=time=>{if(renderer.getContext().isContextLost())throw new Error('The 3D graphics context was lost. Save your project, reload, and try a lower resolution / smaller scene.');applyAtTime(time,true);for(const r of objects)if(r.mixer&&r.animPlaying)r.mixer.setTime(time);cleanRender();if(!poster)poster=canvas.toDataURL('image/jpeg',.85);};
+      const drawFrame=time=>{if(renderer.getContext().isContextLost())throw new Error('The 3D graphics context was lost. Save your project, reload, and try a lower resolution / smaller scene.');applyAtTime(time,true);setWaterTime(time);for(const r of objects)if(r.mixer&&r.animPlaying)r.mixer.setTime(time);cleanRender();if(!poster)poster=canvas.toDataURL('image/jpeg',.85);};
       const opts={canvas,duration,config,drawFrame,signal:controller.signal,onProgress:videoProgress,title:sceneName};
       const result=config.method==='frames'?await renderVideoFrames({...opts,audioBuffer:withAudio?soundtrack.audioBuffer(duration):null}):await renderRealtimeVideo({...opts,audioFactory:withAudio?()=>soundtrack.recordingStream(duration,false):null});
       retainVideo({...result,poster});
@@ -812,9 +845,9 @@ async function main(){
   // Tiny asset thumbnail is sampled from our recreated skin, not the reference screenshot.
   {const c=document.createElement('canvas');c.width=c.height=8;c.getContext('2d').drawImage(textures.bob.image,8,8,8,8,0,0,8,8);skinThumb=c.toDataURL();}
   updateLight();syncLightUI();syncAudioUI();selectObject(bob);showInspector('object');refreshAll();syncFov();historyUI();
-  const clock=new THREE.Clock();let timeSinceStart=0;
+  const clock=new THREE.Clock();let timeSinceStart=0,waterClock=0;
   function animate(){
-    requestAnimationFrame(animate);const dt=Math.min(clock.getDelta(),.25),aiOpen=$('#ai-dialog').open;frames++;if(recording)return;timeSinceStart+=dt;if(!timeline.playing)updateAssetAnimations(timeSinceStart);
+    requestAnimationFrame(animate);const dt=Math.min(clock.getDelta(),.25),aiOpen=$('#ai-dialog').open;frames++;if(recording)return;timeSinceStart+=dt;waterClock=timeline.playing?timeline.time:waterClock+dt;setWaterTime(waterClock);if(!timeline.playing)updateAssetAnimations(timeSinceStart);
     if(timeline.playing){
       const now=performance.now();timeline.time+=Math.max(0,(now-playbackLast)/1000);playbackLast=now;
       if(timeline.time>=timeline.duration){
