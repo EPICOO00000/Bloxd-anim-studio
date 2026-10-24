@@ -19,6 +19,7 @@ const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const clone=v=>JSON.parse(JSON.stringify(v));
 const deg=THREE.MathUtils.degToRad, rad=THREE.MathUtils.radToDeg, clamp=THREE.MathUtils.clamp;
 const icon=(name)=>`<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
+const PANEL_CLASS={library:'panel-library',inspector:'panel-inspector',timeline:'panel-timeline'};
 let toastTimer;
 function toast(message){$('#toast').textContent=message;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),3400);}
 function download(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.hidden=true;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);}
@@ -870,7 +871,6 @@ async function main(){
   animate();
   $('#loader').classList.add('gone');setTimeout(()=>$('#loader').remove(),500);
   // ── Dock: small round buttons open the studio menus as drawers ──
-  const PANEL_CLASS={library:'panel-library',inspector:'panel-inspector',timeline:'panel-timeline'};
   function syncDock(){$$('.dock-btn[data-panel]').forEach(b=>{const on=document.body.classList.contains(PANEL_CLASS[b.dataset.panel]);b.classList.toggle('active',on&&(b.dataset.panel!=='inspector'||!b.dataset.tab||b.dataset.tab===state.inspector));});}
   function closePanels(){document.body.classList.remove('panel-library','panel-inspector','panel-timeline');syncDock();}
   $$('.dock-btn[data-panel]').forEach(b=>b.onclick=()=>{
