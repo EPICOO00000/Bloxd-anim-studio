@@ -9,8 +9,8 @@ import { CameraTrack, samplePose, sampleTransform, putKey, KEY_EPS } from './lib
 import { interpolateRotation } from './lib/interpolation.js';
 import { parseModel, voxelise } from './lib/importers.js';
 import { setWaterTime, updateWaterEnv } from './lib/water.js';
-import { parseSchematic, mapBloxdschem } from './lib/schematics.js';
-import { parseBloxdschem, isBloxdschem } from './lib/bloxdschem.js';
+import { readSchematicFile } from './lib/schematics.js';
+import { isBloxdschem } from './lib/bloxdschem.js';
 import { loadPrefabs, prefabAssets, prefabCells } from './lib/prefabs.js';
 import { apply as applyBrush, topAt, BRUSH_TOOLS, BRUSH_LABELS } from './lib/terrain-brush.js';
 import { chooseVideoConfig, renderVideoFrames, renderRealtimeVideo } from './lib/video-export.js';
@@ -773,12 +773,11 @@ async function main(){
         if(f.size>20*1024*1024){toast(f.name+': please use a file under 20 MB.');continue;}
         const SCHEMATIC_EXT=/\.(json|schem(atic)?|vf|vfsh|bloxd|bloxdschem|bloxsd|bschem)$/i;
         const u8=new Uint8Array(await f.arrayBuffer());
-        const binary=isBloxdschem(u8);
-        if(binary||SCHEMATIC_EXT.test(f.name)||/^[{[]/.test(new TextDecoder().decode(u8.subarray(0,64)).trimStart())){
-          let sch=null;
-          try{sch=binary?mapBloxdschem(parseBloxdschem(u8,f.name)):parseSchematic(new TextDecoder().decode(u8));}catch(e){sch=null;console.warn('[schematic]',e);}
-          if(sch){startSchemGhost(f.name,sch);continue;}
-          if(binary||SCHEMATIC_EXT.test(f.name)){toast(f.name+': no usable block list found inside.');continue;}
+        const magic=isBloxdschem(u8);
+        if(magic||SCHEMATIC_EXT.test(f.name)||/^[{[]/.test(new TextDecoder().decode(u8.subarray(0,64)).trimStart())){
+          const r=readSchematicFile(f.name,u8);
+          if(r?.sch){startSchemGhost(f.name,r.sch);continue;}
+          if(magic||SCHEMATIC_EXT.test(f.name)){toast(f.name+': '+(r?.error||'no usable block list found inside.'));continue;}
         }
         toast('Importing '+f.name+'…');
         try{
