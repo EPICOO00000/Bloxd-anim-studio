@@ -6,6 +6,7 @@ import { loadAssets, blockDefs, assetData, textures, toolNames, toolIcon, textur
 import { VoxelWorld, createTree, createRock } from './lib/world.js';
 import { JOINTS, createCharacter, copyPose, neutralPose, presetPose, applyPose, equip } from './lib/character.js';
 import { CameraTrack, samplePose, sampleTransform, putKey, KEY_EPS } from './lib/tracks.js';
+import { bakeClip, bakeWalkPath, mirrorPose, CLIP_DEFAULTS } from './lib/anim-clips.js';
 import { interpolateRotation } from './lib/interpolation.js';
 import { parseModel, voxelise } from './lib/importers.js';
 import { setWaterTime, updateWaterEnv } from './lib/water.js';
@@ -64,7 +65,7 @@ async function main(){
   let pathLine=null;
   const gizmo=new TransformControls(camera,canvas);gizmo.setSize(.85);helpers.add(gizmo);
   const objects=[];let selected=null,serial=0,frames=0;
-  const state={mode:'select',scope:'root',joint:'head',toolAction:'place',category:'blocks',block:'grass',inspector:'object',selectedKey:null,clean:false,libraryPage:0,libraryGroup:'',libraryAdvanced:false};
+  const state={mode:'select',scope:'root',joint:'head',toolAction:'place',category:'blocks',block:'grass',inspector:'object',selectedKey:null,clean:false,libraryPage:0,libraryGroup:'',libraryAdvanced:false,pathMode:false,autoKey:false,onion:true};
   const timeline={time:0,duration:8,playing:false,loop:false,cameraEnabled:true};
   const camTrack=new CameraTrack(),soundtrack=new Soundtrack();
   let viewOverride=false,importBusy=false,recording=null,skinThumb='',playbackLast=performance.now(),sceneName='Maple clearing';
@@ -138,7 +139,12 @@ async function main(){
     pushHistory('equip '+name,()=>restore(old,before),()=>restore(name,after));if(name==='none'&&state.scope==='held')state.scope='root';setMode(state.mode);refreshInspector();
   }
 
-  function recordActorChange(r,before,label){if(JSON.stringify(plainState(before))!==JSON.stringify(poseState(r))){stageActorEdit(r,before);const after=actorSnapshot(r);pushHistory(label,()=>restoreActor(r,before),()=>restoreActor(r,after));}}
+  function recordActorChange(r,before,label){
+    if(JSON.stringify(plainState(before))===JSON.stringify(poseState(r)))return;
+    // Auto-key: commit the edit straight onto the track at the playhead — animate by performing.
+    if(state.autoKey&&r){r.draft=null;applyObjectKey(r,timeline.time);refreshTimeline();return;}
+    stageActorEdit(r,before);const after=actorSnapshot(r);pushHistory(label,()=>restoreActor(r,before),()=>restoreActor(r,after));
+  }
   function prepEdit(r=selected){if(!r)return;setPlaying(false);viewOverride=true;if(r.character){r.character.pose=copyPose(r.character.displayPose);r.character.manual=true;r.character.live=false;$('#live-motion').checked=false;}}
 
   function register(root,type,name,extra={}){
@@ -391,7 +397,12 @@ async function main(){
         });host.append(b);
       });
     }
-    $('#key-pose').disabled=!selected;$('#key-pose').innerHTML=icon('key')+(selected?.character?'Apply pose':'Apply transform');$('#delete-key').disabled=!state.selectedKey;updateTimeUI();
+    $('#key-pose').disabled=!selected;$('#key-pose').innerHTML=icon('key')+(selected?.character?'Apply pose':'Apply transform');$('#delete-key').disabled=!state.selectedKey;
+    const easeSel=$('#key-ease'),sk=state.selectedKey;
+    const skKey=sk?(sk.type==='camera'?camTrack.keys[sk.index]:(sk.owner===selected?.id?keysOf(selected)[sk.index]:null)):null;
+    easeSel.disabled=!skKey;easeSel.value=skKey?.ease||'';
+    $('#auto-key').classList.toggle('active',state.autoKey);
+    updateTimeUI();
   }
   function replaceKeys(type,owner,keys){if(type==='camera'){camTrack.keys=clone(keys);camTrack.rebuild();updatePath();refreshCameraKeys();}else if(owner){if(owner.character)owner.character.keys=clone(keys);else owner.keys=clone(keys);}refreshTimeline();refreshInspector();}
   function addPoseKey(){
@@ -411,6 +422,146 @@ async function main(){
     pushHistory('delete key',()=>replaceKeys(type,owner,before),()=>replaceKeys(type,owner,after));refreshTimeline();
   }
   function refreshAll(){historyUI();refreshOutliner();refreshInspector();refreshTimeline();refreshCameraKeys();refreshLibrary();}
+  // ── One-click animation helpers: onion skin, baked clips, pose clipboard, walk paths, follow cam ──
+  const onionGroup=new THREE.Group();onionGroup.name='Onion skin';scene.add(onionGroup);
+  let onionPrev=null,onionNext=null;
+  function makeOnionGhost(color){
+    const c=createCharacter('Onion ghost');
+    c.root.traverse(o=>{if(o.isMesh){o.material=new THREE.MeshBasicMaterial({color,transparent:true,opacity:.16,depthWrite:false});o.castShadow=false;o.receiveShadow=false;}});
+    c.markers.visible=false;c.root.visible=false;onionGroup.add(c.root);
+    return c;
+  }
+  function updateOnion(){
+    const show=state.onion&&selected?.character&&!timeline.playing&&!recording;
+    if(!show){if(onionPrev){onionPrev.root.visible=false;onionNext.root.visible=false;}return;}
+    if(!onionPrev){onionPrev=makeOnionGhost(0xf0ad7d);onionNext=makeOnionGhost(0x7dcedb);}
+    let prev=null,next=null;
+    for(const k of keysOf(selected)){if(!k.pose)continue;if(k.time<timeline.time-KEY_EPS)prev=k;else if(k.time>timeline.time+KEY_EPS){next=k;break;}}
+    for(const[g,k]of[[onionPrev,prev],[onionNext,next]]){
+      if(!k){g.root.visible=false;continue;}
+      g.root.visible=true;
+      g.root.position.fromArray(k.position);g.root.rotation.set(...k.rotation);g.root.scale.fromArray(k.scale);
+      applyPose(g,k.pose);
+    }
+  }
+  function bakeClipInto(clip){
+    const r=selected;
+    if(!r?.character){toast('Select a player first — clips bake real pose keys onto a character.');return;}
+    finishInputEdit();setPlaying(false);
+    const d=CLIP_DEFAULTS[clip]||CLIP_DEFAULTS.walk;
+    let start=timeline.time;if(start+d.dur>timeline.duration+.05)start=Math.max(0,timeline.duration-d.dur);
+    const duration=Math.min(d.dur,timeline.duration-start);
+    const gen=bakeClip({clip,start,duration,from:r.root.position.toArray(),yaw:r.root.rotation.y,heightAt:(x,z)=>world.heightAt(x,z)});
+    const before=trackSnapshot(r);
+    for(const k of gen.keys)putKey(keysOf(r),k);
+    prepEdit(r,true);r.draft=null;
+    applyAtTime(timeline.time,true,true);
+    const after=trackSnapshot(r);
+    pushHistory('bake '+clip+' clip',()=>restoreTrack(r,before),()=>restoreTrack(r,after));
+    refreshTimeline();refreshInspector();
+    toast(clip[0].toUpperCase()+clip.slice(1)+' baked · '+gen.keys.length+' keys from '+start.toFixed(2)+'s · Undo restores the track.');
+  }
+  let poseClip=null;
+  function selectedPoseKey(){
+    const r=selected;if(!r?.character)return null;
+    const sel=state.selectedKey;
+    if(sel?.type==='pose'&&sel.owner===r.id){const k=keysOf(r)[sel.index];if(k?.pose)return k;}
+    return null;
+  }
+  function copyPoseClip(){
+    const r=selected;if(!r?.character){toast('Select a player first.');return;}
+    const k=selectedPoseKey();
+    poseClip=copyPose(k?k.pose:r.character.displayPose);
+    toast('Pose copied'+(k?' from the key at '+k.time.toFixed(2)+'s':'')+'. Paste turns it into a key — on any player.');
+  }
+  function pastePoseClip(){
+    const r=selected;if(!r?.character){toast('Select a player first.');return;}
+    if(!poseClip){toast('Copy a pose first.');return;}
+    finishInputEdit();prepEdit(r);
+    r.character.pose=copyPose(poseClip);r.character.preset='custom';
+    applyPose(r.character,r.character.pose);
+    r.draft=null;applyObjectKey(r,timeline.time);
+    refreshTimeline();refreshInspector();
+    toast('Pose pasted as a key at '+timeline.time.toFixed(2)+' s.');
+  }
+  function mirrorCurrentPose(){
+    const r=selected;if(!r?.character){toast('Select a player first.');return;}
+    const k=selectedPoseKey();
+    if(k){
+      const before=trackSnapshot(r);
+      k.pose=mirrorPose(k.pose);
+      applyAtTime(timeline.time,true,true);
+      const after=trackSnapshot(r);
+      pushHistory('mirror key pose',()=>restoreTrack(r,before),()=>restoreTrack(r,after));
+      refreshTimeline();refreshInspector();
+      toast('Key at '+k.time.toFixed(2)+' s mirrored left ↔ right.');
+      return;
+    }
+    const before=actorSnapshot(r);prepEdit(r);
+    r.character.preset='custom';r.character.pose=mirrorPose(r.character.displayPose);
+    applyPose(r.character,r.character.pose);
+    recordActorChange(r,before,'mirror pose');refreshInspector();
+    toast('Pose mirrored left ↔ right. Use Apply pose to key it.');
+  }
+  let pathPoints=null,pathMarkers=[];
+  function clearPathMarkers(){for(const m of pathMarkers){helpers.remove(m);m.geometry?.dispose();m.material?.dispose();}pathMarkers=[];}
+  function setPathMode(on){
+    state.pathMode=!!on;
+    const btn=$('#walk-path');btn.textContent=on?'✔ Bake path':'＋ Path';btn.classList.toggle('active',!!on);
+    if(!on){clearPathMarkers();pathPoints=null;$('#ghost-status').hidden=true;canvas.style.cursor='';}
+    else{pathPoints=[];canvas.style.cursor='crosshair';setGhostStatus('Walk path · click the ground to add points · Bake path or Enter finishes · Esc cancels',false);}
+  }
+  function addPathPoint(hit){
+    const x=hit.point.x,z=hit.point.z,y=world.heightAt(x,z);
+    pathPoints.push([x,y,z]);
+    const dot=new THREE.Mesh(new THREE.SphereGeometry(.15,12,10),new THREE.MeshBasicMaterial({color:0xd0ee8e}));
+    dot.position.set(x,y+.18,z);helpers.add(dot);pathMarkers.push(dot);
+    if(pathPoints.length>1){
+      const a=pathPoints.at(-2);
+      const line=new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(a[0],a[1]+.18,a[2]),new THREE.Vector3(x,y+.18,z)]),new THREE.LineBasicMaterial({color:0xd0ee8e,transparent:true,opacity:.75}));
+      helpers.add(line);pathMarkers.push(line);
+    }
+    setGhostStatus('Walk path · '+pathPoints.length+' point'+(pathPoints.length>1?'s':'')+' · click to add more · Bake path or Enter finishes · Esc cancels',false);
+  }
+  function bakePath(){
+    const r=selected;
+    if(!r?.character){toast('Select a player first — then draw the route.');return;}
+    if(!pathPoints||pathPoints.length<2){toast('Click at least two points on the ground first.');return;}
+    finishInputEdit();setPlaying(false);
+    let gen;
+    try{gen=bakeWalkPath({points:pathPoints.map(p=>[p[0],p[2]]),speed:1.4,heightAt:(x,z)=>world.heightAt(x,z)});}
+    catch(err){toast(err.message);return;}
+    if(gen.totalTime>timeline.duration-.05){timeline.duration=Math.min(60,Math.ceil(gen.totalTime*2)/2+.5);$('#duration').value=timeline.duration;}
+    const before=trackSnapshot(r);
+    for(const k of gen.keys)putKey(keysOf(r),k);
+    prepEdit(r,true);r.draft=null;
+    timeline.time=0;applyAtTime(0,true,true);updateTimeUI();
+    const after=trackSnapshot(r);
+    pushHistory('bake walk path',()=>restoreTrack(r,before),()=>restoreTrack(r,after));
+    setPathMode(false);refreshTimeline();refreshInspector();
+    toast('Walk path baked · '+gen.keys.length+' keys over '+gen.totalTime.toFixed(1)+' s · press From start to preview.');
+  }
+  function cameraFollow(){
+    const r=selected;
+    if(!r){toast('Select a player or object first.');return;}
+    if(!keysOf(r).length){toast(r.name+' has no animation keys yet — nothing to follow.');return;}
+    finishInputEdit();setPlaying(false);
+    const before=clone(camTrack.keys);
+    const offset=camera.position.clone().sub(orbit.target);
+    const keys=[];
+    for(let t=0;t<=timeline.duration+1e-6;t+=.5){
+      const s=r.character?samplePose(keysOf(r),t,r.rotationMode):sampleTransform(keysOf(r),t,r.rotationMode);
+      if(!s)continue;
+      const center=new THREE.Vector3().fromArray(s.position);
+      keys.push({time:Math.min(t,timeline.duration),position:center.clone().add(offset).toArray(),target:[center.x,center.y+1,center.z],fov:camera.fov});
+    }
+    if(keys.length<2){toast('Could not build a follow shot from this track.');return;}
+    camTrack.keys=keys;camTrack.rebuild();updatePath();
+    const after=clone(camTrack.keys);
+    pushHistory('camera follow',()=>replaceKeys('camera',null,before),()=>replaceKeys('camera',null,after));
+    refreshCameraKeys();refreshTimeline();
+    toast('Camera now follows '+r.name+' for the whole clip · Undo restores the old camera track.');
+  }
 
   function freeView(){setPlaying(false);viewOverride=true;orbit.enabled=true;}
   function focusObject(r){
@@ -526,6 +677,7 @@ async function main(){
   canvas.addEventListener('pointerup',e=>{
     if(state.mode==='terrain'&&!ghostState){if(terrainStroke)endTerrainStroke();pointerDown=null;return;}
     const down=pointerDown;pointerDown=null;if(!down||Math.hypot(down.x-e.clientX,down.y-e.clientY)>5||down.gizmo)return;
+    if(state.pathMode){if(down.button===0){const hit=sceneHit(e);if(hit)addPathPoint(hit);}else setPathMode(false);return;}
     if(ghostState){if(down.button===0){updateGhost(e);commitGhost();}else{cancelGhost();toast('Placement canceled.');}return;}
     if(['build','erase'].includes(state.mode)){editBlock(sceneHit(e),state.mode==='erase'||down.button===2||e.shiftKey);return;}
     if(down.button!==0)return;const hit=sceneHit(e);if(!hit||hit.object===floor){selectObject(null);return;}
@@ -588,6 +740,10 @@ async function main(){
   $('#clear-pose-track').onclick=()=>clearObjectKeys(selected);
   $('#live-motion').onchange=e=>{if(selected?.character){selected.character.live=e.target.checked;if(e.target.checked){selected.draft=null;updateKeyUI();}if(selected.character.preset==='custom')selected.character.preset='idle';selected.character.manual=true;}};
   $('#show-joints').onchange=e=>{if(selected?.character)selected.character.markers.visible=e.target.checked;};
+  $('#onion-skin').onchange=e=>{state.onion=e.target.checked;try{localStorage.setItem('studioOnion',state.onion?'1':'0');}catch(err){}updateOnion();};
+  $$('[data-clip]').forEach(b=>b.onclick=()=>bakeClipInto(b.dataset.clip));
+  $('#pose-copy').onclick=copyPoseClip;$('#pose-paste').onclick=pastePoseClip;$('#pose-mirror').onclick=mirrorCurrentPose;
+  $('#walk-path').onclick=()=>{if(state.pathMode){bakePath();return;}if(!selected?.character){toast('Select a player first — then draw the route.');return;}setPathMode(true);};
   $('#held-tool').onchange=e=>equipTool(selected,e.target.value);
   function deleteObject(){const r=selected;if(!r)return;if(r.character&&state.scope==='held'){equipTool(r,'none');return;}if(r.character&&state.scope==='part'){toast('Choose Whole player to delete the character. Joints stay in the rig.');return;}detachRecord(r);pushHistory('delete '+r.name,()=>attachRecord(r),()=>detachRecord(r));}
   $('#delete-object').onclick=deleteObject;
@@ -619,12 +775,36 @@ async function main(){
   $('#camera-smooth').onchange=e=>{camTrack.smooth=e.target.checked;updatePath();};
   $('#show-path').onchange=e=>{if(pathLine)pathLine.visible=e.target.checked;};
   $('#clear-cam').onclick=()=>{const before=clone(camTrack.keys);replaceKeys('camera',null,[]);pushHistory('clear camera keys',()=>replaceKeys('camera',null,before),()=>replaceKeys('camera',null,[]));};
+  $('#camera-follow').onclick=cameraFollow;
   $('#play').onclick=()=>setPlaying(!timeline.playing);$('#stop').onclick=()=>seek(0);
   $('#preview-start').onclick=()=>{applyPendingEdits();seek(0);setPlaying(true);};
   $('#key-time').onchange=e=>seek(clamp(+e.target.value||0,0,timeline.duration));$('#key-time').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();e.target.blur();}};
   $('#loop').onchange=e=>timeline.loop=e.target.checked;
   $('#duration').onchange=e=>{const old=timeline.duration,next=clamp(+e.target.value||8,2,60);timeline.duration=next;timeline.time=Math.min(timeline.time,next);refreshTimeline();updatePath();toast('Duration '+next+'s. Keys beyond the end remain saved.');pushHistory('clip duration',()=>{timeline.duration=old;updatePath();},()=>{timeline.duration=next;updatePath();});};
   $('#delete-key').onclick=()=>{const k=state.selectedKey;if(k)deleteKey(k.type,k.index);};
+  $('#auto-key').onclick=()=>{state.autoKey=!state.autoKey;$('#auto-key').classList.toggle('active',state.autoKey);toast(state.autoKey?'Auto-key ON — every edit drops a key at the playhead automatically.':'Auto-key off — edits stay drafts until Apply.');};
+  $('#key-ease').onchange=e=>{
+    const sel=state.selectedKey;if(!sel)return;
+    const cam=sel.type==='camera',r=cam?null:(sel.owner===selected?.id?selected:null);
+    if(!cam&&!r)return;
+    const ease=e.target.value||undefined;
+    if(cam){
+      const before=clone(camTrack.keys),key=camTrack.keys[sel.index];
+      if(!key)return;
+      if(ease)key.ease=ease;else delete key.ease;
+      camTrack.rebuild();updatePath();
+      const after=clone(camTrack.keys);
+      pushHistory('camera key easing',()=>replaceKeys('camera',null,before),()=>replaceKeys('camera',null,after));
+    }else{
+      const before=trackSnapshot(r),key=keysOf(r)[sel.index];
+      if(!key)return;
+      if(ease)key.ease=ease;else delete key.ease;
+      applyAtTime(timeline.time,true,true);
+      const after=trackSnapshot(r);
+      pushHistory('key easing',()=>restoreTrack(r,before),()=>restoreTrack(r,after));
+    }
+    refreshTimeline();refreshInspector();refreshCameraKeys();
+  };
   $('#track-area').onpointerdown=e=>{
     if(e.target.closest('.key-marker'))return;state.selectedKey=null;const area=e.currentTarget;area.setPointerCapture(e.pointerId);
     const move=ev=>{const r=area.getBoundingClientRect();seek(clamp((ev.clientX-r.left)/r.width,0,1)*timeline.duration);};move(e);
@@ -1012,6 +1192,8 @@ async function main(){
     const k=e.key.toLowerCase();
     if(k==='escape'&&ghostState){cancelGhost();toast('Placement canceled.');return;}
     if(k==='r'&&ghostState){e.preventDefault();rotateGhost();return;}
+    if(k==='escape'&&state.pathMode){setPathMode(false);toast('Walk path canceled.');return;}
+    if(k==='enter'&&state.pathMode){e.preventDefault();bakePath();return;}
     if((e.ctrlKey||e.metaKey)&&k==='z'){e.preventDefault();e.shiftKey?redo():undo();return;}
     if((e.ctrlKey||e.metaKey)&&k==='d'){e.preventDefault();duplicateSelected();return;}
     if((e.ctrlKey||e.metaKey)&&k==='s'){e.preventDefault();$('#save-project').click();return;}
@@ -1048,6 +1230,7 @@ async function main(){
       if(orbit.enabled&&!gizmo.dragging&&!aiOpen)orbit.update();
     }
     for(const r of objects){if(r.mixer&&r.animPlaying&&!aiOpen)r.mixer.update(dt);if(r.character?.markers.visible)applyPose(r.character,r.character.displayPose);}
+    updateOnion();
     if(selected){
       ring.visible=!!selected.character;ring.position.set(selected.root.position.x,world.heightAt(selected.root.position.x,selected.root.position.z)+.013,selected.root.position.z);ring.scale.setScalar(selected.root.scale.x);
       selectionBox.visible=!selected.character&&!timeline.playing;if(selectionBox.visible)selectionBox.setFromObject(selected.root);
@@ -1088,6 +1271,7 @@ async function main(){
   }
   for(const [id,dev] of [['choose-desktop','desktop'],['choose-touch','touch']])$('#'+id).onclick=()=>{applyDevice(dev,$('#device-remember').checked);deviceDialog.close();toast(dev==='touch'?'Interface adapted to touch: big buttons and full-screen menus.':'Interface adapted to computer: shortcuts and compact menus.');};
   $('#device-switch').onclick=()=>openDeviceDialog();
+  try{if(localStorage.getItem('studioOnion')==='0'){state.onion=false;$('#onion-skin').checked=false;}}catch(e){}
   // Phone: keep the focused field in view above the virtual keyboard — the panel
   // owning the screen is the whole point, so the field must never hide behind it.
   document.addEventListener('focusin',e=>{
