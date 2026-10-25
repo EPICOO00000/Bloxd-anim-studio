@@ -101,3 +101,12 @@ body[data-device="touch"] .project-menu button{padding:14px 12px;font-size:13px}
 body[data-device="touch"] dialog{width:calc(100vw - 24px)}
 body[data-device="touch"] .device-options{grid-template-columns:1fr}
 @media (max-width:760px){.brand small,.project-title small,.local-badge{display:none}.brand{width:auto}.timeline-toolbar{gap:10px;padding:0 10px}.transport{min-width:0}}
+#terrain-toggle.active{background:#35472f;border-color:#8fba60;color:#e3f6c2}
+.terrain-panel{margin:10px 13px 0;padding:10px;background:#182326;border:1px solid #3d5148;border-radius:8px;display:flex;flex-direction:column;gap:8px;flex:none}
+.terrain-panel label{display:flex;align-items:center;gap:7px;font-size:9px;color:#a7bcaa}
+.terrain-panel select{flex:1;font-size:10px;padding:6px;min-width:0}
+.terrain-panel input[type=range]{flex:1;min-width:0}
+.terrain-panel label>span{min-width:16px;text-align:right;font-family:ui-monospace,monospace;color:#c4d2cc}
+.terrain-panel .muted{margin:2px 0 0;font-size:8px;line-height:1.5}
+#ghost-status{position:absolute;left:50%;bottom:64px;transform:translateX(-50%);padding:7px 13px;background:#233129f2;border:1px solid #7e9c5b;color:#e0efcd;border-radius:7px;font-size:10px;text-align:center;pointer-events:none;z-index:10;box-shadow:0 6px 30px #0002;max-width:92%;white-space:normal}
+#ghost-status.is-collision{border-color:#bd785d;color:#ffd5bd;background:#3a2823f2}
