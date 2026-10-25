@@ -12,6 +12,7 @@ import { setWaterTime, updateWaterEnv } from './lib/water.js';
 import { parseSchematic, mapBloxdschem } from './lib/schematics.js';
 import { parseBloxdschem, isBloxdschem } from './lib/bloxdschem.js';
 import { loadPrefabs, prefabAssets, prefabCells } from './lib/prefabs.js';
+import { apply as applyBrush, topAt, BRUSH_TOOLS, BRUSH_LABELS } from './lib/terrain-brush.js';
 import { chooseVideoConfig, renderVideoFrames, renderRealtimeVideo } from './lib/video-export.js';
 import { Soundtrack } from './lib/audio.js';
 import { plainState, stageEdit, mergeEdit, keyFromState, stateFromKey, validateDraft } from './lib/key-edit.js';
@@ -253,16 +254,20 @@ async function main(){
     $('#duration-display').textContent=timeline.duration.toFixed(2).padStart(5,'0');$('#playhead').style.left=(t/timeline.duration*100)+'%';
     if(document.activeElement!==$('#key-time'))$('#key-time').value=t.toFixed(2);$('#key-time').max=timeline.duration;updateKeyUI();
   }
+  const terrainCfg={tool:'raise',biome:'temperate',radius:6,strength:2,falloff:'smooth',depth:3,seed:'studio'};
   function setMode(mode){
     setPlaying(false);
     if(state.scope==='part'&&['translate','scale'].includes(mode)){mode='rotate';toast('Body parts rotate at fixed joints. Choose Whole player to move or scale.');}
     state.mode=mode;$$('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));
     gizmo.detach();const target=selectedTarget();if(target&&['translate','rotate','scale'].includes(mode)){gizmo.attach(target);gizmo.setMode(mode);gizmo.setSpace(mode==='translate'&&state.scope!=='held'?'world':'local');}
-    hover.visible=false;const building=mode==='build'||mode==='erase';$('#build-badge').hidden=!building;
-    $('#build-badge').textContent=mode==='erase'?'Remove blocks · click any block':'Placing '+blockDefs[state.block].label+' · right-click to erase';
-    $('#viewport-hint').innerHTML=building?(mode==='erase'?'Click a block to remove <b>·</b> Ctrl+Z to undo <b>·</b> V to select':'Click to place <b>·</b> Right-click to erase <b>·</b> V to select'):mode==='rotate'?'Drag a colored ring <b>·</b> XYZ angles in inspector <b>·</b> Key to animate':'Drag to orbit <b>·</b> Click a block, part or item <b>·</b> E to rotate';
-    $('#place-blocks').classList.toggle('active',mode==='build');$('#erase-blocks').classList.toggle('active',mode==='erase');
-    canvas.style.cursor=building?'crosshair':'default';
+    hover.visible=false;const building=mode==='build'||mode==='erase',terrain=mode==='terrain';$('#build-badge').hidden=!(building||terrain);
+    $('#build-badge').textContent=mode==='erase'?'Remove blocks · click any block':terrain?BRUSH_LABELS[terrainCfg.tool]+' brush · drag over terrain':'Placing '+blockDefs[state.block].label+' · right-click to erase';
+    $('#viewport-hint').innerHTML=(building||terrain)?(mode==='erase'?'Click a block to remove <b>·</b> Ctrl+Z to undo <b>·</b> V to select':terrain?'Left-drag sculpts <b>·</b> Right-drag turns the camera <b>·</b> Each stroke is one undo step':'Click to place <b>·</b> Right-click to erase <b>·</b> V to select'):mode==='rotate'?'Drag a colored ring <b>·</b> XYZ angles in inspector <b>·</b> Key to animate':'Drag to orbit <b>·</b> Click a block, part or item <b>·</b> E to rotate';
+    $('#place-blocks').classList.toggle('active',mode==='build');$('#erase-blocks').classList.toggle('active',mode==='erase');$('#terrain-toggle').classList.toggle('active',terrain);
+    $('#terrain-panel').hidden=!terrain;
+    if(terrain){orbit.mouseButtons={LEFT:null,MIDDLE:THREE.MOUSE.DOLLY,RIGHT:THREE.MOUSE.ROTATE};orbit.touches={ONE:null,TWO:THREE.TOUCH.DOLLY_PAN};}
+    else{orbit.mouseButtons={LEFT:THREE.MOUSE.ROTATE,MIDDLE:THREE.MOUSE.DOLLY,RIGHT:THREE.MOUSE.PAN};orbit.touches={ONE:THREE.TOUCH.ROTATE,TWO:THREE.TOUCH.DOLLY_PAN};}
+    canvas.style.cursor=(building||terrain)?'crosshair':'default';
   }
   function selectObject(r,scope='root',joint=state.joint){finishInputEdit();selected=r;if(r?.draft)r.draft.time=timeline.time;state.selectedKey=null;state.scope=r?.character?scope:'root';state.joint=joint;$('#joint-select').value=joint;refreshOutliner();refreshInspector();refreshTimeline();setMode(['build','erase'].includes(state.mode)?'select':state.mode);}
   function showInspector(tab){$('.inspector-scroll').scrollTop=0;state.inspector=tab;$$('[data-inspector]').forEach(b=>b.classList.toggle('active',b.dataset.inspector===tab));for(const n of ['object','light','camera'])$('#inspect-'+n).hidden=n!==tab;syncDock();}
@@ -322,7 +327,7 @@ async function main(){
   }
   function refreshLibrary(){
     const token=++libraryToken,isBlocks=state.category==='blocks',isItems=state.category==='tools',isModels=state.category==='models',isTextures=state.category==='textures',isBob=state.category==='characters',isBuilds=state.category==='builds';
-    $$('[data-library]').forEach(b=>b.classList.toggle('active',b.dataset.library===state.category));$('#block-edit-actions').hidden=!isBlocks;$('#tool-edit-actions').hidden=!(isItems||isModels);
+    $$('[data-library]').forEach(b=>b.classList.toggle('active',b.dataset.library===state.category));$('#block-edit-actions').hidden=!isBlocks;$('#tool-edit-actions').hidden=!(isItems||isModels);$('#terrain-panel').hidden=!(isBlocks&&state.mode==='terrain');
     $('#asset-action-note').textContent=isBlocks?'Place / Remove to build. Select + Rotate to animate a block.':isItems||isModels?(state.toolAction==='place'?'Place a separate, rotatable asset. A ghost preview follows your cursor — click to set it down, Esc cancels. Models are static source geometry.':'Select a player, then choose an asset to hold. Adjust its grip in Held item.') :isBuilds?'Whole builds from the open map-editor pack. Click one, then click the world — a ghost shows where it lands. Esc cancels.':isTextures?'All PNG files, embedded model images and labeled palette variants. Click to inspect / download.':'The built-in, editable classic Bob recreation.';
     $('#place-tools').classList.toggle('active',state.toolAction==='place');$('#equip-tools').classList.toggle('active',state.toolAction==='equip');
     $('#catalog-summary').textContent=isBuilds?prefabAssets.length.toLocaleString()+' prefab builds · houses, trees, rocks & stands':catalog.counts.liveBlockRoots.toLocaleString()+' base blocks · '+catalog.counts.liveItemEntries.toLocaleString()+' item entries';
@@ -430,9 +435,38 @@ async function main(){
   // Pointer picking uses the viewport rectangle, never the full window.
   const ray=new THREE.Raycaster(),pointer=new THREE.Vector2();
   const hover=new THREE.Mesh(new THREE.BoxGeometry(1.005,1.005,1.005),new THREE.MeshBasicMaterial({color:0xd6f29e,wireframe:true,transparent:true,opacity:.8,depthWrite:false}));hover.visible=false;helpers.add(hover);
-  // Ghost placement preview (ported from the Bloxd Map Editor asset placer): a translucent
-  // copy of the schematic/asset follows the cursor, left-click commits, right-click/Esc cancels.
+  // Ghost placement preview (ported from the Bloxd Map Editor asset placer and the VoxelForge
+  // ghost system): a translucent copy of the schematic/asset follows the cursor, the wheel
+  // adjusts height, R rotates builds, overlapping destinations tint the ghost red,
+  // left-click commits, right-click/Esc cancels.
   let ghostState=null;
+  // Terrain brush ring (VoxelForge-style sculpting): drag stamps the brush along the surface.
+  const brushRing=new THREE.Mesh(new THREE.RingGeometry(.97,1.05,64),new THREE.MeshBasicMaterial({color:0xd6f29e,transparent:true,opacity:.8,depthWrite:false,side:THREE.DoubleSide}));
+  brushRing.rotation.x=-Math.PI/2;brushRing.visible=false;helpers.add(brushRing);
+  let terrainStroke=null,terrainLast=null,terrainRebuild=false;
+  function queueTerrainRebuild(){if(terrainRebuild)return;terrainRebuild=true;requestAnimationFrame(()=>{terrainRebuild=false;world.rebuild();});}
+  function terrainCenter(e){
+    const hit=sceneHit(e);if(!hit)return null;
+    const x=Math.floor(hit.point.x),z=Math.floor(hit.point.z);
+    if(Math.abs(x)>400||Math.abs(z)>400)return null;
+    const t=topAt(world,x,z,Math.ceil(world.heightAt(x,z)),64);
+    return [x,t==null?Math.floor(hit.point.y):t,z];
+  }
+  function stampTerrain(c){
+    const changed=applyBrush(world,c,{...terrainCfg,targetY:c[1]});
+    if(terrainStroke)for(const [k,v] of changed)if(!terrainStroke.has(k))terrainStroke.set(k,v);
+    if(changed.size)queueTerrainRebuild();
+    return changed.size;
+  }
+  function endTerrainStroke(){
+    const entries=terrainStroke?[...terrainStroke]:[];terrainStroke=null;terrainLast=null;
+    if(!entries.length)return;
+    world.rebuild();
+    const tool=terrainCfg.tool;
+    pushHistory('terrain '+tool,
+      ()=>{for(const [k,[old]] of entries){const [x,y,z]=k.split(',').map(Number);world.set(x,y,z,old);}world.rebuild();},
+      ()=>{for(const [k,[,nw]] of entries){const [x,y,z]=k.split(',').map(Number);world.set(x,y,z,nw);}world.rebuild();});
+  }
   function aim(e){const r=canvas.getBoundingClientRect();pointer.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);camera.updateMatrixWorld();ray.setFromCamera(pointer,camera);}
   function visibleMesh(o){if(!o.isMesh)return false;for(let p=o;p;p=p.parent)if(!p.visible)return false;return true;}
   function recordForHit(hit){let obj=hit?.object;while(obj&&!obj.userData.studioId)obj=obj.parent;return objects.find(r=>r.id===obj?.userData.studioId)||null;}
@@ -470,14 +504,27 @@ async function main(){
   }
   let pointerDown=null;
   canvas.addEventListener('contextmenu',e=>e.preventDefault());
-  canvas.addEventListener('pointerdown',e=>{pointerDown={x:e.clientX,y:e.clientY,button:e.button,gizmo:!!gizmo.axis};});
+  canvas.addEventListener('pointerdown',e=>{
+    pointerDown={x:e.clientX,y:e.clientY,button:e.button,gizmo:!!gizmo.axis};
+    if(state.mode==='terrain'&&!ghostState&&e.button===0){terrainStroke=new Map();terrainLast=null;const c=terrainCenter(e);if(c){terrainLast=c.join(',');stampTerrain(c);}}
+  });
   canvas.addEventListener('pointermove',e=>{
-    if(ghostState){hover.visible=false;updateGhost(e);return;}
-    if(!['build','erase'].includes(state.mode)){hover.visible=false;return;}const hit=sceneHit(e),dig=state.mode==='erase'||e.buttons===2||e.shiftKey;hover.visible=editableHit(hit,dig);
+    if(ghostState){hover.visible=false;brushRing.visible=false;updateGhost(e);return;}
+    if(state.mode==='terrain'){
+      hover.visible=false;
+      const c=terrainCenter(e);
+      if(!c){brushRing.visible=false;return;}
+      brushRing.visible=true;brushRing.position.set(c[0]+.5,c[1]+1.03,c[2]+.5);brushRing.scale.setScalar(terrainCfg.radius+.5);
+      if(terrainStroke){const k=c.join(',');if(k!==terrainLast){terrainLast=k;stampTerrain(c);}}
+      return;
+    }
+    if(!['build','erase'].includes(state.mode)){hover.visible=false;brushRing.visible=false;return;}brushRing.visible=false;const hit=sceneHit(e),dig=state.mode==='erase'||e.buttons===2||e.shiftKey;hover.visible=editableHit(hit,dig);
     if(hover.visible){const rec=recordForHit(hit);hover.rotation.set(0,0,0);hover.scale.set(1,1,1);if(dig&&rec?.type==='block'){hover.position.copy(rec.root.position);hover.rotation.copy(rec.root.rotation);hover.scale.copy(rec.root.scale);}else{const p=cellFromHit(hit,dig);hover.position.set(p[0]+.5,p[1]+.5,p[2]+.5);}hover.material.color.set(dig?0xf5a179:0xd6f29e);}
   });
-  canvas.addEventListener('pointerleave',()=>hover.visible=false);
+  canvas.addEventListener('pointerleave',()=>{hover.visible=false;brushRing.visible=false;if(terrainStroke)endTerrainStroke();});
+  canvas.addEventListener('wheel',e=>{if(!ghostState)return;e.preventDefault();ghostState.yOffset+=(e.deltaY<0?1:-1);applyGhostOffset();},{passive:false});
   canvas.addEventListener('pointerup',e=>{
+    if(state.mode==='terrain'&&!ghostState){if(terrainStroke)endTerrainStroke();pointerDown=null;return;}
     const down=pointerDown;pointerDown=null;if(!down||Math.hypot(down.x-e.clientX,down.y-e.clientY)>5||down.gizmo)return;
     if(ghostState){if(down.button===0){updateGhost(e);commitGhost();}else{cancelGhost();toast('Placement canceled.');}return;}
     if(['build','erase'].includes(state.mode)){editBlock(sceneHit(e),state.mode==='erase'||down.button===2||e.shiftKey);return;}
@@ -515,6 +562,13 @@ async function main(){
   $('#snap-rotation').onchange=e=>gizmo.setRotationSnap(e.target.checked?deg(15):null);
   $$('[data-turn]').forEach(b=>b.onclick=()=>{const r=selected;if(!r)return;const before=actorSnapshot(r);prepEdit();selectedTarget().rotation[b.dataset.turn]+=Math.PI/2;syncTargetToActor();recordActorChange(r,before,'quarter turn');refreshInspector();setMode('rotate');});
   $('#place-blocks').onclick=()=>{setPlaying(false);setMode('build');refreshLibrary();};$('#erase-blocks').onclick=()=>{setPlaying(false);setMode('erase');refreshLibrary();};
+  $('#terrain-toggle').onclick=()=>{setPlaying(false);state.category='blocks';setMode(state.mode==='terrain'?'build':'terrain');refreshLibrary();};
+  for(const t of BRUSH_TOOLS){const o=document.createElement('option');o.value=t;o.textContent=BRUSH_LABELS[t];$('#terrain-tool').append(o);}
+  $('#terrain-tool').onchange=e=>terrainCfg.tool=e.target.value;
+  $('#terrain-biome').onchange=e=>terrainCfg.biome=e.target.value;
+  $('#terrain-radius').oninput=e=>{terrainCfg.radius=+e.target.value;$('#terrain-radius-value').textContent=e.target.value;};
+  $('#terrain-strength').oninput=e=>{terrainCfg.strength=+e.target.value;$('#terrain-strength-value').textContent=e.target.value;};
+  $('#terrain-falloff').onchange=e=>terrainCfg.falloff=e.target.value;
   $('#place-tools').onclick=()=>{state.toolAction='place';refreshLibrary();};$('#equip-tools').onclick=()=>{state.toolAction='equip';refreshLibrary();};
   function downloadTexture(key){const meta=catalog.textureMeta[key],url=textureURL(key);if(!url)return;const name=safeName(meta?.name||key);download(new Blob([decode64(url.split(',')[1])],{type:'image/png'}),name.endsWith('.png')?name:name+'.png');}
   $('#download-texture').onclick=()=>downloadTexture($('#download-texture').dataset.texture);$('#asset-detail-download').onclick=()=>downloadTexture($('#asset-detail-download').dataset.texture);
@@ -606,12 +660,15 @@ async function main(){
     const shape=t==='house'?'<path d="M8 19 20 8l12 11v13H8z"/><rect x="17" y="22" width="6" height="10" fill="#1c2318"/>':t==='tree'?'<rect x="18" y="22" width="4" height="12"/><circle cx="20" cy="14" r="9"/>':t==='rock'?'<path d="M8 30 14 14l8-4 10 8-2 12z"/>':'<rect x="13" y="8" width="14" height="24" rx="5"/>';
     return 'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" rx="7" fill="#1c2318"/><g fill="'+c+'">'+shape+'</g></svg>');
   }
+  function setGhostStatus(text,collision){
+    const chip=$('#ghost-status');chip.hidden=false;chip.classList.toggle('is-collision',!!collision);chip.textContent=text;
+  }
   function cancelGhost(){
     if(!ghostState)return;
-    ghostState.dispose();ghostState=null;canvas.style.cursor='';
+    ghostState.dispose();ghostState=null;canvas.style.cursor='';orbit.enableZoom=true;
+    $('#ghost-status').hidden=true;
   }
-  function startSchemGhost(name,sch){
-    cancelGhost();
+  function buildSchemMesh(sch){
     let minX=Infinity,minY=Infinity,minZ=Infinity,maxX=-Infinity,maxZ=-Infinity;
     for(const key of sch.cells.keys()){const [x,y,z]=key.split(',').map(Number);minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxZ=Math.max(maxZ,z);minZ=Math.min(minZ,z);}
     const midX=Math.round((minX+maxX)/2),midZ=Math.round((minZ+maxZ)/2);
@@ -624,11 +681,23 @@ async function main(){
       const c=blockDefs[type]?.color;col.setRGB(c?c[0]:.62,c?c[1]:.72,c?c[2]:.55);mesh.setColorAt(i,col);i++;
     }
     if(mesh.instanceColor)mesh.instanceColor.needsUpdate=true;
-    mesh.frustumCulled=false;
-    const group=new THREE.Group();group.add(mesh);group.visible=false;helpers.add(group);
-    ghostState={kind:'schem',name,sch,group,dispose(){helpers.remove(group);geo.dispose();mat.dispose();}};
-    canvas.style.cursor='copy';
-    toast('Ghost ready for '+name+' — click the world to build it. Right-click or Esc cancels.');
+    mesh.instanceMatrix.needsUpdate=true;mesh.frustumCulled=false;
+    return {mesh,geo,mat,mid:[midX,minY,midZ]};
+  }
+  function ghostSetMesh(g,built){
+    if(g.built){g.group.remove(g.built.mesh);g.built.geo.dispose();g.built.mat.dispose();}
+    g.built=built;g.mid=built?built.mid:null;
+    if(built)g.group.add(built.mesh);
+  }
+  function startSchemGhost(name,sch){
+    cancelGhost();
+    const group=new THREE.Group();group.visible=false;helpers.add(group);
+    const st={kind:'schem',name,sch,group,built:null,yOffset:0,rot:0,anchor:null,lastAnchor:null,collisions:0,
+      dispose(){helpers.remove(group);if(st.built){group.remove(st.built.mesh);st.built.geo.dispose();st.built.mat.dispose();st.built=null;}}};
+    ghostSetMesh(st,buildSchemMesh(sch));
+    ghostState=st;
+    canvas.style.cursor='copy';orbit.enableZoom=false;
+    toast('Ghost ready for '+name+' — click the world to build it. Wheel = height, R = rotate, right-click or Esc cancels.');
   }
   function startPropGhost(asset){
     cancelGhost();
@@ -640,20 +709,60 @@ async function main(){
       o.material=Array.isArray(o.material)?ghostMats:ghostMats[0];o.castShadow=false;o.receiveShadow=false;
     }});
     const group=new THREE.Group();group.add(root);group.visible=false;helpers.add(group);
-    ghostState={kind:'prop',asset,group,dispose(){helpers.remove(group);for(const g of clones)g.dispose();}};
-    canvas.style.cursor='copy';
-    toast('Ghost ready for '+asset+' — click the world to place it. Right-click or Esc cancels.');
+    ghostState={kind:'prop',asset,group,built:null,yOffset:0,rot:0,anchor:null,lastAnchor:null,collisions:0,
+      dispose(){helpers.remove(group);for(const g of clones)g.dispose();}};
+    canvas.style.cursor='copy';orbit.enableZoom=false;
+    toast('Ghost ready for '+asset+' — click the world to place it. Wheel = height, right-click or Esc cancels.');
+  }
+  function rotateGhost(){
+    const g=ghostState;if(!g||g.kind!=='schem'||!g.built)return;
+    let maxZ=-Infinity;
+    for(const key of g.sch.cells.keys()){const z=+key.split(',')[2];if(z>maxZ)maxZ=z;}
+    const next=new Map();
+    for(const [key,type] of g.sch.cells){const p=key.split(',').map(Number);next.set((maxZ-p[2])+','+p[1]+','+p[0],type);}
+    g.sch.cells=next;g.rot=(g.rot+90)%360;
+    ghostSetMesh(g,buildSchemMesh(g.sch));
+    if(g.anchor){g.group.position.set(g.anchor[0],g.anchor[1]+g.yOffset,g.anchor[2]);g.group.visible=true;}
+    g.lastAnchor=null;updateGhostStatus();
+    toast('Rotated to '+g.rot+'°');
   }
   function updateGhost(e){
     if(!ghostState)return;
     const hit=sceneHit(e);if(!hit)return;
+    const g=ghostState;
     const ax=Math.round(hit.point.x),az=Math.round(hit.point.z);
-    const ay=ghostState.kind==='schem'?Math.max(0,Math.ceil(world.heightAt(ax,az))):world.heightAt(ax,az);
-    ghostState.group.position.set(ax,ay,az);ghostState.group.visible=true;ghostState.anchor=[ax,ay,az];
+    const ay=g.kind==='schem'?Math.max(0,Math.ceil(world.heightAt(ax,az))):world.heightAt(ax,az);
+    if(!g.anchor||g.anchor[0]!==ax||g.anchor[1]!==ay||g.anchor[2]!==az){g.anchor=[ax,ay,az];g.lastAnchor=null;}
+    applyGhostOffset();
+  }
+  function applyGhostOffset(){
+    const g=ghostState;if(!g||!g.anchor)return;
+    g.group.position.set(g.anchor[0],g.anchor[1]+g.yOffset,g.anchor[2]);g.group.visible=true;
+    updateGhostStatus();
+  }
+  function updateGhostStatus(){
+    const g=ghostState;if(!g||!g.anchor)return;
+    const ax=g.anchor[0],az=g.anchor[2],y=g.anchor[1]+g.yOffset;
+    let hits=0;
+    if(g.kind==='schem'&&g.built){
+      const sig=ax+','+y+','+az+','+g.rot;
+      if(sig!==g.lastAnchor){
+        g.lastAnchor=sig;
+        for(const key of g.sch.cells.keys()){const p=key.split(',').map(Number);if(world.get(p[0]-g.mid[0]+ax,p[1]-g.mid[1]+y,p[2]-g.mid[2]+az))hits++;}
+        g.collisions=hits;
+        g.built.mat.color.setHex(hits?0xff9a85:0xffffff);
+        g.built.mat.opacity=hits?.32:.45;
+        g.built.mat.emissive.setHex(hits?0x5c0a05:0x000000);
+      }else hits=g.collisions;
+    }
+    setGhostStatus(hits?hits.toLocaleString()+' destination blocks overlap — placing replaces them'
+      :'Ready at '+ax+', '+y+', '+az+(g.yOffset?' · wheel offset '+g.yOffset:'')+' · click = place · wheel = height'+(g.kind==='schem'?' · R = rotate':'')+' · right-click or Esc = cancel',hits>0);
   }
   function commitGhost(){
     const g=ghostState;if(!g)return;
-    const ax=g.anchor?g.anchor[0]:Math.round(orbit.target.x),ay=g.anchor?g.anchor[1]:Math.max(0,Math.ceil(world.heightAt(ax,Math.round(orbit.target.z)))),az=g.anchor?g.anchor[2]:Math.round(orbit.target.z);
+    let ax,ay,az;
+    if(g.anchor){ax=g.anchor[0];ay=g.anchor[1]+g.yOffset;az=g.anchor[2];}
+    else{ax=Math.round(orbit.target.x);az=Math.round(orbit.target.z);ay=Math.max(0,Math.ceil(world.heightAt(ax,az)))+g.yOffset;}
     if(g.kind==='schem'){const name=g.name,sch=g.sch;cancelGhost();placeSchematic(name,sch,ax,ay,az);}
     else{const asset=g.asset;cancelGhost();added(addProp('tool',new THREE.Vector3(ax,ay,az),{asset}));setMode('rotate');}
   }
@@ -903,12 +1012,14 @@ async function main(){
     if($$('dialog').some(d=>d.open))return;
     const k=e.key.toLowerCase();
     if(k==='escape'&&ghostState){cancelGhost();toast('Placement canceled.');return;}
+    if(k==='r'&&ghostState){e.preventDefault();rotateGhost();return;}
     if((e.ctrlKey||e.metaKey)&&k==='z'){e.preventDefault();e.shiftKey?redo():undo();return;}
     if((e.ctrlKey||e.metaKey)&&k==='d'){e.preventDefault();duplicateSelected();return;}
     if((e.ctrlKey||e.metaKey)&&k==='s'){e.preventDefault();$('#save-project').click();return;}
     if(e.code==='Space'){e.preventDefault();setPlaying(!timeline.playing);}
     if(k==='h')toggleClean();if(k==='f')focusObject(selected);if(k==='/'){e.preventDefault();document.body.classList.add('panel-library');syncDock();$('#asset-search').focus();}
     if(k==='b'){state.category='blocks';setMode('build');refreshLibrary();}if(k==='x'){state.category='blocks';setMode('erase');refreshLibrary();}
+    if(k==='t'){state.category='blocks';setMode(state.mode==='terrain'?'build':'terrain');refreshLibrary();}
     if(k==='escape'&&(document.body.classList.contains('panel-library')||document.body.classList.contains('panel-inspector')||document.body.classList.contains('panel-timeline'))){closePanels();return;}
     if(k==='v'||k==='escape')setMode('select');if(k==='w')setMode('translate');if(k==='e')setMode('rotate');if(k==='r')setMode('scale');
     if(k==='delete'||k==='backspace'){e.preventDefault();if(state.selectedKey)deleteKey(state.selectedKey.type,state.selectedKey.index);else deleteObject();}
