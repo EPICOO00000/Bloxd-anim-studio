@@ -47,7 +47,7 @@
 </header>
 <div class="workspace">
   <aside class="library">
-    <div class="panel-heading"><span>ASSET LIBRARY</span><span class="small-badge">LOCAL</span></div>
+    <div class="panel-heading"><span>ASSET LIBRARY</span><span class="small-badge">LOCAL</span><button class="panel-close" title="Close" aria-label="Close asset library"><svg><use href="#i-close"/></svg></button></div>
     <div class="library-top"><h1>The game asset library.</h1><p id="catalog-summary">Loading the complete public collection…</p></div>
     <nav class="tabs library-tabs" aria-label="Asset categories"><button class="active" data-library="blocks">Blocks</button><button data-library="tools">Items</button><button data-library="models">Models</button><button data-library="builds">Builds</button><button data-library="textures">Textures</button><button data-library="characters">Bob</button></nav>
     <div id="block-edit-actions" class="asset-actions"><button id="place-blocks" title="Place blocks (B)">＋ Place</button><button id="erase-blocks" title="Remove blocks (X)">− Remove</button><button id="terrain-toggle" title="Terrain brushes — sculpt & paint the world">⛰ Terrain</button></div>
@@ -93,7 +93,7 @@
     <div id="drop-overlay" hidden><svg><use href="#i-import"/></svg><h2>Bring your world in.</h2><p>Drop a model (GLB, OBJ, STL, PLY) or a Bloxd schematic (.bloxdschem, .json…)</p></div>
   </main>
   <aside class="inspector">
-    <div class="panel-heading"><span>INSPECTOR</span><span id="selection-type" class="small-badge">CHARACTER</span></div>
+    <div class="panel-heading"><span>INSPECTOR</span><span id="selection-type" class="small-badge">CHARACTER</span><button class="panel-close" title="Close" aria-label="Close inspector"><svg><use href="#i-close"/></svg></button></div>
     <nav class="tabs inspector-tabs" aria-label="Inspector sections"><button data-inspector="object" class="active"><svg><use href="#i-cube"/></svg>Object</button><button data-inspector="light"><svg><use href="#i-sun"/></svg>Light</button><button data-inspector="camera"><svg><use href="#i-camera"/></svg>Camera</button></nav>
     <div class="inspector-scroll">
       <section id="inspect-object" class="inspector-section">
@@ -162,7 +162,7 @@
   <div class="timeline-toolbar">
     <div class="transport"><button id="stop" class="icon-btn" title="Back to start"><svg><use href="#i-stop"/></svg></button><button id="play" class="play-button" title="Play / pause (Space)"><svg><use href="#i-play"/></svg></button><button id="preview-start" class="from-start" title="Apply pending edits and preview the complete animation from 0 seconds"><svg><use href="#i-play"/></svg>From start</button><span id="time-display">00:00.00</span><span class="time-total">/ <span id="duration-display">08.00</span></span></div>
     <span class="timeline-caption">TIMELINE <span>30 FPS</span></span>
-    <div class="timeline-actions"><label class="key-time-field" for="key-time">Time<input id="key-time" type="number" min="0" max="8" step="0.01" value="0.00" aria-label="Keyframe time in seconds">s</label><button id="key-pose"><svg><use href="#i-key"/></svg>Apply pose</button><button id="key-camera"><svg><use href="#i-camera"/></svg>Key camera</button><button id="delete-key" class="icon-btn" title="Delete selected key"><svg><use href="#i-trash"/></svg></button><span class="tool-divider"></span><label class="duration-field"><input id="duration" type="number" min="2" max="60" step="1" value="8" aria-label="Clip duration">s</label><label class="loop-check"><input type="checkbox" id="loop">Loop</label></div>
+    <div class="timeline-actions"><label class="key-time-field" for="key-time">Time<input id="key-time" type="number" min="0" max="8" step="0.01" value="0.00" aria-label="Keyframe time in seconds">s</label><button id="key-pose"><svg><use href="#i-key"/></svg>Apply pose</button><button id="key-camera"><svg><use href="#i-camera"/></svg>Key camera</button><button id="delete-key" class="icon-btn" title="Delete selected key"><svg><use href="#i-trash"/></svg></button><span class="tool-divider"></span><label class="duration-field"><input id="duration" type="number" min="2" max="60" step="1" value="8" aria-label="Clip duration">s</label><label class="loop-check"><input type="checkbox" id="loop">Loop</label><button class="panel-close" title="Close" aria-label="Close timeline"><svg><use href="#i-close"/></svg></button></div>
   </div>
   <div class="tracks"><div class="track-headings"><span class="track-header">SCENE TRACKS</span><span><svg><use href="#i-camera"/></svg>Camera travel <b id="camera-key-count">3</b></span><span><i class="pose-dot"></i><span id="pose-track-name">Bob · pose</span><b id="pose-key-count">5</b></span></div><div id="track-area"><div id="ruler"></div><div id="cam-track" class="track-lane camera-lane"></div><div id="pose-track" class="track-lane pose-lane"></div><div id="playhead"><span></span></div></div></div>
   <div class="timeline-footnote"><span id="keyframe-hint">Choose a time → edit → Apply pose / transform. From start previews the full animation.</span><span>Drag keys to retime <b>·</b> Space to play <b>·</b> H for clean view</span></div>
