@@ -6,7 +6,7 @@ import { loadAssets, blockDefs, assetData, textures, toolNames, toolIcon, textur
 import { VoxelWorld, createTree, createRock } from './lib/world.js';
 import { JOINTS, createCharacter, copyPose, neutralPose, presetPose, applyPose, equip } from './lib/character.js';
 import { CameraTrack, samplePose, sampleTransform, putKey, KEY_EPS } from './lib/tracks.js';
-import { bakeClip, bakeWalkPath, mirrorPose, CLIP_DEFAULTS } from './lib/anim-clips.js';
+import { bakeClip, bakeWalkPath, mirrorPose, planSequence, CLIP_DEFAULTS } from './lib/anim-clips.js';
 import { interpolateRotation } from './lib/interpolation.js';
 import { parseModel, voxelise } from './lib/importers.js';
 import { setWaterTime, updateWaterEnv } from './lib/water.js';
@@ -65,7 +65,7 @@ async function main(){
   let pathLine=null;
   const gizmo=new TransformControls(camera,canvas);gizmo.setSize(.85);helpers.add(gizmo);
   const objects=[];let selected=null,serial=0,frames=0;
-  const state={mode:'select',scope:'root',joint:'head',toolAction:'place',category:'blocks',block:'grass',inspector:'object',selectedKey:null,clean:false,libraryPage:0,libraryGroup:'',libraryAdvanced:false,pathMode:false,autoKey:false,onion:true};
+  const state={mode:'select',scope:'root',joint:'head',toolAction:'place',category:'blocks',block:'grass',inspector:'object',selectedKey:null,clean:false,libraryPage:0,libraryGroup:'',libraryAdvanced:false,pathMode:false,autoKey:false,onion:true,chainMode:false,chainQueue:[]};
   const timeline={time:0,duration:8,playing:false,loop:false,cameraEnabled:true};
   const camTrack=new CameraTrack(),soundtrack=new Soundtrack();
   let viewOverride=false,importBusy=false,recording=null,skinThumb='',playbackLast=performance.now(),sceneName='Maple clearing';
@@ -444,22 +444,94 @@ async function main(){
       applyPose(g,k.pose);
     }
   }
+  function bakeOptions(){
+    const num=sel=>{const v=parseFloat($(sel).value);return Number.isFinite(v)&&v>0?v:0;};
+    return {duration:num('#bake-duration'),speed:num('#bake-speed'),direction:$('#bake-backwards').checked?-1:1,all:$('#bake-all').checked,stagger:$('#bake-all').checked?Math.max(0,parseFloat($('#bake-stagger').value)||0):0};
+  }
+  function bakeTargets(all){
+    if(all){const list=objects.filter(r=>r?.character);return list.length?list:null;}
+    return selected?.character?[selected]:null;
+  }
+  function extendTimeline(need){
+    if(need<=timeline.duration)return;
+    timeline.duration=Math.min(60,Math.ceil(need*2)/2+.5);
+    $('#duration').value=timeline.duration;
+  }
+  function afterBakeFlags(r){
+    const c=r.character;c.live=false;c.manual=true;r.draft=null;
+    if(r===selected)$('#live-motion').checked=false;
+  }
+  function bakeHistory(label,snaps){
+    const after=snaps.map(s=>({r:s.r,before:s.before,track:trackSnapshot(s.r)}));
+    pushHistory(label,()=>after.forEach(s=>restoreTrack(s.r,s.before)),()=>after.forEach(s=>restoreTrack(s.r,s.track)));
+  }
   function bakeClipInto(clip){
-    const r=selected;
-    if(!r?.character){toast('Select a player first — clips bake real pose keys onto a character.');return;}
+    if(state.chainMode){pushChain(clip);return;}
+    const opts=bakeOptions(),targets=bakeTargets(opts.all);
+    if(!targets){toast(opts.all?'No characters in the scene — add a player first.':'Select a player first — clips bake real pose keys onto a character.');return;}
     finishInputEdit();setPlaying(false);
     const d=CLIP_DEFAULTS[clip]||CLIP_DEFAULTS.walk;
-    let start=timeline.time;if(start+d.dur>timeline.duration+.05)start=Math.max(0,timeline.duration-d.dur);
-    const duration=Math.min(d.dur,timeline.duration-start);
-    const gen=bakeClip({clip,start,duration,from:r.root.position.toArray(),yaw:r.root.rotation.y,heightAt:(x,z)=>world.heightAt(x,z)});
-    const before=trackSnapshot(r);
-    for(const k of gen.keys)putKey(keysOf(r),k);
-    prepEdit(r,true);r.draft=null;
+    const dur=Math.max(d.step,opts.duration||d.dur);
+    extendTimeline(timeline.time+(targets.length-1)*opts.stagger+dur);
+    const snaps=targets.map(r=>({r,before:trackSnapshot(r)}));
+    let keyCount=0,firstStart=0;
+    targets.forEach((r,i)=>{
+      const start=Math.min(timeline.time+i*opts.stagger,Math.max(0,timeline.duration-dur));
+      if(!i)firstStart=start;
+      const gen=bakeClip({clip,start,duration:dur,from:r.root.position.toArray(),yaw:r.root.rotation.y,speed:opts.speed,direction:opts.direction,heightAt:(x,z)=>world.heightAt(x,z)});
+      for(const k of gen.keys)putKey(keysOf(r),k);
+      keyCount+=gen.keys.length;afterBakeFlags(r);
+    });
+    bakeHistory('bake '+clip+' clip',snaps);
     applyAtTime(timeline.time,true,true);
-    const after=trackSnapshot(r);
-    pushHistory('bake '+clip+' clip',()=>restoreTrack(r,before),()=>restoreTrack(r,after));
     refreshTimeline();refreshInspector();
-    toast(clip[0].toUpperCase()+clip.slice(1)+' baked · '+gen.keys.length+' keys from '+start.toFixed(2)+'s · Undo restores the track.');
+    toast((targets.length>1?targets.length+' characters · ':'')+clip+' baked · '+keyCount+' keys from '+firstStart.toFixed(2)+'s · Undo restores.');
+  }
+  function pushChain(clip){
+    state.chainQueue.push(clip);refreshChainUI();
+    toast(clip+' queued · '+state.chainQueue.length+' in sequence.');
+  }
+  function refreshChainUI(){
+    const n=state.chainQueue.length,btn=$('#chain-mode');
+    btn.textContent=state.chainMode?(n?'✔ Bake '+n:'✔ Bake'):'＋ Chain';
+    btn.classList.toggle('active',state.chainMode);
+    $('#chain-queue').hidden=!state.chainMode||!n;
+    $('#chain-queue-text').textContent=state.chainQueue.join(' → ');
+  }
+  function setChainMode(on){
+    state.chainMode=!!on;
+    if(!on)state.chainQueue=[];
+    refreshChainUI();
+    if(on)toast('Chain mode · click clips to queue them in order, then ✔ Bake (Enter works too).');
+  }
+  function bakeSequence(){
+    const opts=bakeOptions(),targets=bakeTargets(opts.all);
+    if(!targets){toast(opts.all?'No characters in the scene — add a player first.':'Select a player first — clips bake real pose keys onto a character.');return;}
+    if(!state.chainQueue.length){toast('Click clips to queue them first.');return;}
+    finishInputEdit();setPlaying(false);
+    let plan;
+    try{plan=planSequence(state.chainQueue,{duration:opts.duration,start:timeline.time});}catch(err){toast(err.message);return;}
+    extendTimeline(timeline.time+(targets.length-1)*opts.stagger+plan.totalTime);
+    const snaps=targets.map(r=>({r,before:trackSnapshot(r)}));
+    let keyCount=0;
+    targets.forEach((r,i)=>{
+      const off=i*opts.stagger;
+      let pos=r.root.position.toArray(),yaw=r.root.rotation.y;
+      for(const seg of plan.plan){
+        const start=Math.min(seg.start+off,Math.max(0,timeline.duration-seg.duration));
+        const gen=bakeClip({clip:seg.clip,start,duration:seg.duration,from:pos,yaw,speed:opts.speed,direction:opts.direction,heightAt:(x,z)=>world.heightAt(x,z)});
+        for(const k of gen.keys)putKey(keysOf(r),k);
+        keyCount+=gen.keys.length;
+        const L=gen.keys.at(-1);pos=L.position.slice();yaw=L.rotation[1];
+      }
+      afterBakeFlags(r);
+    });
+    bakeHistory('bake clip sequence',snaps);
+    const names=state.chainQueue.join(' → ');
+    setChainMode(false);
+    applyAtTime(timeline.time,true,true);
+    refreshTimeline();refreshInspector();
+    toast('Baked '+names+' · '+keyCount+' keys'+(targets.length>1?' on '+targets.length+' characters':'')+' · Undo restores.');
   }
   let poseClip=null;
   function selectedPoseKey(){
@@ -524,22 +596,28 @@ async function main(){
     setGhostStatus('Walk path · '+pathPoints.length+' point'+(pathPoints.length>1?'s':'')+' · click to add more · Bake path or Enter finishes · Esc cancels',false);
   }
   function bakePath(){
-    const r=selected;
-    if(!r?.character){toast('Select a player first — then draw the route.');return;}
+    const opts=bakeOptions(),targets=bakeTargets(opts.all);
+    if(!targets){toast(opts.all?'No characters in the scene — add a player first.':'Select a player first — then draw the route.');return;}
     if(!pathPoints||pathPoints.length<2){toast('Click at least two points on the ground first.');return;}
     finishInputEdit();setPlaying(false);
-    let gen;
-    try{gen=bakeWalkPath({points:pathPoints.map(p=>[p[0],p[2]]),speed:1.4,heightAt:(x,z)=>world.heightAt(x,z)});}
+    const speed=opts.speed||1.4,pts=pathPoints.map(p=>[p[0],p[2]]),hAt=(x,z)=>world.heightAt(x,z);
+    let probe;
+    try{probe=bakeWalkPath({points:pts,speed,heightAt:hAt});}
     catch(err){toast(err.message);return;}
-    if(gen.totalTime>timeline.duration-.05){timeline.duration=Math.min(60,Math.ceil(gen.totalTime*2)/2+.5);$('#duration').value=timeline.duration;}
-    const before=trackSnapshot(r);
-    for(const k of gen.keys)putKey(keysOf(r),k);
-    prepEdit(r,true);r.draft=null;
+    extendTimeline(timeline.time+(targets.length-1)*opts.stagger+probe.totalTime);
+    const snaps=targets.map(r=>({r,before:trackSnapshot(r)}));
+    let keyCount=0;
+    targets.forEach((r,i)=>{
+      const start=Math.min(timeline.time+i*opts.stagger,Math.max(0,timeline.duration-probe.totalTime));
+      const gen=bakeWalkPath({points:pts,speed,start,heightAt:hAt});
+      for(const k of gen.keys)putKey(keysOf(r),k);
+      keyCount+=gen.keys.length;afterBakeFlags(r);
+    });
+    bakeHistory('bake walk path',snaps);
+    setPathMode(false);
     timeline.time=0;applyAtTime(0,true,true);updateTimeUI();
-    const after=trackSnapshot(r);
-    pushHistory('bake walk path',()=>restoreTrack(r,before),()=>restoreTrack(r,after));
-    setPathMode(false);refreshTimeline();refreshInspector();
-    toast('Walk path baked · '+gen.keys.length+' keys over '+gen.totalTime.toFixed(1)+' s · press From start to preview.');
+    refreshTimeline();refreshInspector();
+    toast('Walk path baked · '+keyCount+' keys over '+probe.totalTime.toFixed(1)+' s'+(targets.length>1?' on '+targets.length+' characters':'')+' · press From start to preview.');
   }
   function cameraFollow(){
     const r=selected;
@@ -743,7 +821,11 @@ async function main(){
   $('#onion-skin').onchange=e=>{state.onion=e.target.checked;try{localStorage.setItem('studioOnion',state.onion?'1':'0');}catch(err){}updateOnion();};
   $$('[data-clip]').forEach(b=>b.onclick=()=>bakeClipInto(b.dataset.clip));
   $('#pose-copy').onclick=copyPoseClip;$('#pose-paste').onclick=pastePoseClip;$('#pose-mirror').onclick=mirrorCurrentPose;
-  $('#walk-path').onclick=()=>{if(state.pathMode){bakePath();return;}if(!selected?.character){toast('Select a player first — then draw the route.');return;}setPathMode(true);};
+  $('#walk-path').onclick=()=>{if(state.pathMode){bakePath();return;}if(!bakeTargets(bakeOptions().all)){toast('Select a player first — or tick All chars — then draw the route.');return;}setPathMode(true);};
+  $('#chain-mode').onclick=()=>{if(state.chainMode){bakeSequence();return;}setChainMode(true);};
+  $('#chain-clear').onclick=()=>{state.chainQueue=[];refreshChainUI();};
+  $('#bake-options-toggle').onclick=()=>{const o=$('#bake-options'),show=o.hidden;o.hidden=!show;$('#bake-options-toggle').textContent=show?'Hide options':'Options';};
+  $('#bake-all').onchange=e=>{$('#bake-stagger').disabled=!e.target.checked;};
   $('#held-tool').onchange=e=>equipTool(selected,e.target.value);
   function deleteObject(){const r=selected;if(!r)return;if(r.character&&state.scope==='held'){equipTool(r,'none');return;}if(r.character&&state.scope==='part'){toast('Choose Whole player to delete the character. Joints stay in the rig.');return;}detachRecord(r);pushHistory('delete '+r.name,()=>attachRecord(r),()=>detachRecord(r));}
   $('#delete-object').onclick=deleteObject;
@@ -1193,7 +1275,9 @@ async function main(){
     if(k==='escape'&&ghostState){cancelGhost();toast('Placement canceled.');return;}
     if(k==='r'&&ghostState){e.preventDefault();rotateGhost();return;}
     if(k==='escape'&&state.pathMode){setPathMode(false);toast('Walk path canceled.');return;}
+    if(k==='escape'&&state.chainMode){setChainMode(false);toast('Chain cleared.');return;}
     if(k==='enter'&&state.pathMode){e.preventDefault();bakePath();return;}
+    if(k==='enter'&&state.chainMode&&state.chainQueue.length){e.preventDefault();bakeSequence();return;}
     if((e.ctrlKey||e.metaKey)&&k==='z'){e.preventDefault();e.shiftKey?redo():undo();return;}
     if((e.ctrlKey||e.metaKey)&&k==='d'){e.preventDefault();duplicateSelected();return;}
     if((e.ctrlKey||e.metaKey)&&k==='s'){e.preventDefault();$('#save-project').click();return;}

@@ -147,3 +147,15 @@ body[data-device="touch"] #ghost-status{z-index:59}
 @media(max-width:720px){.timeline-actions .key-time-field:has(#key-ease){display:none}}
 body[data-device="touch"] .pose-clipboard button{padding:11px 4px;font-size:11px}
 body[data-device="touch"] #auto-key{padding:9px}
+
+/* Clip bake options + chain queue (animation suite II) */
+.bake-options{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:2px 0 10px;font-size:9px;color:#a7b8af}
+.bake-options label{display:flex;align-items:center;gap:4px;background:#161e22;border:1px solid var(--line);border-radius:5px;padding:2px 6px}
+.bake-options label.check{gap:5px}
+.bake-options input[type=number]{width:44px;font-size:10px;padding:5px 2px;font-family:ui-monospace,monospace;background:transparent;border:0}
+.bake-options input:disabled{opacity:.35}
+#chain-queue{display:flex;align-items:center;gap:8px;margin:0 0 9px;padding:6px 9px;background:#1c262a;border:1px solid #758756;border-radius:5px;font-size:9px;color:#d6e8bb}
+#chain-queue-text{flex:1;overflow-wrap:anywhere;line-height:1.5}
+#chain-queue .text-btn{font-size:11px;color:#b7c9b7}
+body[data-device="touch"] #chain-queue{padding:10px 12px;font-size:11px}
+body[data-device="touch"] .bake-options label{padding:6px 8px;font-size:11px}
