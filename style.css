@@ -135,3 +135,15 @@ body[data-device="touch"] dialog{max-width:min(680px,calc(100vw - 10px));max-hei
 body[data-device="touch"] input:not([type=range]):not([type=checkbox]):not([type=color]),body[data-device="touch"] select{font-size:16px}
 body[data-device="touch"] #toast{position:fixed;z-index:60;bottom:100px}
 body[data-device="touch"] #ghost-status{z-index:59}
+
+/* One-click animation suite: pose clipboard, baked clips, auto-key, per-key ease */
+.checks{flex-wrap:wrap;row-gap:8px}
+.pose-clipboard{display:flex;gap:4px;flex-wrap:wrap;margin:10px 0 2px}
+.pose-clipboard button{flex:1;min-width:54px;font-size:9px;padding:8px 4px;border-radius:5px;background:#262f33}
+.pose-clipboard button.active{background:#34432f;color:var(--lime);border-color:#758756}
+#auto-key.active{background:#573932;border-color:#bd785d;color:#ffc7ae}
+.key-time-field select{font-size:10px;padding:7px 5px;background:#161e22;border:1px solid var(--line);border-radius:5px;color:#d5e2dc;max-width:96px}
+@media(max-width:850px){.key-time-field select{max-width:70px;padding:6px 2px;font-size:9px}}
+@media(max-width:720px){.timeline-actions .key-time-field:has(#key-ease){display:none}}
+body[data-device="touch"] .pose-clipboard button{padding:11px 4px;font-size:11px}
+body[data-device="touch"] #auto-key{padding:9px}
