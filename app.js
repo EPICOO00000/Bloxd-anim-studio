@@ -344,11 +344,11 @@ async function main(){
       const label=document.createElement('span');label.textContent=r.name;button.append(label);const tag=document.createElement('i');tag.className='asset-tag';tag.textContent=!r.available?'No published visual':isBuilds?r.meta.b.toLocaleString()+' blocks':r.variant?'State variant':isModels?'Source model':r.kind==='block-item'?'Held block':r.kind==='texture'?(r.meta.kind==='original-pack'?'Original PNG':r.group):isBlocks&&r.shape!=='cube'?r.shape.replace('|rotatable',''):'';button.append(tag);
       if(!r.available){button.disabled=true;button.title=r.name+' — listed in the catalog, but no published graphic was found.';}
       else button.onclick=()=>{
-        if(isBlocks){state.block=r.id;setPlaying(false);setMode('build');refreshLibrary();}
+        if(isBlocks){state.block=r.id;setPlaying(false);setMode('build');touchClosePanels();refreshLibrary();}
         else if(isTextures)showTextureAsset(r.id);
-        else if(isBob){const n=objects.filter(o=>o.character).length+1;added(addBob(spawnPosition(),'Bob '+String(n).padStart(2,'0')));}
+        else if(isBob){const n=objects.filter(o=>o.character).length+1;added(addBob(spawnPosition(),'Bob '+String(n).padStart(2,'0')));touchClosePanels();}
         else if(isBuilds){try{startSchemGhost(prefabLabel(r.meta),prefabCells(r.meta));}catch(err){toast('Could not read '+r.meta.n+': '+err.message);}}
-        else{const asset=isModels?r.asset:r.id;if(state.toolAction==='equip'){if(!selected?.character){toast('Select a player first, then choose an item.');return;}equipTool(selected,asset);setScope('held');setMode('rotate');showInspector('object');}else startPropGhost(asset);}
+        else{const asset=isModels?r.asset:r.id;if(state.toolAction==='equip'){if(!selected?.character){toast('Select a player first, then choose an item.');return;}equipTool(selected,asset);setScope('held');setMode('rotate');touchClosePanels();showInspector('object');}else startPropGhost(asset);}
       };
       if(isBlocks&&state.mode==='build'&&r.id===state.block)button.classList.add('active');
       if(isBob){button.classList.add('character-card');const note=document.createElement('small');note.textContent='Classic skin recreation · 10-joint rig';button.append(note);}
@@ -561,8 +561,8 @@ async function main(){
   $('#rotate-selected').onclick=()=>setMode('rotate');
   $('#snap-rotation').onchange=e=>gizmo.setRotationSnap(e.target.checked?deg(15):null);
   $$('[data-turn]').forEach(b=>b.onclick=()=>{const r=selected;if(!r)return;const before=actorSnapshot(r);prepEdit();selectedTarget().rotation[b.dataset.turn]+=Math.PI/2;syncTargetToActor();recordActorChange(r,before,'quarter turn');refreshInspector();setMode('rotate');});
-  $('#place-blocks').onclick=()=>{setPlaying(false);setMode('build');refreshLibrary();};$('#erase-blocks').onclick=()=>{setPlaying(false);setMode('erase');refreshLibrary();};
-  $('#terrain-toggle').onclick=()=>{setPlaying(false);state.category='blocks';setMode(state.mode==='terrain'?'build':'terrain');refreshLibrary();};
+  $('#place-blocks').onclick=()=>{setPlaying(false);setMode('build');touchClosePanels();refreshLibrary();};$('#erase-blocks').onclick=()=>{setPlaying(false);setMode('erase');touchClosePanels();refreshLibrary();};
+  $('#terrain-toggle').onclick=()=>{setPlaying(false);state.category='blocks';setMode(state.mode==='terrain'?'build':'terrain');touchClosePanels();refreshLibrary();};
   for(const t of BRUSH_TOOLS){const o=document.createElement('option');o.value=t;o.textContent=BRUSH_LABELS[t];$('#terrain-tool').append(o);}
   $('#terrain-tool').onchange=e=>terrainCfg.tool=e.target.value;
   $('#terrain-biome').onchange=e=>terrainCfg.biome=e.target.value;
@@ -690,7 +690,7 @@ async function main(){
     if(built)g.group.add(built.mesh);
   }
   function startSchemGhost(name,sch){
-    cancelGhost();
+    cancelGhost();touchClosePanels();
     const group=new THREE.Group();group.visible=false;helpers.add(group);
     const st={kind:'schem',name,sch,group,built:null,yOffset:0,rot:0,anchor:null,lastAnchor:null,collisions:0,
       dispose(){helpers.remove(group);if(st.built){group.remove(st.built.mesh);st.built.geo.dispose();st.built.mat.dispose();st.built=null;}}};
@@ -700,7 +700,7 @@ async function main(){
     toast('Ghost ready for '+name+' — click the world to build it. Wheel = height, R = rotate, right-click or Esc cancels.');
   }
   function startPropGhost(asset){
-    cancelGhost();
+    cancelGhost();touchClosePanels();
     let root;try{root=makeTool(asset,1.2);}catch(e){toast('Could not build a preview for '+asset+'.');return;}
     const clones=[];
     root.traverse(o=>{if(o.isMesh){
@@ -1059,6 +1059,10 @@ async function main(){
   // ── Dock: small round buttons open the studio menus as drawers ──
   function syncDock(){$$('.dock-btn[data-panel]').forEach(b=>{const on=document.body.classList.contains(PANEL_CLASS[b.dataset.panel]);b.classList.toggle('active',on&&(b.dataset.panel!=='inspector'||!b.dataset.tab||b.dataset.tab===state.inspector));});}
   function closePanels(){document.body.classList.remove('panel-library','panel-inspector','panel-timeline');syncDock();}
+  // In phone mode panels are full-screen: whenever the canvas is needed (painting,
+  // sculpting, ghost placement), the panel steps away so the scene owns the screen.
+  function touchClosePanels(){if(document.body.dataset.device==='touch')closePanels();}
+  $$('.panel-close').forEach(b=>b.onclick=()=>{closePanels();resize();});
   $$('.dock-btn[data-panel]').forEach(b=>b.onclick=()=>{
     const cls=PANEL_CLASS[b.dataset.panel],was=document.body.classList.contains(cls);
     closePanels();
@@ -1084,6 +1088,14 @@ async function main(){
   }
   for(const [id,dev] of [['choose-desktop','desktop'],['choose-touch','touch']])$('#'+id).onclick=()=>{applyDevice(dev,$('#device-remember').checked);deviceDialog.close();toast(dev==='touch'?'Interface adapted to touch: big buttons and full-screen menus.':'Interface adapted to computer: shortcuts and compact menus.');};
   $('#device-switch').onclick=()=>openDeviceDialog();
+  // Phone: keep the focused field in view above the virtual keyboard — the panel
+  // owning the screen is the whole point, so the field must never hide behind it.
+  document.addEventListener('focusin',e=>{
+    if(document.body.dataset.device!=='touch')return;
+    const t=e.target;if(!t.matches||!t.matches('input,select,textarea'))return;
+    const fix=()=>{try{t.scrollIntoView({block:'center',behavior:'smooth'});}catch(err){}};
+    setTimeout(fix,80);setTimeout(fix,400);
+  });
   let savedDevice=null;try{savedDevice=localStorage.getItem('studioDevice');}catch(e){}
   if(savedDevice)applyDevice(savedDevice,false);else openDeviceDialog();
   // Public debug API is also used by the real-browser regression suite.
