@@ -159,3 +159,9 @@ body[data-device="touch"] #auto-key{padding:9px}
 #chain-queue .text-btn{font-size:11px;color:#b7c9b7}
 body[data-device="touch"] #chain-queue{padding:10px 12px;font-size:11px}
 body[data-device="touch"] .bake-options label{padding:6px 8px;font-size:11px}
+
+/* FX tab: particle sprite picker + lens distortion keys */
+#fx-actions{gap:6px;flex-wrap:wrap;align-items:center}
+.fx-tex-label{display:flex;align-items:center;gap:6px;font-size:9px;color:#a7b8af;flex:1;min-width:0}
+#fx-actions select{font-size:10px;padding:6px;background:#161e22;border:1px solid var(--line);border-radius:5px;color:#d5e2dc;max-width:150px;min-width:0;flex:1}
+#dist-keys .muted{margin:6px 0 2px}
