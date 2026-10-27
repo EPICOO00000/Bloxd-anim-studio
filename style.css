@@ -189,3 +189,8 @@ body[data-device="touch"] .bake-options label{padding:6px 8px;font-size:11px}
 
 /* ── Vertical / square export previews: let the video keep its own shape. ── */
 #video-ready video{width:auto;max-width:100%;aspect-ratio:auto;max-height:340px;margin:0 auto}
+
+/* ── Armor slots in the character inspector's Equipment section. ── */
+.armor-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:2px 0 8px}
+.armor-grid label{display:flex;flex-direction:column;gap:4px;font-size:8px;color:var(--muted)}
+.armor-grid select{width:100%;font-size:9px;padding:6px!important}
