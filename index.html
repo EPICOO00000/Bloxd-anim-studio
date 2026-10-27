@@ -173,6 +173,8 @@
         <div class="color-fields"><label>Sun tint <input type="color" id="sun-color" value="#ffe5b5"></label><label>Sky color <input type="color" id="sky-color" value="#c5d6d3"></label></div>
         <div class="skybox-row"><button id="skybox-btn" type="button" title="Use your own image as the sky — equirectangular panoramas wrap best">🖼 Skybox image</button><button id="skybox-clear" type="button" title="Back to the flat sky color" hidden>✕ Reset sky</button><input id="skybox-file" type="file" accept="image/*" hidden></div>
         <div class="section-title">Render</div><div class="checks"><label><input id="shadows" type="checkbox" checked> Shadows</label><label><input id="soft-shadow" type="checkbox" checked> Soft edges</label></div><div class="checks"><label><input id="show-fog" type="checkbox" checked> Distance fog</label><label><input id="sun-helper" type="checkbox"> Sun guide</label></div>
+        <label class="range-label" for="render-dist">Render distance<output id="render-dist-value">125</output></label><input id="render-dist" type="range" min="20" max="500" step="5" value="125">
+        <p class="render-dist-note">Blocks, water and items further than this from the camera are not drawn at all — drop it for smooth frames on giant worlds, raise it to 500 to see everything. Distance fog fades the edge so nothing pops.</p>
       </section>
       <section id="inspect-camera" class="inspector-section" hidden>
         <div class="inspector-intro"><span class="eyebrow">CAMERA TRAVEL</span><h2>Find your angle.</h2><p>Move the view, then save a camera key.</p></div>

@@ -17,6 +17,7 @@ import { loadPrefabs, prefabAssets, prefabCells } from './lib/prefabs.js';
 import { apply as applyBrush, topAt, BRUSH_TOOLS, BRUSH_LABELS } from './lib/terrain-brush.js';
 import { generateTerrain } from './lib/terrain-gen.js';
 import { wearArmor, armorSpec, ARMOR_SETS, ARMOR_SLOTS } from './lib/armor.js';
+import { renderDistanceUniform, clampRenderDistance } from './lib/render-dist.js';
 import { chooseVideoConfig, renderVideoFrames, renderRealtimeVideo } from './lib/video-export.js';
 import { Soundtrack } from './lib/audio.js';
 import { plainState, stageEdit, mergeEdit, keyFromState, stateFromKey, validateDraft } from './lib/key-edit.js';
@@ -50,7 +51,7 @@ async function main(){
   const sun=new THREE.DirectionalLight(0xffe6b9,3.1);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.normalBias=.025;sun.shadow.bias=-.00008;
   Object.assign(sun.shadow.camera,{left:-70,right:70,top:70,bottom:-70,near:.5,far:300});sun.shadow.camera.updateProjectionMatrix();
   const hemi=new THREE.HemisphereLight(0xe8f4f5,0x84917c,1.5);scene.add(sun,sun.target,hemi);
-  const light={az:-38,el:42,power:3.1,fill:1.5,color:'#ffe6b9',sky:'#c5d6d3',shadows:true,soft:true,fog:true,toolLit:false,preset:'golden'};
+  const light={az:-38,el:42,power:3.1,fill:1.5,color:'#ffe6b9',sky:'#c5d6d3',shadows:true,soft:true,fog:true,renderDist:125,toolLit:false,preset:'golden'};
   const LIGHTS={
     golden:{az:-38,el:42,power:3.1,fill:1.5,color:'#ffe6b9',sky:'#c5d6d3'},
     day:{az:25,el:65,power:3.1,fill:1.7,color:'#fffaf0',sky:'#c2dce8'},
@@ -217,7 +218,9 @@ async function main(){
     sun.position.set(Math.sin(az)*Math.cos(el)*distance,Math.sin(el)*distance,Math.cos(az)*Math.cos(el)*distance);
     sun.target.position.set(0,1,0);sun.target.updateMatrixWorld();sun.color.set(light.color);sun.intensity=light.power;hemi.intensity=light.fill;
     scene.background=skyboxTex||new THREE.Color(light.sky);floor.material.color.set(light.sky).multiplyScalar(.88);
-    scene.fog=light.fog?new THREE.Fog(light.sky,160,1400):null;viewport.classList.toggle('night-scene',light.fill<.6);
+    renderDistanceUniform.value=clampRenderDistance(light.renderDist);
+    // Fog fades out exactly where the render distance cuts, so nothing pops in/out.
+    scene.fog=light.fog?new THREE.Fog(light.sky,Math.max(4,renderDistanceUniform.value*.45),Math.max(20,renderDistanceUniform.value*1.02)):null;viewport.classList.toggle('night-scene',light.fill<.6);
     updateWaterEnv({sunDir:sun.position,sky:light.sky,fog:scene.fog?{color:light.sky,near:scene.fog.near,far:scene.fog.far}:null});
     if(renderer.shadowMap.enabled!==light.shadows||renderer.shadowMap.type!==(light.soft?THREE.PCFSoftShadowMap:THREE.PCFShadowMap)){
       renderer.shadowMap.enabled=light.shadows;renderer.shadowMap.type=light.soft?THREE.PCFSoftShadowMap:THREE.PCFShadowMap;
@@ -231,6 +234,7 @@ async function main(){
       $('#'+id).value=light[key];$('#'+id+'-value').textContent=fmt(light[key]);
     }
     $('#tool-shading').checked=light.toolLit;$('#sun-color').value=light.color;$('#sky-color').value=light.sky;$('#shadows').checked=light.shadows;$('#soft-shadow').checked=light.soft;$('#show-fog').checked=light.fog;
+    $('#render-dist').value=light.renderDist;$('#render-dist-value').textContent=Math.round(light.renderDist)+' blk';
     $$('[data-light]').forEach(b=>b.classList.toggle('active',b.dataset.light===light.preset));
   }
   // ── Skybox image: any picture becomes the sky; equirectangular panoramas wrap seamlessly. ──
@@ -916,6 +920,11 @@ async function main(){
         if(!gen.map.size){toast('That combination produced an empty world — try another seed.');return;}
         setPlaying(false);
         const oldBlocks=[...world.map],oldSize=world.size,oldSeed=world.seed;
+        // A fresh world should never be wider than the camera is allowed to draw:
+        // raise the render distance to the footprint (Undo puts it back).
+        const oldRD=light.renderDist;
+        if(size>light.renderDist){light.renderDist=Math.min(500,size);updateLight();syncLightUI();}
+        const newRD=light.renderDist;
         const movers=objects.map(r=>({r,oldY:r.root.position.y,dy:r.root.position.y-world.heightAt(r.root.position.x,r.root.position.z),newY:0}));
         world.map=gen.map;
         world.size=size;world.seed=seed;
@@ -932,9 +941,9 @@ async function main(){
         // Redo regenerates from the same parameters (deterministic) instead of
         // snapshotting a second multi-hundred-thousand-block map.
         pushHistory('generate '+style+' world',
-          ()=>{world.map=new Map(oldBlocks);world.size=oldSize;world.seed=oldSeed;world.rebuild();for(const m of movers)m.r.root.position.y=m.oldY;},
-          ()=>{const g=generateTerrain(params);world.map=g.map;world.size=size;world.seed=seed;world.rebuild();for(const m of movers)m.r.root.position.y=m.newY;});
-        toast('World generated · '+gen.cells.length.toLocaleString()+' blocks · peak '+peak+' · '+gen.stats.trees+' trees · '+gen.stats.vines+' vines. One Undo brings the old terrain back.');
+          ()=>{world.map=new Map(oldBlocks);world.size=oldSize;world.seed=oldSeed;world.rebuild();for(const m of movers)m.r.root.position.y=m.oldY;light.renderDist=oldRD;updateLight();syncLightUI();},
+          ()=>{const g=generateTerrain(params);world.map=g.map;world.size=size;world.seed=seed;world.rebuild();for(const m of movers)m.r.root.position.y=m.newY;light.renderDist=newRD;updateLight();syncLightUI();});
+        toast('World generated · '+gen.stats.cells.toLocaleString()+' blocks · peak '+peak+' · '+gen.stats.trees+' trees · '+gen.stats.vines+' vines. One Undo brings the old terrain back.');
       }catch(err){toast('Generation failed: '+err.message);}
       finally{btn.disabled=false;}
       };
@@ -1038,6 +1047,7 @@ async function main(){
     toast('Back to the flat sky color.');
   };
   for(const[id,key]of [['shadows','shadows'],['soft-shadow','soft'],['show-fog','fog']])$('#'+id).onchange=e=>{light[key]=e.target.checked;updateLight();};
+  $('#render-dist').oninput=e=>{light.renderDist=clampRenderDistance(e.target.value);updateLight();syncLightUI();};
   $('#sun-helper').onchange=e=>sunGuide.visible=e.target.checked;
   $$('[data-light]').forEach(b=>b.onclick=()=>{Object.assign(light,LIGHTS[b.dataset.light],{preset:b.dataset.light});updateLight();syncLightUI();});
   $('#sun-pad').onpointerdown=e=>{

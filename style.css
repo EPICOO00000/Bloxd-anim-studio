@@ -194,3 +194,6 @@ body[data-device="touch"] .bake-options label{padding:6px 8px;font-size:11px}
 .armor-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:2px 0 8px}
 .armor-grid label{display:flex;flex-direction:column;gap:4px;font-size:8px;color:var(--muted)}
 .armor-grid select{width:100%;font-size:9px;padding:6px!important}
+
+/* ── Render-distance slider note in the Light tab. ── */
+.render-dist-note{font-size:8px;color:#93a991;line-height:1.55;margin:6px 0 2px}
