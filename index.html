@@ -59,8 +59,8 @@
       <label>Falloff<select id="terrain-falloff" aria-label="Brush falloff"><option value="smooth">Smooth</option><option value="linear">Linear</option><option value="hard">Hard</option></select></label>
       <div class="terrain-generate">
         <div class="gen-title">Generate a world <span>replaces the terrain · one Undo step</span></div>
-        <label>Style<select id="gen-style" aria-label="Terrain style"><option value="mountains">Mountains</option><option value="islands">Islands</option><option value="canyon">Canyon &amp; river</option><option value="hills">Rolling hills</option></select></label>
-        <label>Size<select id="gen-size" aria-label="World size"><option value="96">96 · fast</option><option value="128" selected>128 · big</option><option value="160">160 · titanic</option></select></label>
+        <label>Style<select id="gen-style" aria-label="Terrain style"><option value="mountains">Mountains</option><option value="islands">Islands</option><option value="canyon">Canyon &amp; river</option><option value="hills">Rolling hills</option><option value="volcano">Volcano</option><option value="mesas">Mesas &amp; plateaus</option><option value="dunes">Sand dunes</option><option value="pillars">Stone pillars</option><option value="craters">Crater field</option></select></label>
+        <label>Size<select id="gen-size" aria-label="World size"><option value="96">96 · fast</option><option value="128" selected>128 · big</option><option value="160">160 · titanic</option><option value="200">200 · huge</option><option value="300">300 · colossal</option><option value="400">400 · gigantic</option><option value="500">500 · maximum</option></select></label>
         <label class="seed-label">Seed<input id="gen-seed" type="text" value="arena" spellcheck="false" aria-label="World seed"><button id="gen-dice" class="dice-btn" title="Random seed" type="button">🎲</button></label>
         <div class="gen-checks"><label><input id="gen-trees" type="checkbox" checked> Trees</label><label><input id="gen-vines" type="checkbox" checked> Cliff vines</label></div>
         <button id="terrain-generate" class="gen-btn" type="button">⛰ Generate world</button>
@@ -142,6 +142,13 @@
             <div class="checks"><label><input type="checkbox" id="live-motion"> Animate preset</label><label><input type="checkbox" id="show-joints"> Joints</label><label><input type="checkbox" id="onion-skin" checked> Onion skin</label></div>
             <button id="clear-pose-track" class="text-btn" title="Clear this character's keys. Undo is available.">Clear pose track</button>
             <div class="section-title">Equipment</div><label class="field-label" for="held-tool">Right hand</label><select id="held-tool" class="wide-select"></select><button id="select-held-tool" class="full-button">Select &amp; rotate held item</button>
+            <label class="field-label">Armor</label>
+            <div class="armor-grid">
+              <label>Helmet<select id="armor-helmet" class="wide-select" aria-label="Helmet"></select></label>
+              <label>Chest<select id="armor-chestplate" class="wide-select" aria-label="Chestplate"></select></label>
+              <label>Legs<select id="armor-leggings" class="wide-select" aria-label="Leggings"></select></label>
+              <label>Boots<select id="armor-boots" class="wide-select" aria-label="Boots"></select></label>
+            </div>
             <button id="load-skin" class="full-button"><svg><use href="#i-image"/></svg>Load skin PNG <small>64 × 64</small></button>
           </div>
           <div id="model-controls" hidden>

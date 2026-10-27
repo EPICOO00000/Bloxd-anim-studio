@@ -16,6 +16,7 @@ import { isBloxdschem } from './lib/bloxdschem.js';
 import { loadPrefabs, prefabAssets, prefabCells } from './lib/prefabs.js';
 import { apply as applyBrush, topAt, BRUSH_TOOLS, BRUSH_LABELS } from './lib/terrain-brush.js';
 import { generateTerrain } from './lib/terrain-gen.js';
+import { wearArmor, armorSpec, ARMOR_SETS, ARMOR_SLOTS } from './lib/armor.js';
 import { chooseVideoConfig, renderVideoFrames, renderRealtimeVideo } from './lib/video-export.js';
 import { Soundtrack } from './lib/audio.js';
 import { plainState, stageEdit, mergeEdit, keyFromState, stateFromKey, validateDraft } from './lib/key-edit.js';
@@ -44,7 +45,7 @@ async function main(){
   renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.13;
   renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
   const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(45,1,.1,4000);
-  const orbit=new OrbitControls(camera,canvas);orbit.enableDamping=true;orbit.dampingFactor=.09;orbit.minDistance=1.2;orbit.maxDistance=600;orbit.maxPolarAngle=Math.PI*.495;
+  const orbit=new OrbitControls(camera,canvas);orbit.enableDamping=true;orbit.dampingFactor=.09;orbit.minDistance=1.2;orbit.maxDistance=1600;orbit.maxPolarAngle=Math.PI*.495;
   camera.position.set(15,12,19);orbit.target.set(0,1.5,0);orbit.update();
   const sun=new THREE.DirectionalLight(0xffe6b9,3.1);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.normalBias=.025;sun.shadow.bias=-.00008;
   Object.assign(sun.shadow.camera,{left:-70,right:70,top:70,bottom:-70,near:.5,far:300});sun.shadow.camera.updateProjectionMatrix();
@@ -56,7 +57,7 @@ async function main(){
     night:{az:-65,el:38,power:.95,fill:.38,color:'#9bbaff',sky:'#263947'},
     studio:{az:-25,el:52,power:2.8,fill:1.85,color:'#ffffff',sky:'#d1d4cb'},
   };
-  const floor=new THREE.Mesh(new THREE.PlaneGeometry(350,350),new THREE.MeshStandardMaterial({color:0xabb9a9,roughness:1}));floor.rotation.x=-Math.PI/2;floor.position.y=-3.04;floor.receiveShadow=true;scene.add(floor);
+  const floor=new THREE.Mesh(new THREE.PlaneGeometry(1250,1250),new THREE.MeshStandardMaterial({color:0xabb9a9,roughness:1}));floor.rotation.x=-Math.PI/2;floor.position.y=-3.04;floor.receiveShadow=true;scene.add(floor);
   const world=new VoxelWorld().generate();scene.add(world.group);
   const objectGroup=new THREE.Group();objectGroup.name='Scene objects';scene.add(objectGroup);
   const helpers=new THREE.Group();helpers.name='Editor guides';scene.add(helpers);
@@ -366,6 +367,7 @@ async function main(){
     $('#texture-preview').hidden=!texture||!textureURL(texture);if(texture&&textureURL(texture)){const meta=catalog.textureMeta[texture]||{};$('#texture-image').src=textureURL(texture);$('#texture-image').alt=meta.name||texture;$('#texture-filename').textContent=meta.name||texture+'.png';$('#download-texture').dataset.texture=texture;$('#tool-shading-row').hidden=!tool;$('#tool-shading').checked=light.toolLit;$('#texture-preview p').textContent=meta.kind==='palette-tint'?'Original grayscale art + the game’s equipment color palette.':meta.kind==='model-image'?'Texture extracted from the source model.':tool?'Original PNG colors are preserved by default.':'Source texture / inventory icon; individual block faces can differ.';}
     if(r.character){
       $('#held-tool').value=r.character.tool;$('#live-motion').checked=r.character.live;$('#show-joints').checked=r.character.markers.visible;refreshJointUI();
+      for(const s of ARMOR_SLOTS){const sel=$('#armor-'+s);if(sel)sel.value=r.character.armor?.[s]||'';}
       $$('[data-pose]').forEach(b=>b.classList.toggle('active',b.dataset.pose===r.character.preset));
     }
     if(['import','voxel'].includes(r.type)){
@@ -871,6 +873,7 @@ async function main(){
   for(const[id,label]of Object.entries(JOINTS)){const o=document.createElement('option');o.value=id;o.textContent=label;$('#joint-select').append(o);}$('#joint-select').value='head';
   const none=document.createElement('option');none.value='none';none.textContent='Empty hand';$('#held-tool').append(none);
   const itemGroups=new Map();for(const name of toolNames){const group=itemDefs[name]?.group||'Other';if(!itemGroups.has(group)){const g=document.createElement('optgroup');g.label=group;itemGroups.set(group,g);$('#held-tool').append(g);}const o=document.createElement('option');o.value=name;o.textContent=name;itemGroups.get(group).append(o);}
+  for(const slot of ARMOR_SLOTS){const sel=$('#armor-'+slot);const no=document.createElement('option');no.value='';no.textContent='None';sel.append(no);for(const[id,set]of Object.entries(ARMOR_SETS)){const o=document.createElement('option');o.value=id;o.textContent=set.label;sel.append(o);}}
   function bindActorInput(el,apply,label){let before=null,owner=null;el.dataset.actorInput='true';
     el.addEventListener('focus',()=>{if(selected){owner=selected;before=actorSnapshot(owner);}});
     el.addEventListener('pointerdown',()=>{if(selected){owner=selected;before=actorSnapshot(owner);}});
@@ -905,32 +908,40 @@ async function main(){
     const btn=$('#terrain-generate');if(btn.disabled)return;btn.disabled=true;
     // Let the button paint its pressed state before the heavy generation starts.
     setTimeout(()=>{
+      const run=()=>{
       try{
         const seed=$('#gen-seed').value.trim()||'arena',size=+$('#gen-size').value||128,style=$('#gen-style').value;
-        const gen=generateTerrain({seed,size,style,biome:$('#terrain-biome').value,trees:$('#gen-trees').checked,vines:$('#gen-vines').checked});
-        if(!gen.cells.length){toast('That combination produced an empty world — try another seed.');return;}
+        const params={seed,size,style,biome:$('#terrain-biome').value,trees:$('#gen-trees').checked,vines:$('#gen-vines').checked};
+        const gen=generateTerrain(params);
+        if(!gen.map.size){toast('That combination produced an empty world — try another seed.');return;}
         setPlaying(false);
         const oldBlocks=[...world.map],oldSize=world.size,oldSeed=world.seed;
         const movers=objects.map(r=>({r,oldY:r.root.position.y,dy:r.root.position.y-world.heightAt(r.root.position.x,r.root.position.z),newY:0}));
-        world.map.clear();
-        for(const[x,y,z,t]of gen.cells)world.set(x,y,z,t);
+        world.map=gen.map;
         world.size=size;world.seed=seed;
         world.rebuild();
-        const newBlocks=[...world.map];
         for(const m of movers){m.newY=clamp(world.heightAt(m.r.root.position.x,m.r.root.position.z)+(Math.abs(m.dy)>6?0:m.dy),-24,60);m.r.root.position.y=m.newY;}
-        // Fly the camera back so the whole new landscape fits the frame.
+        // Fly the camera back so the whole new landscape fits the frame; giant
+        // worlds pull further out with a wider lens.
         viewOverride=true;
-        const dist=Math.max(30,size*.45),peak=gen.stats.peak;
+        const big=size>=240,dist=Math.max(30,size*(big?.95:.45)),peak=gen.stats.peak;
         orbit.target.set(0,Math.max(2,peak*.25),0);
         camera.position.set(dist*.62,dist*.52,dist*.72);
-        camera.fov=45;camera.updateProjectionMatrix();camera.lookAt(orbit.target);
+        camera.fov=big?58:45;camera.updateProjectionMatrix();camera.lookAt(orbit.target);
         syncFov();
+        // Redo regenerates from the same parameters (deterministic) instead of
+        // snapshotting a second multi-hundred-thousand-block map.
         pushHistory('generate '+style+' world',
           ()=>{world.map=new Map(oldBlocks);world.size=oldSize;world.seed=oldSeed;world.rebuild();for(const m of movers)m.r.root.position.y=m.oldY;},
-          ()=>{world.map=new Map(newBlocks);world.size=size;world.seed=seed;world.rebuild();for(const m of movers)m.r.root.position.y=m.newY;});
+          ()=>{const g=generateTerrain(params);world.map=g.map;world.size=size;world.seed=seed;world.rebuild();for(const m of movers)m.r.root.position.y=m.newY;});
         toast('World generated · '+gen.cells.length.toLocaleString()+' blocks · peak '+peak+' · '+gen.stats.trees+' trees · '+gen.stats.vines+' vines. One Undo brings the old terrain back.');
       }catch(err){toast('Generation failed: '+err.message);}
       finally{btn.disabled=false;}
+      };
+      // Giant worlds announce themselves first, then run a frame later so the
+      // busy toast actually paints before the main thread is busy carving.
+      if((+$('#gen-size').value||128)>=240){toast('Carving a '+$('#gen-size').value+'×'+$('#gen-size').value+' world — this can take a few seconds…');setTimeout(run,60);}
+      else run();
     },30);
   };
   // ── Custom block textures: swap the six face maps of a plain cube block for your own PNG. ──
@@ -984,6 +995,15 @@ async function main(){
   $('#bake-options-toggle').onclick=()=>{const o=$('#bake-options'),show=o.hidden;o.hidden=!show;$('#bake-options-toggle').textContent=show?'Hide options':'Options';};
   $('#bake-all').onchange=e=>{$('#bake-stagger').disabled=!e.target.checked;};
   $('#held-tool').onchange=e=>equipTool(selected,e.target.value);
+  // Armor: each slot dresses the character independently; plates ride the pose joints.
+  function wearSlot(slot,set){
+    const r=selected;if(!r?.character)return;const c=r.character,old=armorSpec(c.armor),next={...old,[slot]:set||null};
+    prepEdit(r);
+    const apply=spec=>{wearArmor(c,spec);if(selected===r)refreshInspector();};
+    apply(next);
+    pushHistory(set?'equip '+ARMOR_SETS[set].label.toLowerCase()+' '+slot:'remove '+slot,()=>apply(old),()=>apply(next));
+  }
+  for(const slot of ARMOR_SLOTS)$('#armor-'+slot).onchange=e=>wearSlot(slot,e.target.value);
   function deleteObject(){const r=selected;if(!r)return;if(r.character&&state.scope==='held'){equipTool(r,'none');return;}if(r.character&&state.scope==='part'){toast('Choose Whole player to delete the character. Joints stay in the rig.');return;}detachRecord(r);pushHistory('delete '+r.name,()=>attachRecord(r),()=>detachRecord(r));}
   $('#delete-object').onclick=deleteObject;
   $('#drop-ground').onclick=()=>{const r=selected;if(!r||state.scope!=='root')return;const before=actorSnapshot(r);prepEdit();r.root.updateMatrixWorld(true);const minY=new THREE.Box3().setFromObject(r.root).min.y;r.root.position.y+=world.heightAt(r.root.position.x,r.root.position.z)-minY;recordActorChange(r,before,'ground object');refreshInspector();};
@@ -1381,7 +1401,7 @@ async function main(){
   // Self-contained project files. AI credentials are never part of this data.
   function serializeRecord(r){
     const data={name:r.name,type:r.type,transform:transformOf(r.root),options:r.options||{},rotationMode:r.rotationMode||'shortest'};if(r.draft)data.draft=clone(r.draft);
-    if(r.character){const c=r.character;data.character={pose:copyPose(c.displayPose),keys:clone(c.keys),tool:c.tool,held:heldOf(c),preset:c.preset,live:c.live,skin:c.skinData||null};}
+    if(r.character){const c=r.character;data.character={pose:copyPose(c.displayPose),keys:clone(c.keys),tool:c.tool,held:heldOf(c),preset:c.preset,live:c.live,skin:c.skinData||null,armor:c.armor||null};}
     else if(r.type==='import'||r.type==='voxel'||r.type==='image')data.object=r.root.toJSON();
     if(!r.character)data.keys=clone(r.keys||[]);return data;
   }
@@ -1394,7 +1414,7 @@ async function main(){
     if(data.type==='character'){
       const cdata=data.character||{},c=createCharacter(String(data.name).slice(0,60));
       if(cdata.skin){if(!String(cdata.skin).startsWith('data:image/'))throw new Error('Only embedded skin images are supported.');c.material.map=pixelTexture(await new THREE.TextureLoader().loadAsync(cdata.skin));c.skinData=cdata.skin;}
-      c.pose=copyPose(cdata.pose||neutralPose());c.keys=clone(cdata.keys||[]);c.preset=cdata.preset||'idle';c.live=!!cdata.live;applyPose(c,c.pose);equip(c,toolNames.includes(cdata.tool)?cdata.tool:'none');setHeld(c,cdata.held);r=register(c.root,'character',String(data.name).slice(0,60),{character:c});
+      c.pose=copyPose(cdata.pose||neutralPose());c.keys=clone(cdata.keys||[]);c.preset=cdata.preset||'idle';c.live=!!cdata.live;applyPose(c,c.pose);equip(c,toolNames.includes(cdata.tool)?cdata.tool:'none');setHeld(c,cdata.held);wearArmor(c,cdata.armor);r=register(c.root,'character',String(data.name).slice(0,60),{character:c});
     }else if(data.type==='import'||data.type==='voxel'||data.type==='image'){
       for(const image of data.object?.images||[]){const urls=Array.isArray(image.url)?image.url:[image.url];if(urls.some(u=>typeof u==='string'&&!u.startsWith('data:')))throw new Error('Projects must embed their textures, not link to external files.');}
       const root=await new THREE.ObjectLoader().parseAsync(data.object);r=register(root,data.type,String(data.name).slice(0,60),{animations:root.animations||[]});
@@ -1405,8 +1425,8 @@ async function main(){
   async function loadProject(data){
     finishInputEdit();
     if(data?.format!=='bloxd-studio'||![1,2].includes(data.version))throw new Error('This is not a Bloxd Studio project file.');
-    if(!Array.isArray(data.world?.blocks)||data.world.blocks.length>250000||!Array.isArray(data.objects)||data.objects.length>1000)throw new Error('Invalid or oversized scene.');
-    for(const[k,type]of data.world.blocks){const xyz=String(k).split(',').map(Number);if(xyz.length!==3||xyz.some(n=>!Number.isInteger(n)||Math.abs(n)>100)||!blockDefs[resolveBlock(type)]?.available)throw new Error('Invalid or unavailable terrain data.');}
+    if(!Array.isArray(data.world?.blocks)||data.world.blocks.length>1500000||!Array.isArray(data.objects)||data.objects.length>1000)throw new Error('Invalid or oversized scene.');
+    for(const[k,type]of data.world.blocks){const xyz=String(k).split(',').map(Number);if(xyz.length!==3||xyz.some(n=>!Number.isInteger(n)||Math.abs(n)>260)||!blockDefs[resolveBlock(type)]?.available)throw new Error('Invalid or unavailable terrain data.');}
     if(!data.camera?.keys?.every(k=>Number.isFinite(k.time)&&Number.isFinite(k.fov)&&k.position?.every(Number.isFinite)&&k.target?.every(Number.isFinite)))throw new Error('Invalid camera keys.');
     imageAssets.length=0;
     for(const im of Array.isArray(data.images)?data.images.slice(0,60):[]){if(typeof im?.id==='string'&&typeof im?.url==='string'&&im.url.startsWith('data:image/')&&im.url.length<12e6)imageAssets.push({id:im.id.slice(0,40),name:String(im.name||'Image').slice(0,40),url:im.url,tex:null});}
