@@ -19,6 +19,7 @@ import { generateTerrain } from './lib/terrain-gen.js';
 import { wearArmor, armorSpec, ARMOR_SETS, ARMOR_SLOTS } from './lib/armor.js';
 import { renderDistanceUniform, clampRenderDistance } from './lib/render-dist.js';
 import { chooseVideoConfig, renderVideoFrames, renderRealtimeVideo } from './lib/video-export.js';
+import { buildTimeline, timelineAt, fitRect, sanitizeTrim, MAX_ASSEMBLY_SECONDS } from './lib/video-editor.js';
 import { Soundtrack } from './lib/audio.js';
 import { plainState, stageEdit, mergeEdit, keyFromState, stateFromKey, validateDraft } from './lib/key-edit.js';
 import { initGeminiPanel } from './lib/ai-panel.js';
@@ -1489,8 +1490,9 @@ async function main(){
     try{cleanRender();canvas.toBlob(b=>{if(b){download(b,'Maple-clearing.png');toast('Clean PNG frame saved.');}},'image/png');$('#export-dialog').close();}catch(e){toast('Capture failed: '+e.message);}
   }
   let videoResult=null;
+  const videoClips=[];let clipSeq=0;let clipPreviewGuard=null;
   function videoBusy(busy){
-    for(const id of ['rec','shot','export-mp3','video-format','video-size','video-fps','record-audio','audio-source','load-audio','sound-volume','audio-offset','audio-loop','preview-sound'])$('#'+id).disabled=busy;
+    for(const id of ['rec','shot','export-mp3','video-format','video-size','video-fps','record-audio','audio-source','load-audio','sound-volume','audio-offset','audio-loop','preview-sound','import-clips','assemble-video','clip-fit','assemble-audio']){const el=$('#'+id);if(el)el.disabled=busy;}
     $('#video-progress').hidden=!busy;$('#record-overlay').hidden=true;
   }
   function videoProgress(info){
@@ -1511,6 +1513,231 @@ async function main(){
   }
   $('#video-download').addEventListener('click',()=>{$('#video-download-note').textContent='Download requested. If nothing appears, your preview/browser may block downloads: use the live app in its own tab or open the downloaded editor in Chrome / Edge. The clip stays available here.';});
   $('#video-preview').addEventListener('error',()=>{if(videoResult)$('#video-download-note').textContent='This browser/preview could not play the file. Try Download, or render WebM / open the editor in a full browser. The finished clip is still retained.';});
+  // ── Video clip montage: import MP4/WebM/MOV files, trim each one (the cut),
+  //    reorder them, and render the kept pieces back-to-back into a single new
+  //    video. Clips live for this tab session only (object URLs — they never
+  //    bloat a saved project) and reuse the existing render/progress/download
+  //    machinery. Assembly needs the frame-accurate encoder because every
+  //    output frame is sourced by seeking a <video> element. ──
+  function clipElement(clip){
+    if(!clip.el){
+      const el=document.createElement('video');
+      el.muted=true;el.playsInline=true;el.preload='auto';el.src=clip.url;
+      clip.el=el;
+    }
+    const el=clip.el;
+    return new Promise((resolve,reject)=>{
+      const fail=()=>reject(new Error(clip.name+': this browser cannot decode that video file'));
+      const ready=()=>{
+        if(Number.isFinite(el.duration)&&el.duration>0){
+          if(!Number.isFinite(clip.duration)||clip.duration<=0){
+            clip.duration=el.duration;clip.width=el.videoWidth;clip.height=el.videoHeight;
+          }
+          const t=sanitizeTrim(clip);clip.inPoint=t.inPoint;clip.outPoint=t.outPoint;
+          resolve(el);return;
+        }
+        // Some WebM/MOV streams report duration=Infinity until a probe seek.
+        const probe=()=>{
+          el.removeEventListener('timeupdate',probe);
+          if(Number.isFinite(el.duration)&&el.duration>0){clip.duration=el.duration;el.currentTime=0;resolve(el);}
+          else fail();
+        };
+        el.addEventListener('timeupdate',probe);
+        setTimeout(()=>{el.removeEventListener('timeupdate',probe);fail();},10000);
+        try{el.currentTime=1e7;}catch(e){fail();}
+      };
+      if(el.readyState>=1){ready();return;}
+      el.addEventListener('loadedmetadata',ready,{once:true});
+      el.addEventListener('error',fail,{once:true});
+      setTimeout(()=>{
+        if(el.readyState<1){el.removeEventListener('loadedmetadata',ready);el.removeEventListener('error',fail);fail();}
+      },20000);
+    });
+  }
+  async function importClips(files){
+    let added=0;
+    for(const file of [...files]){
+      if(videoClips.length>=24){toast('24 clips is plenty — remove one before importing more.');break;}
+      if(!/^video\//i.test(file.type||'')&&!/\.(mp4|webm|mov|m4v|mkv|avi)$/i.test(file.name)){toast(file.name+': pick a video file (MP4, WebM, MOV…).');continue;}
+      if(file.size>400*1024*1024){toast(file.name+': video clips must stay under 400 MB.');continue;}
+      const clip={id:'clip'+(++clipSeq),name:(file.name.replace(/\.[^.]+$/,'').slice(0,60))||'Clip',file,url:URL.createObjectURL(file),duration:0,width:0,height:0,inPoint:0,outPoint:0,el:null};
+      try{await clipElement(clip);videoClips.push(clip);added++;}
+      catch(e){URL.revokeObjectURL(clip.url);toast(e.message+' — it was skipped.');}
+    }
+    if(added){
+      renderClipList();
+      toast(added+' video clip'+(added>1?'s':'')+' imported — trim Start/End, reorder, then Render assembly.');
+    }
+  }
+  function updateClipTotal(){
+    const tl=buildTimeline(videoClips);
+    $('#clip-total').textContent=videoClips.length?videoClips.length+' clip'+(videoClips.length>1?'s':'')+' · '+tl.duration.toFixed(1)+'s assembled':'';
+  }
+  function renderClipList(){
+    const host=$('#clip-list');
+    host.hidden=!videoClips.length;host.replaceChildren();
+    videoClips.forEach((clip,i)=>{
+      const row=document.createElement('div');row.className='clip-row';
+      const idx=document.createElement('span');idx.className='clip-index';idx.textContent=i+1;row.append(idx);
+      const play=document.createElement('button');play.className='clip-play';play.textContent='▶';play.title='Preview the trimmed piece';
+      play.onclick=()=>previewClip(clip);row.append(play);
+      const name=document.createElement('span');name.className='clip-name';name.textContent=clip.name+(clip.width?' · '+clip.width+'×'+clip.height:'');name.title=clip.name;row.append(name);
+      const mk=(text,cls,val)=>{
+        const l=document.createElement('label');l.textContent=text;
+        const inp=document.createElement('input');inp.type='number';inp.min='0';inp.step='0.1';inp.max=String(Math.max(.1,clip.duration));inp.value=val.toFixed(1);inp.className=cls;
+        l.append(inp);row.append(l);return inp;
+      };
+      const inI=mk('Start','clip-in',clip.inPoint),outI=mk('End','clip-out',clip.outPoint);
+      const len=document.createElement('span');len.className='clip-len';row.append(len);
+      const sync=()=>{
+        const t=sanitizeTrim({...clip,inPoint:+inI.value,outPoint:+outI.value});
+        clip.inPoint=t.inPoint;clip.outPoint=t.outPoint;
+        inI.value=t.inPoint.toFixed(1);outI.value=t.outPoint.toFixed(1);
+        len.textContent=(clip.outPoint-clip.inPoint).toFixed(1)+'s';
+        row.classList.toggle('clip-bad',clip.outPoint-clip.inPoint<=.0005);
+        updateClipTotal();
+      };
+      inI.onchange=sync;outI.onchange=sync;sync();
+      const up=document.createElement('button');up.className='clip-move';up.textContent='▲';up.title='Move earlier';up.disabled=i===0;
+      up.onclick=()=>{if(recording)return;[videoClips[i-1],videoClips[i]]=[videoClips[i],videoClips[i-1]];renderClipList();};
+      const down=document.createElement('button');down.className='clip-move';down.textContent='▼';down.title='Move later';down.disabled=i===videoClips.length-1;
+      down.onclick=()=>{if(recording)return;[videoClips[i+1],videoClips[i]]=[videoClips[i],videoClips[i+1]];renderClipList();};
+      const del=document.createElement('button');del.className='clip-del';del.textContent='✕';del.title='Remove clip';
+      del.onclick=()=>{
+        if(recording)return;
+        videoClips.splice(i,1);URL.revokeObjectURL(clip.url);
+        if(clip.el){try{clip.el.pause();}catch(e){}clip.el.removeAttribute('src');}
+        renderClipList();
+      };
+      row.append(up,down,del);host.append(row);
+    });
+    updateClipTotal();
+  }
+  function previewClip(clip){
+    const pv=$('#clip-preview');
+    if(clipPreviewGuard)pv.removeEventListener('timeupdate',clipPreviewGuard);
+    clipPreviewGuard=()=>{if(pv.currentTime>=clip.outPoint-.02)pv.pause();};
+    pv.addEventListener('timeupdate',clipPreviewGuard);
+    pv.hidden=false;pv.dataset.clipId=clip.id;
+    if(pv.getAttribute('src')!==clip.url)pv.src=clip.url;
+    const start=()=>{try{pv.currentTime=clip.inPoint;}catch(e){}pv.play().catch(()=>{});};
+    if(pv.readyState>=1)start();else pv.addEventListener('loadedmetadata',start,{once:true});
+  }
+  // Decode each clip's audio once per render (kept in a throwaway map so big
+  // files never stay resident), copy the kept [in→out) slice into a single
+  // timeline-aligned buffer, and hand it to the encoder's audio track.
+  async function assembleAudioBuffer(clips,timeline,signal){
+    const ctx=soundtrack.context(),rate=ctx.sampleRate,total=Math.ceil(timeline.duration*rate);
+    if(total<=0)return {buffer:null,failed:0};
+    const out=ctx.createBuffer(1,total,rate),dst=out.getChannelData(0),cache=new Map();
+    let decodedAny=false,failed=0;
+    for(const entry of timeline.entries){
+      if(signal?.aborted)throw new DOMException('Video export cancelled.','AbortError');
+      const clip=entry.clip;
+      if(!cache.has(clip.id)){
+        try{cache.set(clip.id,await ctx.decodeAudioData(await clip.file.arrayBuffer()));}
+        catch(e){cache.set(clip.id,null);}
+      }
+      const src=cache.get(clip.id);
+      if(!src){failed++;continue;}
+      decodedAny=true;
+      const offset=Math.min(src.duration,entry.inPoint),len=Math.min(entry.outPoint,src.duration)-offset;
+      if(len<=0)continue;
+      const startSample=Math.max(0,Math.round(entry.start*rate)),count=Math.min(Math.ceil(len*rate),total-startSample);
+      if(count<=0)continue;
+      // decodeAudioData already resampled the source to the context rate; mix
+      // its channels down to the mono track the encoder expects.
+      const from=Math.floor(offset*src.sampleRate),gain=1/src.numberOfChannels;
+      for(let sc=0;sc<src.numberOfChannels;sc++){
+        const s=src.getChannelData(sc).subarray(from,from+count);
+        for(let k=0;k<s.length;k++)dst[startSample+k]+=s[k]*gain;
+      }
+    }
+    cache.clear();
+    return {buffer:decodedAny?out:null,failed};
+  }
+  function seekVideo(el,time,signal){
+    return new Promise((resolve,reject)=>{
+      if(signal?.aborted){reject(new DOMException('Video export cancelled.','AbortError'));return;}
+      let done=false,timer=0;
+      const finish=err=>{
+        if(done)return;done=true;clearTimeout(timer);
+        signal?.removeEventListener('abort',cancel);
+        el.removeEventListener('seeked',onSeeked);
+        if(err)reject(err);else resolve();
+      };
+      const cancel=()=>finish(new DOMException('Video export cancelled.','AbortError'));
+      const onSeeked=()=>finish(null);
+      if(Number.isFinite(el.duration))time=Math.max(0,Math.min(time,el.duration-.04));
+      if(Math.abs(el.currentTime-time)<.001){resolve();return;}
+      signal?.addEventListener('abort',cancel,{once:true});
+      el.addEventListener('seeked',onSeeked,{once:true});
+      timer=setTimeout(()=>finish(new Error('Seeking inside a clip timed out — the file may be damaged or unsupported.')),20000);
+      try{el.currentTime=time;}catch(e){finish(e);}
+    });
+  }
+  async function renderAssembly(){
+    if(recording){toast('Finish or cancel the current video render first.');return;}
+    if(importBusy){toast('Wait for the model import to finish before exporting.');return;}
+    if(!videoClips.length){toast('Import at least one video clip first.');return;}
+    const clips=videoClips.slice(),timeline=buildTimeline(clips);
+    if(!timeline.duration){toast('Every clip is trimmed to zero length — widen a Start/End range first.');return;}
+    if(timeline.duration>MAX_ASSEMBLY_SECONDS){
+      toast('The assembly is '+Math.round(timeline.duration)+'s long — trim it under '+MAX_ASSEMBLY_SECONDS+'s ('+(MAX_ASSEMBLY_SECONDS/60)+' min) first.');
+      return;
+    }
+    finishInputEdit();setPlaying(false);soundtrack.stopPreview();
+    $('#video-preview').pause();$('#clip-preview').pause();
+    const [width,height]=$('#video-size').value.split('x').map(Number),fps=+$('#video-fps').value,withAudio=$('#assemble-audio').checked;
+    const controller=new AbortController(),signal=controller.signal;
+    recording={controller,width,height};videoBusy(true);
+    $('#video-progress-bar').value=0;
+    $('#video-progress-label').textContent='Preparing your clips…';
+    $('#video-progress-note').textContent='Every kept piece is decoded frame by frame, so assemblies can take a while.';
+    $('#record-state').textContent='Assembling '+timeline.entries.length+' clip piece'+(timeline.entries.length>1?'s':'')+' into one video…';
+    $('#video-ready').hidden=true;
+    let poster='',els=[];
+    try{
+      if(withAudio)soundtrack.context().resume().catch(()=>{});
+      const config=await chooseVideoConfig({format:$('#video-format').value,width,height,fps,withAudio,signal});
+      if(config.method!=='frames')throw new Error('Clip assembly needs this browser\'s frame-accurate encoder (a current Chrome or Edge). You can still render the animation timeline here.');
+      $('#video-progress-note').textContent=config.notice||'Clips are seeked and copied frame by frame for exact cuts.';
+      els=await Promise.all(clips.map(c=>clipElement(c)));
+      let audioBuffer=null,note='';
+      if(withAudio&&config.audioCodec){
+        const audio=await assembleAudioBuffer(clips,timeline,signal);
+        audioBuffer=audio.buffer;
+        if(audio.failed)note+=' '+audio.failed+' clip'+(audio.failed>1?'s had':' has')+' no decodable sound — those sections stay silent.';
+        if(!audioBuffer&&withAudio)note+=' No clip audio could be decoded, so the assembly is silent.';
+      }
+      const canvas=document.createElement('canvas');
+      canvas.width=width;canvas.height=height;
+      const ctx=canvas.getContext('2d'),mode=$('#clip-fit').value;
+      const drawFrame=async t=>{
+        const hit=timelineAt(timeline,t);
+        if(!hit)return;
+        const el=els[hit.entry.index];
+        await seekVideo(el,Math.min(hit.local,Math.max(0,el.duration-.04)),signal);
+        ctx.fillStyle='#0c1113';ctx.fillRect(0,0,width,height);
+        const r=fitRect(el.videoWidth||width,el.videoHeight||height,width,height,mode);
+        ctx.drawImage(el,r.sx,r.sy,r.sw,r.sh,r.dx,r.dy,r.dw,r.dh);
+        if(!poster)poster=canvas.toDataURL('image/jpeg',.85);
+      };
+      const result=await renderVideoFrames({canvas,duration:timeline.duration,config,drawFrame,signal,onProgress:videoProgress,audioBuffer,title:sceneName+' · clip assembly'});
+      retainVideo({...result,poster});
+      if(note)$('#video-download-note').textContent+=note;
+      $('#record-state').textContent='Clip assembly finished ('+timeline.duration.toFixed(1)+'s from '+timeline.entries.length+' pieces). Download it from Video ready.';
+    }catch(e){
+      const cancelled=signal.aborted||e.name==='AbortError';
+      $('#record-state').textContent=cancelled?'Assembly cancelled. No new file was created.':'Could not assemble the video: '+e.message;
+      $('#video-ready').hidden=!videoResult;
+      if(videoResult)$('#video-download-note').textContent='Your previous finished clip is still available to download.';
+      toast(cancelled?'Clip assembly cancelled.':'Clip assembly failed — see the message in Export.');
+    }finally{
+      recording=null;videoBusy(false);
+      for(const el of els){try{el.pause();}catch(e){}}
+    }
+  }
   async function startRecording(){
     if(recording)return;if(importBusy){toast('Wait for the model import to finish before exporting.');return;}
     finishInputEdit();setPlaying(false);applyPendingEdits();soundtrack.stopPreview();$('#video-preview').pause();
@@ -1542,8 +1769,11 @@ async function main(){
   }
   $('#sandbox-note').hidden=window.self===window.top;
   $('#open-export').onclick=()=>{if(recording){toast('Finish or cancel the current video export.');return;}setPlaying(false);syncAudioUI();$('#export-dialog').showModal();};$('#shot').onclick=captureStill;$('#rec').onclick=startRecording;$('#stop-record').onclick=stopRecording;$('#cancel-video').onclick=stopRecording;
+  $('#import-clips').onclick=()=>{if(recording){toast('Finish or cancel the current video render first.');return;}$('#clip-file').click();};
+  $('#clip-file').onchange=e=>{const files=e.target.files;if(files&&files.length)importClips(files);e.target.value='';};
+  $('#assemble-video').onclick=renderAssembly;
   $('#export-dialog').addEventListener('cancel',e=>{if(recording){e.preventDefault();stopRecording();}});
-  $('#export-dialog').addEventListener('close',()=>{$('#video-preview').pause();if(recording)stopRecording();});
+  $('#export-dialog').addEventListener('close',()=>{$('#video-preview').pause();$('#clip-preview').pause();if(recording)stopRecording();});
   $('#help-btn').onclick=()=>$('#help-dialog').showModal();$('#credits-btn').onclick=()=>$('#help-dialog').showModal();
   $$('.dialog-close').forEach(b=>b.onclick=()=>b.closest('dialog').close());
   $$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}}));

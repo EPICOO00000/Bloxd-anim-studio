@@ -197,3 +197,29 @@ body[data-device="touch"] .bake-options label{padding:6px 8px;font-size:11px}
 
 /* ── Render-distance slider note in the Light tab. ── */
 .render-dist-note{font-size:8px;color:#93a991;line-height:1.55;margin:6px 0 2px}
+
+/* ── Video clip montage editor inside the Export dialog. ── */
+.clip-panel{background:#182326;border:1px solid #3d5148;border-radius:8px;padding:0 14px 14px;margin:16px 0 0}
+.clip-import-row{display:flex;gap:10px;align-items:center;margin-top:11px;flex-wrap:wrap}
+.clip-import-row button{font-size:10px;padding:7px 8px;flex:none}
+.clip-import-row span{font-size:8px;color:#9aaf95;line-height:1.5;min-width:0}
+.clip-list{display:flex;flex-direction:column;gap:5px;margin-top:11px}
+.clip-row{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:5px;padding:5px 7px;background:#202a2d;font-size:9px}
+.clip-row .clip-index{color:#bddf8a;font-family:ui-monospace,monospace;flex:none;width:12px;text-align:center}
+.clip-row .clip-play{flex:none;width:24px;height:24px;padding:0;font-size:10px}
+.clip-row .clip-name{flex:1;min-width:40px;color:#b6c9c6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.clip-row label{display:flex;align-items:center;gap:3px;color:#93a991;font-size:8px;flex:none}
+.clip-row input[type=number]{width:52px;font-size:9px;padding:4px!important;font-family:ui-monospace,monospace}
+.clip-row .clip-len{color:#9dbaa5;font-size:8px;font-family:ui-monospace,monospace;flex:none;min-width:34px;text-align:right}
+.clip-row button.clip-move,.clip-row button.clip-del{flex:none;width:22px;height:22px;padding:0;font-size:9px}
+.clip-row button.clip-del{color:#e9a191}
+.clip-row.clip-bad{border-color:#b78065}
+.clip-preview{display:block;width:100%;max-height:220px;margin-top:10px;border-radius:5px;background:#0c1113;aspect-ratio:16/9;object-fit:contain}
+.clip-assemble-row{display:flex;align-items:center;gap:10px;margin-top:11px;flex-wrap:wrap}
+.clip-assemble-row label{display:flex;align-items:center;gap:5px;font-size:9px;color:#b2c2b0}
+.clip-assemble-row select{font-size:9px;padding:6px!important;max-width:190px}
+.clip-assemble-row .clip-audio-label{flex:none}
+.clip-assemble-row button#assemble-video{margin-left:auto;font-size:10px;font-weight:650;padding:8px 12px;border:1px solid var(--lime);background:#34432f;color:var(--lime);border-radius:6px;flex:none}
+.clip-assemble-row button#assemble-video:hover{background:#3d5136}
+.clip-note{font-size:8px;line-height:1.6;color:#93a991;margin:9px 0 0}
+@media(max-width:650px){.clip-row{flex-wrap:wrap}.clip-row .clip-name{flex-basis:100%;order:-1}.clip-assemble-row button#assemble-video{margin-left:0;width:100%}}
