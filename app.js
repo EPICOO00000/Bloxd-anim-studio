@@ -915,7 +915,7 @@ async function main(){
       const run=()=>{
       try{
         const seed=$('#gen-seed').value.trim()||'arena',size=+$('#gen-size').value||128,style=$('#gen-style').value;
-        const params={seed,size,style,biome:$('#terrain-biome').value,trees:$('#gen-trees').checked,vines:$('#gen-vines').checked};
+        const params={seed,size,style,biome:$('#terrain-biome').value,biome2:$('#gen-biome2').value||null,trees:$('#gen-trees').checked,vines:$('#gen-vines').checked};
         const gen=generateTerrain(params);
         if(!gen.map.size){toast('That combination produced an empty world — try another seed.');return;}
         setPlaying(false);
@@ -943,7 +943,7 @@ async function main(){
         pushHistory('generate '+style+' world',
           ()=>{world.map=new Map(oldBlocks);world.size=oldSize;world.seed=oldSeed;world.rebuild();for(const m of movers)m.r.root.position.y=m.oldY;light.renderDist=oldRD;updateLight();syncLightUI();},
           ()=>{const g=generateTerrain(params);world.map=g.map;world.size=size;world.seed=seed;world.rebuild();for(const m of movers)m.r.root.position.y=m.newY;light.renderDist=newRD;updateLight();syncLightUI();});
-        toast('World generated · '+gen.stats.cells.toLocaleString()+' blocks · peak '+peak+' · '+gen.stats.trees+' trees · '+gen.stats.vines+' vines. One Undo brings the old terrain back.');
+        toast('World generated · '+gen.stats.cells.toLocaleString()+' blocks · peak '+peak+(gen.stats.biome.includes('+')?' · blended biomes: '+gen.stats.biome:'')+' · '+gen.stats.trees+' trees · '+gen.stats.vines+' vines. One Undo brings the old terrain back.');
       }catch(err){toast('Generation failed: '+err.message);}
       finally{btn.disabled=false;}
       };
