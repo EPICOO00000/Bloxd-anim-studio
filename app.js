@@ -15,6 +15,7 @@ import { readSchematicFile } from './lib/schematics.js';
 import { isBloxdschem } from './lib/bloxdschem.js';
 import { loadPrefabs, prefabAssets, prefabCells } from './lib/prefabs.js';
 import { apply as applyBrush, topAt, BRUSH_TOOLS, BRUSH_LABELS } from './lib/terrain-brush.js';
+import { generateTerrain } from './lib/terrain-gen.js';
 import { chooseVideoConfig, renderVideoFrames, renderRealtimeVideo } from './lib/video-export.js';
 import { Soundtrack } from './lib/audio.js';
 import { plainState, stageEdit, mergeEdit, keyFromState, stateFromKey, validateDraft } from './lib/key-edit.js';
@@ -70,6 +71,8 @@ async function main(){
   const timeline={time:0,duration:8,playing:false,loop:false,cameraEnabled:true};
   const camTrack=new CameraTrack(),soundtrack=new Soundtrack();
   let viewOverride=false,importBusy=false,recording=null,skinThumb='',playbackLast=performance.now(),sceneName='Maple clearing';
+  // Custom visuals: an optional skybox image (data URL) and per-block-type texture overrides.
+  let skyboxTex=null,skyboxURL=null;const customBlockTex=new Map();
   // Lens distortion (playback-only) + imported image registry for FX.
   let distKeys=[],distBase=null,distBaseQ=null,particleTexDefault='';
   const imageAssets=[];
@@ -212,7 +215,7 @@ async function main(){
     const az=deg(light.az),el=deg(light.el),distance=36;
     sun.position.set(Math.sin(az)*Math.cos(el)*distance,Math.sin(el)*distance,Math.cos(az)*Math.cos(el)*distance);
     sun.target.position.set(0,1,0);sun.target.updateMatrixWorld();sun.color.set(light.color);sun.intensity=light.power;hemi.intensity=light.fill;
-    scene.background=new THREE.Color(light.sky);floor.material.color.set(light.sky).multiplyScalar(.88);
+    scene.background=skyboxTex||new THREE.Color(light.sky);floor.material.color.set(light.sky).multiplyScalar(.88);
     scene.fog=light.fog?new THREE.Fog(light.sky,160,1400):null;viewport.classList.toggle('night-scene',light.fill<.6);
     updateWaterEnv({sunDir:sun.position,sky:light.sky,fog:scene.fog?{color:light.sky,near:scene.fog.near,far:scene.fog.far}:null});
     if(renderer.shadowMap.enabled!==light.shadows||renderer.shadowMap.type!==(light.soft?THREE.PCFSoftShadowMap:THREE.PCFShadowMap)){
@@ -229,6 +232,36 @@ async function main(){
     $('#tool-shading').checked=light.toolLit;$('#sun-color').value=light.color;$('#sky-color').value=light.sky;$('#shadows').checked=light.shadows;$('#soft-shadow').checked=light.soft;$('#show-fog').checked=light.fog;
     $$('[data-light]').forEach(b=>b.classList.toggle('active',b.dataset.light===light.preset));
   }
+  // ── Skybox image: any picture becomes the sky; equirectangular panoramas wrap seamlessly. ──
+  function setSkybox(url){
+    if(!url){if(skyboxTex)skyboxTex.dispose();skyboxTex=null;skyboxURL=null;$('#skybox-clear').hidden=true;updateLight();return Promise.resolve();}
+    return new THREE.TextureLoader().loadAsync(url).then(tex=>{
+      if(skyboxTex)skyboxTex.dispose();
+      tex.colorSpace=THREE.SRGBColorSpace;tex.mapping=THREE.EquirectangularReflectionMapping;tex.anisotropy=4;
+      skyboxTex=tex;skyboxURL=url;$('#skybox-clear').hidden=false;updateLight();
+    });
+  }
+  // ── Custom block textures: simple cube blocks swap their six face maps for your PNG. ──
+  function blockTexEligible(id){const d=blockDefs[id];return !!d&&d.available&&d.fullCube&&!d.water&&id!=='water'&&!d.animation?.length&&!d.faceAnimations?.some(Boolean);}
+  function applyBlockTexture(id,url){
+    return new THREE.TextureLoader().loadAsync(url).then(img=>{
+      const proto=getBlockPrototype(id),tex=pixelTexture(img);
+      const entry=customBlockTex.get(id)||{url:null,orig:null,tex:null};
+      if(!entry.orig)entry.orig=proto.materials.map(m=>m.map);
+      if(entry.tex&&entry.tex!==tex)entry.tex.dispose();
+      entry.url=url;entry.tex=tex;customBlockTex.set(id,entry);
+      for(const m of proto.materials){m.map=tex;m.needsUpdate=true;}
+      syncBlockTexUI();
+    });
+  }
+  function clearBlockTexture(id){
+    const entry=customBlockTex.get(id);if(!entry)return;
+    const proto=getBlockPrototype(id);
+    (entry.orig||[]).forEach((t,i)=>{const m=proto.materials[i];if(m){m.map=t;m.needsUpdate=true;}});
+    if(entry.tex)entry.tex.dispose();
+    customBlockTex.delete(id);syncBlockTexUI();
+  }
+  function syncBlockTexUI(){const btn=$('#block-texture-clear');if(btn)btn.hidden=!customBlockTex.has(state.block);}
   function updatePath(){
     if(pathLine){helpers.remove(pathLine);pathLine.geometry.dispose();pathLine.material.dispose();pathLine=null;}
     if(camTrack.keys.length<2)return;
@@ -373,7 +406,7 @@ async function main(){
   }
   function refreshLibrary(){
     const token=++libraryToken,isBlocks=state.category==='blocks',isItems=state.category==='tools',isModels=state.category==='models',isTextures=state.category==='textures',isBob=state.category==='characters',isBuilds=state.category==='builds',isFx=state.category==='fx';
-    $$('[data-library]').forEach(b=>b.classList.toggle('active',b.dataset.library===state.category));$('#block-edit-actions').hidden=!isBlocks;$('#tool-edit-actions').hidden=!(isItems||isModels);$('#fx-actions').hidden=!isFx;if(isFx)refreshParticleTexOptions();$('#terrain-panel').hidden=!(isBlocks&&state.mode==='terrain');
+    $$('[data-library]').forEach(b=>b.classList.toggle('active',b.dataset.library===state.category));$('#block-edit-actions').hidden=!isBlocks;if(isBlocks)syncBlockTexUI();$('#tool-edit-actions').hidden=!(isItems||isModels);$('#fx-actions').hidden=!isFx;if(isFx)refreshParticleTexOptions();$('#terrain-panel').hidden=!(isBlocks&&state.mode==='terrain');
     $('#asset-action-note').textContent=isBlocks?'Place / Remove to build. Select + Rotate to animate a block.':isItems||isModels?(state.toolAction==='place'?'Place a separate, rotatable asset. A ghost preview follows your cursor — click to set it down, Esc cancels. Models are static source geometry.':'Select a player, then choose an asset to hold. Adjust its grip in Held item.') :isBuilds?'Whole builds from the open map-editor pack. Click one, then click the world — a ghost shows where it lands. Esc cancels.':isTextures?'All PNG files, embedded model images and labeled palette variants. Click to inspect / download.':'The built-in, editable classic Bob recreation.';
     $('#place-tools').classList.toggle('active',state.toolAction==='place');$('#equip-tools').classList.toggle('active',state.toolAction==='equip');
     $('#catalog-summary').textContent=isBuilds?prefabAssets.length.toLocaleString()+' prefab builds · houses, trees, rocks & stands':catalog.counts.liveBlockRoots.toLocaleString()+' base blocks · '+catalog.counts.liveItemEntries.toLocaleString()+' item entries';
@@ -866,6 +899,63 @@ async function main(){
   $('#terrain-radius').oninput=e=>{terrainCfg.radius=+e.target.value;$('#terrain-radius-value').textContent=e.target.value;};
   $('#terrain-strength').oninput=e=>{terrainCfg.strength=+e.target.value;$('#terrain-strength-value').textContent=e.target.value;};
   $('#terrain-falloff').onchange=e=>terrainCfg.falloff=e.target.value;
+  // ── Procedural worlds: one click rebuilds the terrain from a seeded noise pass. ──
+  $('#gen-dice').onclick=()=>{$('#gen-seed').value=Math.random().toString(36).slice(2,10);};
+  $('#terrain-generate').onclick=()=>{
+    const btn=$('#terrain-generate');if(btn.disabled)return;btn.disabled=true;
+    // Let the button paint its pressed state before the heavy generation starts.
+    setTimeout(()=>{
+      try{
+        const seed=$('#gen-seed').value.trim()||'arena',size=+$('#gen-size').value||128,style=$('#gen-style').value;
+        const gen=generateTerrain({seed,size,style,biome:$('#terrain-biome').value,trees:$('#gen-trees').checked,vines:$('#gen-vines').checked});
+        if(!gen.cells.length){toast('That combination produced an empty world — try another seed.');return;}
+        setPlaying(false);
+        const oldBlocks=[...world.map],oldSize=world.size,oldSeed=world.seed;
+        const movers=objects.map(r=>({r,oldY:r.root.position.y,dy:r.root.position.y-world.heightAt(r.root.position.x,r.root.position.z),newY:0}));
+        world.map.clear();
+        for(const[x,y,z,t]of gen.cells)world.set(x,y,z,t);
+        world.size=size;world.seed=seed;
+        world.rebuild();
+        const newBlocks=[...world.map];
+        for(const m of movers){m.newY=clamp(world.heightAt(m.r.root.position.x,m.r.root.position.z)+(Math.abs(m.dy)>6?0:m.dy),-24,60);m.r.root.position.y=m.newY;}
+        // Fly the camera back so the whole new landscape fits the frame.
+        viewOverride=true;
+        const dist=Math.max(30,size*.45),peak=gen.stats.peak;
+        orbit.target.set(0,Math.max(2,peak*.25),0);
+        camera.position.set(dist*.62,dist*.52,dist*.72);
+        camera.fov=45;camera.updateProjectionMatrix();camera.lookAt(orbit.target);
+        syncFov();
+        pushHistory('generate '+style+' world',
+          ()=>{world.map=new Map(oldBlocks);world.size=oldSize;world.seed=oldSeed;world.rebuild();for(const m of movers)m.r.root.position.y=m.oldY;},
+          ()=>{world.map=new Map(newBlocks);world.size=size;world.seed=seed;world.rebuild();for(const m of movers)m.r.root.position.y=m.newY;});
+        toast('World generated · '+gen.cells.length.toLocaleString()+' blocks · peak '+peak+' · '+gen.stats.trees+' trees · '+gen.stats.vines+' vines. One Undo brings the old terrain back.');
+      }catch(err){toast('Generation failed: '+err.message);}
+      finally{btn.disabled=false;}
+    },30);
+  };
+  // ── Custom block textures: swap the six face maps of a plain cube block for your own PNG. ──
+  $('#block-texture').onclick=()=>{
+    if(!blockTexEligible(state.block)){toast('Pick a plain cube block first — models, water and animated blocks keep their own art.');return;}
+    $('#block-tex-file').click();
+  };
+  $('#block-tex-file').onchange=async e=>{
+    const file=e.target.files[0];e.target.value='';if(!file)return;
+    const id=state.block;
+    if(!blockTexEligible(id)){toast('That block cannot take a custom texture.');return;}
+    if(file.size>8*1024*1024){toast('Texture image is too large (8 MB limit).');return;}
+    if(!/^image\//i.test(file.type||'')){toast('Pick a PNG, JPG or WebP image.');return;}
+    try{
+      const url=await readDataURL(file),oldUrl=customBlockTex.get(id)?.url||null;
+      await applyBlockTexture(id,url);
+      pushHistory('texture '+blockDefs[id].label,()=>{if(oldUrl)applyBlockTexture(id,oldUrl).catch(()=>{});else clearBlockTexture(id);},()=>applyBlockTexture(id,url).catch(()=>{}));
+      toast(blockDefs[id].label+' now wears your texture — every placed copy updates instantly.');
+    }catch(err){toast('Could not apply the texture: '+err.message);}
+  };
+  $('#block-texture-clear').onclick=()=>{
+    const id=state.block,entry=customBlockTex.get(id);if(!entry)return;
+    const url=entry.url;clearBlockTexture(id);
+    pushHistory('reset '+blockDefs[id].label+' texture',()=>applyBlockTexture(id,url).catch(()=>{}),()=>clearBlockTexture(id));
+  };
   $('#place-tools').onclick=()=>{state.toolAction='place';refreshLibrary();};$('#equip-tools').onclick=()=>{state.toolAction='equip';refreshLibrary();};
   function downloadTexture(key){const meta=catalog.textureMeta[key],url=textureURL(key);if(!url)return;const name=safeName(meta?.name||key);download(new Blob([decode64(url.split(',')[1])],{type:'image/png'}),name.endsWith('.png')?name:name+'.png');}
   $('#download-texture').onclick=()=>downloadTexture($('#download-texture').dataset.texture);$('#asset-detail-download').onclick=()=>downloadTexture($('#asset-detail-download').dataset.texture);
@@ -909,6 +999,24 @@ async function main(){
 
   for(const[id,key]of [['sun-az','az'],['sun-el','el'],['sun-power','power'],['fill-power','fill']])$('#'+id).oninput=e=>{light[key]=+e.target.value;light.preset='custom';updateLight();syncLightUI();};
   for(const[id,key]of [['sun-color','color'],['sky-color','sky']])$('#'+id).oninput=e=>{light[key]=e.target.value;light.preset='custom';updateLight();syncLightUI();};
+  // ── Skybox image: replace the flat sky color with any picture. ──
+  $('#skybox-btn').onclick=()=>$('#skybox-file').click();
+  $('#skybox-file').onchange=async e=>{
+    const file=e.target.files[0];e.target.value='';if(!file)return;
+    if(file.size>12*1024*1024){toast('Skybox image is too large (12 MB limit).');return;}
+    if(!/^image\//i.test(file.type||'')){toast('Pick a PNG or JPG image for the sky.');return;}
+    try{
+      const url=await readDataURL(file),old=skyboxURL;
+      await setSkybox(url);
+      pushHistory('skybox image',()=>setSkybox(old).catch(()=>{}),()=>setSkybox(url).catch(()=>{}));
+      toast('Skybox applied — 2:1 panoramas wrap the horizon seamlessly.');
+    }catch(err){toast('Could not load that image: '+err.message);}
+  };
+  $('#skybox-clear').onclick=()=>{
+    const old=skyboxURL;if(!old)return;setSkybox(null);
+    pushHistory('clear skybox',()=>setSkybox(old).catch(()=>{}),()=>setSkybox(null));
+    toast('Back to the flat sky color.');
+  };
   for(const[id,key]of [['shadows','shadows'],['soft-shadow','soft'],['show-fog','fog']])$('#'+id).onchange=e=>{light[key]=e.target.checked;updateLight();};
   $('#sun-helper').onchange=e=>sunGuide.visible=e.target.checked;
   $$('[data-light]').forEach(b=>b.onclick=()=>{Object.assign(light,LIGHTS[b.dataset.light],{preset:b.dataset.light});updateLight();syncLightUI();});
@@ -1277,7 +1385,7 @@ async function main(){
     else if(r.type==='import'||r.type==='voxel'||r.type==='image')data.object=r.root.toJSON();
     if(!r.character)data.keys=clone(r.keys||[]);return data;
   }
-  function projectData(){return{format:'bloxd-studio',version:2,editorVersion:'4.0.0',sceneName,audio:{...clone(soundtrack.state),preview:$('#preview-audio').checked,includeVideo:$('#record-audio').checked},world:{blocks:[...world.map],size:world.size,seed:world.seed},objects:objects.map(serializeRecord),light:clone(light),camera:{keys:clone(camTrack.keys),smooth:camTrack.smooth,distortion:clone(distKeys),view:{position:camera.position.toArray(),target:orbit.target.toArray(),fov:camera.fov}},images:imageAssets.map(a=>({id:a.id,name:a.name,url:a.url})),timeline:{...timeline,playing:false}};}
+  function projectData(){return{format:'bloxd-studio',version:2,editorVersion:'4.0.0',sceneName,audio:{...clone(soundtrack.state),preview:$('#preview-audio').checked,includeVideo:$('#record-audio').checked},world:{blocks:[...world.map],size:world.size,seed:world.seed},objects:objects.map(serializeRecord),light:clone(light),camera:{keys:clone(camTrack.keys),smooth:camTrack.smooth,distortion:clone(distKeys),view:{position:camera.position.toArray(),target:orbit.target.toArray(),fov:camera.fov}},images:imageAssets.map(a=>({id:a.id,name:a.name,url:a.url})),skybox:skyboxURL,customTextures:Object.fromEntries([...customBlockTex].map(([id,e])=>[id,e.url])),timeline:{...timeline,playing:false}};}
   async function recordFromData(data){
     if(!data||!['character','tree','rock','lamp','tool','block','import','voxel','image','particles'].includes(data.type))throw new Error('Unknown object type.');
     const vec=v=>Array.isArray(v)&&v.length===3&&v.every(n=>typeof n==='number'&&Number.isFinite(n)&&Math.abs(n)<1000);
@@ -1297,7 +1405,7 @@ async function main(){
   async function loadProject(data){
     finishInputEdit();
     if(data?.format!=='bloxd-studio'||![1,2].includes(data.version))throw new Error('This is not a Bloxd Studio project file.');
-    if(!Array.isArray(data.world?.blocks)||data.world.blocks.length>50000||!Array.isArray(data.objects)||data.objects.length>1000)throw new Error('Invalid or oversized scene.');
+    if(!Array.isArray(data.world?.blocks)||data.world.blocks.length>250000||!Array.isArray(data.objects)||data.objects.length>1000)throw new Error('Invalid or oversized scene.');
     for(const[k,type]of data.world.blocks){const xyz=String(k).split(',').map(Number);if(xyz.length!==3||xyz.some(n=>!Number.isInteger(n)||Math.abs(n)>100)||!blockDefs[resolveBlock(type)]?.available)throw new Error('Invalid or unavailable terrain data.');}
     if(!data.camera?.keys?.every(k=>Number.isFinite(k.time)&&Number.isFinite(k.fov)&&k.position?.every(Number.isFinite)&&k.target?.every(Number.isFinite)))throw new Error('Invalid camera keys.');
     imageAssets.length=0;
@@ -1309,6 +1417,11 @@ async function main(){
     setPlaying(false);gizmo.detach();for(const r of oldObjects){objectGroup.remove(r.root);objects.splice(objects.indexOf(r),1);}
     world.map=new Map(data.world.blocks.map(([key,type])=>[key,resolveBlock(type)]));world.size=data.world.size||18;world.seed=data.world.seed||42;world.rebuild();
     for(const k of Object.keys(light))if(k in(data.light||{}))light[k]=data.light[k];updateLight();syncLightUI();
+    // Restore custom visuals: clear this session's overrides, then re-apply the project's.
+    for(const id of [...customBlockTex.keys()])clearBlockTexture(id);
+    const ct=data.customTextures&&typeof data.customTextures==='object'?data.customTextures:{};
+    for(const[id,url]of Object.entries(ct).slice(0,40)){const rid=resolveBlock(id);if(rid&&typeof url==='string'&&url.startsWith('data:image/')&&url.length<12e6&&blockTexEligible(rid))applyBlockTexture(rid,url).catch(()=>{});}
+    if(typeof data.skybox==='string'&&data.skybox.startsWith('data:image/')&&data.skybox.length<18e6)setSkybox(data.skybox).catch(()=>setSkybox(null));else setSkybox(null);
     camTrack.keys=clone(data.camera.keys);camTrack.smooth=data.camera.smooth!==false;camTrack.rebuild();
     timeline.duration=clamp(+data.timeline?.duration||8,2,60);timeline.time=clamp(+data.timeline?.time||0,0,timeline.duration);timeline.loop=!!data.timeline?.loop;timeline.cameraEnabled=data.timeline?.cameraEnabled!==false;
     if(data.camera.view)setCamera({position:new THREE.Vector3().fromArray(data.camera.view.position),target:new THREE.Vector3().fromArray(data.camera.view.target),fov:data.camera.view.fov});
