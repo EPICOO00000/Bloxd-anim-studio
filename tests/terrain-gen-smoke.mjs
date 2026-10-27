@@ -124,6 +124,40 @@ ok(countType(volcB,pal('volcanic').surface)>0,'basalt surfaces');
 const alien=generateTerrain({seed:'arena',size:48,style:'islands',biome:'alien'});
 ok(alien.map.size>0,'alien palette generates');
 
+// ── biome blending: two palettes in one world with soft, regional borders ──
+const mix=generateTerrain({seed:'arena',size:128,style:'hills',biome:'temperate',biome2:'tropical'});
+const TA=pal('temperate'),TB=pal('tropical');
+ok(mix.stats.biome==='temperate + tropical','stats report the blended pair');
+ok(countType(mix,TA.log)>5&&countType(mix,TB.log)>5,'pine and palm forests share the map');
+ok(countType(mix,TA.leaves)>0&&countType(mix,TB.leaves)>0,'both leaf types present');
+const mix2=generateTerrain({seed:'arena',size:128,style:'hills',biome:'temperate',biome2:'tropical'});
+ok(mix.map.size===mix2.map.size&&[...mix.map].every(([k,t])=>mix2.map.get(k)===t),'blending is deterministic');
+ok(countType(a,TB.log)===0&&countType(a,TB.leaves)===0,'unmixed worlds never leak a second palette');
+const sameMix=generateTerrain({seed:'arena',size:64,style:'hills',biome:'temperate',biome2:'temperate'});
+ok(sameMix.stats.biome==='temperate','mixing a biome with itself stays single');
+const vmix=generateTerrain({seed:'arena',size:128,style:'hills',biome:'temperate',biome2:'volcanic'});
+ok(countType(vmix,pal('volcanic').water)>0&&countType(vmix,TA.water)>0,'lava lakes and water lakes coexist');
+ok(countType(vmix,pal('volcanic').surface)>0&&countType(vmix,TA.surface)>0,'basalt and grass surfaces blend');
+const amix=generateTerrain({seed:'arena',size:128,style:'hills',biome:'tropical',biome2:'arid'});
+ok(countType(amix,pal('arid').log)>0&&countType(amix,pal('tropical').log)>0,'cacti and palms grow in one world');
+// Regions, not per-column static: arid vs temperate surfaces are distinct ids
+// (sand vs grass); count inland borders — smooth blobs mean few, noise means many.
+const smix=generateTerrain({seed:'arena',size:128,style:'hills',biome:'temperate',biome2:'arid'});
+{
+  const SA=pal('arid'),H=new Map();
+  for(const[k,t]of smix.map){
+    if(t!==TA.surface&&t!==SA.surface)continue;
+    const[x,y,z]=k.split(',').map(Number);
+    if(y<4)continue; // skip beaches (temperate beach sand would fake arid ground)
+    const kk=x+','+z;if(!H.has(kk)||y>H.get(kk).y)H.set(kk,{y,t});
+  }
+  let borders=0,total=0;
+  for(const[kk,v]of H){const[x,z]=kk.split(',').map(Number);const e=H.get((x+1)+','+z);if(!e)continue;total++;if(e.t!==v.t)borders++;}
+  ok(total>500,'enough inland surface columns sampled ('+total+')');
+  ok(borders>0,'the two biomes actually meet somewhere ('+borders+' borders)');
+  ok(borders/total<.15,'borders form soft regions, not static noise ('+Math.round(borders/total*100)+'% edges)');
+}
+
 // ── big worlds stay inside the project limits ──
 const big=generateTerrain({seed:'arena',size:160,style:'hills'});
 ok(big.stats.size===160,'titanic footprint honoured');
