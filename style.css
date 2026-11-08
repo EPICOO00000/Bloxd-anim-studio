@@ -108,6 +108,17 @@ body[data-device="touch"] .device-options{grid-template-columns:1fr}
 .terrain-panel input[type=range]{flex:1;min-width:0}
 .terrain-panel label>span{min-width:16px;text-align:right;font-family:ui-monospace,monospace;color:#c4d2cc}
 .terrain-panel .muted{margin:2px 0 0;font-size:8px;line-height:1.5}
+/* ── Cinematic build zone panel ── */
+.zone-box{display:flex;flex-direction:column;gap:4px}
+.zone-box-label{font-size:8px;letter-spacing:.9px;color:#93a991;margin-top:2px}
+.zone-box .triplet label{padding:0 5px}
+.zone-box .triplet input{font-size:10px;padding:5px 0!important}
+#zone-panel .gen-btn{margin-top:4px}
+#zone-panel .checks{margin:8px 0 4px;font-size:9px}
+#zone-panel .checks label{gap:6px;line-height:1.5}
+#zone-readout{font-family:ui-monospace,monospace;color:#c4d2cc!important}
+#zone-build:disabled{opacity:.5}
+body[data-device="touch"] #zone-panel .checks{font-size:11px}
 #ghost-status{position:absolute;left:50%;bottom:64px;transform:translateX(-50%);padding:7px 13px;background:#233129f2;border:1px solid #7e9c5b;color:#e0efcd;border-radius:7px;font-size:10px;text-align:center;pointer-events:none;z-index:10;box-shadow:0 6px 30px #0002;max-width:92%;white-space:normal}
 #ghost-status.is-collision{border-color:#bd785d;color:#ffd5bd;background:#3a2823f2}
 /* ── Phone mode (chosen at the start gate): every menu becomes a dedicated
