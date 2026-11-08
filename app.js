@@ -7,6 +7,7 @@ import { VoxelWorld, createTree, createRock } from './lib/world.js';
 import { JOINTS, createCharacter, copyPose, neutralPose, presetPose, applyPose, equip } from './lib/character.js';
 import { CameraTrack, samplePose, sampleTransform, sampleScalar, putKey, KEY_EPS } from './lib/tracks.js';
 import { bakeClip, bakeWalkPath, mirrorPose, planSequence, CLIP_DEFAULTS } from './lib/anim-clips.js';
+import { BUILD_ORDERS, BUILD_ORDER_LABELS, BUILD_STYLES, BUILD_STYLE_LABELS, BUILD_EASES, BUILD_EASE_LABELS, MAX_ZONE_BLOCKS, ZONE_DEFAULTS, normalizeRegion, zoneCells, buildEntries, planBuild, planSummary, cameraPlan, zoneWarning } from './lib/cinematic-build.js';
 import { PARTICLE_TYPES, createEmitter, setEmitterTexture, createImageObject, fxIcon } from './lib/fx.js';
 import { interpolateRotation } from './lib/interpolation.js';
 import { parseModel, voxelise } from './lib/importers.js';
@@ -331,14 +332,15 @@ async function main(){
     if(state.scope==='part'&&['translate','scale'].includes(mode)){mode='rotate';toast('Body parts rotate at fixed joints. Choose Whole player to move or scale.');}
     state.mode=mode;$$('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));
     gizmo.detach();const target=selectedTarget();if(target&&['translate','rotate','scale'].includes(mode)){gizmo.attach(target);gizmo.setMode(mode);gizmo.setSpace(mode==='translate'&&state.scope!=='held'?'world':'local');}
-    hover.visible=false;const building=mode==='build'||mode==='erase',terrain=mode==='terrain';$('#build-badge').hidden=!(building||terrain);
-    $('#build-badge').textContent=mode==='erase'?'Remove blocks · click any block':terrain?BRUSH_LABELS[terrainCfg.tool]+' brush · drag over terrain':'Placing '+blockDefs[state.block].label+' · right-click to erase';
-    $('#viewport-hint').innerHTML=(building||terrain)?(mode==='erase'?'Click a block to remove <b>·</b> Ctrl+Z to undo <b>·</b> V to select':terrain?'Left-drag sculpts <b>·</b> Right-drag turns the camera <b>·</b> Each stroke is one undo step':'Click to place <b>·</b> Right-click to erase <b>·</b> V to select'):mode==='rotate'?'Drag a colored ring <b>·</b> XYZ angles in inspector <b>·</b> Key to animate':'Drag to orbit <b>·</b> Click a block, part or item <b>·</b> E to rotate';
-    $('#place-blocks').classList.toggle('active',mode==='build');$('#erase-blocks').classList.toggle('active',mode==='erase');$('#terrain-toggle').classList.toggle('active',terrain);
-    $('#terrain-panel').hidden=!terrain;
-    if(terrain){orbit.mouseButtons={LEFT:null,MIDDLE:THREE.MOUSE.DOLLY,RIGHT:THREE.MOUSE.ROTATE};orbit.touches={ONE:null,TWO:THREE.TOUCH.DOLLY_PAN};}
+    hover.visible=false;const building=mode==='build'||mode==='erase',terrain=mode==='terrain',zoneMode=mode==='zone';$('#build-badge').hidden=!(building||terrain||zoneMode);
+    $('#build-badge').textContent=mode==='erase'?'Remove blocks · click any block':terrain?BRUSH_LABELS[terrainCfg.tool]+' brush · drag over terrain':zoneMode?'Cinematic build · drag a box over the world':'Placing '+blockDefs[state.block].label+' · right-click to erase';
+    $('#viewport-hint').innerHTML=(building||terrain||zoneMode)?(mode==='erase'?'Click a block to remove <b>·</b> Ctrl+Z to undo <b>·</b> V to select':terrain?'Left-drag sculpts <b>·</b> Right-drag turns the camera <b>·</b> Each stroke is one undo step':zoneMode?'Left-drag selects a zone <b>·</b> Right-drag turns the camera <b>·</b> V to select':'Click to place <b>·</b> Right-click to erase <b>·</b> V to select'):mode==='rotate'?'Drag a colored ring <b>·</b> XYZ angles in inspector <b>·</b> Key to animate':'Drag to orbit <b>·</b> Click a block, part or item <b>·</b> E to rotate';
+    $('#place-blocks').classList.toggle('active',mode==='build');$('#erase-blocks').classList.toggle('active',mode==='erase');$('#terrain-toggle').classList.toggle('active',terrain);$('#zone-toggle').classList.toggle('active',zoneMode);
+    $('#terrain-panel').hidden=!terrain;$('#zone-panel').hidden=!zoneMode;
+    if(zoneMode)zoneRefreshUI();
+    if(terrain||zoneMode){orbit.mouseButtons={LEFT:null,MIDDLE:THREE.MOUSE.DOLLY,RIGHT:THREE.MOUSE.ROTATE};orbit.touches={ONE:null,TWO:THREE.TOUCH.DOLLY_PAN};}
     else{orbit.mouseButtons={LEFT:THREE.MOUSE.ROTATE,MIDDLE:THREE.MOUSE.DOLLY,RIGHT:THREE.MOUSE.PAN};orbit.touches={ONE:THREE.TOUCH.ROTATE,TWO:THREE.TOUCH.DOLLY_PAN};}
-    canvas.style.cursor=(building||terrain)?'crosshair':'default';
+    canvas.style.cursor=(building||terrain||zoneMode)?'crosshair':'default';
   }
   function selectObject(r,scope='root',joint=state.joint){finishInputEdit();selected=r;if(r?.draft)r.draft.time=timeline.time;state.selectedKey=null;state.scope=r?.character?scope:'root';state.joint=joint;$('#joint-select').value=joint;refreshOutliner();refreshInspector();refreshTimeline();setMode(['build','erase'].includes(state.mode)?'select':state.mode);}
   function showInspector(tab){$('.inspector-scroll').scrollTop=0;state.inspector=tab;$$('[data-inspector]').forEach(b=>b.classList.toggle('active',b.dataset.inspector===tab));for(const n of ['object','light','camera'])$('#inspect-'+n).hidden=n!==tab;syncDock();}
@@ -413,7 +415,7 @@ async function main(){
   }
   function refreshLibrary(){
     const token=++libraryToken,isBlocks=state.category==='blocks',isItems=state.category==='tools',isModels=state.category==='models',isTextures=state.category==='textures',isBob=state.category==='characters',isBuilds=state.category==='builds',isFx=state.category==='fx';
-    $$('[data-library]').forEach(b=>b.classList.toggle('active',b.dataset.library===state.category));$('#block-edit-actions').hidden=!isBlocks;if(isBlocks)syncBlockTexUI();$('#tool-edit-actions').hidden=!(isItems||isModels);$('#fx-actions').hidden=!isFx;if(isFx)refreshParticleTexOptions();$('#terrain-panel').hidden=!(isBlocks&&state.mode==='terrain');
+    $$('[data-library]').forEach(b=>b.classList.toggle('active',b.dataset.library===state.category));$('#block-edit-actions').hidden=!isBlocks;if(isBlocks)syncBlockTexUI();$('#tool-edit-actions').hidden=!(isItems||isModels);$('#fx-actions').hidden=!isFx;if(isFx)refreshParticleTexOptions();$('#terrain-panel').hidden=!(isBlocks&&state.mode==='terrain');$('#zone-panel').hidden=!(isBlocks&&state.mode==='zone');
     $('#asset-action-note').textContent=isBlocks?'Place / Remove to build. Select + Rotate to animate a block.':isItems||isModels?(state.toolAction==='place'?'Place a separate, rotatable asset. A ghost preview follows your cursor — click to set it down, Esc cancels. Models are static source geometry.':'Select a player, then choose an asset to hold. Adjust its grip in Held item.') :isBuilds?'Whole builds from the open map-editor pack. Click one, then click the world — a ghost shows where it lands. Esc cancels.':isTextures?'All PNG files, embedded model images and labeled palette variants. Click to inspect / download.':'The built-in, editable classic Bob recreation.';
     $('#place-tools').classList.toggle('active',state.toolAction==='place');$('#equip-tools').classList.toggle('active',state.toolAction==='equip');
     $('#catalog-summary').textContent=isBuilds?prefabAssets.length.toLocaleString()+' prefab builds · houses, trees, rocks & stands':catalog.counts.liveBlockRoots.toLocaleString()+' base blocks · '+catalog.counts.liveItemEntries.toLocaleString()+' item entries';
@@ -780,6 +782,128 @@ async function main(){
   const brushRing=new THREE.Mesh(new THREE.RingGeometry(.97,1.05,64),new THREE.MeshBasicMaterial({color:0xd6f29e,transparent:true,opacity:.8,depthWrite:false,side:THREE.DoubleSide}));
   brushRing.rotation.x=-Math.PI/2;brushRing.visible=false;helpers.add(brushRing);
   let terrainStroke=null,terrainLast=null,terrainRebuild=false;
+  // ── Cinematic build: drag a box over the world, then let it construct itself ──
+  const zoneCfg={...ZONE_DEFAULTS,camera:true};
+  const zone={from:null,to:null,cells:[],plan:null};
+  const zoneBox=new THREE.Box3Helper(new THREE.Box3(new THREE.Vector3(),new THREE.Vector3()),0xd0ee8e);
+  zoneBox.material.depthTest=false;zoneBox.material.transparent=true;zoneBox.material.opacity=.95;zoneBox.renderOrder=6;zoneBox.visible=false;helpers.add(zoneBox);
+  let zoneDrag=null;
+  const ZONE_Y_MIN=-8,ZONE_Y_MAX=44,ZONE_DRAG_MAX=40;
+  // Vertical extent of real blocks inside an XZ rectangle — existing editable blocks
+  // lifted out of the world count too, so re-selecting a built zone works.
+  function zoneSpan(x0,x1,z0,z1){
+    let y0=null,y1=null;
+    const bump=(x,z)=>{
+      let lo=null,hi=null;
+      for(let y=ZONE_Y_MIN;y<=ZONE_Y_MAX;y++)if(world.get(x,y,z)){lo=y;break;}
+      if(lo===null)return;
+      for(let y=ZONE_Y_MAX;y>=ZONE_Y_MIN;y--)if(world.get(x,y,z)){hi=y;break;}
+      if(y0===null||lo<y0)y0=lo;
+      if(y1===null||hi>y1)y1=hi;
+    };
+    for(let x=x0;x<=x1;x++)for(let z=z0;z<=z1;z++)bump(x,z);
+    for(const r of objects){
+      if(r.type!=='block'||!r.options?.terrainCell)continue;
+      const c=r.options.terrainCell;
+      if(c[0]<x0||c[0]>x1||c[2]<z0||c[2]>z1)continue;
+      if(y0===null||c[1]<y0)y0=c[1];
+      if(y1===null||c[1]>y1)y1=c[1];
+    }
+    if(y0===null){const h=Math.floor(world.heightAt(Math.round((x0+x1)/2),Math.round((z0+z1)/2)));y0=h-1;y1=h+2;}
+    return [y0,y1];
+  }
+  function zonePlanOptions(){
+    return {order:zoneCfg.order,style:zoneCfg.style,ease:zoneCfg.ease,start:zoneCfg.start,duration:zoneCfg.duration,stagger:zoneCfg.stagger};
+  }
+  // Everything the zone currently holds: world cells plus editable blocks already
+  // lifted out of the terrain, each remembering the record that owns it.
+  function zoneCollect(){
+    const lifted=[];
+    for(const r of objects){
+      if(r.type!=='block'||!r.options?.terrainCell)continue;
+      const c=r.options.terrainCell;
+      lifted.push({x:c[0],y:c[1],z:c[2],type:resolveBlock(r.options.block)||'stone',record:r});
+    }
+    return zoneCells(world,normalizeRegion(zone.from,zone.to),lifted);
+  }
+  function zoneRecompute(){
+    zone.cells=zone.from&&zone.to?zoneCollect():[];
+    zone.plan=zone.cells.length?planBuild(zone.cells,zonePlanOptions()):null;
+    zoneRefreshUI();
+  }
+  function zoneRefreshUI(){
+    if(zone.from&&zone.to){
+      const {min,max}=normalizeRegion(zone.from,zone.to);
+      zoneBox.box.min.set(min[0],min[1],min[2]);
+      zoneBox.box.max.set(max[0]+1,max[1]+1,max[2]+1);
+      zoneBox.visible=state.mode==='zone';
+      zoneBox.updateMatrixWorld(true);
+      for(const ax of ['x','y','z']){
+        const i=ax==='x'?0:ax==='y'?1:2,f=$('#zone-from-'+ax),t=$('#zone-to-'+ax);
+        if(document.activeElement!==f)f.value=min[i];
+        if(document.activeElement!==t)t.value=max[i];
+      }
+    }else zoneBox.visible=false;
+    const warn=zoneWarning(zone.cells.length);
+    $('#zone-readout').textContent=zone.plan?planSummary(zone.plan):'No zone selected yet.';
+    $('#zone-build').disabled=!zone.cells.length||!!warn;
+    $('#zone-note').textContent=warn||'Left-drag a box over the world to select the blocks. The zone then constructs itself layer by layer — one Undo step brings the terrain back.';
+  }
+  function zoneSelect(from,to){
+    const fit=normalizeRegion(from,to);
+    zone.from=fit.min;zone.to=fit.max;zoneLastRect='';zoneRecompute();
+  }
+  function zoneClear(){zone.from=zone.to=null;zone.cells=[];zone.plan=null;zoneRefreshUI();}
+  // Lifts every selected cell into its own editable block record and writes the baked
+  // key track onto it, so playback, onion skin, project save and video export all work
+  // through the ordinary object pipeline — no new render path is involved.
+  function cinematicBuild(){
+    if(!zone.cells.length){toast('Drag a box over the world first to select a zone.');return;}
+    const warn=zoneWarning(zone.cells.length);
+    if(warn){toast(warn);return;}
+    setPlaying(false);finishInputEdit();
+    const {plan,entries}=buildEntries(zone.cells,zonePlanOptions());
+    const baked=[],created=[];
+    for(const e of entries){
+      const cell=[e.x,e.y,e.z];
+      let rec=e.record,fresh=false;
+      if(!rec){
+        rec=register(makeBlock(e.type),'block',blockDefs[e.type]?.label||e.type,{options:{block:e.type,terrainCell:cell}});
+        rec.root.position.set(e.x+.5,e.y+.5,e.z+.5);
+        world.set(e.x,e.y,e.z,null);fresh=true;
+      }
+      baked.push({cell,type:e.type,rec,created:fresh,oldKeys:fresh?null:clone(rec.keys||[]),newKeys:e.keys});
+      rec.keys=clone(e.keys);
+      created.push(rec);
+    }
+    world.rebuild();
+    const camBefore=camTrack.keys.length?clone(camTrack.keys):null;
+    let camKeys=null;
+    if(zoneCfg.camera&&zone.from&&zone.to){
+      camKeys=cameraPlan(normalizeRegion(zone.from,zone.to),{start:zoneCfg.start,duration:zoneCfg.duration}).keys;
+      camTrack.keys=clone(camKeys);camTrack.rebuild();updatePath();
+      if(!timeline.cameraEnabled){timeline.cameraEnabled=true;$('#camera-enabled').checked=true;}
+    }
+    let grew=false;
+    if(plan.total>timeline.duration){timeline.duration=Math.min(60,Math.ceil(plan.total*2)/2);grew=true;}
+    const dropRecord=r=>{objectGroup.remove(r.root);const i=objects.indexOf(r);if(i>=0)objects.splice(i,1);if(r.root)r.root.userData.studioId=undefined;};
+    pushHistory('cinematic build',
+      ()=>{setPlaying(false);
+        for(const e of baked)if(e.created){dropRecord(e.rec);world.set(e.cell[0],e.cell[1],e.cell[2],e.type);}else e.rec.keys=clone(e.oldKeys);
+        world.rebuild();
+        if(camKeys){camTrack.keys=camBefore?clone(camBefore):[];camTrack.rebuild();updatePath();}
+        if(selected&&!objects.includes(selected))selectObject(null);else refreshAll();},
+      ()=>{setPlaying(false);
+        for(const e of baked){if(e.created){objects.push(e.rec);objectGroup.add(e.rec);e.rec.root.userData.studioId=e.rec.id;world.set(e.cell[0],e.cell[1],e.cell[2],null);}e.rec.keys=clone(e.newKeys);}
+        world.rebuild();
+        if(camKeys){camTrack.keys=clone(camKeys);camTrack.rebuild();updatePath();}
+        refreshAll();});
+    if(created.length)selectObject(created[0]);
+    // Land the view on the start of the build so Play immediately shows it rising.
+    if(camKeys)seek(zoneCfg.start,true);else if(zoneCfg.start>0)seek(zoneCfg.start);
+    zoneRefreshUI();
+    toast(planSummary(plan)+' baked into '+created.length+' editable blocks'+(camKeys?' with a cinematic camera':'')+(grew?' · clip length grew to '+timeline.duration.toFixed(1)+' s':'')+'. Press From start to watch it build.');
+  }
   function queueTerrainRebuild(){if(terrainRebuild)return;terrainRebuild=true;requestAnimationFrame(()=>{terrainRebuild=false;world.rebuild();});}
   function terrainCenter(e){
     const hit=sceneHit(e);if(!hit)return null;
@@ -839,10 +963,33 @@ async function main(){
     toast(type==='water'?'Water block selected. Rotate, move or add a transform key.':'Block selected. Rotate, move or add a transform key.');return r;
   }
   let pointerDown=null;
+  // Zone picking: anchor on the surface under the cursor, then grow a rectangle from it.
+  function zoneAnchor(e){
+    const hit=sceneHit(e);if(!hit)return null;
+    const x=Math.floor(hit.point.x),z=Math.floor(hit.point.z);
+    if(Math.abs(x)>400||Math.abs(z)>400)return null;
+    return [x,z];
+  }
+  let zoneLastRect='',zoneTrimmed=false;
+  function zoneApply(from,to){
+    const x0=Math.min(from[0],to[0]),z0=Math.min(from[1],to[1]);
+    const rx=Math.max(from[0],to[0]),rz=Math.max(from[1],to[1]);
+    const ex=Math.min(rx,x0+ZONE_DRAG_MAX-1),ez=Math.min(rz,z0+ZONE_DRAG_MAX-1);
+    const trimmed=rx-x0+1>ZONE_DRAG_MAX||rz-z0+1>ZONE_DRAG_MAX;
+    if(trimmed&&!zoneTrimmed){zoneTrimmed=true;toast('One drag selects at most '+ZONE_DRAG_MAX+' × '+ZONE_DRAG_MAX+' blocks — the box was trimmed. Type exact From / To values for anything larger.');}
+    if(!trimmed)zoneTrimmed=false;
+    const rect=x0+','+ex+','+z0+','+ez;
+    if(rect===zoneLastRect)return;
+    zoneLastRect=rect;
+    const [y0,y1]=zoneSpan(x0,ex,z0,ez);
+    zone.from=[x0,y0,z0];zone.to=[ex,y1,ez];
+    zoneRecompute();
+  }
   canvas.addEventListener('contextmenu',e=>e.preventDefault());
   canvas.addEventListener('pointerdown',e=>{
     pointerDown={x:e.clientX,y:e.clientY,button:e.button,gizmo:!!gizmo.axis};
     if(state.mode==='terrain'&&!ghostState&&e.button===0){terrainStroke=new Map();terrainLast=null;const c=terrainCenter(e);if(c){terrainLast=c.join(',');stampTerrain(c);}}
+    if(state.mode==='zone'&&!ghostState&&e.button===0){const a=zoneAnchor(e);if(a){zoneDrag={from:a,to:a};zoneTrimmed=false;zoneApply(a,a);}}
   });
   canvas.addEventListener('pointermove',e=>{
     if(ghostState){hover.visible=false;brushRing.visible=false;updateGhost(e);return;}
@@ -854,13 +1001,15 @@ async function main(){
       if(terrainStroke){const k=c.join(',');if(k!==terrainLast){terrainLast=k;stampTerrain(c);}}
       return;
     }
+    if(state.mode==='zone'){hover.visible=false;brushRing.visible=false;if(zoneDrag){const a=zoneAnchor(e);if(a)zoneApply(zoneDrag.from,a);}return;}
     if(!['build','erase'].includes(state.mode)){hover.visible=false;brushRing.visible=false;return;}brushRing.visible=false;const hit=sceneHit(e),dig=state.mode==='erase'||e.buttons===2||e.shiftKey;hover.visible=editableHit(hit,dig);
     if(hover.visible){const rec=recordForHit(hit);hover.rotation.set(0,0,0);hover.scale.set(1,1,1);if(dig&&rec?.type==='block'){hover.position.copy(rec.root.position);hover.rotation.copy(rec.root.rotation);hover.scale.copy(rec.root.scale);}else{const p=cellFromHit(hit,dig);hover.position.set(p[0]+.5,p[1]+.5,p[2]+.5);}hover.material.color.set(dig?0xf5a179:0xd6f29e);}
   });
-  canvas.addEventListener('pointerleave',()=>{hover.visible=false;brushRing.visible=false;if(terrainStroke)endTerrainStroke();});
+  canvas.addEventListener('pointerleave',()=>{hover.visible=false;brushRing.visible=false;zoneDrag=null;if(terrainStroke)endTerrainStroke();});
   canvas.addEventListener('wheel',e=>{if(!ghostState)return;e.preventDefault();ghostState.yOffset+=(e.deltaY<0?1:-1);applyGhostOffset();},{passive:false});
   canvas.addEventListener('pointerup',e=>{
     if(state.mode==='terrain'&&!ghostState){if(terrainStroke)endTerrainStroke();pointerDown=null;return;}
+    if(state.mode==='zone'&&!ghostState){const drag=zoneDrag;zoneDrag=null;pointerDown=null;if(drag)zoneApply(drag.from,drag.to);if(zone.plan)toast(planSummary(zone.plan)+' selected. Pick a build order, then Build it.');return;}
     const down=pointerDown;pointerDown=null;if(!down||Math.hypot(down.x-e.clientX,down.y-e.clientY)>5||down.gizmo)return;
     if(state.pathMode){if(down.button===0){const hit=sceneHit(e);if(hit)addPathPoint(hit);}else setPathMode(false);return;}
     if(ghostState){if(down.button===0){updateGhost(e);commitGhost();}else{cancelGhost();toast('Placement canceled.');}return;}
@@ -901,6 +1050,33 @@ async function main(){
   $$('[data-turn]').forEach(b=>b.onclick=()=>{const r=selected;if(!r)return;const before=actorSnapshot(r);prepEdit();selectedTarget().rotation[b.dataset.turn]+=Math.PI/2;syncTargetToActor();recordActorChange(r,before,'quarter turn');refreshInspector();setMode('rotate');});
   $('#place-blocks').onclick=()=>{setPlaying(false);setMode('build');touchClosePanels();refreshLibrary();};$('#erase-blocks').onclick=()=>{setPlaying(false);setMode('erase');touchClosePanels();refreshLibrary();};
   $('#terrain-toggle').onclick=()=>{setPlaying(false);state.category='blocks';setMode(state.mode==='terrain'?'build':'terrain');touchClosePanels();refreshLibrary();};
+  $('#zone-toggle').onclick=()=>{setPlaying(false);state.category='blocks';setMode(state.mode==='zone'?'build':'zone');touchClosePanels();refreshLibrary();};
+  for(const o of BUILD_ORDERS){const el=document.createElement('option');el.value=o;el.textContent=BUILD_ORDER_LABELS[o];$('#zone-order').append(el);}
+  for(const st of BUILD_STYLES){const el=document.createElement('option');el.value=st;el.textContent=BUILD_STYLE_LABELS[st];$('#zone-style').append(el);}
+  for(const ez of BUILD_EASES){const el=document.createElement('option');el.value=ez;el.textContent=BUILD_EASE_LABELS[ez];$('#zone-ease').append(el);}
+  $('#zone-order').value=zoneCfg.order;$('#zone-style').value=zoneCfg.style;$('#zone-ease').value=zoneCfg.ease;
+  $('#zone-order').onchange=e=>{zoneCfg.order=e.target.value;zoneRecompute();};
+  $('#zone-style').onchange=e=>{zoneCfg.style=e.target.value;zoneRecompute();};
+  $('#zone-ease').onchange=e=>{zoneCfg.ease=e.target.value;zoneRecompute();};
+  $('#zone-start').value=zoneCfg.start;$('#zone-duration').value=zoneCfg.duration;
+  $('#zone-start').oninput=e=>{zoneCfg.start=Math.max(0,+e.target.value||0);zoneRecompute();};
+  $('#zone-duration').oninput=e=>{zoneCfg.duration=Math.max(.2,+e.target.value||4);zoneRecompute();};
+  $('#zone-stagger').value=Math.round(zoneCfg.stagger*100);$('#zone-stagger-value').textContent=Math.round(zoneCfg.stagger*100)+'%';
+  $('#zone-stagger').oninput=e=>{zoneCfg.stagger=Math.max(0,Math.min(.9,+e.target.value/100));$('#zone-stagger-value').textContent=e.target.value+'%';zoneRecompute();};
+  $('#zone-camera').checked=zoneCfg.camera;
+  $('#zone-camera').onchange=e=>zoneCfg.camera=e.target.checked;
+  $('#zone-build').onclick=()=>cinematicBuild();
+  $('#zone-clear').onclick=()=>{zoneClear();zoneLastRect='';zoneTrimmed=false;toast('Zone cleared.');};
+  for(const ax of ['x','y','z']){
+    const i=ax==='x'?0:ax==='y'?1:2;
+    $('#zone-from-'+ax).oninput=$('#zone-to-'+ax).oninput=()=>{
+      const axes=['x','y','z'];
+      const from=axes.map(a=>Math.round(+$('#zone-from-'+a).value)||0);
+      const to=axes.map(a=>Math.round(+$('#zone-to-'+a).value)||0);
+      if(from[0]===to[0]&&from[1]===to[1]&&from[2]===to[2])return;
+      zone.from=from;zone.to=to;zoneRecompute();
+    };
+  }
   for(const t of BRUSH_TOOLS){const o=document.createElement('option');o.value=t;o.textContent=BRUSH_LABELS[t];$('#terrain-tool').append(o);}
   $('#terrain-tool').onchange=e=>terrainCfg.tool=e.target.value;
   $('#terrain-biome').onchange=e=>terrainCfg.biome=e.target.value;
@@ -1796,6 +1972,7 @@ async function main(){
     if(k==='h')toggleClean();if(k==='f')focusObject(selected);if(k==='/'){e.preventDefault();document.body.classList.add('panel-library');syncDock();$('#asset-search').focus();}
     if(k==='b'){state.category='blocks';setMode('build');refreshLibrary();}if(k==='x'){state.category='blocks';setMode('erase');refreshLibrary();}
     if(k==='t'){state.category='blocks';setMode(state.mode==='terrain'?'build':'terrain');refreshLibrary();}
+    if(k==='z'){state.category='blocks';setMode(state.mode==='zone'?'build':'zone');refreshLibrary();}
     if(k==='escape'&&(document.body.classList.contains('panel-library')||document.body.classList.contains('panel-inspector')||document.body.classList.contains('panel-timeline'))){closePanels();return;}
     if(k==='v'||k==='escape')setMode('select');if(k==='w')setMode('translate');if(k==='e')setMode('rotate');if(k==='r')setMode('scale');
     if(k==='delete'||k==='backspace'){e.preventDefault();if(state.selectedKey)deleteKey(state.selectedKey.type,state.selectedKey.index);else deleteObject();}
@@ -1883,7 +2060,9 @@ async function main(){
     video:{start:startRecording,cancel:stopRecording,get result(){return videoResult;},get busy(){return!!recording;}},
     get selected(){return selected;},get frames(){return frames;},get ready(){return frames>2;},get recording(){return!!recording;},catalog,itemDefs,getBlockPrototype,
     select:selectObject,setMode,setScope,selectedTarget,selectTerrainBlock,addProp,sceneHit,soundtrack,seek,setPlaying,updateLight,addPoseKey,addCameraKey,projectData,loadProject,parseModel,voxelise,equip,applyPose,neutralPose,presetPose,
-    serializeRecord,handleFiles,undo,redo,frameScene,focusObject,refreshAll,editBlock,cellFromHit,history,cleanRender,actorSnapshot,restoreActor,makeTool,toolTextureName,setToolLighting,applyObjectKey,applyPendingEdits,revertEdit,keysOf,poseState};
+    serializeRecord,handleFiles,undo,redo,frameScene,focusObject,refreshAll,editBlock,cellFromHit,history,cleanRender,actorSnapshot,restoreActor,makeTool,toolTextureName,setToolLighting,applyObjectKey,applyPendingEdits,revertEdit,keysOf,poseState,
+    zone:{get from(){return zone.from;},get to(){return zone.to;},get cells(){return zone.cells;},get plan(){return zone.plan;},get config(){return zoneCfg;},select:zoneSelect,clear:zoneClear,refresh:zoneRefreshUI},
+    cinematicBuild,MAX_ZONE_BLOCKS};
   window.STUDIO.ai=initGeminiPanel({
     catalog:{blocks:Object.entries(blockDefs).filter(([id,d])=>d.available).map(([id,d])=>({id,label:d.label,root:d.root,solid:d.solid,surfaceHeight:d.surfaceHeight})),blockAliases:catalog.blockAliases,tools:toolNames.slice(),inventoryTools:catalog.itemOrder.filter(n=>itemDefs[n].available&&itemDefs[n].kind==='item'),sourceModels:catalog.sourceModels.map(m=>m.asset),lights:clone(LIGHTS)},
     snapshot:captureAIScene,apply:applyAIPlan,canUndo:entry=>history.at(-1)===entry,undo,
